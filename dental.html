@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Dental & Aesthetic Studio | Bespoke Smile Makeovers & Veneers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0F172A; color: #F8FAFC; }
+    .teal-gradient { background: linear-gradient(135deg, #0D9488 0%, #065F46 100%); }
+    .glass-card { background: rgba(30, 41, 59, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-[#0F172A]/90 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl teal-gradient flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-teal-500/20">
+          ✨
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white">AURA<span class="text-teal-400"> SMILE</span></span>
+          <span class="block text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Microscopic Aesthetic Dentistry & Aligners</span>
+        </div>
+      </div>
+      <a href="#assessment" class="teal-gradient text-white font-bold px-5 py-2.5 rounded-lg text-sm shadow-md hover:opacity-90 transition">
+        Book Private Assessment
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+    <section class="relative pt-12 pb-16 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-teal-400/10 text-teal-400 border border-teal-400/20 mb-6">
+          ● Digital Smile Design & Ceramic Veneers Studio
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+          Craft Your Signature Smile with <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Microscopic Precision</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Ultra-thin Porcelain Veneers, Invisible Clear Aligners, and Full Smile Rejuvenation designed by master cosmetic clinicians.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Smile Makeover Assessment -->
+    <section id="assessment" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl border border-slate-800">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Interactive 60-Second Smile Assessment</h2>
+          <p class="text-sm text-slate-400 mt-2">Select your aesthetic goal to see recommended treatment, timeline, and estimated cost.</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-2">Primary Aesthetic Goal</label>
+              <select id="goalSelect" onchange="updateSmileEstimates()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-teal-500 focus:outline-none">
+                <option value="veneers">Ceramic Veneers (Gaps, Chipped or Discolored Teeth)</option>
+                <option value="aligners">Invisible Aligners (Crooked / Misaligned Teeth)</option>
+                <option value="implants">Single / Full Arch Dental Implants</option>
+                <option value="whitening">Laser Whitening & Express Rejuvenation</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-2">Number of Teeth / Area</label>
+              <select id="areaSelect" onchange="updateSmileEstimates()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:border-teal-500 focus:outline-none">
+                <option value="front">Upper Smile Zone (6–8 Front Teeth)</option>
+                <option value="full">Full Upper & Lower Arch (16–20 Teeth)</option>
+                <option value="single">Single Tooth / Localized Correction</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div>
+              <span class="text-xs text-slate-400 block">Recommended Technique</span>
+              <span id="treatmentName" class="text-base font-bold text-teal-400 mt-1 block">E-Max Porcelain Veneers</span>
+              <span class="text-[11px] text-slate-500">0.3mm Minimal Prep</span>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 block">Treatment Timeline</span>
+              <span id="timeline" class="text-base font-bold text-emerald-400 mt-1 block">2 Visits (5–7 Days)</span>
+              <span class="text-[11px] text-slate-500">Digital 3D Smile Trial</span>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 block">Estimated Investment</span>
+              <span id="costEstimate" class="text-base font-bold text-teal-300 mt-1 block">₹90,000 – ₹1.4L</span>
+              <span class="text-[11px] text-slate-500">0% Interest EMI Available</span>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-slate-400 text-center sm:text-left">
+              Want a private 3D digital simulation of your smile before scheduling clinic visit?
+            </span>
+            <button onclick="bookConsultation()" class="w-full sm:w-auto teal-gradient text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:opacity-90 transition flex items-center justify-center space-x-2">
+              <span>Book VIP Smile Consultation</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 bg-[#0F172A] text-center text-xs text-slate-500">
+    <p>AutomateFlow Demonstration Project | Aura Dental Studio Aesthetic Showcase</p>
+  </footer>
+
+  <script>
+    function updateSmileEstimates() {
+      const goal = document.getElementById('goalSelect').value;
+      const area = document.getElementById('areaSelect').value;
+      const treatment = document.getElementById('treatmentName');
+      const timeline = document.getElementById('timeline');
+      const cost = document.getElementById('costEstimate');
+
+      if (goal === "veneers") {
+        treatment.textContent = "E-Max Porcelain Veneers";
+        timeline.textContent = "2 Visits (5–7 Days)";
+        cost.textContent = area === "front" ? "₹90,000 – ₹1.4L" : (area === "full" ? "₹2.2L – ₹3.5L" : "₹15,000 – ₹22,000");
+      } else if (goal === "aligners") {
+        treatment.textContent = "Clear Invisible Aligners";
+        timeline.textContent = "4 to 9 Months";
+        cost.textContent = "₹65,000 – ₹1.2L";
+      } else if (goal === "implants") {
+        treatment.textContent = "Titanium Laser Implants";
+        timeline.textContent = "Immediate Loading / 3 Mos";
+        cost.textContent = area === "single" ? "₹32,000 – ₹45,000" : "₹1.8L – ₹3.2L";
+      } else {
+        treatment.textContent = "In-Clinic Laser Bleaching";
+        timeline.textContent = "Single 45-Min Session";
+        cost.textContent = "₹9,500 – ₹14,000";
+      }
+    }
+
+    function bookConsultation() {
+      const goal = document.getElementById('goalSelect').value;
+      const treatment = document.getElementById('treatmentName').textContent;
+      const cost = document.getElementById('costEstimate').textContent;
+      const msg = encodeURIComponent(`Hello Aura Dental team, I completed your online Smile Assessment for ${treatment} (${cost}). Would like to schedule a private 3D digital smile consultation.`);
+      window.open(`https://wa.me/918527750562?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>

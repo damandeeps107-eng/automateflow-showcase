@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helios Solar EPC | Commercial & Residential Rooftop Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0F17; color: #F8FAFC; }
+    .solar-gradient { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+    .glass-card { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .accent-border { border-color: rgba(245, 158, 11, 0.3); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-amber-500/10 border-b border-amber-500/20 py-2.5 px-4 text-center text-xs sm:text-sm text-amber-400 font-medium">
+    ⚡ PM Surya Ghar Scheme 2026: Get up to ₹78,000 Govt Subsidy on Residential Rooftop Systems
+  </div>
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-[#0B0F17]/90 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl solar-gradient flex items-center justify-center font-bold text-gray-950 text-xl shadow-lg shadow-amber-500/20">
+          ☀️
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white">HELIOS<span class="text-amber-400"> SOLAR</span></span>
+          <span class="block text-[10px] tracking-widest text-gray-400 uppercase font-semibold">Tier-1 EPC & Industrial Rooftops</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#calculator" class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white transition">
+          Calculate ROI
+        </a>
+        <a href="#calculator" class="solar-gradient text-gray-950 font-bold px-5 py-2.5 rounded-lg text-sm shadow-md hover:opacity-90 transition">
+          Get Instant Quote
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+    <section class="relative pt-12 pb-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-400 border border-amber-400/20 mb-6">
+          ● Turnkey Rooftop Solar Engineering & Net-Metering
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+          Slash Your Factory & Home Electricity Bills by <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Up to 85%</span>
+        </h1>
+        <p class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          High-efficiency Monocrystalline Bifacial Solar Systems with 25-Year Performance Guarantee. From subsidy paperwork to grid approval — 100% turnkey.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Solar ROI & Subsidy Calculator -->
+    <section id="calculator" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl border border-gray-800">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Interactive Solar ROI & Savings Calculator</h2>
+          <p class="text-sm text-gray-400 mt-2">Adjust your monthly electricity bill to calculate required system size, subsidy, and payback period.</p>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Bill Slider -->
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <label class="text-sm font-semibold text-gray-300">Average Monthly Electricity Bill</label>
+              <span id="billDisplay" class="text-xl font-bold text-amber-400">₹8,000 / month</span>
+            </div>
+            <input type="range" id="billSlider" min="2000" max="60000" step="1000" value="8000" class="w-full h-2.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-500">
+            <div class="flex justify-between text-xs text-gray-500 mt-1">
+              <span>₹2,000</span>
+              <span>₹30,000</span>
+              <span>₹60,000+</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Results Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gray-800 text-center">
+            <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
+              <span class="text-xs text-gray-400 font-medium block">Recommended Size</span>
+              <span id="systemSize" class="text-2xl font-bold text-white mt-1 block">3 kW</span>
+              <span class="text-[10px] text-gray-500">Rooftop Area ~300 sq.ft</span>
+            </div>
+            <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
+              <span class="text-xs text-gray-400 font-medium block">Annual Savings</span>
+              <span id="annualSavings" class="text-2xl font-bold text-emerald-400 mt-1 block">₹81,600</span>
+              <span class="text-[10px] text-gray-500">Guaranteed Generation</span>
+            </div>
+            <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
+              <span class="text-xs text-gray-400 font-medium block">Govt Subsidy</span>
+              <span id="govtSubsidy" class="text-2xl font-bold text-amber-400 mt-1 block">₹78,000</span>
+              <span class="text-[10px] text-gray-500">Direct DBT to Bank</span>
+            </div>
+            <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
+              <span class="text-xs text-gray-400 font-medium block">Payback Period</span>
+              <span id="paybackYears" class="text-2xl font-bold text-white mt-1 block">2.8 Years</span>
+              <span class="text-[10px] text-gray-500">Free Power Thereafter</span>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-left">
+              <span class="text-sm font-semibold text-white">Ready for a Free Rooftop Site Feasibility Audit?</span>
+              <span class="text-xs text-gray-400 block">Our engineers will inspect shadow analysis, structural load, and net-metering.</span>
+            </div>
+            <button onclick="bookSiteVisit()" class="w-full sm:w-auto solar-gradient text-gray-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:opacity-90 transition flex items-center justify-center space-x-2">
+              <span>Book Site Inspection on WhatsApp</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 py-8 bg-[#0B0F17] text-center text-xs text-gray-500">
+    <p>AutomateFlow Demonstration Project | Helios Solar EPC Systems Showcase</p>
+  </footer>
+
+  <script>
+    const slider = document.getElementById('billSlider');
+    const billDisplay = document.getElementById('billDisplay');
+    const systemSize = document.getElementById('systemSize');
+    const annualSavings = document.getElementById('annualSavings');
+    const govtSubsidy = document.getElementById('govtSubsidy');
+    const paybackYears = document.getElementById('paybackYears');
+
+    function updateCalculations() {
+      const bill = parseInt(slider.value);
+      billDisplay.textContent = '₹' + bill.toLocaleString('en-IN') + ' / month';
+
+      // Estimate kW based on bill (~₹8 per unit, 120 units per kW/month)
+      const unitsPerMonth = bill / 8;
+      const kw = Math.max(2, Math.round(unitsPerMonth / 120));
+      systemSize.textContent = kw + ' kW';
+
+      const annual = Math.round(bill * 12 * 0.85);
+      annualSavings.textContent = '₹' + annual.toLocaleString('en-IN');
+
+      let subsidy = 0;
+      if (kw === 1) subsidy = 30000;
+      else if (kw === 2) subsidy = 60000;
+      else subsidy = 78000;
+      govtSubsidy.textContent = '₹' + subsidy.toLocaleString('en-IN');
+
+      const estCost = (kw * 65000) - subsidy;
+      const payback = (estCost / annual).toFixed(1);
+      paybackYears.textContent = Math.max(2.1, payback) + ' Years';
+    }
+
+    slider.addEventListener('input', updateCalculations);
+    updateCalculations();
+
+    function bookSiteVisit() {
+      const bill = slider.value;
+      const kw = systemSize.textContent;
+      const msg = encodeURIComponent(`Hello Helios Solar team, I used your online calculator for my monthly bill of ₹${bill} (Recommended Size: ${kw}). I would like to book a free rooftop site inspection.`);
+      window.open(`https://wa.me/918527750562?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>

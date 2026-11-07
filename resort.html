@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Royal Haveli & Spa | Destination Weddings & Luxury Palace Stay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0C0A09; color: #F5F5F4; }
+    .serif-title { font-family: 'Cinzel', serif; }
+    .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%); }
+    .gold-text { color: #D4AF37; }
+    .glass-card { background: rgba(28, 25, 23, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(212, 175, 55, 0.2); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Top Announcement -->
+  <div class="bg-amber-900/30 border-b border-amber-600/30 py-2.5 px-4 text-center text-xs sm:text-sm text-amber-300 font-medium tracking-wide">
+    👑 2026–2027 Royal Destination Wedding Calendar Now Open | Verified Shubh Muhurat Dates
+  </div>
+
+  <!-- Header -->
+  <header class="border-b border-stone-800 bg-[#0C0A09]/95 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center font-bold text-stone-950 text-xl shadow-lg shadow-amber-900/40">
+          ⚜️
+        </div>
+        <div>
+          <span class="text-xl serif-title font-bold tracking-wider text-stone-100">THE ROYAL HAVELI</span>
+          <span class="block text-[10px] tracking-widest text-amber-500 uppercase font-semibold">Heritage Palace & Wedding Resort</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#dates" class="gold-gradient text-stone-950 font-bold px-5 py-2.5 rounded-lg text-sm shadow-md hover:opacity-90 transition">
+          Check Date Availability
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+    <section class="relative pt-12 pb-16 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-6">
+          ● Private Palatial Venue & 64 Heritage Royal Suites
+        </span>
+        <h1 class="serif-title text-4xl sm:text-6xl font-bold tracking-wide text-stone-100 max-w-4xl mx-auto leading-tight">
+          Celebrate Your Royal Shaadi in <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-600">Timeless Grandeur</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
+          From sunset Pheras at the Marble Courtyard to 800-guest Gala Receptions on the Grand Royal Lawns. Complete turnkey wedding hospitality.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Wedding Date & Capacity Checker -->
+    <section id="dates" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="serif-title text-2xl sm:text-3xl font-bold text-stone-100">Live Wedding Date & Package Estimator</h2>
+          <p class="text-sm text-stone-400 mt-2">Select your guest count and preferred wedding month to check lawn suitability and package estimates.</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-stone-400 block mb-2">Estimated Guest Count</label>
+              <select id="guestSelect" onchange="updateEstimates()" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-stone-200 text-sm focus:border-amber-500 focus:outline-none">
+                <option value="200">Intimate Royal Wedding (150–250 Guests)</option>
+                <option value="450" selected>Grand Courtyard Wedding (350–500 Guests)</option>
+                <option value="800">Imperial Palace Lawn (600–1000+ Guests)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-stone-400 block mb-2">Preferred Wedding Season</label>
+              <select id="seasonSelect" onchange="updateEstimates()" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-stone-200 text-sm focus:border-amber-500 focus:outline-none">
+                <option value="winter">Winter 2026 (Nov – Feb) [Peak Season]</option>
+                <option value="summer">Spring / Summer 2027 (March – June)</option>
+                <option value="monsoon">Royal Monsoon (July – Sept)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="bg-stone-900/80 p-6 rounded-xl border border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div>
+              <span class="text-xs text-stone-400 block">Recommended Lawns</span>
+              <span id="venueName" class="text-base font-bold text-amber-400 mt-1 block">Surya Chowk & Pool Lawn</span>
+              <span class="text-[11px] text-stone-500">Includes 40 Heritage Rooms</span>
+            </div>
+            <div>
+              <span class="text-xs text-stone-400 block">Available Dates</span>
+              <span id="availableDates" class="text-base font-bold text-emerald-400 mt-1 block">4 Shubh Dates Open</span>
+              <span class="text-[11px] text-stone-500">Live Calendar Synced</span>
+            </div>
+            <div>
+              <span class="text-xs text-stone-400 block">Est. Complete Package</span>
+              <span id="estBudget" class="text-base font-bold text-amber-300 mt-1 block">₹28L – ₹35L (2 Days)</span>
+              <span class="text-[11px] text-stone-500">Rooms + Venues + Catering</span>
+            </div>
+          </div>
+
+          <!-- Booking Call to Action -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-stone-400 text-center sm:text-left">
+              Want a 360° virtual video walkthrough of royal suites & banquets before booking recce?
+            </span>
+            <button onclick="bookRecce()" class="w-full sm:w-auto gold-gradient text-stone-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:opacity-90 transition flex items-center justify-center space-x-2">
+              <span>Book Virtual Recce on WhatsApp</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-800 py-8 bg-[#0C0A09] text-center text-xs text-stone-500">
+    <p>AutomateFlow Demonstration Project | The Royal Haveli Wedding Venue Showcase</p>
+  </footer>
+
+  <script>
+    function updateEstimates() {
+      const guests = document.getElementById('guestSelect').value;
+      const season = document.getElementById('seasonSelect').value;
+      const venue = document.getElementById('venueName');
+      const dates = document.getElementById('availableDates');
+      const budget = document.getElementById('estBudget');
+
+      if (guests === "200") {
+        venue.textContent = "Sheesh Mahal & Courtyard";
+        dates.textContent = season === "winter" ? "3 Dates Open" : "6 Dates Open";
+        budget.textContent = "₹18L – ₹24L (2 Days)";
+      } else if (guests === "450") {
+        venue.textContent = "Surya Chowk & Pool Lawn";
+        dates.textContent = season === "winter" ? "4 Dates Open" : "7 Dates Open";
+        budget.textContent = "₹28L – ₹36L (2 Days)";
+      } else {
+        venue.textContent = "Grand Imperial Lawns";
+        dates.textContent = season === "winter" ? "2 Dates Open" : "5 Dates Open";
+        budget.textContent = "₹45L – ₹60L (2 Days)";
+      }
+    }
+
+    function bookRecce() {
+      const guests = document.getElementById('guestSelect').value;
+      const venue = document.getElementById('venueName').textContent;
+      const msg = encodeURIComponent(`Hello Royal Haveli team, I checked your online venue checker for an estimated ${guests} guests (${venue}). Would love to schedule a virtual recce & review date availability.`);
+      window.open(`https://wa.me/918527750562?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Auto Spa & Detailing | Ceramic Coating & TPU PPF Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0F19; color: #F3F4F6; }
+    .gold-gradient { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+    .accent-red { background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%); }
+    .glass-card { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glow-effect:hover { box-shadow: 0 0 25px rgba(245, 158, 11, 0.25); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-600 to-amber-700 py-1.5 px-4 text-center text-xs font-semibold text-black tracking-wide">
+    🏁 November 2026 Studio Slots: Complimentary Paint Depth Gauge Analysis with Every PPF Booking
+  </div>
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-[#0B0F19]/90 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-amber-500/20">
+          🏎️
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-white">APEX<span class="text-amber-400"> DETAILING</span></span>
+          <span class="block text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Self-Healing TPU PPF & Graphene Ceramic Studio</span>
+        </div>
+      </div>
+      <a href="#calculator" class="gold-gradient text-black font-bold px-5 py-2.5 rounded-lg text-sm shadow-md hover:opacity-90 transition">
+        Calculate PPF Estimate
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+    <section class="relative pt-12 pb-16 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/10 text-amber-400 border border-amber-400/20 mb-6">
+          ● ISO Certified Cleanroom Bay & Heat-Gun Precision Plotting
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+          Keep Your Car Looking <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-500">Showroom Fresh</span> Forever.
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          Instant online protection calculator for luxury sedans, SUVs, and supercars. Zero swirl marks, rock-chip immunity, and 5-to-10-year official warranty.
+        </p>
+
+        <!-- Metric Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-14">
+          <div class="p-4 rounded-xl glass-card border border-slate-800">
+            <span class="block text-2xl font-bold text-amber-400">10-Year</span>
+            <span class="text-xs text-slate-400">Non-Yellowing Warranty</span>
+          </div>
+          <div class="p-4 rounded-xl glass-card border border-slate-800">
+            <span class="block text-2xl font-bold text-amber-400">10H Rating</span>
+            <span class="text-xs text-slate-400">Graphene Hydrophobic Seal</span>
+          </div>
+          <div class="p-4 rounded-xl glass-card border border-slate-800">
+            <span class="block text-2xl font-bold text-amber-400">200+ Micron</span>
+            <span class="text-xs text-slate-400">Self-Healing TPU Film</span>
+          </div>
+          <div class="p-4 rounded-xl glass-card border border-slate-800">
+            <span class="block text-2xl font-bold text-amber-400">48-Hr Bay</span>
+            <span class="text-xs text-slate-400">Turnaround Guarantee</span>
+          </div>
+        </div>
+
+        <!-- Interactive Calculator & Package Selector -->
+        <div id="calculator" class="max-w-3xl mx-auto rounded-2xl glass-card p-6 sm:p-10 border border-slate-700/80 text-left shadow-2xl relative glow-effect transition">
+          <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center">
+                <span class="mr-2">⚡</span> Instant Vehicle Protection Estimator
+              </h3>
+              <p class="text-xs text-slate-400">Select your vehicle segment and required protection grade below</p>
+            </div>
+            <span class="bg-amber-400/20 text-amber-300 text-xs px-3 py-1 rounded-full font-bold">Live Calculator</span>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Vehicle Segment -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">1. Select Your Vehicle Category</label>
+              <div class="grid grid-cols-3 gap-3">
+                <button type="button" onclick="setCar('hatch', this)" class="car-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-center text-sm font-semibold hover:border-amber-400 transition">
+                  🚗 Sedan / Hatch<br><span class="text-[11px] text-slate-400">City, Verna, Virtus</span>
+                </button>
+                <button type="button" onclick="setCar('suv', this)" class="car-btn border-2 border-amber-400 bg-amber-400/10 p-3 rounded-xl text-center text-sm font-semibold text-white">
+                  🚙 Mid / Full SUV<br><span class="text-[11px] text-amber-300">Creta, Thar, Fortuner</span>
+                </button>
+                <button type="button" onclick="setCar('luxury', this)" class="car-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-center text-sm font-semibold hover:border-amber-400 transition">
+                  🏎️ Luxury / Supercar<br><span class="text-[11px] text-slate-400">BMW, Merc, Porsche</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Service Required -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">2. Desired Protection Package</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button type="button" onclick="setPackage('ceramic', this)" class="pkg-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-left text-xs font-semibold hover:border-amber-400 transition">
+                  <div class="text-amber-400 font-bold mb-1">10H Ceramic Coating</div>
+                  <div class="text-slate-400">Deep gloss, 3-yr hydrophobic barrier, swirl resistance</div>
+                </button>
+                <button type="button" onclick="setPackage('tpu_front', this)" class="pkg-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-left text-xs font-semibold hover:border-amber-400 transition">
+                  <div class="text-amber-400 font-bold mb-1">Front Clip TPU PPF</div>
+                  <div class="text-slate-400">Bumper, bonnet, mirrors, fenders rock-chip shield</div>
+                </button>
+                <button type="button" onclick="setPackage('tpu_full', this)" class="pkg-btn border-2 border-amber-400 bg-amber-400/10 p-3 rounded-xl text-left text-xs font-semibold text-white">
+                  <div class="text-amber-300 font-bold mb-1">Full Body Self-Healing PPF</div>
+                  <div class="text-slate-300">Complete vehicle wrap, 7-10 yr warranty, self-repair</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Estimate Display Card -->
+            <div class="bg-gradient-to-br from-slate-900 to-black p-5 rounded-xl border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Estimated Studio Package:</span>
+                <div class="text-3xl font-extrabold text-amber-400" id="costEstimate">₹85,000 – ₹95,000</div>
+                <div class="text-xs text-slate-300 mt-0.5" id="warrantyText">Includes 7-Year Official Digital Warranty & 2 Free Inspections</div>
+              </div>
+              <a href="https://wa.me/918003993939?text=Hi%20Apex%20Detailing,%20I%20used%20your%20instant%20calculator%20for%20my%20vehicle%20and%20would%20like%20to%20reserve%20a%20bay%20slot." target="_blank" class="w-full sm:w-auto text-center gold-gradient text-black font-extrabold px-6 py-3.5 rounded-xl shadow-lg hover:brightness-110 transition whitespace-nowrap">
+                Reserve Bay Slot on WhatsApp 💬
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-[#0B0F19] py-8 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-semibold text-white">APEX AUTO SPA & DETAILING STUDIO</p>
+      <p class="mt-1">Dedicated Cleanroom Bays in Mumbai • Bangalore • Delhi NCR • Ahmedabad</p>
+      <p class="mt-4 text-[11px] text-slate-400">Engineered with high-converting booking architecture by <a href="https://automateflow.in" class="text-amber-400 hover:underline">AutomateFlow</a></p>
+    </div>
+  </footer>
+
+  <script>
+    let currentCar = 'suv';
+    let currentPkg = 'tpu_full';
+
+    const pricing = {
+      hatch: { ceramic: '₹18,000 – ₹22,000', tpu_front: '₹35,000 – ₹42,000', tpu_full: '₹65,000 – ₹75,000' },
+      suv: { ceramic: '₹24,000 – ₹28,000', tpu_front: '₹45,000 – ₹55,000', tpu_full: '₹85,000 – ₹95,000' },
+      luxury: { ceramic: '₹32,000 – ₹38,000', tpu_front: '₹60,000 – ₹70,000', tpu_full: '₹1,20,000 – ₹1,45,000' }
+    };
+
+    const warranties = {
+      ceramic: 'Includes 3-Year Official Gloss Warranty & Annual Top-Up Coat',
+      tpu_front: 'Includes 5-Year Impact Warranty on High-Velocity Strike Zones',
+      tpu_full: 'Includes 7-10 Year Self-Healing TPU Warranty & 2 Free Maintenance Checks'
+    };
+
+    function update() {
+      document.getElementById('costEstimate').innerText = pricing[currentCar][currentPkg];
+      document.getElementById('warrantyText').innerText = warranties[currentPkg];
+    }
+
+    function setCar(type, btn) {
+      currentCar = type;
+      document.querySelectorAll('.car-btn').forEach(b => {
+        b.className = 'car-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-center text-sm font-semibold hover:border-amber-400 transition text-slate-300';
+      });
+      btn.className = 'car-btn border-2 border-amber-400 bg-amber-400/10 p-3 rounded-xl text-center text-sm font-semibold text-white';
+      update();
+    }
+
+    function setPackage(pkg, btn) {
+      currentPkg = pkg;
+      document.querySelectorAll('.pkg-btn').forEach(b => {
+        b.className = 'pkg-btn border border-slate-600 bg-slate-800/80 p-3 rounded-xl text-left text-xs font-semibold hover:border-amber-400 transition';
+      });
+      btn.className = 'pkg-btn border-2 border-amber-400 bg-amber-400/10 p-3 rounded-xl text-left text-xs font-semibold text-white';
+      update();
+    }
+  </script>
+</body>
+</html>

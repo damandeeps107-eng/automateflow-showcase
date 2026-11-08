@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Appointment & Patient Booking Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slot-pill.active {
+      background-color: #0284C7;
+      color: #FFFFFF;
+      border-color: #0284C7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .date-card.active {
+      border-color: #0284C7;
+      background-color: #F0F9FF;
+      color: #0369A1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 text-center font-medium border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <span class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Direct 1-Click Patient Booking Portal
+      </span>
+      <span class="hidden sm:inline text-slate-400">Zero Wait Time • Instant WhatsApp Confirmation</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg">
+          🩺
+        </div>
+        <div>
+          <h1 id="clinicName" class="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight">Elite Care Clinic</h1>
+          <p id="clinicSubtitle" class="text-xs text-slate-500 font-medium">Multi-Specialty Clinical Practice</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+          ● Doctor Available Today
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-1 w-full">
+    
+    <!-- Doctor & Clinic Info Card -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm mb-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-md shadow-sky-500/10 flex-shrink-0">
+            👨‍⚕️
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h2 id="doctorName" class="text-lg sm:text-xl font-bold text-slate-900">Dr. Senior Consultant</h2>
+              <span id="qualification" class="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">MBBS, MD / Specialist</span>
+            </div>
+            <p id="specialty" class="text-sm text-sky-600 font-semibold mt-0.5">Primary Clinical Consultation & OPD</p>
+            <p id="clinicAddress" class="text-xs text-slate-500 mt-2 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Main Clinic Location</span>
+            </p>
+          </div>
+        </div>
+        <div class="w-full sm:w-auto bg-slate-50 sm:bg-transparent p-3 sm:p-0 rounded-xl border sm:border-0 border-slate-100 flex sm:flex-col items-center sm:items-end justify-between">
+          <span class="text-xs text-slate-500">Consultation Fee</span>
+          <span id="fee" class="text-lg font-bold text-slate-900">₹600 – ₹1,000</span>
+          <span class="text-[11px] text-slate-400">Pay at Clinic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Form Card -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+      <h3 class="text-base font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-sky-100 text-sky-700 text-xs flex items-center justify-center font-bold">1</span>
+        Select Consultation & Time Slot
+      </h3>
+
+      <!-- Consultation Type Selection -->
+      <div class="mb-6">
+        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2.5">Service / Concern</label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="serviceOptions">
+          <label class="cursor-pointer border border-sky-500 bg-sky-50/50 rounded-xl p-3.5 text-left flex items-start gap-3 transition">
+            <input type="radio" name="service" value="General OPD Consultation" checked class="mt-1 text-sky-600 focus:ring-sky-500">
+            <div>
+              <span class="block text-sm font-semibold text-slate-900">Clinical Consultation</span>
+              <span class="block text-xs text-slate-500 mt-0.5">In-person examination & diagnosis</span>
+            </div>
+          </label>
+          <label class="cursor-pointer border border-slate-200 hover:border-slate-300 rounded-xl p-3.5 text-left flex items-start gap-3 transition">
+            <input type="radio" name="service" value="Follow-up / Review" class="mt-1 text-sky-600 focus:ring-sky-500">
+            <div>
+              <span class="block text-sm font-semibold text-slate-900">Follow-up / Review</span>
+              <span class="block text-xs text-slate-500 mt-0.5">Report analysis & prescription check</span>
+            </div>
+          </label>
+          <label class="cursor-pointer border border-slate-200 hover:border-slate-300 rounded-xl p-3.5 text-left flex items-start gap-3 transition">
+            <input type="radio" name="service" value="Procedure / Treatment" class="mt-1 text-sky-600 focus:ring-sky-500">
+            <div>
+              <span class="block text-sm font-semibold text-slate-900">Procedure / Treatment</span>
+              <span class="block text-xs text-slate-500 mt-0.5">Specialized treatment session</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Date Selection -->
+      <div class="mb-6">
+        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2.5">Select Date</label>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="dateContainer">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+      <!-- Slot Selection -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-2.5">
+          <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider">Available Slots</label>
+          <span class="text-xs text-slate-500">Approx. 20 min slot</span>
+        </div>
+        
+        <div class="space-y-3">
+          <div>
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">Morning OPD (10:00 AM – 01:30 PM)</span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" onclick="selectSlot(this)" class="slot-pill active border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">10:30 AM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">11:15 AM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">12:00 PM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">12:45 PM</button>
+            </div>
+          </div>
+
+          <div>
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2 pt-2">Evening OPD (04:30 PM – 07:30 PM)</span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">04:45 PM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">05:30 PM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">06:15 PM</button>
+              <button type="button" onclick="selectSlot(this)" class="slot-pill border border-slate-200 rounded-xl py-2 px-3 text-xs font-semibold text-center hover:border-slate-300 transition">07:00 PM</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-200 my-6"></div>
+
+      <!-- Patient Details -->
+      <h3 class="text-base font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-sky-100 text-sky-700 text-xs flex items-center justify-center font-bold">2</span>
+        Patient Contact Details
+      </h3>
+
+      <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Patient Full Name *</label>
+            <input type="text" id="patientName" required placeholder="e.g. Rahul Sharma" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">WhatsApp / Phone Number *</label>
+            <input type="tel" id="patientPhone" required placeholder="10-digit mobile number" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Patient Age</label>
+            <input type="number" id="patientAge" placeholder="e.g. 32" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Primary Symptoms / Note (Optional)</label>
+            <input type="text" id="patientNotes" placeholder="e.g. Routine consultation / toothache / skin consultation" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition">
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md shadow-sky-600/20 text-sm transition flex items-center justify-center gap-2">
+            <span>Confirm Appointment Slot</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </button>
+          <p class="text-[11px] text-slate-400 text-center mt-2.5">
+            Instant booking confirmation • Direct appointment pass issued via WhatsApp
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- System Demo / Handover Note for Clinic -->
+    <div class="mt-8 bg-slate-900 rounded-2xl p-6 sm:p-7 text-white border border-slate-800">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-bold block mb-1">Clinic Digital Infrastructure</span>
+          <h4 class="text-base font-bold text-white">Full Clinic Website & Patient Booking System</h4>
+          <p class="text-xs text-slate-400 mt-1 max-w-xl leading-relaxed">
+            Agar aapko apne clinic ke liye standalone modern website, Google Maps booking integration, ya custom patient records portal chahiye, toh hum turnkey 48 hours me setup karke handover kar dete hain.
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="inline-block bg-white/10 text-slate-200 text-xs px-3.5 py-2 rounded-lg font-medium border border-white/15">
+            Ready for Handover
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div id="bookingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-200 transform transition-all text-center">
+      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl mx-auto mb-4">
+        ✓
+      </div>
+      <h3 class="text-lg font-bold text-slate-900">Appointment Reserved!</h3>
+      <p class="text-xs text-slate-500 mt-1">Your slot has been recorded directly in the clinic schedule.</p>
+      
+      <div class="bg-slate-50 rounded-xl p-4 my-5 text-left border border-slate-200/80 space-y-2 text-xs">
+        <div class="flex justify-between"><span class="text-slate-500">Doctor:</span> <span id="modalDoctor" class="font-bold text-slate-900">Dr. Senior Consultant</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Patient:</span> <span id="modalPatient" class="font-semibold text-slate-800">Rahul Sharma</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Date & Slot:</span> <span id="modalSlot" class="font-bold text-sky-600">Tomorrow • 10:30 AM</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Service:</span> <span id="modalService" class="font-medium text-slate-700">Clinical Consultation</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Booking Ref:</span> <span id="modalRef" class="font-mono text-slate-600">#CL-84920</span></div>
+      </div>
+
+      <button type="button" onclick="closeModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition">
+        Close Preview
+      </button>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span>© 2026 AutomateFlow Clinical Systems. Designed for modern medical practices.</span>
+      <span class="text-[11px] text-slate-400">HIPAA Compliant Data Standards</span>
+    </div>
+  </footer>
+
+  <script>
+    // URL Parameter Parser to personalize for ANY clinic instantly
+    const params = new URLSearchParams(window.location.search);
+    const clinic = params.get('clinic') || 'Aura Health & Dental Studio';
+    const doctor = params.get('doctor') || 'Dr. Senior Consultant';
+    const qualification = params.get('qual') || 'MBBS, MD / Specialist';
+    const specialty = params.get('spec') || 'Advanced Patient Care & Family Medicine';
+    const city = params.get('city') || 'Main City Road';
+    const fee = params.get('fee') || '₹700';
+
+    document.getElementById('clinicName').innerText = clinic;
+    document.getElementById('clinicSubtitle').innerText = specialty;
+    document.getElementById('doctorName').innerText = doctor;
+    document.getElementById('qualification').innerText = qualification;
+    document.getElementById('specialty').innerText = specialty;
+    document.getElementById('clinicAddress').querySelector('span').innerText = city;
+    document.getElementById('fee').innerText = fee;
+    document.title = `${clinic} | Online Patient Appointment Portal`;
+
+    // Populate Dates (Next 6 Days)
+    const dateContainer = document.getElementById('dateContainer');
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let selectedDateStr = '';
+
+    for (let i = 0; i < 6; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() + i);
+      const dayName = i === 0 ? 'Today' : (i === 1 ? 'Tmrw' : days[d.getDay()]);
+      const dateNum = d.getDate();
+      const monthName = months[d.getMonth()];
+      const isFirst = i === 0;
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `date-card border border-slate-200 rounded-xl py-2 px-2 text-center transition ${isFirst ? 'active' : 'hover:border-slate-300'}`;
+      btn.innerHTML = `<span class="block text-[10px] uppercase font-bold text-slate-400">${dayName}</span><span class="block text-sm font-bold text-slate-800">${dateNum} ${monthName}</span>`;
+      btn.onclick = () => {
+        document.querySelectorAll('.date-card').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        selectedDateStr = `${dayName}, ${dateNum} ${monthName}`;
+      };
+      dateContainer.appendChild(btn);
+      if (isFirst) selectedDateStr = `Today, ${dateNum} ${monthName}`;
+    }
+
+    let selectedTimeSlot = '10:30 AM';
+    function selectSlot(btn) {
+      document.querySelectorAll('.slot-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedTimeSlot = btn.innerText.trim();
+    }
+
+    function handleBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('patientName').value;
+      const phone = document.getElementById('patientPhone').value;
+      const service = document.querySelector('input[name="service"]:checked').value;
+      const ref = '#CL-' + Math.floor(10000 + Math.random() * 90000);
+
+      document.getElementById('modalDoctor').innerText = doctor;
+      document.getElementById('modalPatient').innerText = `${name} (${phone})`;
+      document.getElementById('modalSlot').innerText = `${selectedDateStr} • ${selectedTimeSlot}`;
+      document.getElementById('modalService').innerText = service;
+      document.getElementById('modalRef').innerText = ref;
+
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

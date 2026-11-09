@@ -3,363 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUXURY LIVING GURGAON | DLF Phase 4 Garden Villas & Luxury Builder Floors</title>
-  <meta name="description" content="Exclusive 4 & 5 BHK Luxury Builder Floors and Garden Villas across DLF Phase 1-4 & Golf Course Road, Gurugram. Direct developer pricing, private lifts, and bespoke finishes.">
+  <title>Luxury Living Gurgaon | DLF Phase 4 Garden Villas & Luxury Floors</title>
+  <meta name="description" content="Curated 316 to 500 Sq. Yd. Luxury Builder Floors & Garden Villas in DLF Phase 1–4 and Golf Course Road, Gurugram. Direct mandate, private elevators, and bespoke Italian marble finishes.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #0A0D12;
-      color: #E2E8F0;
-      scroll-behavior: smooth;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FAF9F6;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
     }
     .font-serif-luxury {
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', Georgia, serif;
     }
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #F6D365 0%, #FDA085 50%, #D4AF37 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .property-card {
+      background: #FFFFFF;
+      border: 1px solid #EAE8E3;
+      transition: all 0.25s ease-in-out;
     }
-    .gold-bg {
-      background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+    .property-card:hover {
+      border-color: #1A1A1A;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
     }
-    .gold-border {
-      border-color: rgba(212, 175, 55, 0.25);
+    .btn-dark {
+      background-color: #111827;
+      color: #FFFFFF;
+      transition: background-color 0.2s ease;
     }
-    .luxury-card {
-      background: rgba(18, 22, 31, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .luxury-card:hover {
-      border-color: rgba(212, 175, 55, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(212, 175, 55, 0.15);
+    .btn-dark:hover {
+      background-color: #27272A;
     }
   </style>
 </head>
-<body class="antialiased selection:bg-[#D4AF37] selection:text-black">
+<body class="selection:bg-neutral-900 selection:text-white">
 
-  <!-- Top VIP Notice Bar -->
-  <aside aria-label="Announcement" class="bg-gradient-to-r from-[#18140B] via-[#2A2111] to-[#18140B] border-b border-[#D4AF37]/20 py-2 px-4 text-center text-xs tracking-wider text-[#F3E5AB]">
-    <span class="inline-block w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse mr-2"></span>
-    OFF-MARKET INVENTORY: Exclusive DLF Phase 4 Garden Villas & Golf Course Road Penthouse Walkthroughs
+  <!-- Top Announcement Bar -->
+  <aside aria-label="Announcement" class="bg-[#111827] text-white py-2 px-4 text-center text-xs tracking-wider uppercase font-medium">
+    Off-Market Mandate: DLF Phase 4 Garden Villas • Private Terrace &amp; 3 Covered Car Parks
   </aside>
 
   <!-- Navigation Header -->
-  <header class="sticky top-0 z-50 bg-[#0A0D12]/95 backdrop-blur-md border-b border-white/5">
+  <header class="sticky top-0 z-50 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-[#EAE8E3]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center font-serif-luxury font-bold text-black text-lg shadow-lg shadow-amber-500/20">
-          LL
-        </div>
+      
+      <!-- Real Brand Logo & Title -->
+      <div class="flex items-center space-x-3.5">
+        <img src="assets/luxury_living_logo.jpg" alt="Luxury Living Gurgaon Logo" class="w-11 h-11 rounded-full object-cover border border-neutral-300 shadow-sm">
         <div>
-          <span class="text-lg sm:text-xl font-bold tracking-tight text-white font-serif-luxury block leading-none">
-            LUXURY LIVING <span class="text-[#D4AF37]">GURGAON</span>
+          <span class="text-lg font-bold tracking-tight text-neutral-900 font-serif-luxury block leading-none">
+            Luxury Living Gurgaon
           </span>
-          <span class="text-[10px] tracking-widest text-slate-400 uppercase font-medium">
-            DLF Phase 1–4 & Golf Course Road Specialist
+          <span class="text-[11px] tracking-wider text-neutral-500 uppercase font-medium">
+            DLF Phase 1–4 &amp; Golf Course Road Specialist
           </span>
         </div>
       </div>
+
+      <!-- Action Buttons -->
       <div class="flex items-center space-x-4">
-        <a href="https://instagram.com/luxurylivinggurgaon" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center text-xs text-slate-400 hover:text-white transition">
-          <svg class="w-4 h-4 mr-1.5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <a href="https://instagram.com/luxurylivinggurgaon" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center text-xs font-medium text-neutral-600 hover:text-neutral-900 transition">
+          <svg class="w-4 h-4 mr-1.5 text-neutral-700" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           @luxurylivinggurgaon
         </a>
-        <a href="https://wa.me/918810382628?text=Hi%20Luxury%20Living%20Gurgaon,%20I%20am%20interested%20in%20viewing%20DLF%20Phase%204%20Garden%20Villas%20and%20luxury%20builder%20floors." class="gold-bg text-black font-semibold px-4 py-2 rounded-md text-xs sm:text-sm tracking-wide shadow-md hover:opacity-95 transition flex items-center space-x-1.5">
-          <span>Book VIP Site Visit</span>
+        <a href="https://wa.me/918810382628?text=Namaste%20Luxury%20Living%20Team,%20I%20am%20interested%20in%20viewing%20DLF%20Phase%204%20Garden%20Villas%20and%20luxury%20builder%20floors." class="btn-dark px-5 py-2.5 rounded text-xs sm:text-sm font-semibold tracking-wide">
+          Schedule Site Visit
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-950/20 via-[#0A0D12] to-[#0A0D12] -z-10"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 text-center">
+  <!-- Editorial Hero Section -->
+  <main class="border-b border-[#EAE8E3]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 text-center">
       
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-[#D4AF37]/30 text-xs text-[#D4AF37] mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
-        <span>Verified Inventory | Registry Ready | Zero Brokerage Hassle</span>
-      </div>
+      <span class="text-xs uppercase tracking-widest text-neutral-500 font-semibold block mb-4">
+        Exclusive Property Mandate • Gurugram
+      </span>
 
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif-luxury tracking-tight max-w-5xl mx-auto leading-tight text-white mb-6">
-        Ultra-Luxury Builder Floors &amp; <span class="gold-gradient-text">Garden Villas</span> in Gurgaon
+      <h1 class="text-4xl sm:text-6xl font-normal font-serif-luxury text-neutral-900 leading-[1.15] mb-6">
+        Independent Luxury Floors &amp; <br class="hidden sm:inline"><span class="italic font-medium">Garden Villas in DLF</span>
       </h1>
 
-      <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-        Curated independent floors across <span class="text-white font-medium">DLF Phase 4, Phase 2, &amp; Golf Course Road</span>. 
-        Featuring private lifts, wrap-around balconies, imported Italian marble, and basement lounges for discerning homeowners.
+      <p class="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Handpicked 316 to 500 Sq. Yd. builder floors across DLF Phase 4, Phase 2, and Golf Course Road. Private elevators, wrap-around balconies, and landscaped private terraces.
       </p>
 
-      <!-- Trust Badges -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-14">
-        <div class="luxury-card p-4 rounded-xl text-left">
-          <span class="text-2xl font-bold text-[#D4AF37] font-serif-luxury block">450–500</span>
-          <span class="text-xs text-slate-400">Sq. Yds. Plot Sizes</span>
+      <!-- Key Specifications Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12 text-left">
+        <div class="bg-white border border-[#EAE8E3] p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Plot Area</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">316–500 Sq. Yd.</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">East / Park Facing</span>
         </div>
-        <div class="luxury-card p-4 rounded-xl text-left">
-          <span class="text-2xl font-bold text-[#D4AF37] font-serif-luxury block">Private Lift</span>
-          <span class="text-xs text-slate-400">Direct Lobby to Floor</span>
+        <div class="bg-white border border-[#EAE8E3] p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Private Elevator</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">Direct to Floor</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">Dedicated Lobby</span>
         </div>
-        <div class="luxury-card p-4 rounded-xl text-left">
-          <span class="text-2xl font-bold text-[#D4AF37] font-serif-luxury block">Stilt + 3 Car</span>
-          <span class="text-xs text-slate-400">Covered Dedicated Parking</span>
+        <div class="bg-white border border-[#EAE8E3] p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Covered Parking</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">Stilt + 3 Cars</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">Automated Gates</span>
         </div>
-        <div class="luxury-card p-4 rounded-xl text-left">
-          <span class="text-2xl font-bold text-[#D4AF37] font-serif-luxury block">100% Clear</span>
-          <span class="text-xs text-slate-400">Direct Registry &amp; OC</span>
+        <div class="bg-white border border-[#EAE8E3] p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Possession</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">Ready to Move</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">OC &amp; Registry Ready</span>
         </div>
       </div>
 
-      <!-- Quick Action Buttons -->
+      <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#inventory" class="w-full sm:w-auto px-8 py-3.5 rounded-lg gold-bg text-black font-semibold text-sm hover:brightness-110 transition shadow-lg shadow-amber-900/30">
-          Explore Current Inventory ↓
+        <a href="#inventory" class="w-full sm:w-auto btn-dark px-8 py-3.5 rounded text-sm font-semibold tracking-wide">
+          View Signature Inventory
         </a>
-        <a href="https://wa.me/918810382628?text=Namaste%20Luxury%20Living%20Team,%20please%20share%20the%20price%20list%20and%20floor%20plans%20for%20DLF%20Phase%204%20floors." class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white font-medium text-sm hover:bg-white/10 transition flex items-center justify-center space-x-2">
-          <span>Get Price Deck on WhatsApp</span>
+        <a href="https://wa.me/918810382628?text=Namaste%20Luxury%20Living%20Team,%20please%20share%20the%20price%20list%20and%20floor%20plans%20for%20DLF%20Phase%204%20floors." class="w-full sm:w-auto bg-white border border-neutral-300 text-neutral-800 px-8 py-3.5 rounded text-sm font-semibold hover:border-neutral-900 transition">
+          Request Price Deck via WhatsApp
         </a>
       </div>
 
     </div>
   </main>
 
-  <!-- Featured Properties Section -->
-  <section id="inventory" class="py-20 bg-[#0E121A] border-t border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-2">Live Availability</span>
-          <h2 class="text-3xl sm:text-4xl font-bold font-serif-luxury text-white">Signature Luxury Floors</h2>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-400 max-w-md mt-3 md:mt-0">
-          Handpicked boutique developments designed with high ceilings, European fixtures, and private terrace recreation zones.
-        </p>
+  <!-- Featured Signature Inventory -->
+  <section id="inventory" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#EAE8E3] pb-6">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-neutral-500 font-semibold block mb-1">Featured Meta Ad Inventory</span>
+        <h2 class="text-3xl font-normal font-serif-luxury text-neutral-900">DLF Phase 4 Garden Villas</h2>
       </div>
-
-      <!-- Grid of Properties -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Property 1: DLF Phase 4 Garden Villas -->
-        <div class="luxury-card rounded-2xl overflow-hidden flex flex-col justify-between">
-          <div>
-            <div class="relative h-64 overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="DLF Phase 4 Garden Villa Builder Floor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-              <div class="absolute top-3 left-3 bg-[#0A0D12]/90 backdrop-blur-md px-3 py-1 rounded text-[11px] font-semibold text-[#D4AF37] border border-[#D4AF37]/30">
-                ⭐ Featured Meta Ad Listing
-              </div>
-              <div class="absolute bottom-3 right-3 bg-black/80 px-2.5 py-1 rounded text-xs text-white">
-                DLF Phase 4
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs text-slate-400 font-medium">4 BHK + Lounge + Servant</span>
-                <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Ready for Possession</span>
-              </div>
-              <h3 class="text-xl font-bold font-serif-luxury text-white mb-2">DLF Phase 4 Garden Villas</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                450 Sq. Yd. independent builder floor with Italian modular kitchen, private Otis lift, landscaped private terrace &amp; 3 stilt car spaces.
-              </p>
-              
-              <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-2 text-xs text-slate-400 mb-6">
-                <div>📐 <strong class="text-white">450 Sq. Yd.</strong></div>
-                <div>🛗 <strong class="text-white">Direct Private Lift</strong></div>
-                <div>🚗 <strong class="text-white">3 Stilt Car Parks</strong></div>
-                <div>🌳 <strong class="text-white">Terrace Garden</strong></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/918810382628?text=Hi%20Luxury%20Living%20Gurgaon,%20I%20am%20interested%20in%20visiting%20the%20DLF%20Phase%204%20Garden%20Villa%20Floor.%20Please%20send%20walkthrough%20video%20and%20location." class="w-full py-3 rounded-lg gold-bg text-black font-bold text-xs tracking-wider uppercase text-center block hover:opacity-95 transition">
-              Schedule Site Visit
-            </a>
-          </div>
-        </div>
-
-        <!-- Property 2: Golf Course Road Bel-Air -->
-        <div class="luxury-card rounded-2xl overflow-hidden flex flex-col justify-between">
-          <div>
-            <div class="relative h-64 overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Golf Course Road Luxury Independent Floor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-              <div class="absolute top-3 left-3 bg-[#0A0D12]/90 backdrop-blur-md px-3 py-1 rounded text-[11px] font-semibold text-white border border-white/10">
-                Ultra-Prime Bel Air
-              </div>
-              <div class="absolute bottom-3 right-3 bg-black/80 px-2.5 py-1 rounded text-xs text-white">
-                Golf Course Road
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs text-slate-400 font-medium">4 BHK + Family Den</span>
-                <span class="text-xs font-semibold text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/30">Immediate Registry</span>
-              </div>
-              <h3 class="text-xl font-bold font-serif-luxury text-white mb-2">Golf Course Rd Signature Floor</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                500 Sq. Yd. corner layout with expansive glass frontage, wrap-around balconies, VRV air-conditioning and master suite with Jacuzzi.
-              </p>
-              
-              <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-2 text-xs text-slate-400 mb-6">
-                <div>📐 <strong class="text-white">500 Sq. Yd. Corner</strong></div>
-                <div>❄️ <strong class="text-white">VRV Air Conditioning</strong></div>
-                <div>🚗 <strong class="text-white">4 Stilt Car Parks</strong></div>
-                <div>🍷 <strong class="text-white">Private Bar Lounge</strong></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/918810382628?text=Hi%20Luxury%20Living%20Gurgaon,%20please%20share%20exact%20pricing%20and%20layout%20for%20Golf%20Course%20Road%20500%20sq%20yd%20floor." class="w-full py-3 rounded-lg gold-bg text-black font-bold text-xs tracking-wider uppercase text-center block hover:opacity-95 transition">
-              Schedule Site Visit
-            </a>
-          </div>
-        </div>
-
-        <!-- Property 3: DLF Phase 2 Prime Avenue -->
-        <div class="luxury-card rounded-2xl overflow-hidden flex flex-col justify-between">
-          <div>
-            <div class="relative h-64 overflow-hidden group">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="DLF Phase 2 Independent Floor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-              <div class="absolute top-3 left-3 bg-[#0A0D12]/90 backdrop-blur-md px-3 py-1 rounded text-[11px] font-semibold text-white border border-white/10">
-                Cyber City Proximity
-              </div>
-              <div class="absolute bottom-3 right-3 bg-black/80 px-2.5 py-1 rounded text-xs text-white">
-                DLF Phase 2
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs text-slate-400 font-medium">4 BHK + Italian Fittings</span>
-                <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Ready to Move</span>
-              </div>
-              <h3 class="text-xl font-bold font-serif-luxury text-white mb-2">DLF Phase 2 Executive Floor</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                300 Sq. Yd. park-facing floor walking distance from CyberHub. Smart home automation, Kohler rain showers, and servant quarter.
-              </p>
-              
-              <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-2 text-xs text-slate-400 mb-6">
-                <div>📐 <strong class="text-white">300 Sq. Yd. Park Facing</strong></div>
-                <div>⚡ <strong class="text-white">Smart Automation</strong></div>
-                <div>🚗 <strong class="text-white">2 Stilt Car Parks</strong></div>
-                <div>🏢 <strong class="text-white">Near CyberHub</strong></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/918810382628?text=Hi%20Luxury%20Living%20Gurgaon,%20I%20would%20like%20details%20for%20DLF%20Phase%202%20floor%20near%20CyberHub." class="w-full py-3 rounded-lg gold-bg text-black font-bold text-xs tracking-wider uppercase text-center block hover:opacity-95 transition">
-              Schedule Site Visit
-            </a>
-          </div>
-        </div>
-
-      </div>
-
+      <p class="text-xs sm:text-sm text-neutral-500 max-w-md mt-2 md:mt-0">
+        316 Sq. Yd. Super Luxury Builder Floor • Few meters from Golf Course Road &amp; Galleria Market.
+      </p>
     </div>
-  </section>
 
-  <!-- Interactive Site Visit Scheduler Section -->
-  <section class="py-20 relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="luxury-card p-8 sm:p-12 rounded-3xl border border-[#D4AF37]/30 shadow-2xl relative overflow-hidden">
-        
-        <div class="text-center mb-8">
-          <span class="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-2">Private Client Desk</span>
-          <h2 class="text-3xl font-bold font-serif-luxury text-white mb-2">Book a Private Floor Walkthrough</h2>
-          <p class="text-sm text-slate-400 max-w-lg mx-auto">
-            Experience the craftsmanship in person. Select your location preference to generate your direct WhatsApp itinerary with Luxury Living Gurgaon.
+    <!-- Editorial Gallery & Action Box -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Gallery Column -->
+      <div class="lg:col-span-7 space-y-4">
+        <div class="overflow-hidden rounded border border-[#EAE8E3] bg-neutral-100">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80" alt="DLF Phase 4 Luxury Floor Exterior" class="w-full h-[420px] object-cover">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="overflow-hidden rounded border border-[#EAE8E3] bg-neutral-100 h-48">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Living Room Italian Flooring" class="w-full h-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded border border-[#EAE8E3] bg-neutral-100 h-48">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Terrace Lounge Area" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Details Column -->
+      <div class="lg:col-span-5 bg-white border border-[#EAE8E3] p-8 rounded space-y-6">
+        <div>
+          <span class="inline-block px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-neutral-100 text-neutral-700 rounded mb-3">
+            Top Floor with Terrace Available
+          </span>
+          <h3 class="text-2xl font-normal font-serif-luxury text-neutral-900 leading-snug">
+            4 Spacious Bedrooms with En-Suite Bathrooms
+          </h3>
+          <p class="text-xs text-neutral-500 mt-2">
+            Garden Villas, DLF Phase 4 • Park Facing Rear Balcony
           </p>
         </div>
 
-        <form id="tourForm" class="space-y-6" onsubmit="event.preventDefault(); bookVisit();">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Preferred Location</label>
-              <select id="locationSelect" class="w-full bg-[#0A0D12] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
-                <option value="DLF Phase 4 (Garden Villas)">DLF Phase 4 (Garden Villas)</option>
-                <option value="Golf Course Road (500 Sq. Yd.)">Golf Course Road (500 Sq. Yd.)</option>
-                <option value="DLF Phase 2 (Near CyberHub)">DLF Phase 2 (Near CyberHub)</option>
-                <option value="DLF Phase 1 / Sushant Lok">DLF Phase 1 / Sushant Lok</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Preferred Floor Level</label>
-              <select id="floorSelect" class="w-full bg-[#0A0D12] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
-                <option value="First Floor (Double Balcony)">First Floor (Double Balcony)</option>
-                <option value="Second Floor (Optimal Privacy)">Second Floor (Optimal Privacy)</option>
-                <option value="Third Floor (Exclusive Terrace Rights)">Third Floor (Exclusive Terrace Rights)</option>
-                <option value="Ground Floor (Lawn / Courtyard)">Ground Floor (Lawn / Courtyard)</option>
-              </select>
-            </div>
+        <div class="border-t border-b border-[#EAE8E3] py-5 space-y-3.5 text-xs text-neutral-600">
+          <div class="flex justify-between">
+            <span class="text-neutral-500">Plot Dimensions</span>
+            <span class="font-semibold text-neutral-900">316 Sq. Yards</span>
           </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
-              <input type="text" id="buyerName" placeholder="e.g. Rajiv Mehra" class="w-full bg-[#0A0D12] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D4AF37]">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Preferred Visit Day</label>
-              <select id="visitDay" class="w-full bg-[#0A0D12] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#D4AF37]">
-                <option value="This Weekend (Saturday/Sunday)">This Weekend (Saturday / Sunday)</option>
-                <option value="Tomorrow (Weekday Afternoon)">Tomorrow (Weekday Afternoon)</option>
-                <option value="Today (Urgent Inspection)">Today (Urgent Inspection)</option>
-              </select>
-            </div>
+          <div class="flex justify-between">
+            <span class="text-neutral-500">Living / Dining</span>
+            <span class="font-semibold text-neutral-900">Massive Double-Height Lounge</span>
           </div>
-
-          <button type="submit" class="w-full py-4 rounded-xl gold-bg text-black font-bold text-sm tracking-widest uppercase hover:brightness-110 transition shadow-xl shadow-amber-900/40">
-            Confirm Site Visit on WhatsApp →
-          </button>
-        </form>
-
-        <div class="mt-6 text-center text-xs text-slate-500">
-          🔒 Direct connect to Luxury Living Gurgaon (+91 88103 82628). No third-party spam.
+          <div class="flex justify-between">
+            <span class="text-neutral-500">Kitchen</span>
+            <span class="font-semibold text-neutral-900">Fully Equipped Italian Modular</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-neutral-500">Air Conditioning</span>
+            <span class="font-semibold text-neutral-900">VRV Multi-Zone System</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-neutral-500">Power Backup</span>
+            <span class="font-semibold text-neutral-900">100% Dedicated DG Set</span>
+          </div>
         </div>
 
+        <div>
+          <h4 class="text-xs font-semibold text-neutral-900 uppercase tracking-wider mb-2">Book a Private Site Visit</h4>
+          <p class="text-xs text-neutral-500 mb-5 leading-relaxed">
+            Connect directly with Luxury Living Gurgaon. We arrange personalized inspection slots, legal papers walkthrough, and key handover timelines.
+          </p>
+
+          <a href="https://wa.me/918810382628?text=Namaste%20Luxury%20Living%20Team,%20I%20would%20like%20to%20schedule%20a%20private%20site%20visit%20for%20the%20DLF%20Phase%204%20Garden%20Villa%20floor." class="w-full btn-dark py-3.5 rounded text-xs font-bold uppercase tracking-wider text-center block">
+            Schedule Site Visit on WhatsApp →
+          </a>
+          <span class="block text-center text-[11px] text-neutral-400 mt-2">Direct WhatsApp: +91 88103 82628</span>
+        </div>
       </div>
+
     </div>
+
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 bg-[#06080C] py-12 text-slate-400 text-xs">
+  <!-- Editorial Footer -->
+  <footer class="border-t border-[#EAE8E3] bg-white py-12 text-xs text-neutral-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="text-center sm:text-left">
-        <span class="text-white font-serif-luxury font-bold text-base block">LUXURY LIVING GURGAON</span>
-        <span class="text-slate-500">Specialist in DLF Phase 1–4, Sushant Lok &amp; Golf Course Road Luxury Builder Floors</span>
+      <div class="flex items-center space-x-3">
+        <img src="assets/luxury_living_logo.jpg" alt="Luxury Living Gurgaon" class="w-8 h-8 rounded-full object-cover border border-neutral-300">
+        <div>
+          <span class="font-bold text-neutral-900 block">LUXURY LIVING GURGAON</span>
+          <span>DLF Phase 1–4, Sushant Lok &amp; Golf Course Road Specialists</span>
+        </div>
       </div>
-      <div class="flex items-center space-x-6 text-xs">
-        <a href="https://instagram.com/luxurylivinggurgaon" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Instagram: @luxurylivinggurgaon</a>
-        <a href="https://wa.me/918810382628" class="text-[#D4AF37] font-semibold hover:underline">WhatsApp: +91 88103 82628</a>
+      <div class="flex items-center space-x-6">
+        <a href="https://instagram.com/luxurylivinggurgaon" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition">Instagram: @luxurylivinggurgaon</a>
+        <a href="https://wa.me/918810382628" class="text-neutral-900 font-semibold hover:underline">WhatsApp: +91 88103 82628</a>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-white/5 text-center text-slate-600">
-      Interactive Demo Property Portal designed by AutomateFlow for Luxury Living Gurgaon.
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-[#EAE8E3] text-center text-[11px] text-neutral-400">
+      Preview Portal prepared by AutomateFlow for Luxury Living Gurgaon.
     </div>
   </footer>
-
-  <script>
-    function bookVisit() {
-      const loc = document.getElementById('locationSelect').value;
-      const floor = document.getElementById('floorSelect').value;
-      const name = document.getElementById('buyerName').value.trim() || 'Prospective Buyer';
-      const day = document.getElementById('visitDay').value;
-      
-      const msg = `Namaste Luxury Living Gurgaon Team,\nMy name is ${name}. I am looking to schedule a private site visit for:\n📍 Location: ${loc}\n🏢 Floor: ${floor}\n🗓 Preferred Timing: ${day}\n\nPlease share the detailed brochure and coordinate the inspection.`;
-      
-      const url = `https://wa.me/918810382628?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank');
-    }
-  </script>
 
 </body>
 </html>

@@ -1,0 +1,266 @@
+#!/usr/bin/env python3
+"""
+Master Realtor / Property Advisory Landing Page Generator
+Faithfully implements the layout of CCS Real Estate + Modern Luxury Real Estate:
+- Clean editorial canvas (#FAF9F6)
+- Sharp typography (Playfair Display + Plus Jakarta Sans)
+- Locality / City inventory highlights (Gurgaon, DLF, Golf Course Rd, Mohali, Noida)
+- Verified property specs & direct 1-click WhatsApp inspection scheduler
+- Injected brand logo & dynamic lead customization
+"""
+
+def generate_realtor_page(biz_name, handle, phone, city, logo_url, slug, properties=None):
+    if not properties:
+        properties = [
+            {
+                "title": f"4 BHK Luxury Independent Floor • {city}",
+                "tag": "Ready for Registry",
+                "specs": "350–500 Sq. Yds. • Private Lift • 3 Stilt Car Parks",
+                "desc": "Bespoke builder floor with Italian marble, German modular kitchen, wrap-around balconies, and private landscaped terrace garden.",
+                "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+            },
+            {
+                "title": f"Signature Corner Penthouse • {city}",
+                "tag": "Distress Opportunity",
+                "specs": "500 Sq. Yds. Corner • Double Height Living Lounge",
+                "desc": "Exclusive two-side open corner floor with direct private lobby access, VRV air conditioning, and unobstructed park views.",
+                "img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+            },
+            {
+                "title": f"Executive 3BHK Builder Floor • {city}",
+                "tag": "Prime Connectivity",
+                "specs": "270–300 Sq. Yds. • Gated 24/7 Security",
+                "desc": "Walking distance from prime markets and expressways. Sanctioned HSVP/DTCP floor plans with 100% power backup and registry ready.",
+                "img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+            }
+        ]
+
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{biz_name} | Prime Luxury Builder Floors &amp; Real Estate in {city}</title>
+  <meta name="description" content="Verified luxury builder floors, kothis and independent villas across {city}. Direct builder mandate, clear title registry, and private inspections with {biz_name}.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {{
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FAF9F6;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }}
+    .font-serif-luxury {{
+      font-family: 'Playfair Display', Georgia, serif;
+    }}
+    .border-subtle {{
+      border-color: #EAE8E3;
+    }}
+    .btn-primary {{
+      background-color: #111827;
+      color: #FFFFFF;
+      transition: all 0.2s ease;
+    }}
+    .btn-primary:hover {{
+      background-color: #27272A;
+      transform: translateY(-1px);
+    }}
+  </style>
+</head>
+<body class="selection:bg-neutral-900 selection:text-white">
+
+  <!-- Top Announcement Strip -->
+  <aside aria-label="Announcement" class="bg-[#111827] text-white py-2 px-4 text-center text-xs tracking-wider uppercase font-medium">
+    Exclusive Inventory: Luxury Builder Floors &amp; Independent Kothis in {city} • Zero Middlemen
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-subtle">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Brand -->
+      <div class="flex items-center space-x-3.5">
+        <img src="{logo_url}" alt="{biz_name} Logo" class="w-11 h-11 rounded-full object-cover border border-neutral-300 shadow-sm" onerror="this.style.display='none'">
+        <div>
+          <span class="text-lg font-bold tracking-tight text-neutral-900 font-serif-luxury block leading-none">
+            {biz_name}
+          </span>
+          <span class="text-[11px] tracking-wider text-neutral-500 uppercase font-medium">
+            {city} Luxury Property Specialist
+          </span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-4">
+        <a href="https://instagram.com/{handle.replace('@', '')}" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center text-xs font-medium text-neutral-600 hover:text-neutral-900 transition">
+          <svg class="w-4 h-4 mr-1.5 text-neutral-700" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          {handle}
+        </a>
+        <a href="https://wa.me/{phone}?text=Hi%20{biz_name}%20Team,%20I%20am%20interested%20in%20viewing%20luxury%20builder%20floors%20in%20{city}." class="btn-primary px-5 py-2.5 rounded text-xs sm:text-sm font-semibold tracking-wide">
+          Schedule Site Visit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Hero Section -->
+  <main class="border-b border-subtle">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 text-center">
+      
+      <span class="text-xs uppercase tracking-widest text-neutral-500 font-semibold block mb-4">
+        Direct Developer Advisory Desk
+      </span>
+
+      <h1 class="text-4xl sm:text-6xl font-normal font-serif-luxury text-neutral-900 leading-[1.15] mb-6">
+        Curated Builder Floors &amp; <br class="hidden sm:inline"><span class="italic font-medium">Prime Residences in {city}</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Handpicked luxury developments with private elevators, dedicated covered stilt car parking, imported finishes, and 100% verified registry titles.
+      </p>
+
+      <!-- Key Specifications Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12 text-left">
+        <div class="bg-white border border-subtle p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Plot Dimensions</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">250–500 Sq. Yd.</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">East &amp; Park Facing</span>
+        </div>
+        <div class="bg-white border border-subtle p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Elevator</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">Private Access</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">Direct from Stilt Lobby</span>
+        </div>
+        <div class="bg-white border border-subtle p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Parking</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">2–4 Covered Cars</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">Dedicated Stilt Bay</span>
+        </div>
+        <div class="bg-white border border-subtle p-5 rounded">
+          <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Documentation</span>
+          <span class="text-xl font-bold font-serif-luxury text-neutral-900 mt-1 block">100% Clear</span>
+          <span class="text-xs text-neutral-500 mt-0.5 block">OC &amp; Registry Ready</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#properties" class="w-full sm:w-auto btn-primary px-8 py-3.5 rounded text-sm font-semibold tracking-wide">
+          Explore Current Inventory ↓
+        </a>
+        <a href="https://wa.me/{phone}?text=Namaste%20{biz_name}%20Team,%20please%20share%20the%20detailed%20price%20list%20and%20floor%20plans." class="w-full sm:w-auto bg-white border border-neutral-300 text-neutral-800 px-8 py-3.5 rounded text-sm font-semibold hover:border-neutral-900 transition">
+          Request Price Deck via WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Featured Properties Showcase (CCS Real Estate Style) -->
+  <section id="properties" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-subtle pb-6">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-neutral-500 font-semibold block mb-1">Discover Popular Properties</span>
+        <h2 class="text-3xl font-normal font-serif-luxury text-neutral-900">Featured Residential Opportunities</h2>
+      </div>
+      <p class="text-xs sm:text-sm text-neutral-500 max-w-md mt-2 md:mt-0">
+        Direct from {biz_name} verified portfolio across {city}. Ready for immediate private walkthrough.
+      </p>
+    </div>
+
+    <!-- Properties Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">"""
+
+    for prop in properties:
+        html += f"""
+      <div class="bg-white border border-subtle rounded overflow-hidden flex flex-col justify-between">
+        <div>
+          <div class="relative h-64 overflow-hidden bg-neutral-200">
+            <img src="{prop['img']}" alt="{prop['title']}" class="w-full h-full object-cover">
+            <div class="absolute top-3 left-3 bg-[#111827]/90 text-white px-2.5 py-1 rounded text-[11px] font-semibold tracking-wide">
+              {prop['tag']}
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-neutral-500 block mb-1">{prop['specs']}</span>
+            <h3 class="text-xl font-normal font-serif-luxury text-neutral-900 mb-2">{prop['title']}</h3>
+            <p class="text-xs text-neutral-600 leading-relaxed mb-4">{prop['desc']}</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/{phone}?text=Hi%20{biz_name},%20I%20am%20interested%20in%20visiting%20{prop['title']}.%20Please%20send%20brochure%20and%20location." class="w-full btn-primary py-3 rounded text-xs font-bold uppercase tracking-wider text-center block">
+            Schedule Site Visit →
+          </a>
+        </div>
+      </div>"""
+
+    html += f"""
+    </div>
+  </section>
+
+  <!-- Why Choose Us Strip (Matching CCS Real Estate) -->
+  <section class="border-t border-subtle bg-[#F4F3EE] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h3 class="text-2xl font-serif-luxury font-normal text-neutral-900">Why Buyers Work Directly with {biz_name}</h3>
+        <p class="text-xs text-neutral-500 mt-2">Zero false commitments. Complete paperwork scrutiny and direct builder negotiations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded border border-subtle">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-1">01</span>
+          <h4 class="text-base font-semibold text-neutral-900 mb-2">100% Pre-Verified Titles</h4>
+          <p class="text-xs text-neutral-600 leading-relaxed">
+            Every builder floor is vetted for sanctioned layouts, occupancy certificate approvals, and chain of deeds.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded border border-subtle">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-1">02</span>
+          <h4 class="text-base font-semibold text-neutral-900 mb-2">Direct Builder Pricing</h4>
+          <p class="text-xs text-neutral-600 leading-relaxed">
+            Zero hidden charges. Transparent payment plans linked with construction stages and registry date.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded border border-subtle">
+          <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-1">03</span>
+          <h4 class="text-base font-semibold text-neutral-900 mb-2">Dedicated Site Concierge</h4>
+          <p class="text-xs text-neutral-600 leading-relaxed">
+            Personalized vehicle pickup, architect coordination, and legal deed registration support from start to finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Footer -->
+  <footer class="border-t border-subtle bg-white py-12 text-xs text-neutral-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <img src="{logo_url}" alt="{biz_name}" class="w-8 h-8 rounded-full object-cover border border-neutral-300" onerror="this.style.display='none'">
+        <div>
+          <span class="font-bold text-neutral-900 block">{biz_name.upper()}</span>
+          <span>Luxury Real Estate Advisory Desk • {city}</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="https://instagram.com/{handle.replace('@', '')}" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition">Instagram: {handle}</a>
+        <a href="https://wa.me/{phone}" class="text-neutral-900 font-semibold hover:underline">WhatsApp: +{phone}</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-subtle text-center text-[11px] text-neutral-400">
+      Preview Portal prepared by AutomateFlow for {biz_name}.
+    </div>
+  </footer>
+
+</body>
+</html>"""
+    return html
+
+if __name__ == "__main__":
+    print("Realtor Template Generator Loaded.")

@@ -264,3 +264,4 @@ def generate_realtor_page(biz_name, handle, phone, city, logo_url, slug, propert
 
 if __name__ == "__main__":
     print("Realtor Template Generator Loaded.")
+

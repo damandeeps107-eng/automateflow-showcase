@@ -270,3 +270,4 @@ def generate_interior_page(biz_name, handle, phone, city, logo_url, slug, projec
 
 if __name__ == "__main__":
     print("Interior Designer Template Generator Loaded.")
+

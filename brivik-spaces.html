@@ -60,8 +60,8 @@
 </head>
 <body class="antialiased selection:bg-[#3E0F3F] selection:text-white">
 
-  <!-- 1. Top Announcement Bar (Mobile Friendly) -->
-  <aside aria-label="Announcement" class="top-bar-bg text-white text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-white/10">
+  <!-- 1. Top Announcement Bar -->
+  <aside aria-label="Announcement" class="top-bar-bg text-white text-[10px] sm:text-xs py-2 px-3 sm:px-4 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="truncate text-left pr-2">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
@@ -76,36 +76,36 @@
     </div>
   </aside>
 
-  <!-- 2. Main Header (Logo + Direct Contact Badges) -->
+  <!-- 2. Clean Mobile-Aligned Header -->
   <header class="bg-white py-3 sm:py-4 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Brand Logo & Identity -->
-      <a href="#" class="flex items-center space-x-3 text-left w-full sm:w-auto justify-between sm:justify-start">
-        <div class="flex items-center space-x-3">
-          <div class="w-12 h-12 rounded-lg bg-[#3E0F3F] text-white flex items-center justify-center font-bold text-xl shadow-md border border-[#5A175B]">
-            BS
-          </div>
-          <div>
-            <span class="text-xl sm:text-2xl font-bold tracking-tight text-[#2D0C2E] block uppercase leading-none">
-              BRIVIK SPACES
-            </span>
-            <span class="text-[11px] font-medium text-gray-500 tracking-wider block mt-1">
-              Turnkey Interior Studio • Nitin Verma • Noida &amp; NCR
-            </span>
-          </div>
+      <a href="#" class="flex items-center space-x-3 text-left">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#3E0F3F] text-white flex items-center justify-center font-bold text-lg sm:text-xl shadow-md border border-[#5A175B] shrink-0">
+          BS
         </div>
-
-        <!-- Mobile Quick Call Button -->
-        <a href="tel:+919755717435" class="sm:hidden w-9 h-9 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200" aria-label="Call Now">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        </a>
+        <div>
+          <span class="text-lg sm:text-2xl font-bold tracking-tight text-[#2D0C2E] block uppercase leading-none">
+            BRIVIK SPACES
+          </span>
+          <span class="text-[10px] sm:text-[11px] font-medium text-gray-500 tracking-wider block mt-1">
+            Turnkey Studio • Nitin Verma • Noida &amp; NCR
+          </span>
+        </div>
       </a>
 
-      <!-- Desktop / Tablet Contact Group (Matching User Reference) -->
-      <div class="hidden sm:flex items-center space-x-6 text-left">
-        <!-- Phone Box -->
-        <div class="flex items-center space-x-3">
+      <!-- Quick Action on Mobile + Badges on Desktop -->
+      <div class="flex items-center space-x-3 sm:space-x-6 text-left">
+        
+        <!-- Mobile Call Pill Button -->
+        <a href="tel:+919755717435" class="sm:hidden flex items-center space-x-1.5 bg-emerald-50 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-full text-xs font-semibold">
+          <svg class="w-3.5 h-3.5 fill-current text-emerald-600" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Call Us</span>
+        </a>
+
+        <!-- Desktop Phone Box -->
+        <div class="hidden sm:flex items-center space-x-3">
           <div class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#2D0C2E]">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </div>
@@ -117,8 +117,8 @@
           </div>
         </div>
 
-        <!-- Email/WhatsApp Box -->
-        <div class="flex items-center space-x-3">
+        <!-- Desktop Email Box -->
+        <div class="hidden md:flex items-center space-x-3">
           <div class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#2D0C2E]">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
@@ -126,73 +126,75 @@
             <a href="https://wa.me/919755717435" class="text-xs sm:text-sm font-bold text-gray-900 block hover:text-[#2D0C2E] transition leading-tight">
               contact@brivikspaces.in
             </a>
-            <span class="text-[11px] text-gray-400 font-normal">Direct WhatsApp / Email</span>
+            <span class="text-[11px] text-gray-400 font-normal">Direct WhatsApp / Mail</span>
           </div>
         </div>
+
       </div>
 
     </div>
   </header>
 
-  <!-- 3. Navigation Bar (Mobile Scrollable + Desktop Horizontal) -->
+  <!-- 3. Navigation Bar (Mobile Smooth Scroll + Desktop Links) -->
   <nav class="nav-bar-bg text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase sticky top-0 z-40 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between overflow-x-auto py-3 space-x-6 sm:space-x-8 no-scrollbar">
+      <div class="flex items-center overflow-x-auto py-2.5 sm:py-3 space-x-6 sm:space-x-8 no-scrollbar">
         <a href="#" class="text-pink-400 hover:text-white transition whitespace-nowrap">HOME</a>
         <a href="#projects" class="hover:text-pink-300 transition whitespace-nowrap">NEW FLAT PORTFOLIO</a>
         <a href="#kitchens" class="hover:text-pink-300 transition whitespace-nowrap">MODULAR KITCHENS</a>
-        <a href="#services" class="hover:text-pink-300 transition whitespace-nowrap">3D RENDERS &amp; BOQ</a>
         <a href="#why-us" class="hover:text-pink-300 transition whitespace-nowrap">45-DAY GUARANTEE</a>
-        <a href="#contact" class="hover:text-pink-300 transition whitespace-nowrap">BOOK SITE VISIT</a>
+        <a href="#founder" class="hover:text-pink-300 transition whitespace-nowrap">MEET NITIN VERMA</a>
+        <a href="#contact" class="hover:text-pink-300 transition whitespace-nowrap">SITE CONSULTATION</a>
       </div>
     </div>
   </nav>
 
-  <!-- 4. Signature Hero Banner (DNA Realtors Style Recreated for Brivik Spaces) -->
+  <!-- 4. Signature Hero Banner (DNA Realtors Style + 100% Mobile Optimized) -->
   <section class="relative w-full overflow-hidden bg-neutral-900">
     
-    <!-- Background High-Res Architectural Living Room Image -->
+    <!-- Background Architectural Living Room Image -->
     <div class="relative h-[480px] sm:h-[520px] lg:h-[580px] w-full">
       <img 
         src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=85" 
-        alt="Brivik Spaces Luxury Turnkey Apartment Interior" 
+        alt="Brivik Spaces Luxury Turnkey Living Room" 
         class="w-full h-full object-cover object-center"
       >
-      <!-- Gradient overlay for perfect text legibility -->
-      <div class="absolute inset-0 bg-black/40 sm:bg-black/25"></div>
+      <!-- Dark backdrop for contrast -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 sm:bg-black/30"></div>
     </div>
 
-    <!-- Left Plum Brand Card Overlay (100% Mobile Responsive) -->
-    <div class="absolute top-0 left-0 bottom-0 w-full sm:w-[480px] lg:w-[540px] plum-card-bg text-white flex flex-col justify-center px-6 sm:px-12 py-8 sm:py-12 z-10 shadow-2xl bg-opacity-95 sm:bg-opacity-100">
+    <!-- Plum Brand Card Overlay (Optimized for Mobile & Desktop) -->
+    <div class="absolute inset-x-0 bottom-0 sm:bottom-auto sm:top-0 sm:left-0 sm:w-[480px] lg:w-[540px] sm:h-full plum-card-bg text-white flex flex-col justify-center px-6 sm:px-12 py-7 sm:py-12 z-10 shadow-2xl bg-opacity-95 sm:bg-opacity-100 rounded-t-2xl sm:rounded-none">
       <div class="max-w-md">
         
-        <span class="inline-block bg-white/15 px-3 py-1 rounded text-[11px] uppercase tracking-widest font-semibold mb-3">
-          Turnkey Interior Studio • Nitin Verma
-        </span>
+        <div class="inline-flex items-center space-x-1.5 bg-white/15 px-2.5 py-1 rounded text-[10px] sm:text-[11px] uppercase tracking-widest font-semibold mb-2.5 sm:mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+          <span>Turnkey Interior Studio • Nitin Verma</span>
+        </div>
 
-        <span class="text-lg sm:text-2xl font-light text-neutral-200 block leading-tight">
+        <span class="text-base sm:text-2xl font-light text-neutral-200 block leading-tight">
           Got a new flat?
         </span>
-        <span class="text-lg sm:text-2xl font-light text-neutral-200 block leading-tight mb-2">
+        <span class="text-base sm:text-2xl font-light text-neutral-200 block leading-tight mb-1 sm:mb-2">
           Let's design it right at
         </span>
         
-        <h1 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-4 sm:mb-6 leading-tight">
+        <h1 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-2 sm:mb-4 leading-tight">
           BRIVIK SPACES
         </h1>
 
-        <!-- Cursive Script Tagline (Matching User Idea) -->
-        <div class="font-cursive text-3xl sm:text-5xl text-pink-200 font-semibold mb-6 sm:mb-8 transform -rotate-1">
+        <!-- Cursive Script Tagline -->
+        <div class="font-cursive text-2xl sm:text-4xl lg:text-5xl text-pink-200 font-semibold mb-4 sm:mb-6 transform -rotate-1">
           Where Luxury Meets Comfort
         </div>
 
-        <p class="text-xs sm:text-sm text-neutral-200 mb-6 leading-relaxed hidden sm:block">
-          Complete turnkey interior architecture, 3D visualization, German modular carpentry, and guaranteed 45-day handover across Noida &amp; Delhi NCR.
+        <p class="text-xs sm:text-sm text-neutral-200 mb-5 leading-relaxed hidden sm:block">
+          Complete turnkey interior architecture, photorealistic 3D visualization, German modular carpentry, and guaranteed 45-day handover across Noida &amp; Delhi NCR.
         </p>
 
         <!-- CTA Action inside Plum Card -->
         <div class="flex items-center space-x-3">
-          <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20got%20a%20new%20flat%20and%20want%20to%20discuss%20turnkey%20interiors%20with%20Brivik%20Spaces." class="w-full sm:w-auto bg-white text-[#2D0C2E] font-bold px-6 py-3 rounded-lg text-xs uppercase tracking-wider text-center shadow-lg hover:bg-neutral-100 transition">
+          <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20got%20a%20new%20flat%20and%20want%20to%20discuss%20turnkey%20interiors%20with%20Brivik%20Spaces." class="w-full sm:w-auto bg-white text-[#2D0C2E] font-bold px-6 py-3 rounded-lg text-xs uppercase tracking-wider text-center shadow-lg hover:bg-neutral-100 transition block">
             Book Free Site Visit →
           </a>
           <button class="slider-arrow w-10 h-10 rounded hidden sm:flex items-center justify-center text-white shrink-0" aria-label="Previous Slide">
@@ -203,13 +205,13 @@
       </div>
     </div>
 
-    <!-- Right Slider Arrow Button (Desktop) -->
+    <!-- Desktop Slider Navigation -->
     <button class="slider-arrow absolute right-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded items-center justify-center text-white z-10 hidden sm:flex" aria-label="Next Slide">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </button>
 
-    <!-- Slider Dots (Mobile & Desktop) -->
-    <div class="absolute bottom-4 sm:bottom-6 left-1/2 sm:left-2/3 -translate-x-1/2 flex items-center space-x-2.5 z-10">
+    <!-- Slider Dots (Desktop) -->
+    <div class="absolute bottom-6 right-12 flex items-center space-x-2.5 z-10 hidden sm:flex">
       <span class="w-2.5 h-2.5 rounded-full bg-white shadow"></span>
       <span class="w-2.5 h-2.5 rounded-full bg-white/50 border border-white/80"></span>
       <span class="w-2.5 h-2.5 rounded-full bg-white/50 border border-white/80"></span>
@@ -233,7 +235,7 @@
         <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
           <div>
             <span class="text-xs font-bold text-[#3E0F3F] uppercase tracking-widest block mb-2">01. Timeline Guarantee</span>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">45-Day Handover Assurance</h3>
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">45-Day Handover Assurance</h3>
             <p class="text-xs text-gray-600 leading-relaxed">
               Factory-finished cabinetry and pre-cut materials ensure zero on-site sawdust delays. Move into your dream home strictly on time.
             </p>
@@ -243,7 +245,7 @@
         <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
           <div>
             <span class="text-xs font-bold text-[#3E0F3F] uppercase tracking-widest block mb-2">02. Cost Protection</span>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">100% Fixed BOQ Quotation</h3>
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">100% Fixed BOQ Quotation</h3>
             <p class="text-xs text-gray-600 leading-relaxed">
               Every screw, ply sheet, and hinge is itemized beforehand. Zero mid-project budget inflation or surprise extra bills.
             </p>
@@ -253,7 +255,7 @@
         <div class="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
           <div>
             <span class="text-xs font-bold text-[#3E0F3F] uppercase tracking-widest block mb-2">03. Peace of Mind</span>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">10-Year Hardware Warranty</h3>
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">10-Year Hardware Warranty</h3>
             <p class="text-xs text-gray-600 leading-relaxed">
               We exclusively deploy premium German hardware (Blum / Hettich) and waterproof marine ply with an official 10-year warranty card.
             </p>
@@ -266,40 +268,40 @@
   </section>
 
   <!-- 6. Featured Apartment Projects Gallery -->
-  <section id="projects" class="py-16 sm:py-20 bg-white border-b border-gray-200">
+  <section id="projects" class="py-14 sm:py-20 bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-gray-200">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-gray-200">
         <div>
           <span class="text-xs font-bold text-[#3E0F3F] uppercase tracking-widest block mb-1">Recent Turnkey Handover</span>
           <h2 class="text-2xl sm:text-4xl font-bold text-gray-900">Featured Homeowner Portfolios</h2>
         </div>
-        <p class="text-xs sm:text-sm text-gray-500 max-w-md mt-3 md:mt-0">
-          Handcrafted living rooms, bedrooms, and modular kitchens delivered across premier societies in Noida &amp; Greater Noida.
+        <p class="text-xs sm:text-sm text-gray-500 max-w-md mt-2 md:mt-0">
+          Handcrafted living rooms, bedrooms, and modular kitchens delivered across premier high-rise flats in Noida &amp; NCR.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Project 1 -->
         <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
           <div>
-            <div class="relative h-60 sm:h-64 overflow-hidden bg-gray-100 group">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-gray-100 group">
               <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="3BHK Turnkey Interior Noida" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-[#3E0F3F] text-white text-[11px] font-semibold px-2.5 py-1 rounded">
                 3 BHK Turnkey Flat
               </span>
             </div>
-            <div class="p-6">
+            <div class="p-5 sm:p-6">
               <span class="text-xs font-semibold text-gray-400 block mb-1">Noida Expressway • 1,850 Sq. Ft.</span>
-              <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Minimalist Living &amp; Fluted Louver TV Unit</h3>
+              <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">Minimalist Living &amp; Fluted Louver TV Unit</h3>
               <p class="text-xs text-gray-600 leading-relaxed mb-4">
                 Italian marble floor integration, warm perimeter cove lighting, custom fluted charcoal wall panelling, and hidden wiring cabinetry.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20really%20liked%20the%20Minimalist%20Living%20Room%20design%20on%20Brivik%20Spaces.%20Please%20share%20more%20details." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
+          <div class="p-5 sm:p-6 pt-0">
+            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20really%20liked%20the%20Minimalist%20Living%20Room%20design%20on%20Brivik%20Spaces.%20Please%20share%20more%20details." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-2.5 sm:py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
               Get Similar Design for My Flat →
             </a>
           </div>
@@ -308,22 +310,22 @@
         <!-- Project 2 -->
         <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
           <div>
-            <div class="relative h-60 sm:h-64 overflow-hidden bg-gray-100 group">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-gray-100 group">
               <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Master Suite Turnkey Interior" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-[#3E0F3F] text-white text-[11px] font-semibold px-2.5 py-1 rounded">
                 Master Bedroom Suite
               </span>
             </div>
-            <div class="p-6">
+            <div class="p-5 sm:p-6">
               <span class="text-xs font-semibold text-gray-400 block mb-1">Greater Noida West • Private Villa</span>
-              <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Sculpted Bed Wall &amp; Walk-in Wardrobe</h3>
+              <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">Sculpted Bed Wall &amp; Walk-in Wardrobe</h3>
               <p class="text-xs text-gray-600 leading-relaxed mb-4">
                 Custom cushioned acoustic headboard wall, tinted glass profile sliding wardrobes with sensor LED illumination, and dressing vanity.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20am%20interested%20in%20the%20Master%20Bedroom%20Suite%20turnkey%20design." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
+          <div class="p-5 sm:p-6 pt-0">
+            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20am%20interested%20in%20the%20Master%20Bedroom%20Suite%20turnkey%20design." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-2.5 sm:py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
               Get Similar Design for My Flat →
             </a>
           </div>
@@ -332,22 +334,22 @@
         <!-- Project 3 -->
         <div id="kitchens" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-xl transition duration-300">
           <div>
-            <div class="relative h-60 sm:h-64 overflow-hidden bg-gray-100 group">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-gray-100 group">
               <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80" alt="German Modular Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               <span class="absolute top-3 left-3 bg-[#3E0F3F] text-white text-[11px] font-semibold px-2.5 py-1 rounded">
                 German Modular Kitchen
               </span>
             </div>
-            <div class="p-6">
+            <div class="p-5 sm:p-6">
               <span class="text-xs font-semibold text-gray-400 block mb-1">Noida Sector 75 • Acrylic Finish</span>
-              <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Handle-less Island Kitchen &amp; Breakfast Bar</h3>
+              <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">Handle-less Island Kitchen &amp; Breakfast Bar</h3>
               <p class="text-xs text-gray-600 leading-relaxed mb-4">
                 Anti-scratch high-gloss acrylic shutters, Blum soft-close tandem boxes, integrated spice pullouts, and durable quartz countertop.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20please%20share%20modular%20kitchen%20estimates%20and%20catalogue." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
+          <div class="p-5 sm:p-6 pt-0">
+            <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20please%20share%20modular%20kitchen%20estimates%20and%20catalogue." class="w-full bg-[#151D30] hover:bg-[#3E0F3F] text-white py-2.5 sm:py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-center block transition">
               Get Similar Design for My Flat →
             </a>
           </div>
@@ -359,17 +361,17 @@
   </section>
 
   <!-- 7. Meet Founder Nitin Verma Section -->
-  <section class="py-16 bg-gray-50 border-b border-gray-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <div class="w-20 h-20 rounded-full bg-[#3E0F3F] text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
+  <section id="founder" class="py-14 sm:py-16 bg-gray-50 border-b border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#3E0F3F] text-white font-bold text-xl sm:text-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md">
         NV
       </div>
-      <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Nitin Verma</h3>
-      <span class="text-xs text-pink-700 font-semibold uppercase tracking-wider block mb-4">Founder &amp; Principal Designer • Brivik Spaces</span>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+      <h3 class="text-lg sm:text-2xl font-bold text-gray-900 mb-1">Nitin Verma</h3>
+      <span class="text-xs text-pink-700 font-semibold uppercase tracking-wider block mb-3 sm:mb-4">Founder &amp; Principal Designer • Brivik Spaces</span>
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-xl mx-auto mb-6">
         "When you get the keys to your new flat, the biggest headache is dealing with unorganized contractors and rising budgets. At Brivik Spaces, our mission is simple: provide showroom-standard turnkey execution with a 45-day handover guarantee and 100% price certainty."
       </p>
-      <div class="flex items-center justify-center space-x-4">
+      <div class="flex items-center justify-center">
         <a href="https://wa.me/919755717435" class="bg-[#25D366] text-white font-semibold px-5 py-2.5 rounded-lg text-xs tracking-wide shadow flex items-center hover:bg-emerald-600 transition">
           <svg class="w-4 h-4 mr-1.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           Chat with Nitin on WhatsApp
@@ -379,8 +381,8 @@
   </section>
 
   <!-- 8. Corporate Footer -->
-  <footer id="contact" class="bg-[#151D30] text-gray-300 py-12 text-xs border-t border-neutral-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer id="contact" class="bg-[#151D30] text-gray-300 py-10 sm:py-12 text-xs border-t border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
       <div class="text-center sm:text-left">
         <span class="text-white font-bold text-sm block uppercase tracking-wide">BRIVIK SPACES</span>
         <span class="text-gray-400 mt-1 block">Turnkey Residential &amp; Modular Interior Studio • Noida &amp; Delhi NCR</span>
@@ -394,14 +396,14 @@
         </a>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-gray-700/60 text-center text-[11px] text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-gray-700/60 text-center text-[11px] text-gray-500">
       Preview Portal prepared by AutomateFlow for Brivik Spaces. All rights reserved.
     </div>
   </footer>
 
-  <!-- 9. Floating WhatsApp Chat Bubble (Mobile & Desktop) -->
-  <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20saw%20Brivik%20Spaces%20turnkey%20interiors%20and%20want%20to%20discuss%20my%20flat." class="floating-wa w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white" aria-label="WhatsApp Us" target="_blank" rel="noopener noreferrer">
-    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  <!-- 9. Floating WhatsApp Chat Bubble -->
+  <a href="https://wa.me/919755717435?text=Hi%20Nitin%20ji,%20I%20saw%20Brivik%20Spaces%20turnkey%20interiors%20and%20want%20to%20discuss%20my%20flat." class="floating-wa w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white" aria-label="WhatsApp Us" target="_blank" rel="noopener noreferrer">
+    <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
   </a>
 
 </body>

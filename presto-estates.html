@@ -20,11 +20,11 @@
       font-family: 'Playfair Display', Georgia, serif;
     }
     
-    /* Clean, safe fade-in animations that do not hide content if paused */
-    @keyframes heroFadeIn {
+    /* Clean, high-performance smooth hero entrance animation */
+    @keyframes heroEntrance {
       0% {
-        opacity: 0;
-        transform: translateY(18px);
+        opacity: 0.1;
+        transform: translateY(12px);
       }
       100% {
         opacity: 1;
@@ -32,11 +32,9 @@
       }
     }
     
-    .hero-anim-1 { animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-    .hero-anim-2 { animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
-    .hero-anim-3 { animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both; }
-    .hero-anim-4 { animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both; }
-    .hero-anim-5 { animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both; }
+    .hero-container-anim {
+      animation: heroEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
 
     .btn-wa-green {
       background-color: #25D366;
@@ -50,10 +48,10 @@
     }
 
     .glass-pill {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.22);
     }
 
     .floating-wa {
@@ -121,41 +119,41 @@
   <section class="relative w-full min-h-[580px] sm:min-h-[660px] flex items-center bg-[#0B1120] overflow-hidden">
     
     <!-- Full-Bleed Architectural Luxury Image Background -->
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85" 
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
          alt="Luxury DLF Builder Floors Presto Estates" 
          class="absolute inset-0 w-full h-full object-cover object-center">
 
     <!-- Sophisticated Minimal Dark Gradient: Heavy on left for crisp readability, fades subtly to right -->
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/35 sm:to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-slate-950/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/30 sm:to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40"></div>
 
     <!-- Left-Aligned Animated Text Container -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full py-14 sm:py-20">
-      <div class="max-w-xl text-white">
+      <div class="max-w-xl text-white hero-container-anim">
         
-        <!-- Animated Badge -->
-        <div class="hero-anim-1 inline-flex items-center gap-2 glass-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-300 mb-4">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 glass-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-300 mb-4">
           <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
           <span>DLF Phase 2 &amp; Cyber City • Starting ₹3.50 Cr</span>
         </div>
 
-        <!-- Animated Italic Script Line -->
-        <p class="hero-anim-2 font-serif-luxury italic text-xl sm:text-2xl text-amber-200/95 mb-2 tracking-wide">
+        <!-- Italic Script Line -->
+        <p class="font-serif-luxury italic text-xl sm:text-2xl text-amber-200 mb-2 tracking-wide">
           Distress Deals &amp; Bespoke Builder Floors
         </p>
 
-        <!-- Animated Main Headline -->
-        <h1 class="hero-anim-3 text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] mb-4">
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] mb-4 text-white">
           Luxury Living in the Heart of DLF Gurgaon
         </h1>
 
-        <!-- Animated Subtitle -->
-        <p class="hero-anim-4 text-gray-200 text-xs sm:text-base leading-relaxed mb-6 font-light max-w-lg">
+        <!-- Subtitle -->
+        <p class="text-gray-200 text-xs sm:text-base leading-relaxed mb-6 font-light max-w-lg">
           Curated 350 to 500 Sq. Yds. independent luxury builder floors in DLF Phase 2. Private high-speed elevator access, 3 covered car parks, Italian marble, and immediate connectivity to Cyber City &amp; MG Road.
         </p>
 
-        <!-- Animated Action Buttons -->
-        <div class="hero-anim-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates,%20please%20share%20floor%20plans%20and%20pricing%20for%20DLF%20Phase%202%20builder%20floors." class="btn-wa-green inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-xl">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
             <span>Book Verified Site Visit</span>
@@ -165,8 +163,8 @@
           </a>
         </div>
 
-        <!-- Animated Minimal Spec Pillars -->
-        <div class="hero-anim-5 grid grid-cols-3 gap-4 pt-6 mt-8 border-t border-white/15 text-xs text-gray-300">
+        <!-- Spec Pillars -->
+        <div class="grid grid-cols-3 gap-4 pt-6 mt-8 border-t border-white/15 text-xs text-gray-300">
           <div>
             <span class="block text-amber-300 font-extrabold text-base sm:text-lg">₹3.50 Cr+</span>
             <span class="text-gray-300 font-normal">Starting Price</span>

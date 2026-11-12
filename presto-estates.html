@@ -20,7 +20,7 @@
       font-family: 'Playfair Display', Georgia, serif;
     }
     
-    /* Clean, high-performance smooth hero entrance animation */
+    /* Clean entrance animation */
     @keyframes heroEntrance {
       0% {
         opacity: 0.1;
@@ -65,6 +65,21 @@
     .floating-wa:hover {
       transform: scale(1.1) translateY(-3px);
     }
+
+    /* Modal Animation */
+    @keyframes modalPop {
+      0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    .modal-box-anim {
+      animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
 </head>
 <body class="selection:bg-amber-100 selection:text-amber-900">
@@ -84,15 +99,15 @@
     </div>
   </div>
 
-  <!-- 2. Clean Minimal Header with Proper Circular Logo -->
+  <!-- 2. Clean Minimal Header with Original Circular Logo -->
   <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
       
-      <!-- Brand with Proper Circular Logo -->
+      <!-- Brand with Original Circular Logo -->
       <a href="#" class="flex items-center gap-3 group">
-        <!-- Proper Circle Logo -->
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0F172A] border-2 border-amber-500/50 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-          <span class="font-serif-luxury font-bold text-base sm:text-lg tracking-wider text-amber-400">PE</span>
+        <!-- Proper Circle Original Logo -->
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-amber-500/60 shadow-md group-hover:scale-105 transition-transform flex-shrink-0 bg-slate-900">
+          <img src="assets/presto_original_logo.png" alt="Presto Estates Official Logo" class="w-full h-full object-cover">
         </div>
         <div>
           <span class="text-base sm:text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">PRESTO ESTATES</span>
@@ -100,16 +115,16 @@
         </div>
       </a>
 
-      <!-- Quick Actions (Mobile Optimized) -->
+      <!-- Quick Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="tel:917424001000" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200 px-3.5 py-2 rounded-full hover:bg-gray-100 transition">
+        <button onclick="openInquiryModal('Header Quick Inquiry')" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200 px-3.5 py-2 rounded-full hover:bg-gray-100 transition">
           <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           Call: 7424001000
-        </a>
-        <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates%20Team,%20I%20am%20interested%20in%20luxury%20builder%20floors%20in%20DLF%20Phase%202." target="_blank" class="btn-wa-green inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
+        </button>
+        <button onclick="openInquiryModal('Header WhatsApp')" class="btn-wa-green inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-          <span>WhatsApp</span>
-        </a>
+          <span>WhatsApp Inquiry</span>
+        </button>
       </div>
 
     </div>
@@ -154,10 +169,10 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates,%20please%20share%20floor%20plans%20and%20pricing%20for%20DLF%20Phase%202%20builder%20floors." class="btn-wa-green inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-xl">
+          <button onclick="openInquiryModal('Hero CTA - Verified Site Visit')" class="btn-wa-green inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-xl">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
             <span>Book Verified Site Visit</span>
-          </a>
+          </button>
           <a href="tel:917424001000" class="glass-pill hover:bg-white/20 text-white px-5 py-3 rounded-full text-xs sm:text-sm font-medium transition flex items-center justify-center gap-2">
             <span>📞 Call: 7424001000</span>
           </a>
@@ -214,9 +229,9 @@
           <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
             Italian marble flooring, private elevator access directly into apartment foyer, 3 dedicated stilt car parks, premium modular kitchen, 2 mins from Cyber City.
           </p>
-          <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates,%20I%20am%20interested%20in%20the%20Luxury%20Independent%20Builder%20Floor%20in%20DLF%20Phase%202." class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+          <button onclick="openInquiryModal('DLF Phase 2 Luxury Builder Floor (₹3.50 Cr)')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
             <span>WhatsApp Floor Plan</span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -237,9 +252,9 @@
           <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
             Double-height ceiling, bespoke terrace lounge, central VRV air conditioning, 100% power backup. High ROI potential for premium end-users &amp; property investors.
           </p>
-          <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates,%20please%20send%20details%20and%20pricing%20for%20the%20Distress%20Deal%20in%20DLF%20Phase%202." class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+          <button onclick="openInquiryModal('DLF Distress Deal (Park-Facing 500 Sq. Yds.)')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
             <span>Get Distress Deal Details</span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -260,22 +275,22 @@
           <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
             Unobstructed skyline view, smart home automation, high-speed elevator, 4-tier security. Walking distance from MG Road &amp; Cyber Hub.
           </p>
-          <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates,%20I%20am%20interested%20in%20the%20Executive%20Penthouse%20in%20Gurgaon." class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+          <button onclick="openInquiryModal('Cyber City Penthouse with Terrace')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
             <span>WhatsApp Penthouse Specs</span>
-          </a>
+          </button>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- 5. Minimal Trust Footprint -->
+  <!-- 5. Minimal Trust Footprint with Original Logo -->
   <section class="bg-slate-900 text-white py-14 px-4 sm:px-8 border-t border-slate-800">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left">
       <div>
         <div class="flex items-center justify-center sm:justify-start gap-3 mb-3">
-          <div class="w-8 h-8 rounded-full bg-slate-800 border border-amber-500/50 flex items-center justify-center text-amber-400 font-serif-luxury font-bold text-xs">
-            PE
+          <div class="w-9 h-9 rounded-full overflow-hidden border border-amber-500/50 flex-shrink-0 bg-slate-950">
+            <img src="assets/presto_original_logo.png" alt="Presto Estates Logo" class="w-full h-full object-cover">
           </div>
           <span class="font-bold text-sm tracking-wide">PRESTO ESTATES</span>
         </div>
@@ -302,9 +317,125 @@
   </section>
 
   <!-- 6. Fixed Floating WhatsApp Button -->
-  <a href="https://wa.me/917424001000?text=Hi%20Presto%20Estates%20Team,%20I%20am%20interested%20in%20properties%20in%20DLF%20Phase%202,%20Gurgaon." class="floating-wa w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white" aria-label="WhatsApp Us" target="_blank" rel="noopener noreferrer">
+  <button onclick="openInquiryModal('Floating WhatsApp Widget')" class="floating-wa w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white" aria-label="WhatsApp Us">
     <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-  </a>
+  </button>
+
+  <!-- 7. SMART LEAD CAPTURE POPUP (Direct WhatsApp Forwarding) -->
+  <div id="inquiryModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm hidden">
+    
+    <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-amber-500/30 modal-box-anim">
+      
+      <!-- Modal Header with Original Logo & Close Button -->
+      <div class="bg-gradient-to-r from-slate-950 to-slate-900 p-5 text-white flex items-center justify-between border-b border-amber-500/20">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden border border-amber-400 flex-shrink-0 bg-black">
+            <img src="assets/presto_original_logo.png" alt="Presto Estates Logo" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="text-sm font-bold tracking-tight text-white leading-tight">Presto Estates • Direct Inquiry</h3>
+            <p class="text-[11px] text-amber-300 font-medium">Get Pricing &amp; Floor Plans on WhatsApp</p>
+          </div>
+        </div>
+        <button onclick="closeInquiryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body (Input Form) -->
+      <form id="leadForm" onsubmit="handleLeadSubmit(event)" class="p-6 space-y-4">
+        <input type="hidden" id="inquirySource" value="Website Direct Popup">
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Aapka Naam / Full Name *</label>
+          <input type="text" id="leadName" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">WhatsApp Mobile Number *</label>
+          <input type="tel" id="leadPhone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Interested Property</label>
+          <select id="leadProperty" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+            <option value="DLF Phase 2 Luxury Builder Floor (₹3.50 Cr+)">DLF Phase 2 Luxury Builder Floor (₹3.50 Cr+)</option>
+            <option value="Exclusive Distress Deal in DLF Gurgaon">Exclusive Distress Deal in DLF Gurgaon</option>
+            <option value="Cyber City Penthouse with Private Terrace">Cyber City Penthouse with Private Terrace</option>
+            <option value="General Luxury Kothi / Independent Plot">General Luxury Kothi / Independent Plot</option>
+          </select>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="btn-wa-green w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Send Inquiry Direct to Presto WhatsApp</span>
+          </button>
+        </div>
+
+        <p class="text-[10px] text-gray-400 text-center">
+          🔒 Aapki details 100% private rahengi. Presto Estates advisory team aapse direct connect karegi.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Client-Side Script for Auto-Popup & Instant WhatsApp Submission -->
+  <script>
+    function openInquiryModal(source) {
+      if (source) {
+        document.getElementById('inquirySource').value = source;
+      }
+      const modal = document.getElementById('inquiryModal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeInquiryModal() {
+      const modal = document.getElementById('inquiryModal');
+      modal.classList.add('hidden');
+    }
+
+    // Auto-open modal after 1.8 seconds on page load
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        // Only open if modal hasn't been closed
+        const modal = document.getElementById('inquiryModal');
+        if (modal.classList.contains('hidden') && !sessionStorage.getItem('presto_modal_seen')) {
+          openInquiryModal('Automated Welcome Popup');
+          sessionStorage.setItem('presto_modal_seen', 'true');
+        }
+      }, 1800);
+    });
+
+    // Handle Form Submit and forward directly to Presto Estates WhatsApp
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value.trim();
+      const phone = document.getElementById('leadPhone').value.trim();
+      const property = document.getElementById('leadProperty').value;
+      const source = document.getElementById('inquirySource').value;
+
+      // Construct professional WhatsApp message
+      const text = encodeURIComponent(
+        "Hi Presto Estates Team,\n" +
+        "Maine aapki website se verified property inquiry submit ki hai:\n\n" +
+        "👤 Name: " + name + "\n" +
+        "📱 WhatsApp: +91 " + phone + "\n" +
+        "🏡 Interested Property: " + property + "\n" +
+        "📍 Reference: " + source + "\n\n" +
+        "Kripya floor plans aur verified pricing share karein."
+      );
+
+      const targetWaUrl = "https://wa.me/917424001000?text=" + text;
+      
+      // Close modal
+      closeInquiryModal();
+
+      // Redirect directly to WhatsApp
+      window.open(targetWaUrl, '_blank');
+    }
+  </script>
 
 </body>
 </html>

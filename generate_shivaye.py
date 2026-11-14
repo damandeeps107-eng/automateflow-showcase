@@ -1,0 +1,477 @@
+#!/usr/bin/env python3
+"""
+Shivaye Associates Landing Page Generator
+Category: Boutique Builder Floors & Real Estate Advisory
+Location: West Delhi / Dwarka Mor / Uttam Nagar, Delhi NCR
+Phone: +91 9716793057
+"""
+
+html_content = """<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivaye Associates | Smart 2BHK &amp; 3BHK Luxury Builder Floors Delhi</title>
+  <meta name="description" content="Shivaye Associates - Premium Independent Builder Floors in West Delhi (Dwarka Mor, Uttam Nagar). Lift, Car Parking, Modular Kitchen & 90% Bank Loan Approved.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .font-luxury {
+      font-family: 'Cinzel', serif;
+    }
+    .navy-gradient {
+      background: linear-gradient(135deg, #0A192F 0%, #172A45 100%);
+    }
+    .gold-text {
+      color: #D97706;
+    }
+    .badge-gold {
+      background-color: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+    .property-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .property-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.12);
+      border-color: #CBD5E1;
+    }
+    .btn-wa-green {
+      background-color: #059669;
+      color: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+    .btn-wa-green:hover {
+      background-color: #047857;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.3);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- Top Real Estate Bar -->
+  <div class="bg-[#0A192F] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center gap-1.5 font-semibold text-amber-400">
+          <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          100% Registry &amp; Freehold Properties
+        </span>
+        <span class="hidden sm:inline text-slate-500">•</span>
+        <span class="hidden sm:inline">Dwarka Mor &amp; Uttam Nagar Prime Metro Hubs</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span>🏦 Up to 90% Loan from Nationalized Banks</span>
+        <a href="tel:+919716793057" class="text-white font-bold hover:text-amber-400">📞 +91 97167 93057</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-xl bg-[#0A192F] flex items-center justify-center font-bold text-amber-400 text-2xl font-luxury shadow-md">
+          SA
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-[#0A192F]">
+            SHIVAYE ASSOCIATES
+          </span>
+          <p class="text-[11px] tracking-wider uppercase text-slate-500 font-semibold">Boutique Builder Floors • Delhi NCR</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#properties" class="hover:text-amber-600 transition-colors">Builder Floors</a>
+        <a href="#amenities" class="hover:text-amber-600 transition-colors">Amenities</a>
+        <a href="#calculator" class="hover:text-amber-600 transition-colors">EMI Calculator</a>
+        <a href="#contact" class="hover:text-amber-600 transition-colors">Site Visit</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20a%202BHK%20%2F%203BHK%20builder%20floor." target="_blank" class="btn-wa-green px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#0A192F] via-[#112240] to-[#0A192F] text-white py-16 sm:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-300">
+            <span>🏡 Direct Builder Inventory • 0% Brokerage</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Smart &amp; Luxurious <br>
+            <span class="text-amber-400 font-luxury">Independent Builder Floors</span> <br>
+            <span class="text-2xl sm:text-3xl font-light text-slate-300">In West Delhi &amp; Dwarka Mor</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Move into your dream home with zero hassle. Featuring Italian marble, high-speed branded elevators, dedicated stilt car parking, modern modular kitchens, and walking distance from Metro.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20Please%20send%20brochure%20and%20video%20tour%20of%20available%202BHK%20and%203BHK%20floors." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 hover:scale-105 transition-all flex items-center gap-2">
+              <span>Book Priority Site Visit</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="#properties" class="px-6 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-colors">
+              View Available Inventory
+            </a>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-700">
+            <div>
+              <p class="text-2xl sm:text-3xl font-black text-amber-400">90%</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Bank Loan Facility</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-black text-white">500+</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Families Settled</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-black text-emerald-400">0%</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Brokerage on Builder Floors</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Quick Booking Form -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-900 border border-slate-100">
+            <div class="space-y-1 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Free Site Visit</span>
+              <h3 class="text-xl font-bold text-slate-900">Schedule Your Property Tour</h3>
+              <p class="text-xs text-slate-500">Pick-and-drop service available from Dwarka Mor Metro Station.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); window.open('https://wa.me/919716793057?text=' + encodeURIComponent('Hi Shivaye Associates! My Name: ' + document.getElementById('s_name').value + ', Phone: ' + document.getElementById('s_phone').value + ', Configuration: ' + document.getElementById('s_type').value + ', Budget: ' + document.getElementById('s_budget').value), '_blank');" class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                <input id="s_name" type="text" required placeholder="e.g. Rajesh Kumar" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">WhatsApp Number</label>
+                <input id="s_phone" type="tel" required placeholder="e.g. +91 98765 43210" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white">
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Configuration</label>
+                  <select id="s_type" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-amber-500">
+                    <option>Smart 2 BHK Floor</option>
+                    <option>Spacious 3 BHK Floor</option>
+                    <option>Ultra 4 BHK / Penthouse</option>
+                    <option>Commercial Shop / Plot</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Your Budget</label>
+                  <select id="s_budget" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-amber-500">
+                    <option>₹25 - ₹35 Lakhs</option>
+                    <option>₹35 - ₹50 Lakhs</option>
+                    <option>₹50 - ₹80 Lakhs</option>
+                    <option>₹80 Lakhs+</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full btn-wa-green py-3.5 rounded-xl font-bold text-sm tracking-wide flex items-center justify-center gap-2 shadow-lg mt-2">
+                <span>Book Visit on WhatsApp</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Builder Floors -->
+  <section id="properties" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-amber-600">Ready To Move &amp; Under Construction</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Featured Builder Floors in West Delhi</h2>
+        </div>
+        <p class="text-sm text-slate-500 max-w-md">
+          Each unit comes with 100% legal title verification, completion certificate, and direct builder pricing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Floor 1 -->
+        <div class="property-card rounded-2xl overflow-hidden group">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="2BHK Builder Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 badge-gold text-xs font-bold px-3 py-1 rounded-md">Smart 2 BHK</span>
+            <span class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-sm font-black px-3 py-1 rounded-md">₹28 Lakhs Onwards</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Modern 2 BHK Builder Floor with Lift &amp; Car Parking</h3>
+              <p class="text-xs text-amber-600 font-semibold mt-1">📍 Dwarka Mor (300m from Metro Station)</p>
+            </div>
+            
+            <ul class="text-xs text-slate-600 space-y-1.5 border-t border-b border-slate-100 py-3">
+              <li class="flex items-center gap-2">✓ Branded Elevator &amp; Covered Stilt Parking</li>
+              <li class="flex items-center gap-2">✓ L-Type Modular Kitchen with Chimney</li>
+              <li class="flex items-center gap-2">✓ Wide 30 Feet Road • Gated Colony</li>
+              <li class="flex items-center gap-2">✓ 90% Loan Available from SBI &amp; HDFC</li>
+            </ul>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs text-slate-400">Ready to Move</span>
+              <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20Please%20share%20floor%20plan%20and%20video%20for%20the%202BHK%20Dwarka%20Mor%20floor." target="_blank" class="text-xs font-bold text-amber-700 hover:underline flex items-center gap-1">Get Floor Plan &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floor 2 -->
+        <div class="property-card rounded-2xl overflow-hidden group">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="3BHK Builder Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold px-3 py-1 rounded-md">Luxury 3 BHK</span>
+            <span class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-sm font-black px-3 py-1 rounded-md">₹48 Lakhs Onwards</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Spacious 3 BHK Corner Independent Floor</h3>
+              <p class="text-xs text-amber-600 font-semibold mt-1">📍 Uttam Nagar East / Janakpuri Border</p>
+            </div>
+            
+            <ul class="text-xs text-slate-600 space-y-1.5 border-t border-b border-slate-100 py-3">
+              <li class="flex items-center gap-2">✓ Two-Side Open Corner Property with Natural Light</li>
+              <li class="flex items-center gap-2">✓ Italian Flooring &amp; Texture Wall Paint</li>
+              <li class="flex items-center gap-2">✓ 2 Luxury Bathrooms with Jaguar Fittings</li>
+              <li class="flex items-center gap-2">✓ Bank Loan &amp; Direct Registry</li>
+            </ul>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs text-slate-400">Immediate Registry</span>
+              <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20Please%20share%20details%20for%20the%203BHK%20Corner%20Floor." target="_blank" class="text-xs font-bold text-amber-700 hover:underline flex items-center gap-1">Get Floor Plan &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floor 3 -->
+        <div class="property-card rounded-2xl overflow-hidden group">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Penthouse Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-purple-100 text-purple-800 border border-purple-300 text-xs font-bold px-3 py-1 rounded-md">Roof Right Penthouse</span>
+            <span class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-sm font-black px-3 py-1 rounded-md">₹65 Lakhs Onwards</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Exclusive 3/4 BHK with Private Terrace Garden</h3>
+              <p class="text-xs text-amber-600 font-semibold mt-1">📍 Near Metro Hub, Dwarka Mor</p>
+            </div>
+            
+            <ul class="text-xs text-slate-600 space-y-1.5 border-t border-b border-slate-100 py-3">
+              <li class="flex items-center gap-2">✓ Private Rooftop Garden with Gazebo Setup</li>
+              <li class="flex items-center gap-2">✓ Private Lift Access Directly to Foyer</li>
+              <li class="flex items-center gap-2">✓ Dedicated Stilt Parking for 2 Cars</li>
+              <li class="flex items-center gap-2">✓ Ultra Luxury Specification</li>
+            </ul>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs text-slate-400">Exclusive Deal</span>
+              <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20Please%20share%20video%20tour%20for%20the%20Terrace%20Penthouse." target="_blank" class="text-xs font-bold text-amber-700 hover:underline flex items-center gap-1">Get Floor Plan &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Amenities Included -->
+  <section id="amenities" class="py-20 bg-white border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-600">Standard Specifications</span>
+        <h2 class="text-3xl font-extrabold text-slate-900">Every Floor is Built for Comfort &amp; Longevity</h2>
+        <p class="text-sm text-slate-500">You don't need to spend extra money on renovations—move in directly with peace of mind.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🛗</div>
+          <h4 class="font-bold text-slate-900 text-sm">Automatic Branded Lift</h4>
+          <p class="text-xs text-slate-500">Full passenger lift with ARD safety device for automatic landing during power cuts.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🚗</div>
+          <h4 class="font-bold text-slate-900 text-sm">Dedicated Car Parking</h4>
+          <p class="text-xs text-slate-500">Reserved covered stilt car parking space with wide driveway entry.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🍳</div>
+          <h4 class="font-bold text-slate-900 text-sm">Modular Kitchen &amp; Chimney</h4>
+          <p class="text-xs text-slate-500">Complete soft-close storage, quartz countertop, and electric auto-clean chimney.</p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🚇</div>
+          <h4 class="font-bold text-slate-900 text-sm">Walking Distance to Metro</h4>
+          <p class="text-xs text-slate-500">Just 300 to 500 meters from Dwarka Mor / Uttam Nagar Metro Stations.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive EMI Calculator -->
+  <section id="calculator" class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10 space-y-2">
+        <span class="text-xs uppercase font-bold tracking-widest text-amber-600">Home Loan Assistance</span>
+        <h2 class="text-3xl font-extrabold text-slate-900">Instant Monthly EMI Calculator</h2>
+        <p class="text-xs sm:text-sm text-slate-500">Check how easy it is to own a luxury builder floor with affordable bank EMIs.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 sm:p-10 shadow-lg border border-slate-200 space-y-8">
+        
+        <div>
+          <div class="flex justify-between text-xs font-bold text-slate-700 mb-2">
+            <span>Property Loan Amount</span>
+            <span id="loan_val_text" class="text-amber-700 font-extrabold text-sm">₹30,00,000</span>
+          </div>
+          <input id="loan_slider" type="range" min="1500000" max="8000000" step="100000" value="3000000" oninput="calcEMI()" class="w-full accent-amber-600 cursor-pointer">
+          <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+            <span>₹15 Lakhs</span>
+            <span>₹50 Lakhs</span>
+            <span>₹80 Lakhs</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Tenure (Years)</label>
+            <select id="tenure_select" onchange="calcEMI()" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900">
+              <option value="15">15 Years</option>
+              <option value="20" selected>20 Years</option>
+              <option value="25">25 Years</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Interest Rate (Bank Avg)</label>
+            <input type="text" disabled value="8.5% p.a." class="w-full bg-slate-100 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-700">
+          </div>
+        </div>
+
+        <div class="navy-gradient text-white p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="text-xs text-slate-300 uppercase tracking-wider font-semibold">Estimated Monthly EMI</span>
+            <div id="emi_result" class="text-3xl sm:text-4xl font-black text-amber-400 mt-1">₹26,035 / mo</div>
+            <p class="text-[11px] text-slate-400 mt-1">*Eligible for PMAY / Tax benefits under Section 80C &amp; 24b.</p>
+          </div>
+          <button onclick="dispatchLoanLead()" class="btn-wa-green px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 shadow-lg">
+            <span>Check Bank Loan Eligibility</span>
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Office & Contact Footer -->
+  <footer id="contact" class="bg-[#0A192F] text-slate-400 text-xs py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8">
+      
+      <div class="md:col-span-5 space-y-3">
+        <span class="text-white font-bold text-lg">SHIVAYE ASSOCIATES</span>
+        <p class="leading-relaxed">Leading real estate consultants and builder floor developers in West Delhi. Offering transparent advisory, free site visits, and end-to-end bank loan assistance.</p>
+        <p class="text-amber-400 font-semibold">📞 +91 97167 93057 • Delhi NCR</p>
+      </div>
+
+      <div class="md:col-span-4 space-y-2">
+        <h4 class="text-white font-bold text-sm">Key Operating Areas</h4>
+        <p>• Dwarka Mor Metro Station Hub</p>
+        <p>• Uttam Nagar East &amp; West</p>
+        <p>• Nawada &amp; Mohan Garden</p>
+        <p>• Janakpuri &amp; Vikaspuri</p>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-white font-bold text-sm">Direct WhatsApp</h4>
+        <p>Connect with our senior property consultant for inventory lists, videos &amp; site visit booking.</p>
+        <a href="https://wa.me/919716793057" class="btn-wa-green inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-white">
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp Button -->
+  <a href="https://wa.me/919716793057?text=Hi%20Shivaye%20Associates%2C%20I%20saw%20your%20website%20and%20want%20to%20know%20about%202BHK%20%2F%203BHK%20floors." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- EMI Calculator Script -->
+  <script>
+    function calcEMI() {
+      let p = parseFloat(document.getElementById('loan_slider').value);
+      document.getElementById('loan_val_text').innerText = '₹' + p.toLocaleString('en-IN');
+      
+      let tenureYears = parseFloat(document.getElementById('tenure_select').value);
+      let n = tenureYears * 12;
+      let r = 8.5 / 12 / 100;
+      
+      let emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      document.getElementById('emi_result').innerText = '₹' + Math.round(emi).toLocaleString('en-IN') + ' / mo';
+    }
+
+    function dispatchLoanLead() {
+      let p = document.getElementById('loan_slider').value;
+      let tenure = document.getElementById('tenure_select').value;
+      let emi = document.getElementById('emi_result').innerText;
+      let txt = 'Hi Shivaye Associates! I calculated EMI on your website for ₹' + parseInt(p).toLocaleString('en-IN') + ' loan (' + tenure + ' yrs tenure: ' + emi + '). Please connect for bank loan eligibility and floor options.';
+      window.open('https://wa.me/919716793057?text=' + encodeURIComponent(txt), '_blank');
+    }
+  </script>
+
+</body>
+</html>
+"""
+
+with open('/Users/user/.gemini/antigravity/scratch/automateflow-showcase/shivaye-associates.html', 'w') as f:
+    f.write(html_content)
+
+print("Saved shivaye-associates.html successfully!")

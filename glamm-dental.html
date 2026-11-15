@@ -4,677 +4,647 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glamm Dental | Dr. Sonam Gupta (MDS) | Advanced Multispeciality Dental & Smile Clinic Janakpuri</title>
-  <meta name="description" content="Glamm Dental Clinic Janakpuri, New Delhi. Led by Dr. Sonam Gupta (MDS Prosthodontist & Implantologist). Gentle family-friendly dental care, smile design from ₹6,999, painless implants.">
+  <meta name="description" content="Glamm Dental Clinic Janakpuri, New Delhi. Led by Dr. Sonam Gupta (MDS Prosthodontist & Implantologist). Digital Smile Design, Painless Implants, Clear Aligners.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #F8F9FA;
-      --dark: #0D131A;
-      --dark-card: #151D24;
-      --slate: #475569;
+      --bg: #F8FAFC;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --card-border: rgba(226, 232, 240, 0.9);
+      --glass-glow: rgba(2, 132, 199, 0.08);
+      --primary: #0284C7;
+      --primary-dark: #0369A1;
+      --primary-deep: #0C4A6E;
+      --dark: #0F172A;
+      --slate: #334155;
       --muted: #64748B;
-      --cyan: #00B4D8;
-      --cyan-light: #E0F2FE;
-      --cyan-deep: #0077B6;
-      --teal-card: #0A9396;
-      --radius: 28px;
+      --gold: #D97706;
+      --gold-light: #FEF3C7;
+      --wa: #25D366;
+      --radius: 18px;
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      color: var(--dark);
-      padding: 18px;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--slate);
+      line-height: 1.6;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    .frame-container {
-      max-width: 1360px;
+    /* Ambient Fluid Glows */
+    .ambient-glow-1 {
+      position: fixed;
+      top: -10%;
+      right: -5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, rgba(248, 250, 252, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: 10%;
+      left: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-    }
-
-    /* =========================================
-       HERO FRAME (Dentora Cinematic Style)
-       ========================================= */
-    .hero-frame {
-      background: #0B1218;
-      border-radius: var(--radius);
+      padding: 0 24px;
       position: relative;
-      overflow: hidden;
-      min-height: 720px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 24px 32px 32px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Hero Background Image & Atmospheric Vignette */
-    .hero-bg-img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 65%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center right;
       z-index: 1;
-      opacity: 0.9;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, #0B1218 35%, rgba(11, 18, 24, 0.85) 60%, rgba(11, 18, 24, 0.2) 100%);
-      z-index: 2;
     }
 
-    /* Floating Pill Navbar */
-    .nav-bar {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      padding: 8px 16px;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    .brand-wrap img {
-      height: 28px;
-      width: auto;
-      filter: brightness(0) invert(1);
-    }
-    .nav-pill-group {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 100px;
-      padding: 4px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .nav-pill {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: 100px;
-      transition: var(--transition);
-    }
-    .nav-pill.active {
+    /* Top Strip */
+    .top-strip {
       background: #FFFFFF;
-      color: #0D131A;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .nav-pill:hover:not(.active) {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .btn-nav-call {
-      background: #FFFFFF;
-      color: #0D131A;
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 10px 22px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
-    }
-    .btn-nav-call:hover {
-      background: #E0F2FE;
-      transform: translateY(-1px);
-    }
-
-    /* Hero Core Content */
-    .hero-body {
-      position: relative;
-      z-index: 10;
-      max-width: 580px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-    .hero-title {
-      font-size: 62px;
-      line-height: 1.05;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-    .hero-subtitle {
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.6;
-      margin-bottom: 32px;
-      max-width: 480px;
-    }
-    .hero-cta-btn {
-      background: #FFFFFF;
-      color: #0D131A;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 100px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      transition: var(--transition);
-    }
-    .hero-cta-btn .arrow-circ {
-      width: 28px;
-      height: 28px;
-      background: #00B4D8;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-    .hero-cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
-    }
-    .hero-cta-btn:hover .arrow-circ {
-      transform: translateX(3px);
-    }
-
-    /* Hero Bottom Row */
-    .hero-bottom-row {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      width: 100%;
-    }
-
-    /* Left Floating Glass Card */
-    .hero-glass-badge {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 14px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      max-width: 310px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    }
-    .glass-thumb {
-      width: 72px;
-      height: 52px;
-      border-radius: 12px;
-      object-fit: cover;
-    }
-    .glass-text p {
-      font-size: 11.5px;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.4;
-      margin-bottom: 6px;
-    }
-    .glass-rating {
-      font-size: 11px;
-      color: #FCD34D;
-      font-weight: 700;
-    }
-
-    /* Right Quick Service Pills */
-    .hero-service-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      max-width: 520px;
-    }
-    .quick-pill {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #FFFFFF;
-      font-size: 12.5px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: 100px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .quick-pill:hover, .quick-pill.highlight {
-      background: #FFFFFF;
-      color: #0D131A;
-      font-weight: 600;
-    }
-
-    /* Sub Footer Bar inside Hero */
-    .hero-meta-bar {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
-      margin-top: 24px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* =========================================
-       SEGMENTED TICKER STRIP (Dentora Style)
-       ========================================= */
-    .ticker-bar {
-      margin: 36px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #94A3B8;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      overflow: hidden;
-    }
-    .ticker-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .ticker-lines {
-      letter-spacing: -2px;
-      color: #CBD5E1;
-      font-weight: 300;
-    }
-
-    /* =========================================
-       EDITORIAL MANIFESTO (Dentora About Section)
-       ========================================= */
-    .manifesto-section {
-      padding: 60px 0 80px;
-    }
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .manifesto-left {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-    .pill-tag {
-      display: inline-block;
-      align-self: flex-start;
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      color: var(--dark);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 100px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-    .avatars-group {
-      display: flex;
-      gap: 12px;
-    }
-    .avatar-card {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      border: 2px solid #FFFFFF;
-    }
-    .stats-trio {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 10px;
-    }
-    .stat-val {
-      font-size: 34px;
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .stat-desc {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
       font-size: 12px;
       color: var(--muted);
-      margin-top: 6px;
-      font-weight: 500;
+      padding: 8px 0;
     }
-
-    .manifesto-right {
-      position: relative;
-    }
-    .manifesto-quote {
-      font-size: 38px;
-      line-height: 1.25;
-      color: #94A3B8;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
-    }
-    .manifesto-quote strong {
-      color: var(--dark);
-      font-weight: 700;
-    }
-    .manifesto-chair-img {
-      width: 100%;
-      height: 280px;
-      border-radius: 24px;
-      object-fit: cover;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-    }
-
-    /* =========================================
-       FEATURED TREATMENT & DOCTOR TELE-CONSULT
-       ========================================= */
-    .featured-section {
-      padding: 60px 0 80px;
-    }
-    .section-head {
-      margin-bottom: 40px;
-    }
-    .section-head h2 {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-      margin-top: 8px;
-    }
-    .featured-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 32px;
-    }
-
-    /* Left Doctor Tele-Consult Card (Dentora Style Soft Cyan) */
-    .doctor-tele-card {
-      background: #DDF4FF;
-      border-radius: 24px;
-      padding: 32px;
+    .top-strip .container {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
+      align-items: center;
     }
-    .tele-top {
+    .top-strip a {
+      color: var(--slate);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .top-strip a:hover { color: var(--primary); }
+    .badge-google {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .badge-google span { color: #F59E0B; }
+
+    /* Navigation */
+    nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: var(--transition);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .brand-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-phone {
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(2, 132, 199, 0.08);
+      color: var(--primary-dark);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-phone:hover {
+      background: rgba(2, 132, 199, 0.15);
+    }
+    .btn-primary {
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: var(--dark);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover {
+      background: var(--primary-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(12, 74, 110, 0.25);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 0 70px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+    .hero-pill span {
+      background: var(--gold);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      line-height: 1.15;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .hero-content p {
+      font-size: 16.5px;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+    .hero-cta-group {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
-    .tele-doc-img {
-      width: 90px;
-      height: 90px;
-      border-radius: 20px;
-      object-fit: cover;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .tele-doc-info h3 {
-      font-size: 19px;
-      font-weight: 700;
-      color: #0C4A6E;
-    }
-    .tele-doc-info p {
-      font-size: 13px;
-      color: #0369A1;
-      font-weight: 500;
-      margin-top: 2px;
-    }
-    .tele-rating {
-      font-size: 12px;
-      color: #D97706;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-    .tele-body-text {
+    .btn-wa-solid {
+      background: #15803D;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
       font-size: 14.5px;
-      color: #0F172A;
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-    .btn-tele-book {
-      background: #00B4D8;
-      color: #FFFFFF;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 13px 24px;
-      border-radius: 100px;
+      font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 180, 216, 0.3);
       transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.2);
     }
-    .btn-tele-book:hover {
-      background: #0096C7;
+    .btn-wa-solid:hover {
+      background: #166534;
       transform: translateY(-2px);
     }
 
-    /* Right Clinic Diagnostics Card */
-    .clinic-stats-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 24px;
+    /* Doctor Spotlight Card (Glass) */
+    .doctor-spotlight {
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+      position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      text-align: center;
     }
-    .clinic-chair-photo {
+    .doctor-img-wrap {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.1), rgba(217, 119, 6, 0.1));
+      padding: 8px;
+      position: relative;
+    }
+    .doctor-img-wrap img {
       width: 100%;
-      height: 240px;
+      height: 100%;
       object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
-    .diagnostics-panel {
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    .doctor-name {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
     }
-    .diag-item h4 {
-      font-size: 12px;
-      color: var(--muted);
+    .doctor-qual {
+      font-size: 13px;
+      color: var(--primary-dark);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 12px;
     }
-    .diag-val {
-      font-size: 26px;
+    .doctor-bio {
+      font-size: 13.5px;
+      color: var(--slate);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .doctor-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .doc-badge {
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--slate);
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    /* Trust Stats Strip */
+    .stats-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 70px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+    .stat-box {
+      text-align: center;
+      border-right: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .stat-box:last-child { border-right: none; }
+    .stat-number {
+      font-size: 32px;
       font-weight: 800;
       color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .stat-number span { color: var(--primary); }
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
       margin-top: 4px;
     }
-    .progress-track {
-      grid-column: span 2;
-      margin-top: 8px;
-    }
-    .progress-track span {
-      font-size: 12px;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 6px;
-    }
-    .bars-row {
-      display: flex;
-      gap: 4px;
-      height: 18px;
-      align-items: center;
-    }
-    .bar-seg {
-      flex: 1;
-      height: 100%;
-      background: #00B4D8;
-      border-radius: 3px;
-    }
-    .bar-seg.dim { background: #E2E8F0; }
 
-    /* =========================================
-       BENTO GRID (Why Choose Precision Dental?)
-       ========================================= */
-    .bento-section {
-      padding: 60px 0 80px;
+    /* Brand Certifications Bar */
+    .partners-section {
+      text-align: center;
+      margin-bottom: 80px;
     }
-    .bento-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 32px;
-    }
-    .bento-head h2 {
-      font-size: 34px;
+    .partners-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
       font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .partners-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      opacity: 0.85;
+    }
+    .partners-row img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: var(--transition);
+    }
+    .partners-row img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Treatments Section */
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 48px;
+    }
+    .section-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
       color: var(--dark);
       letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
-    .nav-arrows {
+    .section-desc {
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+    .treatment-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: var(--transition);
       display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .treatment-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(2, 132, 199, 0.4);
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.08);
+    }
+    .card-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .treatment-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .treatment-desc {
+      font-size: 14px;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .specs-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .specs-list li {
+      font-size: 13px;
+      color: var(--slate);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
       gap: 8px;
     }
-    .arrow-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid #CBD5E1;
-      background: white;
+    .specs-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .btn-card {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      color: var(--dark);
+      font-size: 13.5px;
+      font-weight: 600;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: var(--transition);
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      gap: 6px;
+    }
+    .treatment-card:hover .btn-card {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Clinic Experience Showcase */
+    .clinic-showcase {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-radius: 28px;
+      padding: 56px 48px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .clinic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .clinic-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #F8FAFC;
+    }
+    .clinic-text p {
+      font-size: 15px;
+      color: #94A3B8;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .clinic-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .feat-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 18px;
+      border-radius: 12px;
+    }
+    .feat-item h5 {
       font-size: 14px;
-      color: var(--dark);
+      color: #F8FAFC;
+      margin-bottom: 4px;
+    }
+    .feat-item p {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-bottom: 0;
+    }
+    .clinic-img-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .clinic-img-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
       transition: var(--transition);
     }
-    .arrow-btn.active {
-      background: #00B4D8;
-      color: white;
-      border-color: #00B4D8;
+    .clinic-img-card:hover img {
+      transform: scale(1.03);
     }
 
-    .bento-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr 1fr;
-      gap: 24px;
-    }
-    .bento-card {
-      border-radius: 24px;
-      overflow: hidden;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-    .bento-card.teal {
-      background: #00B4D8;
-      color: white;
-    }
-    .bento-card.white {
+    /* Location & Map Section */
+    .location-section {
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 80px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
-    .bento-card.img-card {
-      padding: 0;
-      background: #0B1218;
-    }
-    .bento-card.img-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 280px;
-    }
-
-    /* Testimonial Quote */
-    .quote-box {
-      margin-top: 60px;
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 28px;
-      padding: 48px;
+    .location-grid {
       display: grid;
-      grid-template-columns: 80px 1fr 100px;
-      gap: 28px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
       align-items: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.02);
     }
-    .quote-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      line-height: 0.8;
-      color: #94A3B8;
-      align-self: flex-start;
-    }
-    .quote-body p {
-      font-size: 24px;
-      line-height: 1.4;
-      color: #64748B;
-      letter-spacing: -0.01em;
-    }
-    .quote-body strong {
-      color: var(--dark);
-    }
-    .quote-author {
-      margin-top: 16px;
-      font-size: 14px;
+    .location-details h4 {
+      font-size: 22px;
       font-weight: 700;
       color: var(--dark);
+      margin-bottom: 12px;
     }
-    .quote-author span {
-      font-weight: 400;
+    .address-box {
+      background: #F8FAFC;
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 20px;
+    }
+    .address-box p {
+      font-size: 14.5px;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .timing-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .timing-item {
+      font-size: 13.5px;
       color: var(--muted);
-      font-size: 13px;
     }
-    .quote-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .timing-item strong {
+      color: var(--dark);
+      display: block;
     }
 
-    /* Modal */
+    /* Footer */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--card-border);
+      padding: 36px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Appointment Modal */
     .modal-overlay {
       position: fixed;
-      inset: 0;
-      background: rgba(13, 19, 26, 0.7);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 200;
       display: none;
       align-items: center;
@@ -684,16 +654,16 @@
     .modal-box {
       background: #FFFFFF;
       width: 100%;
-      max-width: 480px;
-      border-radius: 28px;
+      max-width: 500px;
+      border-radius: 24px;
       padding: 36px;
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
       position: relative;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
     .modal-close {
       position: absolute;
@@ -704,365 +674,422 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
+      font-size: 16px;
       cursor: pointer;
-      font-size: 14px;
       color: var(--slate);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
     }
-    .modal-head h3 {
-      font-size: 20px;
+    .modal-close:hover { background: #E2E8F0; }
+    .modal-header h3 {
+      font-size: 21px;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
-    .modal-head p {
-      font-size: 13px;
+    .modal-header p {
+      font-size: 13.5px;
       color: var(--muted);
       margin-bottom: 24px;
     }
     .form-group {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .form-group label {
       display: block;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--slate);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .form-group input, .form-group select {
       width: 100%;
       padding: 12px 16px;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 12px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 10px;
       font-size: 14px;
       font-family: inherit;
       background: #F8FAFC;
+      transition: var(--transition);
     }
     .form-group input:focus, .form-group select:focus {
       outline: none;
-      border-color: #00B4D8;
-      background: white;
+      border-color: var(--primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
     }
     .btn-submit-modal {
       width: 100%;
-      background: #00B4D8;
+      background: var(--dark);
       color: white;
       border: none;
       padding: 14px;
       border-radius: 12px;
-      font-size: 14.5px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      margin-top: 10px;
-      box-shadow: 0 4px 14px rgba(0, 180, 216, 0.3);
       transition: var(--transition);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
     .btn-submit-modal:hover {
-      background: #0096C7;
+      background: var(--primary-deep);
+      transform: translateY(-2px);
     }
 
-    /* Responsive */
+    /* Responsive Media Queries */
     @media (max-width: 992px) {
-      .hero-bg-img { display: none; }
-      .hero-overlay { background: #0B1218; }
-      .manifesto-grid { grid-template-columns: 1fr; }
-      .featured-grid { grid-template-columns: 1fr; }
-      .bento-grid { grid-template-columns: 1fr; }
-      .quote-box { grid-template-columns: 1fr; text-align: center; }
-      .quote-mark { display: none; }
-      .quote-avatar { margin: 0 auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-content h1 { font-size: 40px; }
+      .hero-content p { margin: 0 auto 32px; }
+      .hero-cta-group { justify-content: center; }
+      .stats-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat-box:nth-child(2) { border-right: none; }
+      .treatments-grid { grid-template-columns: 1fr 1fr; }
+      .clinic-grid { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      body { padding: 10px; }
-      .hero-frame { padding: 20px; min-height: auto; }
-      .hero-title { font-size: 38px; }
-      .nav-pill-group { display: none; }
-      .hero-glass-badge { display: none; }
-      .hero-service-pills { justify-content: flex-start; }
-      .manifesto-quote { font-size: 26px; }
-      .stats-trio { grid-template-columns: 1fr; }
-      .ticker-bar { display: none; }
+      .nav-links { display: none; }
+      .hero-content h1 { font-size: 32px; }
+      .hero-cta-group { flex-direction: column; width: 100%; }
+      .hero-cta-group a, .hero-cta-group button { width: 100%; justify-content: center; }
+      .treatments-grid { grid-template-columns: 1fr; }
+      .stats-container { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      .stat-box { border-right: none; border-bottom: 1px solid var(--card-border); padding-bottom: 12px; }
+      .stat-box:last-child { border-bottom: none; }
+      .clinic-showcase { padding: 32px 20px; }
+      .clinic-features { grid-template-columns: 1fr; }
+      .modal-box { padding: 24px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="frame-container">
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
 
-    <!-- =========================================
-         1. HERO FRAME (Dentora Dribbble Spec)
-         ========================================= -->
-    <section class="hero-frame">
-      <img src="assets/glamm/hero.jpg" alt="Glamm Dental Gentle Care" class="hero-bg-img">
-      <div class="hero-overlay"></div>
-
-      <!-- Floating Nav Bar -->
-      <nav class="nav-bar">
-        <div class="brand-wrap">
-          <img src="assets/glamm/logo.webp" alt="Glamm Dental Clinic">
-        </div>
-        <div class="nav-pill-group">
-          <a href="#" class="nav-pill active">Home</a>
-          <a href="#services" class="nav-pill">Services</a>
-          <a href="#about" class="nav-pill">About Us</a>
-          <a href="#testimonials" class="nav-pill">Testimonial</a>
-          <a href="#contact" class="nav-pill">Contact</a>
-        </div>
-        <button class="btn-nav-call" onclick="openModal('Book a Call')">
-          Book a Call
-        </button>
-      </nav>
-
-      <!-- Hero Core Typography -->
-      <div class="hero-body">
-        <h1 class="hero-title">Family-Friendly<br>Dental Care</h1>
-        <p class="hero-subtitle">
-          Permanent natural-looking solutions to replace missing teeth and restore confident healthy smiles with Dr. Sonam Gupta (MDS) in Janakpuri.
-        </p>
-        <button class="hero-cta-btn" onclick="openModal('Hero Appointment')">
-          Book an Appointment
-          <div class="arrow-circ">➔</div>
-        </button>
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container">
+      <div>📍 B1-135, Janakpuri, New Delhi (Near Metro Station)</div>
+      <div class="badge-google">
+        <span>★★★★★</span> 4.9 Rating (180+ Verified Google Reviews)
       </div>
-
-      <!-- Hero Bottom Row: Floating Review Card + Quick Pills -->
-      <div class="hero-bottom-row">
-        <!-- Floating Glass Card (Left) -->
-        <div class="hero-glass-badge">
-          <img src="assets/glamm/dr_sonam_portrait.jpg" alt="Doctor Consultation" class="glass-thumb">
-          <div class="glass-text">
-            <p>Restore natural healthy confident dental growth.</p>
-            <div class="glass-rating">★ 4.9 [Rating] ↗</div>
-          </div>
-        </div>
-
-        <!-- Quick Service Pills (Right) -->
-        <div class="hero-service-pills">
-          <span class="quick-pill highlight" onclick="openModal('Smile Design @ ₹6,999')">Smile Design (₹6,999)</span>
-          <span class="quick-pill" onclick="openModal('Dental Checkup')">Dental Checkup</span>
-          <span class="quick-pill" onclick="openModal('Teeth Cleaning')">Teeth Cleaning</span>
-          <span class="quick-pill" onclick="openModal('Dental Implants')">Dental Implants</span>
-          <span class="quick-pill" onclick="openModal('Invisible Aligners')">Invisible Aligners</span>
-        </div>
-      </div>
-
-      <!-- Bottom Frame Micro-Bar -->
-      <div class="hero-meta-bar">
-        <div>Your Teeth Our Science</div>
-        <div>Janakpuri West • New Delhi</div>
-        <div>Scroll for More ↓</div>
-      </div>
-    </section>
-
-    <!-- =========================================
-         2. SEGMENTED TICKER STRIP
-         ========================================= -->
-    <div class="ticker-bar">
-      <div class="ticker-item"><span class="ticker-lines">||||||||||||||||||</span> Smile Assessment</div>
-      <div class="ticker-item"><span class="ticker-lines">||||||||||||||||||</span> Care Planning</div>
-      <div class="ticker-item"><span class="ticker-lines">||||||||||||||||||</span> Treatment Process</div>
-      <div class="ticker-item"><span class="ticker-lines">||||||||||||||||||</span> Dental Maintenance</div>
-      <div class="ticker-item"><span class="ticker-lines">||||||||||||||||||</span> Smile Assessment</div>
     </div>
-
-    <!-- =========================================
-         3. ABOUT US MANIFESTO SECTION
-         ========================================= -->
-    <section class="manifesto-section" id="about">
-      <div class="manifesto-grid">
-        
-        <div class="manifesto-left">
-          <div class="pill-tag">About Us</div>
-          <div class="avatars-group">
-            <img src="assets/glamm/patient.jpg" alt="Smiling Patient" class="avatar-card">
-            <img src="assets/glamm/happy.jpg" alt="Smiling Patient" class="avatar-card">
-          </div>
-          <div>
-            <div style="font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 8px;">Thousands Trust Us for Smiles!</div>
-            <div class="stats-trio">
-              <div>
-                <div class="stat-val">98%</div>
-                <div class="stat-desc">Satisfaction Rate</div>
-              </div>
-              <div>
-                <div class="stat-val">5k+</div>
-                <div class="stat-desc">Smiles Transformed</div>
-              </div>
-              <div>
-                <div class="stat-val">4.9★</div>
-                <div class="stat-desc">Customer Rating</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="manifesto-right">
-          <div class="manifesto-quote">
-            We deliver personalized dental treatments with <strong>modern technology</strong> and gentle care ensuring healthy confident smiles for <strong>every patient.</strong>
-          </div>
-          <img src="assets/glamm/chair.jpg" alt="Modern Clinic Operatory" class="manifesto-chair-img">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         4. FEATURED TREATMENT & DOCTOR TELE-CONSULT
-         ========================================= -->
-    <section class="featured-section" id="services">
-      <div class="section-head">
-        <div class="pill-tag" style="margin-bottom: 8px;">Feature Treatment</div>
-        <h2>Advanced Dental Care for a Healthier Smile</h2>
-        <p style="color: var(--muted); font-size: 15px; margin-top: 6px;">Join hundreds of patients achieving healthier, brighter smiles through expert dental care and personalized treatments.</p>
-      </div>
-
-      <div class="featured-grid">
-
-        <!-- Left Doctor Tele-Consult Card (Dentora Style) -->
-        <div class="doctor-tele-card">
-          <div>
-            <div class="tele-top">
-              <img src="assets/glamm/dr_sonam.png" alt="Dr. Sonam Gupta" class="tele-doc-img">
-              <div class="tele-doc-info">
-                <h3>Dr. Sonam Gupta</h3>
-                <p>Lead Dental Specialist & Prosthodontist (MDS)</p>
-                <div class="tele-rating">★ 4.9 [180+ Reviews]</div>
-              </div>
-            </div>
-            <div class="tele-body-text">
-              Specializing in full mouth rehabilitation, painless dental implants, and porcelain smile designs. Book direct consultation with Dr. Sonam at our Janakpuri clinic.
-            </div>
-          </div>
-          <button class="btn-tele-book" onclick="openModal('Dr. Sonam Consultation')">
-            Book Appointment ➔
-          </button>
-        </div>
-
-        <!-- Right Clinic Diagnostics Card -->
-        <div class="clinic-stats-card">
-          <img src="assets/glamm/clinic.jpg" alt="Clinic Interior Janakpuri" class="clinic-chair-photo">
-          <div class="diagnostics-panel">
-            <div class="diag-item">
-              <h4>Recommended Checkups</h4>
-              <div class="diag-val">2 <span style="font-size: 14px; font-weight: 500; color: var(--muted);">/ Year</span></div>
-            </div>
-            <div class="diag-item">
-              <h4>Average Treatment Time</h4>
-              <div class="diag-val">40 <span style="font-size: 14px; font-weight: 500; color: var(--muted);">Mins</span></div>
-            </div>
-            <div class="progress-track">
-              <span>Today's Appointment Capacity: 85% Booked</span>
-              <div class="bars-row">
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg"></div>
-                <div class="bar-seg dim"></div>
-                <div class="bar-seg dim"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         5. BENTO GRID (Why Choose Precision Dental?)
-         ========================================= -->
-    <section class="bento-section">
-      <div class="bento-head">
-        <h2>Why Choose Precision Dental?</h2>
-        <div class="nav-arrows">
-          <div class="arrow-btn">←</div>
-          <div class="arrow-btn active">→</div>
-        </div>
-      </div>
-
-      <div class="bento-grid">
-        
-        <div class="bento-card white">
-          <div>
-            <div class="pill-tag" style="margin-bottom: 14px;">Complete Oral Care</div>
-            <h3 style="font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 8px;">Painless Dental Implants & RCT</h3>
-            <p style="font-size: 13.5px; color: var(--muted); line-height: 1.5;">Computer-guided surgical stents ensuring zero bleeding, rapid healing, and lifetime stability.</p>
-          </div>
-          <div style="font-size: 13px; font-weight: 700; color: var(--cyan); margin-top: 20px; cursor: pointer;" onclick="openModal('Implants')">
-            Explore Implant Options ➔
-          </div>
-        </div>
-
-        <div class="bento-card teal">
-          <div>
-            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; margin-bottom: 12px;">🌟 Rewards & Festive Care</div>
-            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 10px;">Smile Design Starting @ ₹6,999 Only</h3>
-            <p style="font-size: 14px; opacity: 0.95; line-height: 1.5;">Maintain your preventive care streak and unlock exclusive whitening and cosmetic smile makeover pricing.</p>
-          </div>
-          <button class="btn-nav-call" style="margin-top: 24px; width: fit-content;" onclick="openModal('Festive Smile Package')">
-            Claim Festive Offer ➔
-          </button>
-        </div>
-
-        <div class="bento-card img-card">
-          <img src="assets/glamm/happy.jpg" alt="Patient Smile">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================
-         6. TESTIMONIAL QUOTE BOX
-         ========================================= -->
-    <div class="quote-box" id="testimonials">
-      <div class="quote-mark">“</div>
-      <div class="quote-body">
-        <p>
-          We deliver personalized dental treatments with <strong>modern technology and gentle care</strong> ensuring healthy confident smiles for <strong>every patient.</strong>
-        </p>
-        <div class="quote-author">
-          Ananya Verma • <span>Janakpuri Resident (Smile Design Patient)</span>
-        </div>
-      </div>
-      <img src="assets/glamm/patient.jpg" alt="Patient Ananya" class="quote-avatar">
-    </div>
-
-    <!-- Footer -->
-    <footer style="margin-top: 60px; padding: 40px 0; border-top: 1px solid #E2E8F0; text-align: center; color: var(--muted); font-size: 13px;">
-      <p>© 2026 Glamm Dental Clinic. All Rights Reserved. Led by Dr. Sonam Gupta (MDS Prosthodontist).</p>
-      <p style="margin-top: 6px;">B1-135, Janakpuri, New Delhi • WhatsApp: +91 92204 60959</p>
-    </footer>
-
   </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <a href="#" class="brand-logo">
+        <img src="assets/glamm/logo.webp" alt="Glamm Dental Clinic Logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#doctor">Dr. Sonam Gupta</a></li>
+        <li><a href="#clinic">The Clinic</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:+919220460959" class="btn-phone">📞 92204 60959</a>
+        <button class="btn-primary" onclick="openModal('Consultation')">Book Appointment</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>FESTIVE CAMPAIGN</span> Smile Design Treatment Starting @ ₹6,999 Only
+          </div>
+          <h1>World-Class Dentistry, <em>Crafted For Your Confidence.</em></h1>
+          <p>
+            Experience hospital-grade clinical precision with bespoke aesthetic smile transformations. Led by Dr. Sonam Gupta (MDS Prosthodontist), bringing over 12 years of specialized care to Janakpuri, New Delhi.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn-primary" style="padding: 14px 28px; font-size: 15px;" onclick="openModal('Smile Design')">
+              Book Priority Consultation ➔
+            </button>
+            <a href="https://wa.me/919220460959?text=Hello%20Dr.%20Sonam,%20I%20would%20like%20to%20inquire%20about%20Smile%20Design%20at%20Glamm%20Dental." class="btn-wa-solid">
+              💬 Direct WhatsApp With Doctor
+            </a>
+          </div>
+        </div>
+
+        <!-- Doctor Glass Spotlight Card -->
+        <div class="doctor-spotlight" id="doctor">
+          <div class="doctor-img-wrap">
+            <img src="assets/glamm/dr_sonam.png" alt="Dr. Sonam Gupta (MDS) Glamm Dental">
+          </div>
+          <h2 class="doctor-name">Dr. Sonam Gupta</h2>
+          <div class="doctor-qual">BDS, MDS • Prosthodontist & Implantologist</div>
+          <p class="doctor-bio">
+            Senior Prosthodontist specializing in painless dental implants, full-mouth reconstructions, and celebrity porcelain smile makeovers.
+          </p>
+          <div class="doctor-badges">
+            <span class="doc-badge">🏆 12+ Yrs Experience</span>
+            <span class="doc-badge">✨ 5,000+ Smiles</span>
+            <span class="doc-badge">🛡️ German Implant Certified</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats Strip -->
+  <div class="container">
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">5,000<span>+</span></div>
+        <div class="stat-label">Successful Smile Restorations</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100<span>%</span></div>
+        <div class="stat-label">Computer-Guided Painless Care</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4.9<span>★</span></div>
+        <div class="stat-label">Patient Satisfaction Rating</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0<span>%</span></div>
+        <div class="stat-label">Easy Monthly EMI Options</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Brand Certifications -->
+  <div class="container">
+    <div class="partners-section">
+      <div class="partners-label">Certified Clinical Materials & Global Technology Partners</div>
+      <div class="partners-row">
+        <img src="assets/glamm/invisalign.webp" alt="Invisalign Certified Provider">
+        <img src="assets/glamm/straumann.webp" alt="Straumann Swiss Implants">
+        <img src="assets/glamm/nobel.webp" alt="Nobel Biocare Sweden">
+        <img src="assets/glamm/3m.jpg" alt="3M Oral Care Solutions">
+      </div>
+    </div>
+  </div>
+
+  <!-- Treatments Grid -->
+  <section class="container" id="treatments" style="margin-bottom: 80px;">
+    <div class="section-header">
+      <div class="section-tag">Clinical Excellence</div>
+      <h2 class="section-title">Specialized Treatments</h2>
+      <p class="section-desc">Every treatment plan is customized using digital 3D scans, hospital sterilization, and lifetime material warranties.</p>
+    </div>
+
+    <div class="treatments-grid">
+
+      <!-- Card 1: Smile Design -->
+      <div class="treatment-card">
+        <div class="card-badge">FESTIVE OFFER STARTING @ ₹6,999</div>
+        <h3 class="treatment-name">Digital Smile Design</h3>
+        <p class="treatment-desc">
+          Ultra-thin porcelain veneers crafted to eliminate gaps, correct discoloration, and restore a naturally radiant, Hollywood-grade smile.
+        </p>
+        <ul class="specs-list">
+          <li>Zero enamel damage & painless fitting</li>
+          <li>Custom shade matching in 2 visits</li>
+          <li>10-Year warranty on E-Max porcelain</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Digital Smile Design')">Inquire Smile Package ➔</button>
+      </div>
+
+      <!-- Card 2: Painless Dental Implants -->
+      <div class="treatment-card">
+        <div class="card-badge">LIFETIME STABILITY</div>
+        <h3 class="treatment-name">Painless Dental Implants</h3>
+        <p class="treatment-desc">
+          Permanent titanium & zirconia tooth replacement with German precision. Eat your favorite foods with 100% natural bite force.
+        </p>
+        <ul class="specs-list">
+          <li>Same-day immediate loading options</li>
+          <li>Computer-guided flapless surgery</li>
+          <li>0% Easy Monthly EMI options</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Dental Implants')">Book Implant Evaluation ➔</button>
+      </div>
+
+      <!-- Card 3: Invisible Aligners -->
+      <div class="treatment-card">
+        <div class="card-badge">NO METAL BRACES</div>
+        <h3 class="treatment-name">Clear Invisible Aligners</h3>
+        <p class="treatment-desc">
+          Straighten misaligned teeth discreetly with custom 3D digital clear trays. Remove them when eating with zero food restrictions.
+        </p>
+        <ul class="specs-list">
+          <li>3D digital smile simulation before starting</li>
+          <li>Virtually invisible to colleagues and friends</li>
+          <li>Faster results than traditional braces</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Invisible Aligners')">Get 3D Scan Slot ➔</button>
+      </div>
+
+      <!-- Card 4: Laser Teeth Whitening -->
+      <div class="treatment-card">
+        <div class="card-badge">SINGLE SITTING • 45 MINS</div>
+        <h3 class="treatment-name">Laser Teeth Whitening</h3>
+        <p class="treatment-desc">
+          Professional cool-light laser technology that lifts stubborn stains from coffee, tea, and smoking safely without enamel sensitivity.
+        </p>
+        <ul class="specs-list">
+          <li>Up to 8 shades lighter in 45 minutes</li>
+          <li>Enamel-safe pH balanced formulation</li>
+          <li>Long-lasting instant results</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Laser Whitening')">Book Whitening Session ➔</button>
+      </div>
+
+      <!-- Card 5: Single Sitting RCT -->
+      <div class="treatment-card">
+        <div class="card-badge">MICROSCOPIC PRECISION</div>
+        <h3 class="treatment-name">Single-Sitting Rotary RCT</h3>
+        <p class="treatment-desc">
+          Pain-free root canal treatment completed in a single comfortable 45-minute sitting using rotary endodontics and apex locators.
+        </p>
+        <ul class="specs-list">
+          <li>100% painless computerized anesthesia</li>
+          <li>Saves natural infected tooth permanently</li>
+          <li>Includes digital X-ray diagnostics</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Root Canal RCT')">Book Pain Relief ➔</button>
+      </div>
+
+      <!-- Card 6: Pediatric & Preventive -->
+      <div class="treatment-card">
+        <div class="card-badge">FAMILY DENTISTRY</div>
+        <h3 class="treatment-name">Complete Preventive Care</h3>
+        <p class="treatment-desc">
+          Comprehensive oral health screenings, ultrasonic scaling, fluoride treatments, and gentle pediatric dentistry for children.
+        </p>
+        <ul class="specs-list">
+          <li>Child-friendly, calm environment</li>
+          <li>Ultrasonic stain & plaque removal</li>
+          <li>Preventive cavity sealing</li>
+        </ul>
+        <button class="btn-card" onclick="openModal('Preventive Checkup')">Schedule Family Visit ➔</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clinic Experience Showcase -->
+  <div class="container" id="clinic">
+    <div class="clinic-showcase">
+      <div class="clinic-grid">
+        <div class="clinic-text">
+          <div class="hero-pill" style="background: rgba(255,255,255,0.1); color: #E0F2FE; border-color: rgba(255,255,255,0.2);">
+            JANAKPURI CLINIC TOUR
+          </div>
+          <h3>Hospital-Grade Hygiene Meets Boutique Comfort</h3>
+          <p>
+            We adhere to strict 7-tier sterilization protocols, Autoclave Class B standards, and HEPA air purification so every visit feels as safe as it is relaxing.
+          </p>
+          <div class="clinic-features">
+            <div class="feat-item">
+              <h5>Class B Autoclave</h5>
+              <p>100% sterile packaged instruments</p>
+            </div>
+            <div class="feat-item">
+              <h5>Digital RVG X-Rays</h5>
+              <p>90% less radiation exposure</p>
+            </div>
+            <div class="feat-item">
+              <h5>Private Operatories</h5>
+              <p>Calm, sound-damped treatment suites</p>
+            </div>
+            <div class="feat-item">
+              <h5>Emergency Dental Care</h5>
+              <p>Same-day priority pain management</p>
+            </div>
+          </div>
+          <button class="btn-primary" style="background: white; color: var(--dark);" onclick="openModal('Clinic Consultation')">
+            Book In-Clinic Appointment ➔
+          </button>
+        </div>
+        <div class="clinic-img-card">
+          <img src="assets/glamm/clinic.jpg" alt="Glamm Dental Clinic Operatory Janakpuri">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location Section -->
+  <div class="container" id="location">
+    <div class="location-section">
+      <div class="location-grid">
+        <div class="location-details">
+          <h4>Visit Glamm Dental Janakpuri</h4>
+          <div class="address-box">
+            <p>
+              <strong>Upper Ground Floor, B1-135, Block B1, Janakpuri, New Delhi, Delhi 110058</strong><br>
+              Walking distance from Janakpuri West Metro Station (Blue & Magenta lines).
+            </p>
+          </div>
+          <div class="timing-row">
+            <div class="timing-item">
+              <strong>Monday – Saturday</strong>
+              9:30 AM – 8:30 PM
+            </div>
+            <div class="timing-item">
+              <strong>Sunday (By Appointment)</strong>
+              10:00 AM – 6:00 PM
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Glamm+Dental+B1-135+Janakpuri+New+Delhi" target="_blank" class="btn-phone" style="display: inline-flex;">
+            🗺️ Open Google Maps Directions ➔
+          </a>
+        </div>
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border);">
+          <img src="assets/glamm/dr_sonam_portrait.jpg" alt="Dr Sonam Gupta Glamm Dental" style="width: 100%; height: 260px; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Glamm Dental. All Rights Reserved. Led by Dr. Sonam Gupta (MDS Prosthodontist).</p>
+      <p style="margin-top: 6px; font-size: 11.5px; color: #94A3B8;">Janakpuri, New Delhi • Contact: +91 92204 60959</p>
+    </div>
+  </footer>
 
   <!-- Appointment Modal -->
   <div class="modal-overlay" id="inquiryModal">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-head">
+      <div class="modal-header">
         <h3>Book Priority Consultation</h3>
-        <p>Direct priority scheduling at Glamm Dental Janakpuri</p>
+        <p>Direct scheduling with Dr. Sonam Gupta at Glamm Dental</p>
       </div>
 
       <form id="appointmentForm" onsubmit="submitAppointment(event)">
         <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" id="patientName" placeholder="e.g. Rahul Sharma" required>
+          <label>Full Name</label>
+          <input type="text" id="patientName" placeholder="e.g. Ananya Sharma" required>
         </div>
         <div class="form-group">
           <label>WhatsApp / Phone Number</label>
           <input type="tel" id="patientPhone" placeholder="e.g. 98111 XXXXX" required>
         </div>
         <div class="form-group">
-          <label>Treatment Interested In</label>
+          <label>Select Treatment</label>
           <select id="treatmentSelect">
             <option value="Smile Design (Veneers) - ₹6,999 Festive Offer">Smile Design (Veneers) - ₹6,999 Festive Offer</option>
             <option value="Painless Dental Implants">Painless Dental Implants</option>
@@ -1073,7 +1100,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Preferred Time Slot</label>
+          <label>Preferred Consultation Slot</label>
           <select id="timeSlot">
             <option value="Today (Priority Slot)">Today (Priority Slot)</option>
             <option value="Tomorrow Morning (10:00 AM - 1:00 PM)">Tomorrow Morning (10:00 AM - 1:00 PM)</option>
@@ -1107,6 +1134,7 @@
       document.getElementById('inquiryModal').style.display = 'none';
     }
 
+    // Close modal when clicking outside
     document.getElementById('inquiryModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
@@ -1118,7 +1146,7 @@
       const treatment = document.getElementById('treatmentSelect').value;
       const slot = document.getElementById('timeSlot').value;
 
-      const text = `Hello Dr. Sonam Gupta / Glamm Dental,%0A%0AI would like to book an appointment from your website:%0A- *Patient Name:* ${encodeURIComponent(name)}%0A- *Contact:* ${encodeURIComponent(phone)}%0A- *Treatment:* ${encodeURIComponent(treatment)}%0A- *Preferred Slot:* ${encodeURIComponent(slot)}%0A%0APlease confirm availability.`;
+      const text = `Hello Dr. Sonam Gupta / Glamm Dental,%0A%0AI would like to book a priority consultation from your clinic portal:%0A- *Patient Name:* ${encodeURIComponent(name)}%0A- *Contact:* ${encodeURIComponent(phone)}%0A- *Treatment:* ${encodeURIComponent(treatment)}%0A- *Preferred Slot:* ${encodeURIComponent(slot)}%0A%0APlease confirm appointment availability.`;
 
       window.location.href = `https://wa.me/919220460959?text=${text}`;
     }

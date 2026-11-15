@@ -10,20 +10,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #F8FAFC;
-      --card-bg: rgba(255, 255, 255, 0.85);
-      --card-border: rgba(226, 232, 240, 0.9);
-      --glass-glow: rgba(2, 132, 199, 0.08);
-      --primary: #0284C7;
-      --primary-dark: #0369A1;
-      --primary-deep: #0C4A6E;
-      --dark: #0F172A;
-      --slate: #334155;
-      --muted: #64748B;
+      /* Dentora Inspired Premium Architectural Palette */
+      --canvas-bg: #EFF2F5;
+      --card-white: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-card: rgba(226, 232, 240, 0.85);
+
+      /* Deep Petrol Slate / Medical Navy */
+      --petrol-hero: #112027;
+      --petrol-card: #182C35;
+      --petrol-dark: #0D191E;
+      --petrol-light: #24414E;
+      --teal-accent: #4FA2B0;
+      --teal-mist: #D7E8EC;
+
+      /* Vibrant Coral / Terracotta (Dentora Signature Highlight) */
+      --coral-accent: #F5795F;
+      --coral-hover: #E8674D;
+      --coral-light: #FDEEEB;
+      --coral-deep: #C94C32;
+
+      /* Warm Sandstone / Almond Silk */
+      --sand-card: #EAE3DA;
+      --sand-text: #3D2D24;
+      --sand-sub: #786457;
+
+      /* Neutral Text Hierarchy */
+      --text-dark: #0F1C21;
+      --text-slate: #3B4B52;
+      --text-muted: #6B7C85;
       --gold: #D97706;
       --gold-light: #FEF3C7;
-      --wa: #25D366;
-      --radius: 18px;
+      --wa-green: #25D366;
+
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --radius-xl: 32px;
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -31,39 +54,40 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--slate);
+      background-color: var(--canvas-bg);
+      color: var(--text-slate);
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      padding-bottom: 40px;
     }
 
-    /* Ambient Fluid Glows */
+    /* Ambient Subtle Liquid Lighting */
     .ambient-glow-1 {
       position: fixed;
-      top: -10%;
-      right: -5%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, rgba(248, 250, 252, 0) 70%);
+      top: -12%;
+      right: -8%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(79, 162, 176, 0.12) 0%, rgba(239, 242, 245, 0) 70%);
       pointer-events: none;
       z-index: 0;
     }
     .ambient-glow-2 {
       position: fixed;
-      bottom: 10%;
+      bottom: 15%;
       left: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(245, 121, 95, 0.08) 0%, rgba(239, 242, 245, 0) 70%);
       pointer-events: none;
       z-index: 0;
     }
 
-    .container {
-      max-width: 1200px;
+    .main-wrapper {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 16px 20px;
       position: relative;
       z-index: 1;
     }
@@ -71,182 +95,221 @@
     /* Top Strip */
     .top-strip {
       background: #FFFFFF;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-      font-size: 12px;
-      color: var(--muted);
-      padding: 8px 0;
-    }
-    .top-strip .container {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      padding: 10px 20px;
+      margin-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
     .top-strip a {
-      color: var(--slate);
+      color: var(--text-slate);
       text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
+      font-weight: 600;
     }
-    .top-strip a:hover { color: var(--primary); }
     .badge-google {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      color: var(--dark);
+      gap: 6px;
+      color: var(--text-dark);
       font-weight: 600;
     }
     .badge-google span { color: #F59E0B; }
 
-    /* Navigation */
-    nav {
-      background: rgba(255, 255, 255, 0.85);
+    /* Floating Pill Navbar */
+    nav.dentora-nav {
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--card-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: var(--transition);
-    }
-    nav .container {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 76px;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
+      position: sticky;
+      top: 14px;
+      z-index: 100;
+      box-shadow: 0 10px 30px rgba(15, 28, 33, 0.04);
+      margin-bottom: 18px;
     }
     .brand-logo img {
-      height: 48px;
+      height: 44px;
       width: auto;
       object-fit: contain;
+      display: block;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
       list-style: none;
     }
     .nav-links a {
-      color: var(--slate);
+      color: var(--text-slate);
       text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
       transition: var(--transition);
     }
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover { color: var(--coral-accent); }
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .btn-phone {
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: rgba(2, 132, 199, 0.08);
-      color: var(--primary-dark);
+    .btn-phone-pill {
+      padding: 9px 18px;
+      border-radius: 100px;
+      background: var(--teal-mist);
+      color: var(--petrol-hero);
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      border: 1px solid rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(79, 162, 176, 0.3);
       transition: var(--transition);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-    .btn-phone:hover {
-      background: rgba(2, 132, 199, 0.15);
+    .btn-phone-pill:hover {
+      background: #C4E0E6;
     }
-    .btn-primary {
-      padding: 12px 24px;
-      border-radius: 12px;
-      background: var(--dark);
+    .btn-coral-nav {
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: var(--coral-accent);
       color: #FFFFFF;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13.5px;
+      font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
-      transition: var(--transition);
       border: none;
       cursor: pointer;
+      box-shadow: 0 4px 16px rgba(245, 121, 95, 0.3);
+      transition: var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
-    .btn-primary:hover {
-      background: var(--primary-deep);
+    .btn-coral-nav:hover {
+      background: var(--coral-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(12, 74, 110, 0.25);
+      box-shadow: 0 6px 20px rgba(245, 121, 95, 0.4);
     }
 
-    /* Hero Section */
-    .hero-section {
-      padding: 60px 0 70px;
+    /* =========================================
+       HERO FRAME (Dentora Petrol Cinematic)
+       ========================================= */
+    .hero-frame {
+      background: radial-gradient(130% 120% at 75% 20%, #25404A 0%, #172B32 50%, #0F1C21 100%);
+      border-radius: var(--radius-xl);
+      padding: 56px 52px;
+      color: #FFFFFF;
+      box-shadow: 0 24px 60px rgba(15, 28, 33, 0.15);
       position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .hero-glow-orb {
+      position: absolute;
+      top: 10%;
+      right: 15%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(79, 162, 176, 0.25) 0%, rgba(23, 43, 50, 0) 70%);
+      pointer-events: none;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 48px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
-    .hero-pill {
+    .hero-campaign-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #FFFFFF;
-      border: 1px solid rgba(2, 132, 199, 0.2);
-      padding: 6px 16px;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 7px 18px;
       border-radius: 100px;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--primary-dark);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      color: #E3EBED;
       margin-bottom: 24px;
     }
-    .hero-pill span {
-      background: var(--gold);
-      color: white;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 8px;
+    .hero-campaign-pill .tag {
+      background: var(--coral-accent);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
       border-radius: 50px;
       letter-spacing: 0.5px;
     }
-    .hero-content h1 {
+    .hero-frame h1 {
       font-family: 'Playfair Display', serif;
       font-size: 52px;
       line-height: 1.15;
-      color: var(--dark);
+      color: #FFFFFF;
       letter-spacing: -0.02em;
       margin-bottom: 20px;
     }
-    .hero-content h1 em {
+    .hero-frame h1 em {
       font-style: italic;
-      color: var(--primary);
+      color: var(--teal-accent);
       font-weight: 600;
     }
-    .hero-content p {
+    .hero-frame p.hero-lead {
       font-size: 16.5px;
-      color: var(--slate);
-      line-height: 1.6;
-      margin-bottom: 32px;
+      color: #B4CCD2;
+      line-height: 1.65;
+      margin-bottom: 36px;
       max-width: 540px;
     }
     .hero-cta-group {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
-    .btn-wa-solid {
-      background: #15803D;
-      color: white;
+    .btn-coral-hero {
+      background: var(--coral-accent);
+      color: #FFFFFF;
+      padding: 15px 32px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(245, 121, 95, 0.35);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-coral-hero:hover {
+      background: var(--coral-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(245, 121, 95, 0.45);
+    }
+    .btn-wa-glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
       padding: 14px 26px;
-      border-radius: 12px;
+      border-radius: 100px;
       font-size: 14.5px;
       font-weight: 600;
       text-decoration: none;
@@ -254,218 +317,412 @@
       align-items: center;
       gap: 8px;
       transition: var(--transition);
-      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.2);
     }
-    .btn-wa-solid:hover {
-      background: #166534;
+    .btn-wa-glass:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.4);
       transform: translateY(-2px);
     }
-
-    /* Doctor Spotlight Card (Glass) */
-    .doctor-spotlight {
-      background: var(--card-bg);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--card-border);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
-      position: relative;
-      overflow: hidden;
+    .doctor-spotlight-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 32px;
       text-align: center;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
-    .doctor-img-wrap {
-      width: 220px;
-      height: 220px;
+    .doc-portrait-wrap {
+      width: 210px;
+      height: 210px;
       margin: 0 auto 20px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.1), rgba(217, 119, 6, 0.1));
-      padding: 8px;
+      background: radial-gradient(circle, rgba(79, 162, 176, 0.4) 0%, rgba(245, 121, 95, 0.2) 100%);
+      padding: 6px;
       position: relative;
     }
-    .doctor-img-wrap img {
+    .doc-portrait-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
       border-radius: 50%;
       background: #FFFFFF;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      display: block;
     }
-    .doctor-name {
-      font-size: 21px;
+    .doc-name {
+      font-size: 22px;
       font-weight: 700;
-      color: var(--dark);
+      color: #FFFFFF;
       margin-bottom: 4px;
     }
-    .doctor-qual {
+    .doc-spec {
       font-size: 13px;
-      color: var(--primary-dark);
-      font-weight: 600;
+      color: var(--teal-accent);
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin-bottom: 12px;
     }
-    .doctor-bio {
+    .doc-summary {
       font-size: 13.5px;
-      color: var(--slate);
+      color: #B4CCD2;
       line-height: 1.5;
       margin-bottom: 20px;
     }
-    .doctor-badges {
+    .doc-pill-tags {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
-    .doc-badge {
-      background: #FFFFFF;
-      border: 1px solid var(--card-border);
-      font-size: 11.5px;
+    .doc-pill-tags span {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #E3EBED;
+      font-size: 12px;
       font-weight: 600;
-      color: var(--slate);
       padding: 5px 12px;
-      border-radius: 100px;
+      border-radius: 50px;
     }
 
-    /* Trust Stats Strip */
-    .stats-container {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 28px 40px;
+    /* =========================================
+       SIGNATURE DENTORA COLOR-BLOCK BENTO GRID
+       ========================================= */
+    .bento-section {
+      margin-bottom: 36px;
+    }
+    .bento-grid-4 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-bottom: 70px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      grid-template-columns: 1.25fr 1fr 1fr 1fr;
+      gap: 18px;
     }
-    .stat-box {
-      text-align: center;
-      border-right: 1px solid rgba(226, 232, 240, 0.8);
+    
+    /* Bento Card 1: Signature Coral (Active Festive Offer) */
+    .bento-card-coral {
+      background: linear-gradient(135deg, #F5795F 0%, #EA654B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 32px rgba(245, 121, 95, 0.25);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
     }
-    .stat-box:last-child { border-right: none; }
-    .stat-number {
-      font-size: 32px;
+    .bento-card-coral:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(245, 121, 95, 0.35);
+    }
+    .bento-tag-coral {
+      align-self: flex-start;
+      background: #FFFFFF;
+      color: var(--coral-deep);
+      font-size: 11px;
       font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
     }
-    .stat-number span { color: var(--primary); }
-    .stat-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-top: 4px;
+    .bento-card-coral h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+    .bento-card-coral p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 22px;
+    }
+    .btn-bento-coral {
+      background: #FFFFFF;
+      color: var(--coral-deep);
+      border: none;
+      padding: 11px 20px;
+      border-radius: 100px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      width: fit-content;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-bento-coral:hover {
+      background: var(--sand-card);
+      transform: translateX(3px);
     }
 
-    /* Brand Certifications Bar */
-    .partners-section {
+    /* Bento Card 2: Deep Petrol Slate (Clinical Leadership) */
+    .bento-card-petrol {
+      background: var(--petrol-card);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(15, 28, 33, 0.1);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .bento-card-petrol:hover {
+      transform: translateY(-4px);
+    }
+    .bento-tag-petrol {
+      align-self: flex-start;
+      background: rgba(79, 162, 176, 0.2);
+      color: var(--teal-mist);
+      border: 1px solid rgba(79, 162, 176, 0.3);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .bento-card-petrol h4 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+    .bento-card-petrol p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #B4CCD2;
+      margin-bottom: 18px;
+    }
+    .bento-stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--teal-accent);
+      margin-top: auto;
+    }
+    .bento-stat-label {
+      font-size: 12px;
+      color: #8CAAB2;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Bento Card 3: Warm Sandstone / Silk (Swiss Implants) */
+    .bento-card-sand {
+      background: var(--sand-card);
+      color: var(--sand-text);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(61, 45, 36, 0.06);
+      transition: var(--transition);
+    }
+    .bento-card-sand:hover {
+      transform: translateY(-4px);
+    }
+    .bento-tag-sand {
+      align-self: flex-start;
+      background: #FFFFFF;
+      color: var(--sand-text);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .bento-card-sand h4 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: var(--sand-text);
+    }
+    .bento-card-sand p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--sand-sub);
+      margin-bottom: 18px;
+    }
+    .bento-sand-footer {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sand-text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    /* Bento Card 4: Crisp White Glass (Patient Trust) */
+    .bento-card-white {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transition: var(--transition);
+    }
+    .bento-card-white:hover {
+      transform: translateY(-4px);
+    }
+    .bento-tag-white {
+      align-self: flex-start;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .bento-card-white h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .bento-card-white p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .rating-stars { color: #F59E0B; font-size: 16px; }
+    .rating-val { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+
+    /* Partners Row */
+    .partners-panel {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px 32px;
+      margin-bottom: 36px;
       text-align: center;
-      margin-bottom: 80px;
     }
     .partners-label {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1.2px;
-      color: var(--muted);
       font-weight: 700;
-      margin-bottom: 24px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
     }
-    .partners-row {
+    .partners-logos {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 40px;
+      gap: 48px;
       flex-wrap: wrap;
-      opacity: 0.85;
     }
-    .partners-row img {
+    .partners-logos img {
       height: 32px;
       width: auto;
       object-fit: contain;
       filter: grayscale(100%);
+      opacity: 0.65;
       transition: var(--transition);
     }
-    .partners-row img:hover {
+    .partners-logos img:hover {
       filter: grayscale(0%);
       opacity: 1;
-      transform: scale(1.05);
     }
 
-    /* Treatments Section */
-    .section-header {
+    /* =========================================
+       TREATMENTS SECTION
+       ========================================= */
+    .section-head {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 48px;
+      max-width: 640px;
+      margin: 0 auto 36px;
     }
     .section-tag {
-      font-size: 12px;
+      display: inline-block;
+      font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      color: var(--primary-dark);
-      font-weight: 700;
+      color: var(--coral-accent);
+      font-weight: 800;
       margin-bottom: 8px;
     }
-    .section-title {
+    .section-head h2 {
       font-family: 'Playfair Display', serif;
       font-size: 38px;
-      color: var(--dark);
+      color: var(--text-dark);
       letter-spacing: -0.02em;
       line-height: 1.2;
       margin-bottom: 12px;
     }
-    .section-desc {
-      font-size: 15.5px;
-      color: var(--muted);
+    .section-head p {
+      font-size: 15px;
+      color: var(--text-muted);
     }
 
     .treatments-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 80px;
+      gap: 24px;
+      margin-bottom: 48px;
     }
     .treatment-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 30px 26px;
       transition: var(--transition);
       display: flex;
       flex-direction: column;
-      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     }
     .treatment-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(2, 132, 199, 0.4);
-      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.08);
+      border-color: rgba(79, 162, 176, 0.4);
+      box-shadow: 0 16px 36px rgba(15, 28, 33, 0.08);
     }
     .card-badge {
       display: inline-block;
       align-self: flex-start;
-      background: var(--gold-light);
-      color: var(--gold);
-      font-size: 11.5px;
-      font-weight: 700;
+      background: var(--teal-mist);
+      color: var(--petrol-hero);
+      font-size: 11px;
+      font-weight: 800;
       padding: 4px 10px;
       border-radius: 6px;
       margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .treatment-card.featured-offer .card-badge {
+      background: var(--coral-light);
+      color: var(--coral-deep);
     }
     .treatment-name {
       font-size: 20px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--text-dark);
       margin-bottom: 10px;
     }
     .treatment-desc {
-      font-size: 14px;
-      color: var(--slate);
+      font-size: 13.5px;
+      color: var(--text-slate);
       line-height: 1.6;
       margin-bottom: 20px;
       flex-grow: 1;
@@ -476,7 +733,7 @@
     }
     .specs-list li {
       font-size: 13px;
-      color: var(--slate);
+      color: var(--text-slate);
       margin-bottom: 8px;
       display: flex;
       align-items: center;
@@ -484,18 +741,18 @@
     }
     .specs-list li::before {
       content: "✓";
-      color: var(--primary);
+      color: var(--coral-accent);
       font-weight: 800;
     }
-    .btn-card {
+    .btn-treatment-card {
       width: 100%;
       padding: 12px;
-      border-radius: 10px;
-      background: #FFFFFF;
-      color: var(--dark);
+      border-radius: 100px;
+      background: var(--canvas-bg);
+      color: var(--text-dark);
       font-size: 13.5px;
-      font-weight: 600;
-      border: 1px solid var(--card-border);
+      font-weight: 700;
+      border: 1px solid var(--border-subtle);
       cursor: pointer;
       transition: var(--transition);
       display: flex;
@@ -503,21 +760,22 @@
       justify-content: center;
       gap: 6px;
     }
-    .treatment-card:hover .btn-card {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+    .treatment-card:hover .btn-treatment-card {
+      background: var(--petrol-hero);
+      color: #FFFFFF;
+      border-color: var(--petrol-hero);
     }
 
-    /* Clinic Experience Showcase */
-    .clinic-showcase {
-      background: #0F172A;
+    /* =========================================
+       CLINIC SHOWCASE (Hospital Grade Hygiene)
+       ========================================= */
+    .clinic-showcase-frame {
+      background: var(--petrol-hero);
       color: #FFFFFF;
-      border-radius: 28px;
+      border-radius: var(--radius-xl);
       padding: 56px 48px;
-      margin-bottom: 80px;
-      position: relative;
-      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 50px rgba(15, 28, 33, 0.15);
     }
     .clinic-grid {
       display: grid;
@@ -528,62 +786,66 @@
     .clinic-text h3 {
       font-family: 'Playfair Display', serif;
       font-size: 34px;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 16px;
-      color: #F8FAFC;
+      color: #FFFFFF;
     }
     .clinic-text p {
       font-size: 15px;
-      color: #94A3B8;
-      line-height: 1.6;
+      color: #B4CCD2;
+      line-height: 1.65;
       margin-bottom: 28px;
     }
-    .clinic-features {
+    .clinic-features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
       margin-bottom: 32px;
     }
-    .feat-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .feat-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 14px 18px;
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
     }
-    .feat-item h5 {
+    .feat-box h5 {
       font-size: 14px;
-      color: #F8FAFC;
+      color: #FFFFFF;
       margin-bottom: 4px;
+      font-weight: 700;
     }
-    .feat-item p {
+    .feat-box p {
       font-size: 12px;
-      color: #94A3B8;
+      color: #8CAAB2;
       margin-bottom: 0;
+      line-height: 1.4;
     }
-    .clinic-img-card {
-      border-radius: 20px;
+    .clinic-photo-card {
+      border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
-    .clinic-img-card img {
+    .clinic-photo-card img {
       width: 100%;
       height: 380px;
       object-fit: cover;
       display: block;
       transition: var(--transition);
     }
-    .clinic-img-card:hover img {
-      transform: scale(1.03);
+    .clinic-photo-card:hover img {
+      transform: scale(1.02);
     }
 
-    /* Location & Map Section */
-    .location-section {
+    /* =========================================
+       LOCATION & MAP SECTION
+       ========================================= */
+    .location-card {
       background: #FFFFFF;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
       padding: 40px;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
     .location-grid {
@@ -593,56 +855,61 @@
       align-items: center;
     }
     .location-details h4 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--text-dark);
       margin-bottom: 12px;
     }
-    .address-box {
-      background: #F8FAFC;
-      border-left: 4px solid var(--primary);
+    .address-highlight {
+      background: var(--canvas-bg);
+      border-left: 4px solid var(--coral-accent);
       padding: 16px 20px;
       border-radius: 0 12px 12px 0;
       margin-bottom: 20px;
     }
-    .address-box p {
-      font-size: 14.5px;
-      color: var(--slate);
+    .address-highlight p {
+      font-size: 14px;
+      color: var(--text-slate);
       line-height: 1.6;
       margin-bottom: 0;
     }
     .timing-row {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       margin-bottom: 24px;
     }
     .timing-item {
-      font-size: 13.5px;
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--text-muted);
     }
     .timing-item strong {
-      color: var(--dark);
+      color: var(--text-dark);
       display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
     }
 
     /* Footer */
-    footer {
+    footer.dentora-footer {
       background: #FFFFFF;
-      border-top: 1px solid var(--card-border);
-      padding: 36px 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
       text-align: center;
       font-size: 13px;
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
-    /* Appointment Modal */
+    /* =========================================
+       APPOINTMENT MODAL
+       ========================================= */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(15, 23, 42, 0.6);
+      background: rgba(15, 28, 33, 0.7);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 200;
@@ -654,10 +921,10 @@
     .modal-box {
       background: #FFFFFF;
       width: 100%;
-      max-width: 500px;
-      border-radius: 24px;
+      max-width: 480px;
+      border-radius: var(--radius-xl);
       padding: 36px;
-      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 25px 60px rgba(15, 28, 33, 0.25);
       position: relative;
       animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -669,14 +936,14 @@
       position: absolute;
       top: 24px;
       right: 24px;
-      background: #F1F5F9;
+      background: var(--canvas-bg);
       border: none;
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       font-size: 16px;
       cursor: pointer;
-      color: var(--slate);
+      color: var(--text-slate);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -684,14 +951,14 @@
     }
     .modal-close:hover { background: #E2E8F0; }
     .modal-header h3 {
-      font-size: 21px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--text-dark);
       margin-bottom: 6px;
     }
     .modal-header p {
       font-size: 13.5px;
-      color: var(--muted);
+      color: var(--text-muted);
       margin-bottom: 24px;
     }
     .form-group {
@@ -701,7 +968,7 @@
       display: block;
       font-size: 12px;
       font-weight: 700;
-      color: var(--slate);
+      color: var(--text-slate);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 6px;
@@ -709,28 +976,28 @@
     .form-group input, .form-group select {
       width: 100%;
       padding: 12px 16px;
-      border: 1.5px solid var(--card-border);
-      border-radius: 10px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 12px;
       font-size: 14px;
       font-family: inherit;
-      background: #F8FAFC;
+      background: var(--canvas-bg);
       transition: var(--transition);
     }
     .form-group input:focus, .form-group select:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: var(--coral-accent);
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+      box-shadow: 0 0 0 3px rgba(245, 121, 95, 0.15);
     }
     .btn-submit-modal {
       width: 100%;
-      background: var(--dark);
+      background: var(--coral-accent);
       color: white;
       border: none;
       padding: 14px;
-      border-radius: 12px;
+      border-radius: 100px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: var(--transition);
       margin-top: 10px;
@@ -738,37 +1005,84 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      box-shadow: 0 6px 20px rgba(245, 121, 95, 0.35);
     }
     .btn-submit-modal:hover {
-      background: var(--primary-deep);
+      background: var(--coral-hover);
       transform: translateY(-2px);
     }
 
-    /* Responsive Media Queries */
-    @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-      .hero-content h1 { font-size: 40px; }
-      .hero-content p { margin: 0 auto 32px; }
-      .hero-cta-group { justify-content: center; }
-      .stats-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .stat-box:nth-child(2) { border-right: none; }
-      .treatments-grid { grid-template-columns: 1fr 1fr; }
-      .clinic-grid { grid-template-columns: 1fr; }
-      .location-grid { grid-template-columns: 1fr; }
+    /* =========================================
+       RESPONSIVE MEDIA QUERIES
+       ========================================= */
+    @media (max-width: 1100px) {
+      .bento-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .hero-content h1 { font-size: 32px; }
-      .hero-cta-group { flex-direction: column; width: 100%; }
-      .hero-cta-group a, .hero-cta-group button { width: 100%; justify-content: center; }
-      .treatments-grid { grid-template-columns: 1fr; }
-      .stats-container { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
-      .stat-box { border-right: none; border-bottom: 1px solid var(--card-border); padding-bottom: 12px; }
-      .stat-box:last-child { border-bottom: none; }
-      .clinic-showcase { padding: 32px 20px; }
-      .clinic-features { grid-template-columns: 1fr; }
-      .modal-box { padding: 24px 20px; }
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+      }
+      .hero-frame {
+        padding: 40px 24px;
+      }
+      .hero-frame h1 {
+        font-size: 38px;
+      }
+      .hero-frame p.hero-lead {
+        margin: 0 auto 28px;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .clinic-grid {
+        grid-template-columns: 1fr;
+      }
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-wrapper {
+        padding: 10px 12px;
+      }
+      .hero-frame h1 {
+        font-size: 30px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta-group button, .hero-cta-group a {
+        width: 100%;
+        justify-content: center;
+      }
+      .bento-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .treatments-grid {
+        grid-template-columns: 1fr;
+      }
+      .clinic-features-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-box {
+        padding: 24px 18px;
+      }
+      .partners-logos {
+        gap: 24px;
+      }
     }
   </style>
 </head>
@@ -777,19 +1091,18 @@
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
+  <div class="main-wrapper">
+
+    <!-- Top Strip -->
+    <div class="top-strip">
       <div>📍 B1-135, Janakpuri, New Delhi (Near Metro Station)</div>
       <div class="badge-google">
         <span>★★★★★</span> 4.9 Rating (180+ Verified Google Reviews)
       </div>
     </div>
-  </div>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="container">
+    <!-- Floating Pill Navbar -->
+    <nav class="dentora-nav">
       <a href="#" class="brand-logo">
         <img src="assets/glamm/logo.webp" alt="Glamm Dental Clinic Logo">
       </a>
@@ -800,242 +1113,278 @@
         <li><a href="#location">Location</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="tel:+919220460959" class="btn-phone">📞 92204 60959</a>
-        <button class="btn-primary" onclick="openModal('Consultation')">Book Appointment</button>
+        <a href="tel:+919220460959" class="btn-phone-pill">📞 92204 60959</a>
+        <button class="btn-coral-nav" onclick="openModal('Priority Consultation')">Book Appointment</button>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
+    <!-- Hero Frame (Dentora Petrol Cinematic) -->
+    <section class="hero-frame">
+      <div class="hero-glow-orb"></div>
       <div class="hero-grid">
 
         <div class="hero-content">
-          <div class="hero-pill">
-            <span>FESTIVE CAMPAIGN</span> Smile Design Treatment Starting @ ₹6,999 Only
+          <div class="hero-campaign-pill">
+            <span class="tag">FESTIVE CAMPAIGN</span> Smile Design Treatment Starting @ ₹6,999 Only
           </div>
           <h1>World-Class Dentistry, <em>Crafted For Your Confidence.</em></h1>
-          <p>
+          <p class="hero-lead">
             Experience hospital-grade clinical precision with bespoke aesthetic smile transformations. Led by Dr. Sonam Gupta (MDS Prosthodontist), bringing over 12 years of specialized care to Janakpuri, New Delhi.
           </p>
           <div class="hero-cta-group">
-            <button class="btn-primary" style="padding: 14px 28px; font-size: 15px;" onclick="openModal('Smile Design')">
+            <button class="btn-coral-hero" onclick="openModal('Digital Smile Design')">
               Book Priority Consultation ➔
             </button>
-            <a href="https://wa.me/919220460959?text=Hello%20Dr.%20Sonam,%20I%20would%20like%20to%20inquire%20about%20Smile%20Design%20at%20Glamm%20Dental." class="btn-wa-solid">
-              💬 Direct WhatsApp With Doctor
+            <a href="https://wa.me/919220460959?text=Hello%20Dr.%20Sonam,%20I%20would%20like%20to%20inquire%20about%20Smile%20Design%20at%20Glamm%20Dental." class="btn-wa-glass">
+              💬 Direct Doctor WhatsApp
             </a>
           </div>
         </div>
 
-        <!-- Doctor Glass Spotlight Card -->
-        <div class="doctor-spotlight" id="doctor">
-          <div class="doctor-img-wrap">
+        <!-- Doctor Spotlight Card (Glassmorphic) -->
+        <div class="doctor-spotlight-card" id="doctor">
+          <div class="doc-portrait-wrap">
             <img src="assets/glamm/dr_sonam.png" alt="Dr. Sonam Gupta (MDS) Glamm Dental">
           </div>
-          <h2 class="doctor-name">Dr. Sonam Gupta</h2>
-          <div class="doctor-qual">BDS, MDS • Prosthodontist & Implantologist</div>
-          <p class="doctor-bio">
+          <h2 class="doc-name">Dr. Sonam Gupta</h2>
+          <div class="doc-spec">BDS, MDS • Prosthodontist & Implantologist</div>
+          <p class="doc-summary">
             Senior Prosthodontist specializing in painless dental implants, full-mouth reconstructions, and celebrity porcelain smile makeovers.
           </p>
-          <div class="doctor-badges">
-            <span class="doc-badge">🏆 12+ Yrs Experience</span>
-            <span class="doc-badge">✨ 5,000+ Smiles</span>
-            <span class="doc-badge">🛡️ German Implant Certified</span>
+          <div class="doc-pill-tags">
+            <span>🏆 12+ Yrs Experience</span>
+            <span>✨ 5,000+ Smiles</span>
+            <span>🛡️ German Implant Certified</span>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Trust Stats Strip -->
-  <div class="container">
-    <div class="stats-container">
-      <div class="stat-box">
-        <div class="stat-number">5,000<span>+</span></div>
-        <div class="stat-label">Successful Smile Restorations</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">100<span>%</span></div>
-        <div class="stat-label">Computer-Guided Painless Care</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">4.9<span>★</span></div>
-        <div class="stat-label">Patient Satisfaction Rating</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">0<span>%</span></div>
-        <div class="stat-label">Easy Monthly EMI Options</div>
-      </div>
-    </div>
-  </div>
+    <!-- Signature Dentora Color-Block Bento Grid -->
+    <section class="bento-section">
+      <div class="bento-grid-4">
 
-  <!-- Global Brand Certifications -->
-  <div class="container">
-    <div class="partners-section">
+        <!-- Card 1: Vibrant Coral (Active Festive Offer) -->
+        <div class="bento-card-coral">
+          <div>
+            <div class="bento-tag-coral">ACTIVE FESTIVE OFFER</div>
+            <h3>Smile Design Starting @ ₹6,999</h3>
+            <p>
+              Ultra-thin porcelain veneers crafted to eliminate gaps, correct discoloration, and restore a naturally radiant, Hollywood-grade smile in 2 visits.
+            </p>
+          </div>
+          <button class="btn-bento-coral" onclick="openModal('Smile Design Festive Offer')">
+            Inquire Smile Offer ➔
+          </button>
+        </div>
+
+        <!-- Card 2: Deep Petrol Slate (Clinical Leadership) -->
+        <div class="bento-card-petrol">
+          <div>
+            <div class="bento-tag-petrol">MDS PROSTHODONTIST</div>
+            <h4>Specialized In-House Care</h4>
+            <p>
+              Direct consultation with Dr. Sonam Gupta. Computer-guided precision with zero guesswork.
+            </p>
+          </div>
+          <div>
+            <div class="bento-stat-num">12+</div>
+            <div class="bento-stat-label">Years Clinical Mastery</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Warm Sandstone / Silk (Swiss Implants) -->
+        <div class="bento-card-sand">
+          <div>
+            <div class="bento-tag-sand">SWISS PRECISION</div>
+            <h4>Painless Dental Implants</h4>
+            <p>
+              Permanent Straumann & Nobel Biocare titanium implants with lifetime warranty and 0% monthly EMI.
+            </p>
+          </div>
+          <div class="bento-sand-footer">
+            <span>🛡️ Lifetime International Warranty</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Crisp White Glass (Patient Trust) -->
+        <div class="bento-card-white">
+          <div>
+            <div class="bento-tag-white">JANAKPURI FAVORITE</div>
+            <h4>Trusted By 5,000+ Families</h4>
+            <p>
+              West Delhi's premier boutique dental clinic with 100% sterile Class B Autoclave hygiene.
+            </p>
+          </div>
+          <div class="rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-val">4.9 / 5.0 (180+ Reviews)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Global Technology Partners Panel -->
+    <div class="partners-panel">
       <div class="partners-label">Certified Clinical Materials & Global Technology Partners</div>
-      <div class="partners-row">
+      <div class="partners-logos">
         <img src="assets/glamm/invisalign.webp" alt="Invisalign Certified Provider">
         <img src="assets/glamm/straumann.webp" alt="Straumann Swiss Implants">
         <img src="assets/glamm/nobel.webp" alt="Nobel Biocare Sweden">
         <img src="assets/glamm/3m.jpg" alt="3M Oral Care Solutions">
       </div>
     </div>
-  </div>
 
-  <!-- Treatments Grid -->
-  <section class="container" id="treatments" style="margin-bottom: 80px;">
-    <div class="section-header">
-      <div class="section-tag">Clinical Excellence</div>
-      <h2 class="section-title">Specialized Treatments</h2>
-      <p class="section-desc">Every treatment plan is customized using digital 3D scans, hospital sterilization, and lifetime material warranties.</p>
-    </div>
-
-    <div class="treatments-grid">
-
-      <!-- Card 1: Smile Design -->
-      <div class="treatment-card">
-        <div class="card-badge">FESTIVE OFFER STARTING @ ₹6,999</div>
-        <h3 class="treatment-name">Digital Smile Design</h3>
-        <p class="treatment-desc">
-          Ultra-thin porcelain veneers crafted to eliminate gaps, correct discoloration, and restore a naturally radiant, Hollywood-grade smile.
-        </p>
-        <ul class="specs-list">
-          <li>Zero enamel damage & painless fitting</li>
-          <li>Custom shade matching in 2 visits</li>
-          <li>10-Year warranty on E-Max porcelain</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Digital Smile Design')">Inquire Smile Package ➔</button>
+    <!-- Specialized Treatments Grid -->
+    <section id="treatments" style="margin-bottom: 48px;">
+      <div class="section-head">
+        <div class="section-tag">Clinical Excellence</div>
+        <h2>Specialized Treatments</h2>
+        <p>Every treatment plan is customized using digital 3D scans, hospital sterilization, and lifetime material warranties.</p>
       </div>
 
-      <!-- Card 2: Painless Dental Implants -->
-      <div class="treatment-card">
-        <div class="card-badge">LIFETIME STABILITY</div>
-        <h3 class="treatment-name">Painless Dental Implants</h3>
-        <p class="treatment-desc">
-          Permanent titanium & zirconia tooth replacement with German precision. Eat your favorite foods with 100% natural bite force.
-        </p>
-        <ul class="specs-list">
-          <li>Same-day immediate loading options</li>
-          <li>Computer-guided flapless surgery</li>
-          <li>0% Easy Monthly EMI options</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Dental Implants')">Book Implant Evaluation ➔</button>
+      <div class="treatments-grid">
+
+        <!-- Treatment 1: Smile Design -->
+        <div class="treatment-card featured-offer">
+          <div class="card-badge">FESTIVE OFFER @ ₹6,999</div>
+          <h3 class="treatment-name">Digital Smile Design</h3>
+          <p class="treatment-desc">
+            Ultra-thin porcelain veneers crafted to eliminate gaps, correct discoloration, and restore a naturally radiant, Hollywood-grade smile.
+          </p>
+          <ul class="specs-list">
+            <li>Zero enamel damage & painless fitting</li>
+            <li>Custom shade matching in 2 visits</li>
+            <li>10-Year warranty on E-Max porcelain</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Digital Smile Design')">Inquire Smile Package ➔</button>
+        </div>
+
+        <!-- Treatment 2: Painless Dental Implants -->
+        <div class="treatment-card">
+          <div class="card-badge">LIFETIME STABILITY</div>
+          <h3 class="treatment-name">Painless Dental Implants</h3>
+          <p class="treatment-desc">
+            Permanent titanium & zirconia tooth replacement with German precision. Eat your favorite foods with 100% natural bite force.
+          </p>
+          <ul class="specs-list">
+            <li>Same-day immediate loading options</li>
+            <li>Computer-guided flapless surgery</li>
+            <li>0% Easy Monthly EMI options</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Dental Implants')">Book Implant Evaluation ➔</button>
+        </div>
+
+        <!-- Treatment 3: Invisible Aligners -->
+        <div class="treatment-card">
+          <div class="card-badge">NO METAL BRACES</div>
+          <h3 class="treatment-name">Clear Invisible Aligners</h3>
+          <p class="treatment-desc">
+            Straighten misaligned teeth discreetly with custom 3D digital clear trays. Remove them when eating with zero food restrictions.
+          </p>
+          <ul class="specs-list">
+            <li>3D digital smile simulation before starting</li>
+            <li>Virtually invisible to colleagues and friends</li>
+            <li>Faster results than traditional braces</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Invisible Aligners')">Get 3D Scan Slot ➔</button>
+        </div>
+
+        <!-- Treatment 4: Laser Teeth Whitening -->
+        <div class="treatment-card">
+          <div class="card-badge">SINGLE SITTING • 45 MINS</div>
+          <h3 class="treatment-name">Laser Teeth Whitening</h3>
+          <p class="treatment-desc">
+            Professional cool-light laser technology that lifts stubborn stains from coffee, tea, and smoking safely without enamel sensitivity.
+          </p>
+          <ul class="specs-list">
+            <li>Up to 8 shades lighter in 45 minutes</li>
+            <li>Enamel-safe pH balanced formulation</li>
+            <li>Long-lasting instant results</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Laser Whitening')">Book Whitening Session ➔</button>
+        </div>
+
+        <!-- Treatment 5: Single Sitting RCT -->
+        <div class="treatment-card">
+          <div class="card-badge">MICROSCOPIC PRECISION</div>
+          <h3 class="treatment-name">Single-Sitting Rotary RCT</h3>
+          <p class="treatment-desc">
+            Pain-free root canal treatment completed in a single comfortable 45-minute sitting using rotary endodontics and apex locators.
+          </p>
+          <ul class="specs-list">
+            <li>100% painless computerized anesthesia</li>
+            <li>Saves natural infected tooth permanently</li>
+            <li>Includes digital X-ray diagnostics</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Root Canal RCT')">Book Pain Relief ➔</button>
+        </div>
+
+        <!-- Treatment 6: Preventive & Family Care -->
+        <div class="treatment-card">
+          <div class="card-badge">FAMILY DENTISTRY</div>
+          <h3 class="treatment-name">Complete Preventive Care</h3>
+          <p class="treatment-desc">
+            Comprehensive oral health screenings, ultrasonic scaling, fluoride treatments, and gentle pediatric dentistry for children.
+          </p>
+          <ul class="specs-list">
+            <li>Child-friendly, calm environment</li>
+            <li>Ultrasonic stain & plaque removal</li>
+            <li>Preventive cavity sealing</li>
+          </ul>
+          <button class="btn-treatment-card" onclick="openModal('Preventive Checkup')">Schedule Family Visit ➔</button>
+        </div>
+
       </div>
+    </section>
 
-      <!-- Card 3: Invisible Aligners -->
-      <div class="treatment-card">
-        <div class="card-badge">NO METAL BRACES</div>
-        <h3 class="treatment-name">Clear Invisible Aligners</h3>
-        <p class="treatment-desc">
-          Straighten misaligned teeth discreetly with custom 3D digital clear trays. Remove them when eating with zero food restrictions.
-        </p>
-        <ul class="specs-list">
-          <li>3D digital smile simulation before starting</li>
-          <li>Virtually invisible to colleagues and friends</li>
-          <li>Faster results than traditional braces</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Invisible Aligners')">Get 3D Scan Slot ➔</button>
-      </div>
-
-      <!-- Card 4: Laser Teeth Whitening -->
-      <div class="treatment-card">
-        <div class="card-badge">SINGLE SITTING • 45 MINS</div>
-        <h3 class="treatment-name">Laser Teeth Whitening</h3>
-        <p class="treatment-desc">
-          Professional cool-light laser technology that lifts stubborn stains from coffee, tea, and smoking safely without enamel sensitivity.
-        </p>
-        <ul class="specs-list">
-          <li>Up to 8 shades lighter in 45 minutes</li>
-          <li>Enamel-safe pH balanced formulation</li>
-          <li>Long-lasting instant results</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Laser Whitening')">Book Whitening Session ➔</button>
-      </div>
-
-      <!-- Card 5: Single Sitting RCT -->
-      <div class="treatment-card">
-        <div class="card-badge">MICROSCOPIC PRECISION</div>
-        <h3 class="treatment-name">Single-Sitting Rotary RCT</h3>
-        <p class="treatment-desc">
-          Pain-free root canal treatment completed in a single comfortable 45-minute sitting using rotary endodontics and apex locators.
-        </p>
-        <ul class="specs-list">
-          <li>100% painless computerized anesthesia</li>
-          <li>Saves natural infected tooth permanently</li>
-          <li>Includes digital X-ray diagnostics</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Root Canal RCT')">Book Pain Relief ➔</button>
-      </div>
-
-      <!-- Card 6: Pediatric & Preventive -->
-      <div class="treatment-card">
-        <div class="card-badge">FAMILY DENTISTRY</div>
-        <h3 class="treatment-name">Complete Preventive Care</h3>
-        <p class="treatment-desc">
-          Comprehensive oral health screenings, ultrasonic scaling, fluoride treatments, and gentle pediatric dentistry for children.
-        </p>
-        <ul class="specs-list">
-          <li>Child-friendly, calm environment</li>
-          <li>Ultrasonic stain & plaque removal</li>
-          <li>Preventive cavity sealing</li>
-        </ul>
-        <button class="btn-card" onclick="openModal('Preventive Checkup')">Schedule Family Visit ➔</button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Clinic Experience Showcase -->
-  <div class="container" id="clinic">
-    <div class="clinic-showcase">
+    <!-- Clinic Experience Showcase -->
+    <div class="clinic-showcase-frame" id="clinic">
       <div class="clinic-grid">
         <div class="clinic-text">
-          <div class="hero-pill" style="background: rgba(255,255,255,0.1); color: #E0F2FE; border-color: rgba(255,255,255,0.2);">
+          <div class="hero-campaign-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
             JANAKPURI CLINIC TOUR
           </div>
           <h3>Hospital-Grade Hygiene Meets Boutique Comfort</h3>
           <p>
             We adhere to strict 7-tier sterilization protocols, Autoclave Class B standards, and HEPA air purification so every visit feels as safe as it is relaxing.
           </p>
-          <div class="clinic-features">
-            <div class="feat-item">
+          <div class="clinic-features-grid">
+            <div class="feat-box">
               <h5>Class B Autoclave</h5>
               <p>100% sterile packaged instruments</p>
             </div>
-            <div class="feat-item">
+            <div class="feat-box">
               <h5>Digital RVG X-Rays</h5>
               <p>90% less radiation exposure</p>
             </div>
-            <div class="feat-item">
+            <div class="feat-box">
               <h5>Private Operatories</h5>
               <p>Calm, sound-damped treatment suites</p>
             </div>
-            <div class="feat-item">
+            <div class="feat-box">
               <h5>Emergency Dental Care</h5>
               <p>Same-day priority pain management</p>
             </div>
           </div>
-          <button class="btn-primary" style="background: white; color: var(--dark);" onclick="openModal('Clinic Consultation')">
+          <button class="btn-coral-hero" onclick="openModal('In-Clinic Tour & Consultation')">
             Book In-Clinic Appointment ➔
           </button>
         </div>
-        <div class="clinic-img-card">
+        <div class="clinic-photo-card">
           <img src="assets/glamm/clinic.jpg" alt="Glamm Dental Clinic Operatory Janakpuri">
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Location Section -->
-  <div class="container" id="location">
-    <div class="location-section">
+    <!-- Location Section -->
+    <div class="location-card" id="location">
       <div class="location-grid">
         <div class="location-details">
           <h4>Visit Glamm Dental Janakpuri</h4>
-          <div class="address-box">
+          <div class="address-highlight">
             <p>
               <strong>Upper Ground Floor, B1-135, Block B1, Janakpuri, New Delhi, Delhi 110058</strong><br>
               Walking distance from Janakpuri West Metro Station (Blue & Magenta lines).
@@ -1051,24 +1400,23 @@
               10:00 AM – 6:00 PM
             </div>
           </div>
-          <a href="https://maps.google.com/?q=Glamm+Dental+B1-135+Janakpuri+New+Delhi" target="_blank" class="btn-phone" style="display: inline-flex;">
+          <a href="https://maps.google.com/?q=Glamm+Dental+B1-135+Janakpuri+New+Delhi" target="_blank" class="btn-phone-pill" style="display: inline-flex;">
             🗺️ Open Google Maps Directions ➔
           </a>
         </div>
-        <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border);">
+        <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
           <img src="assets/glamm/dr_sonam_portrait.jpg" alt="Dr Sonam Gupta Glamm Dental" style="width: 100%; height: 260px; object-fit: cover; display: block;">
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
+    <!-- Footer -->
+    <footer class="dentora-footer">
       <p>© 2026 Glamm Dental. All Rights Reserved. Led by Dr. Sonam Gupta (MDS Prosthodontist).</p>
-      <p style="margin-top: 6px; font-size: 11.5px; color: #94A3B8;">Janakpuri, New Delhi • Contact: +91 92204 60959</p>
-    </div>
-  </footer>
+      <p style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">Janakpuri, New Delhi • Contact: +91 92204 60959</p>
+    </footer>
+
+  </div>
 
   <!-- Appointment Modal -->
   <div class="modal-overlay" id="inquiryModal">

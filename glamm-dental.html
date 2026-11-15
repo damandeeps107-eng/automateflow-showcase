@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Glamm Dental | Dr. Sonam Gupta (MDS) | Advanced Multispeciality Dental & Smile Clinic Janakpuri</title>
+  <meta name="description" content="Glamm Dental Clinic Janakpuri, New Delhi. Led by Dr. Sonam Gupta (MDS Prosthodontist). Laser Dentistry, Smile Design starting @ ₹6,999, Painless Implants & Clear Aligners.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0E7490;
+      --primary-dark: #155E75;
+      --primary-light: #E0F2FE;
+      --accent: #D97706;
+      --accent-gold: #F59E0B;
+      --dark: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --light-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      --wa-green: #25D366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.5;
+      padding-bottom: 75px;
+    }
+
+    /* Top Trust Bar */
+    .top-bar {
+      background: var(--dark);
+      color: #F8FAFC;
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 6px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar .rating {
+      color: #FCD34D;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), #0284C7);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(14, 116, 144, 0.25);
+    }
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.3px;
+    }
+    .brand-text span {
+      font-size: 10px;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .call-btn-header {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(14, 116, 144, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+      padding: 28px 18px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      border: 1px solid #FDE68A;
+    }
+    .badge-pill span {
+      background: #D97706;
+      color: white;
+      border-radius: 10px;
+      padding: 1px 6px;
+      font-size: 10px;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      line-height: 1.25;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .hero h2 em {
+      color: var(--primary);
+      font-style: normal;
+    }
+    .hero p {
+      font-size: 13.5px;
+      color: var(--slate);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .doctor-tag {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .doctor-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0284C7;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .doctor-info h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .doctor-info p {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-main {
+      background: linear-gradient(135deg, var(--primary), #0284C7);
+      color: white;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(14, 116, 144, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-wa {
+      background: #FFFFFF;
+      color: #15803D;
+      border: 1.5px solid #BBF7D0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Trust Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 18px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      text-align: center;
+      padding: 8px 4px;
+      background: #F8FAFC;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .stat-num {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-lbl {
+      font-size: 10.5px;
+      color: var(--slate);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* Treatments Section */
+    .section-title {
+      padding: 24px 18px 12px;
+    }
+    .section-title h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.3px;
+    }
+    .section-title p {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .cards-grid {
+      padding: 0 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .price-pill {
+      background: #ECFDF5;
+      color: #065F46;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 8px;
+      border: 1px solid #A7F3D0;
+    }
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--slate);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .card-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .spec-tag {
+      background: #F1F5F9;
+      color: var(--slate);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .btn-card-inquire {
+      width: 100%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 9px;
+      border-radius: 8px;
+      border: 1px solid rgba(14, 116, 144, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    /* Before-After Section */
+    .before-after-box {
+      margin: 0 18px 24px;
+      background: #0F172A;
+      color: white;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .before-after-box h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #F8FAFC;
+      margin-bottom: 6px;
+    }
+    .before-after-box p {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-bottom: 16px;
+    }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .ba-item {
+      background: #1E293B;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .ba-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .ba-tag.before { background: #EF4444; color: white; }
+    .ba-tag.after { background: #10B981; color: white; }
+    .ba-item h5 { font-size: 12px; color: #E2E8F0; }
+    .ba-item p { font-size: 10.5px; color: #94A3B8; margin-top: 2px; margin-bottom: 0; }
+
+    /* Clinic Location */
+    .location-box {
+      margin: 0 18px 24px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .location-box h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .location-box p {
+      font-size: 12px;
+      color: var(--slate);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .maps-link {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Fixed Bottom Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    }
+    .bottom-bar .btn-call {
+      flex: 1;
+      background: #F1F5F9;
+      color: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 12px;
+    }
+    .bottom-bar .btn-book {
+      flex: 2;
+      background: linear-gradient(135deg, #25D366, #16A34A);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Pop-up Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      animation: fadeIn 0.2s ease-out;
+    }
+    .modal-box {
+      background: white;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 20px 20px 0 0;
+      padding: 24px 20px;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+      animation: slideUp 0.3s ease-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .modal-header h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .modal-header p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .close-modal {
+      background: #F1F5F9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--slate);
+      cursor: pointer;
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--dark);
+      background: #F8FAFC;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+    }
+    .btn-submit-modal {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #16A34A);
+      color: white;
+      border: none;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-top: 6px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Trust Bar -->
+  <div class="top-bar">
+    <div>📍 Janakpuri, West Delhi</div>
+    <div class="rating">★ 4.9 (180+ Google Reviews)</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">G</div>
+      <div class="brand-text">
+        <h1>Glamm Dental</h1>
+        <span>Advanced Multispeciality Clinic</span>
+      </div>
+    </div>
+    <a href="tel:+919220460959" class="call-btn-header">
+      📞 Call Clinic
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge-pill">
+      <span>FESTIVE OFFER</span> Smile Design Starting @ ₹6,999 Only!
+    </div>
+    <h2>World-Class Dentistry, <em>Designed For Your Confidence</em></h2>
+    <p>Painless Dental Implants, Hollywood Smile Design, and Clear Aligners with Delhi's leading specialists.</p>
+
+    <!-- Doctor Profile Tag -->
+    <div class="doctor-tag">
+      <div class="doctor-avatar">SG</div>
+      <div class="doctor-info">
+        <h4>Dr. Sonam Gupta (MDS)</h4>
+        <p>Prosthodontist & Implantologist • 12+ Yrs Experience</p>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="hero-actions">
+      <button class="btn-main" onclick="openModal('General Consultation')">
+        📅 Book Free Smile Consultation
+      </button>
+      <a href="https://wa.me/919220460959?text=Hello%20Dr.%20Sonam,%20I%20would%20like%20to%20book%20a%20Smile%20Consultation%20at%20Glamm%20Dental%20Janakpuri." class="btn-wa">
+        💬 Chat on WhatsApp with Doctor
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Row -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">5,000+</div>
+      <div class="stat-lbl">Smiles Restored</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl">Painless Care</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0% EMI</div>
+      <div class="stat-lbl">Payment Options</div>
+    </div>
+  </div>
+
+  <!-- Core Treatments -->
+  <div class="section-title">
+    <h3>Signature Treatments</h3>
+    <p>Transparent pricing, digital precision & lifetime warranty</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Treatment 1: Smile Design -->
+    <div class="service-card">
+      <div class="card-top">
+        <div class="card-title">✨ Digital Smile Design (Veneers)</div>
+        <div class="price-pill">From ₹6,999</div>
+      </div>
+      <div class="card-desc">
+        Complete cosmetic transformation with ultra-thin porcelain veneers, closing gaps, fixing discolorations, and crafting a symmetrical celebrity smile.
+      </div>
+      <div class="card-specs">
+        <span class="spec-tag">10-Year Warranty</span>
+        <span class="spec-tag">Zero Tooth Damage</span>
+        <span class="spec-tag">Custom Shade Match</span>
+      </div>
+      <button class="btn-card-inquire" onclick="openModal('Digital Smile Design')">
+        Book Smile Assessment ➔
+      </button>
+    </div>
+
+    <!-- Treatment 2: Dental Implants -->
+    <div class="service-card">
+      <div class="card-top">
+        <div class="card-title">🦷 Painless Dental Implants</div>
+        <div class="price-pill">Permanent Fix</div>
+      </div>
+      <div class="card-desc">
+        Swiss and German grade titanium dental implants. Replace missing teeth with natural bite force, lifetime stability, and 0% bone loss.
+      </div>
+      <div class="card-specs">
+        <span class="spec-tag">Same-Day Loading</span>
+        <span class="spec-tag">Computer Guided</span>
+        <span class="spec-tag">Lifetime Guarantee</span>
+      </div>
+      <button class="btn-card-inquire" onclick="openModal('Dental Implants')">
+        Inquire Implant Cost ➔
+      </button>
+    </div>
+
+    <!-- Treatment 3: Invisible Aligners -->
+    <div class="service-card">
+      <div class="card-top">
+        <div class="card-title">⭐ Invisible Clear Aligners</div>
+        <div class="price-pill">No Metal Braces</div>
+      </div>
+      <div class="card-desc">
+        Straighten crooked teeth discreetly with 3D digital clear trays. Completely invisible, removable, comfortable, with 3D scan preview of final results.
+      </div>
+      <div class="card-specs">
+        <span class="spec-tag">3D Virtual Scan</span>
+        <span class="spec-tag">Eat Anything</span>
+        <span class="spec-tag">0% Easy EMI</span>
+      </div>
+      <button class="btn-card-inquire" onclick="openModal('Invisible Aligners')">
+        Get 3D Scan Appointment ➔
+      </button>
+    </div>
+
+    <!-- Treatment 4: Laser Teeth Whitening -->
+    <div class="service-card">
+      <div class="card-top">
+        <div class="card-title">⚡ Laser Teeth Whitening</div>
+        <div class="price-pill">45-Min Session</div>
+      </div>
+      <div class="card-desc">
+        Advanced cool-light laser whitening that brightens teeth by up to 8 shades in a single 45-minute sitting. Safe on enamel with zero sensitivity.
+      </div>
+      <div class="card-specs">
+        <span class="spec-tag">Single Visit</span>
+        <span class="spec-tag">Enamel Safe</span>
+        <span class="spec-tag">Instant 8 Shades Lighter</span>
+      </div>
+      <button class="btn-card-inquire" onclick="openModal('Laser Whitening')">
+        Book Whitening Session ➔
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Before / After Box -->
+  <div class="before-after-box">
+    <h4>Real Patient Case Studies</h4>
+    <p>100% verified results executed by Dr. Sonam Gupta at Glamm Dental Janakpuri.</p>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <span class="ba-tag before">Case #104 (Before)</span>
+        <h5>Severe Midline Gap</h5>
+        <p>Discolored Central Incisors</p>
+      </div>
+      <div class="ba-item">
+        <span class="ba-tag after">After (Day 3)</span>
+        <h5>Full Smile Veneers</h5>
+        <p>Natural E-Max Finish</p>
+      </div>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <span class="ba-tag before">Case #218 (Before)</span>
+        <h5>Missing Lower Molars</h5>
+        <p>Chewing Difficulty</p>
+      </div>
+      <div class="ba-item">
+        <span class="ba-tag after">After (Implant)</span>
+        <h5>German Titanium Unit</h5>
+        <p>100% Natural Bite Restored</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location & Clinic Info -->
+  <div class="location-box">
+    <h4>📍 Clinic Location & Visiting Hours</h4>
+    <p>
+      <strong>Upper Ground Floor, B1-135, Block B1, Janakpuri, New Delhi, 110058</strong><br>
+      (Near Janakpuri West Metro Station)<br>
+      Mon–Sat: 9:30 AM – 8:30 PM | Sun: 10:00 AM – 6:00 PM
+    </p>
+    <a href="https://maps.google.com/?q=Glamm+Dental+Janakpuri+New+Delhi" target="_blank" class="maps-link">
+      🗺️ Open in Google Maps ➔
+    </a>
+  </div>
+
+  <!-- Bottom Fixed Bar -->
+  <div class="bottom-bar">
+    <a href="tel:+919220460959" class="btn-call">
+      📞 Call
+    </a>
+    <a href="javascript:void(0)" onclick="openModal('Direct Appointment')" class="btn-book">
+      💬 WhatsApp Booking
+    </a>
+  </div>
+
+  <!-- Appointment Modal -->
+  <div class="modal-overlay" id="inquiryModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3>Book Priority Consultation</h3>
+          <p>Dr. Sonam Gupta | Glamm Dental Janakpuri</p>
+        </div>
+        <button class="close-modal" onclick="closeModal()">✕</button>
+      </div>
+
+      <form id="appointmentForm" onsubmit="submitAppointment(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="patientName" placeholder="e.g. Rahul Sharma" required>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp Number</label>
+          <input type="tel" id="patientPhone" placeholder="e.g. 98111 XXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>Treatment Interested In</label>
+          <select id="treatmentSelect">
+            <option value="Smile Design (Veneers) - ₹6,999 Offer">Smile Design (Veneers) - ₹6,999 Offer</option>
+            <option value="Dental Implants (Painless)">Dental Implants (Painless)</option>
+            <option value="Invisible Clear Aligners">Invisible Clear Aligners</option>
+            <option value="Laser Teeth Whitening">Laser Teeth Whitening</option>
+            <option value="Root Canal Treatment (RCT)">Root Canal Treatment (RCT)</option>
+            <option value="General Dental Checkup">General Dental Checkup</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Day / Time</label>
+          <select id="timeSlot">
+            <option value="Today (Urgent Slot)">Today (Urgent Slot)</option>
+            <option value="Tomorrow Morning (10 AM - 1 PM)">Tomorrow Morning (10 AM - 1 PM)</option>
+            <option value="Tomorrow Evening (4 PM - 8 PM)">Tomorrow Evening (4 PM - 8 PM)</option>
+            <option value="This Weekend">This Weekend</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit-modal">
+          Confirm Appointment on WhatsApp ➔
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(treatment) {
+      if (treatment) {
+        const sel = document.getElementById('treatmentSelect');
+        for (let opt of sel.options) {
+          if (opt.value.toLowerCase().includes(treatment.toLowerCase())) {
+            opt.selected = true;
+            break;
+          }
+        }
+      }
+      document.getElementById('inquiryModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('inquiryModal').style.display = 'none';
+    }
+
+    // Auto open popup after 2.5 seconds
+    setTimeout(() => {
+      openModal();
+    }, 2500);
+
+    function submitAppointment(e) {
+      e.preventDefault();
+      const name = document.getElementById('patientName').value.trim();
+      const phone = document.getElementById('patientPhone').value.trim();
+      const treatment = document.getElementById('treatmentSelect').value;
+      const slot = document.getElementById('timeSlot').value;
+
+      const text = `Hello Dr. Sonam Gupta / Glamm Dental,%0A%0AI would like to book a priority consultation from your clinic portal:%0A- *Patient Name:* ${encodeURIComponent(name)}%0A- *Contact:* ${encodeURIComponent(phone)}%0A- *Treatment:* ${encodeURIComponent(treatment)}%0A- *Preferred Slot:* ${encodeURIComponent(slot)}%0A%0APlease confirm appointment availability.`;
+
+      window.location.href = `https://wa.me/919220460959?text=${text}`;
+    }
+  </script>
+</body>
+</html>

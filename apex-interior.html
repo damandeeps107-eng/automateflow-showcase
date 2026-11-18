@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Interior | Design Your Dream • Pune Turnkey Homes</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-cream: #FBF9F5;
+      --bg-card: #FFFFFF;
+      --text-dark: #121316;
+      --text-body: #4A4D55;
+      --text-muted: #7A7E89;
+      --accent-warm: #B88E5F;
+      --border-light: rgba(18, 19, 22, 0.08);
+      --border-card: rgba(0, 0, 0, 0.06);
+      --shadow-sm: 0 4px 12px rgba(18, 19, 22, 0.04);
+      --shadow-md: 0 12px 32px rgba(18, 19, 22, 0.07);
+      --shadow-lg: 0 20px 48px rgba(18, 19, 22, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-width: 1240px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: #18191D;
+      color: #E6E8EC;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 8px 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+    .top-bar span { color: var(--accent-warm); font-weight: 700; }
+    .top-bar a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* Main Navigation Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(251, 249, 245, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* Brand Logo */
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-top: 2px;
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-body);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .phone-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: rgba(18, 19, 22, 0.04);
+    }
+    .cta-consult {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #18191D;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transition: all 0.25s ease;
+    }
+    .cta-consult:hover {
+      background: #000000;
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section with Smooth Animated Slideshow */
+    .hero-container {
+      position: relative;
+      height: 82vh;
+      min-height: 580px;
+      max-height: 760px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.06);
+      transition: opacity 1.6s ease-in-out, transform 7s ease-out;
+      z-index: 1;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1.0);
+      z-index: 2;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(15, 17, 21, 0.45) 0%,
+        rgba(15, 17, 21, 0.65) 60%,
+        rgba(15, 17, 21, 0.85) 100%
+      );
+      z-index: 3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      color: #FFFFFF;
+    }
+    .hero-inner { max-width: 800px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F8F9FA;
+      margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ADE80;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4ADE80;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.2vw, 62px);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: #F3ECE2;
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 1.8vw, 18px);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 36px;
+      max-width: 660px;
+      font-weight: 400;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .btn-primary-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: all 0.25s ease;
+    }
+    .btn-primary-wa:hover {
+      background: #20BA5A;
+      transform: translateY(-2px);
+    }
+    .btn-secondary-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    .slider-indicators {
+      position: absolute;
+      bottom: 28px;
+      right: 32px;
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 32px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      background: #FFFFFF;
+      width: 48px;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .trust-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--accent-warm);
+      padding-left: 18px;
+    }
+    .trust-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .trust-label {
+      font-size: 13px;
+      color: var(--text-body);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 80px 24px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+    .section-subtitle {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.8vw, 42px);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .project-img-wrapper {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+    .project-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(18, 19, 22, 0.75);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .project-location {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-details {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--text-body);
+    }
+    .project-details strong { color: var(--text-dark); }
+
+    /* Process Section */
+    .process-section {
+      background: #FFFFFF;
+      padding: 80px 24px;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .process-inner { max-width: var(--max-width); margin: 0 auto; }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .process-step {
+      background: var(--bg-cream);
+      padding: 28px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent-warm);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .step-text {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: #18191D;
+      border-radius: var(--radius-lg);
+      padding: 64px 40px;
+      color: #FFFFFF;
+      text-align: center;
+      margin: 40px auto 80px;
+      max-width: var(--max-width);
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-banner-content { max-width: 680px; margin: 0 auto; }
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .cta-p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111215;
+      color: #94969E;
+      font-size: 13px;
+      padding: 48px 24px 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand {
+      color: #FFFFFF;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Sticky Mobile WhatsApp Floating Action */
+    .mobile-floating-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      padding: 12px 20px;
+      z-index: 9999;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    }
+    .mobile-floating-btn {
+      width: 100%;
+      background: #25D366;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 20px;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .projects-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-floating-bar { display: block; }
+      body { padding-bottom: 70px; }
+      .header-inner { padding: 14px 20px; }
+      .hero-container { height: 74vh; }
+    }
+    @media (max-width: 600px) {
+      .top-bar { font-size: 11px; flex-direction: column; gap: 4px; }
+      .phone-link { display: none; }
+      .process-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .trust-number { font-size: 22px; }
+      .cta-banner { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span>✦ PUNE TURNKEY INTERIOR STUDIO</span>
+    <span>Factory Direct Pricing • 2BHK, 3BHK, Villas & Duplexes</span>
+    <a href="https://wa.me/919719293516?text=Hi%20Apex%20Interior,%20I%20would%20like%20to%20book%20a%20free%20site%20visit">Book Free Site Visit →</a>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand-logo">
+        <span class="brand-name">APEX INTERIOR</span>
+        <span class="brand-sub">Design Your Dream • Pune</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#projects" class="nav-link">Completed Homes</a></li>
+          <li><a href="#process" class="nav-link">Our Workflow</a></li>
+          <li><a href="#rates" class="nav-link">Factory Direct Advantage</a></li>
+          <li><a href="#contact" class="nav-link">Free Site Visit</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+919719293516" class="phone-link">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +91 97192 93516
+        </a>
+        <a href="https://wa.me/919719293516?text=Hi%20Apex%20Interior,%20saw%20your%20portfolio.%20I%20want%20to%20discuss%20my%20flat%20interior." class="cta-consult">
+          <span>Book Site Visit</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Smooth Animated Slideshow -->
+  <section class="hero-container">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=85');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1920&q=85');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1920&q=85');"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Design Your Dream • Pune Studio</span>
+        </div>
+        <h1 class="hero-title">
+          Luxury Home Interiors at <em>Factory Direct</em> Rates.
+        </h1>
+        <p class="hero-desc">
+          Complete turnkey home interiors, European modular kitchens, and custom woodwork for 2BHK, 3BHK, Villas & Duplexes across Pune. Premium aesthetics without middleman markups.
+        </p>
+        <div class="hero-btn-row">
+          <a href="https://wa.me/919719293516?text=Hi%20Apex%20Interior,%20I%20am%20looking%20for%20home%20interiors%20in%20Pune.%20Please%20share%20details." class="btn-primary-wa">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.216c-5.411 0-9.808 4.397-9.808 9.808 0 1.728.451 3.419 1.306 4.901l-1.388 5.073 5.213-1.368c1.432.781 3.053 1.194 4.677 1.194 5.409 0 9.809-4.399 9.809-9.808 0-5.411-4.4-9.8-9.809-9.8z"/></svg>
+            <span>Connect on WhatsApp</span>
+          </a>
+          <a href="#projects" class="btn-secondary-light">
+            <span>Explore Pune Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-indicators">
+      <div class="dot active" onclick="setSlide(0)"></div>
+      <div class="dot" onclick="setSlide(1)"></div>
+      <div class="dot" onclick="setSlide(2)"></div>
+      <div class="dot" onclick="setSlide(3)"></div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-number">Free Visit</div>
+        <div class="trust-label">At-Home Site Measurement in Pune</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">Factory Rate</div>
+        <div class="trust-label">Zero Middleman Markup Guarantee</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">10 Years</div>
+        <div class="trust-label">Material & Hardware Warranty</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">200+ Homes</div>
+        <div class="trust-label">Completed Across Pune & PCMC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Portfolio Section -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <div class="section-subtitle">Featured Pune Residences</div>
+      <h2 class="section-title">Designed for Living, Crafted to Last.</h2>
+      <p class="section-desc">
+        A glimpse into our recent turnkey apartments, duplexes, and modular kitchens across Kharadi, Wakad, Baner & Hinjawadi.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <span class="project-tag">3BHK Turnkey</span>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Kharadi 3BHK" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Rohan Viti Contemporary Luxe</h3>
+          <div class="project-location">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            Kharadi, Pune
+          </div>
+          <div class="project-details">
+            <span>Scope: <strong>Turnkey Interior & Woodwork</strong></span>
+            <span>Type: <strong>3BHK Residence</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <span class="project-tag">Modular Kitchen</span>
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Baner Kitchen" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">VTP Sierra Minimalist Kitchen</h3>
+          <div class="project-location">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            Baner, Pune
+          </div>
+          <div class="project-details">
+            <span>Countertop: <strong>Italian Quartz Surface</strong></span>
+            <span>Finish: <strong>Anti-Scratch Matte</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <span class="project-tag">Master Bedroom & Wardrobe</span>
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Wakad Master" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Godrej Elements Master Suite</h3>
+          <div class="project-location">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            Wakad, Pune
+          </div>
+          <div class="project-details">
+            <span>Features: <strong>Fluted Panels & Warm Cove</strong></span>
+            <span>Storage: <strong>Floor-to-Ceiling Sliding</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process-section">
+    <div class="process-inner">
+      <div class="section-header" style="margin-bottom: 32px;">
+        <div class="section-subtitle">How We Work</div>
+        <h2 class="section-title">From Concept to Keys</h2>
+        <p class="section-desc">
+          Professional project tracking, transparent material commitments, and zero hidden costs.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h4 class="step-title">Free Site Visit</h4>
+          <p class="step-text">Our interior consultant visits your property anywhere in Pune for accurate laser measurements and space planning.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h4 class="step-title">Custom 3D Layout</h4>
+          <p class="step-text">Visualize your colors, materials, and lighting in photorealistic 3D before final production begins.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h4 class="step-title">Factory Manufacturing</h4>
+          <p class="step-text">Built on automated precision machinery to guarantee exact edge-banding and smooth hardware motion.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h4 class="step-title">Seamless Handover</h4>
+          <p class="step-text">Delivered on schedule with deep cleaning and your 10-year warranty documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div id="contact" class="cta-banner">
+    <div class="cta-banner-content">
+      <h2 class="cta-title">Planning Home Interiors in Pune?</h2>
+      <p class="cta-p">
+        Connect directly with the Apex Interior team on WhatsApp. Share your 2BHK, 3BHK, or Villa floor plan for a fast quotation and free site visit booking.
+      </p>
+      <a href="https://wa.me/919719293516?text=Hi%20Apex%20Interior,%20I%20have%20an%20interior%20requirement%20in%20Pune.%20Can%20we%20schedule%20a%20free%20site%20visit?" class="btn-primary-wa" style="font-size: 16px; padding: 16px 36px;">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.216c-5.411 0-9.808 4.397-9.808 9.808 0 1.728.451 3.419 1.306 4.901l-1.388 5.073 5.213-1.368c1.432.781 3.053 1.194 4.677 1.194 5.409 0 9.809-4.399 9.809-9.808 0-5.411-4.4-9.8-9.809-9.8z"/></svg>
+        <span>Chat on WhatsApp Directly</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">APEX INTERIOR • DESIGN YOUR DREAM</div>
+        <p style="margin-top: 6px; font-size: 13px;">Pune & PCMC, Maharashtra | Turnkey Residential & Modular Kitchens</p>
+      </div>
+      <div>
+        <p>© 2026 Apex Interior. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Button -->
+  <div class="mobile-floating-bar">
+    <a href="https://wa.me/919719293516?text=Hi%20Apex%20Interior,%20I%20am%20interested%20in%20home%20interiors%20in%20Pune." class="mobile-floating-btn">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.216c-5.411 0-9.808 4.397-9.808 9.808 0 1.728.451 3.419 1.306 4.901l-1.388 5.073 5.213-1.368c1.432.781 3.053 1.194 4.677 1.194 5.409 0 9.809-4.399 9.809-9.808 0-5.411-4.4-9.8-9.809-9.8z"/></svg>
+      <span>Instant WhatsApp Consultation</span>
+    </a>
+  </div>
+
+  <!-- Smooth Auto Slider Script -->
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-indicators .dot');
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function setSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+      resetTimer();
+    }
+
+    function nextSlide() {
+      let next = (currentSlide + 1) % slides.length;
+      setSlide(next);
+    }
+
+    function resetTimer() {
+      if (slideInterval) clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 4500);
+    }
+
+    resetTimer();
+  </script>
+</body>
+</html>

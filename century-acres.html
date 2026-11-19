@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Century 21 Acres | Premium Real Estate Buy & Sell | Pune</title>
+  <meta name="description" content="Century 21 Acres - Premier Real Estate & Property Advisory in Pune. Buy, sell, and invest in verified 2 & 3 BHK luxury residences, gated duplex villas, and NA plots with 100% RERA compliance.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-cream: #FDFBF7;
+      --accent-gold: #C59B27;
+      --accent-gold-dark: #A17C17;
+      --dark-navy: #0B1320;
+      --card-border: rgba(11, 19, 32, 0.08);
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: #1A202C;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    
+    /* Hero Image Crossfade Slides */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1.8s ease-in-out, transform 7s ease-out;
+      z-index: 1;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1.0);
+      z-index: 2;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      transition: all 0.25s ease;
+    }
+    .floating-wa:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 14px 35px rgba(37, 211, 102, 0.5);
+    }
+
+    /* Auto-Inquiry Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 19, 32, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      padding: 32px 36px;
+      position: relative;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+      transform: translateY(20px) scale(0.96);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(197, 155, 39, 0.3);
+    }
+    .modal-backdrop.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-800 selection:text-white">
+
+  <!-- Floating Direct WhatsApp CTA -->
+  <a href="https://wa.me/918104755586?text=Hello%20Century%2021%20Acres%20team%2C%20I%20saw%20your%20property%20showcase.%20I%20am%20interested%20in%20Buying/Selling%20property%20in%20Pune.%20Please%20share%20details." target="_blank" class="floating-wa flex items-center gap-2.5 bg-[#25D366] text-white px-5 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Direct WhatsApp Inquiry</span>
+  </a>
+
+  <!-- Top Announcement Bar -->
+  <aside class="bg-[#0B1320] text-amber-300 py-2.5 px-4 text-center text-xs tracking-wider uppercase font-semibold border-b border-amber-900/40">
+    ⭐ Pune's Certified Real Estate Advisory • 100% RERA Verified Listings • 0% Brokerage on Builder Deals
+  </aside>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#0B1320] flex items-center justify-center text-amber-400 font-serif font-black text-xl shadow-md border border-amber-500/30">
+          C
+        </div>
+        <div>
+          <span class="font-serif font-bold text-xl tracking-tight text-[#0B1320]">CENTURY 21 ACRES</span>
+          <span class="block text-[10px] tracking-widest uppercase font-semibold text-amber-700">Property Buy & Sell Advisory • Pune</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="#properties" class="hover:text-amber-700 transition">Featured Homes</a>
+        <a href="#plots" class="hover:text-amber-700 transition">NA Plots</a>
+        <a href="#sell" class="hover:text-amber-700 transition">Sell Your Property</a>
+        <a href="#why-us" class="hover:text-amber-700 transition">Why Choose Us</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+918104755586" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold text-slate-800 bg-slate-100 px-4 py-2.5 rounded-full hover:bg-slate-200 transition">
+          <svg class="w-3.5 h-3.5 text-amber-600" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/></svg>
+          +91 81047 55586
+        </a>
+        <button onclick="openModal()" class="bg-[#0B1320] text-amber-300 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-black transition shadow-lg border border-amber-400/20">
+          Book Site Visit
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Animated Image Slider -->
+  <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
+    <!-- Slider Slides -->
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');"></div>
+    
+    <!-- Dark Scrim Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/65 to-[#0B1320]/40 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-16">
+      <span class="inline-block bg-amber-400/20 text-amber-300 border border-amber-400/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
+        🏡 Your Dream Home & Investment in Pune
+      </span>
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        Buy, Sell & Invest with Confidence.<br>
+        <span class="text-amber-400">100% RERA Verified</span> Properties.
+      </h1>
+      <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed mb-10 font-normal">
+        From premium 2 & 3 BHK high-rise residences to luxury gated duplex villas and high-appreciation NA plots in Pune, Baner, Hinjawadi & PCMC.
+      </p>
+
+      <!-- Quick Interactive Filter Bar -->
+      <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/20 max-w-3xl mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl">
+        <select id="heroLocation" class="bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-xl px-4 py-3 flex-1 outline-none">
+          <option value="All Pune">📍 Location: All Pune & PCMC</option>
+          <option value="Baner / Balewadi">Baner / Balewadi</option>
+          <option value="Hinjawadi / Wakad">Hinjawadi / Wakad</option>
+          <option value="Kharadi / Wagholi">Kharadi / Wagholi</option>
+          <option value="Ravet / Punawale">Ravet / Punawale</option>
+        </select>
+        <select id="heroType" class="bg-white text-slate-800 text-xs sm:text-sm font-semibold rounded-xl px-4 py-3 flex-1 outline-none">
+          <option value="2 & 3 BHK Apartments">🏢 2 & 3 BHK Luxury Homes</option>
+          <option value="Duplex Villas">🏡 Gated Duplex Villas</option>
+          <option value="NA Investment Plots">📐 NA Residential/Commercial Plots</option>
+          <option value="Sell Property">💰 Want to Sell My Property</option>
+        </select>
+        <button onclick="handleHeroSearch()" class="bg-amber-500 hover:bg-amber-600 text-[#0B1320] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+          <span>Search Properties</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- Live Slide Dots -->
+      <div class="flex items-center justify-center gap-2 mt-8">
+        <span class="slide-dot w-8 h-1.5 rounded-full bg-amber-400"></span>
+        <span class="slide-dot w-2 h-1.5 rounded-full bg-white/40"></span>
+        <span class="slide-dot w-2 h-1.5 rounded-full bg-white/40"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metric / Trust Bar -->
+  <section class="bg-white border-y border-slate-200 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-4 border-r border-slate-100 last:border-0">
+        <div class="font-serif text-3xl sm:text-4xl font-extrabold text-[#0B1320]">1,400+</div>
+        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Properties Transacted</div>
+      </div>
+      <div class="p-4 border-r border-slate-100 last:border-0">
+        <div class="font-serif text-3xl sm:text-4xl font-extrabold text-amber-600">100%</div>
+        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">RERA Registered</div>
+      </div>
+      <div class="p-4 border-r border-slate-100 last:border-0">
+        <div class="font-serif text-3xl sm:text-4xl font-extrabold text-[#0B1320]">0%</div>
+        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Direct Builder Brokerage</div>
+      </div>
+      <div class="p-4">
+        <div class="font-serif text-3xl sm:text-4xl font-extrabold text-amber-600">45 Days</div>
+        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Guaranteed Sell Time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Hot Properties -->
+  <section id="properties" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-amber-700 font-bold text-xs tracking-widest uppercase bg-amber-100/70 px-3.5 py-1.5 rounded-full">Exclusive Hot Deals</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#0B1320] mt-3">Featured Residential & Investment Opportunities</h2>
+      <p class="text-slate-600 text-sm mt-3">Handpicked, high-appreciation properties with complete legal title clearance & bank loan approvals.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Property 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Siddhashila Pune" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fast Selling</span>
+          <span class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-amber-400 text-xs font-extrabold px-3 py-1 rounded-md">₹59.99 Lakh* Onwards</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-amber-800 tracking-wider uppercase mb-1">Baner - Wakad Corridor, Pune</div>
+            <h3 class="font-serif font-bold text-xl text-[#0B1320]">Siddhashila Grandeur Residences</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Premium 2 & 3 BHK smart homes with Italian finishes, 40+ club amenities, and 10 mins from IT Park.</p>
+            
+            <div class="flex items-center gap-4 text-xs font-semibold text-slate-600 my-4 py-3 border-y border-slate-100">
+              <span>🛏️ 2 & 3 BHK</span>
+              <span>📐 760 - 1180 Sq.Ft</span>
+              <span>🏢 RERA Approved</span>
+            </div>
+          </div>
+          <div class="flex gap-2.5">
+            <a href="https://wa.me/918104755586?text=Hi%20Century%2021%20Acres%2C%20please%20send%20brochure%20and%20pricing%20for%20Siddhashila%20Grandeur." target="_blank" class="flex-1 bg-[#25D366] text-white text-xs font-bold py-3 rounded-xl text-center hover:bg-emerald-600 transition flex items-center justify-center gap-1.5">
+              <span>WhatsApp Brochure</span>
+            </a>
+            <button onclick="openModalWithProp('Siddhashila Grandeur 2/3 BHK')" class="bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-xl hover:bg-black transition">
+              Site Visit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Duplex Villas" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-amber-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Luxury Duplex</span>
+          <span class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-amber-400 text-xs font-extrabold px-3 py-1 rounded-md">₹1.15 Cr* Onwards</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-amber-800 tracking-wider uppercase mb-1">Kharadi / Eon IT Zone, Pune</div>
+            <h3 class="font-serif font-bold text-xl text-[#0B1320]">The Crown Gated Duplex Villas</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Exclusive 3 & 4 BHK independent duplex villas with private terrace garden, dedicated 2 car parking & clubhouse.</p>
+            
+            <div class="flex items-center gap-4 text-xs font-semibold text-slate-600 my-4 py-3 border-y border-slate-100">
+              <span>🏡 3 & 4 BHK Villa</span>
+              <span>📐 1850 - 2400 Sq.Ft</span>
+              <span>🔒 24×7 Security</span>
+            </div>
+          </div>
+          <div class="flex gap-2.5">
+            <a href="https://wa.me/918104755586?text=Hi%20Century%2021%20Acres%2C%20please%20send%20villa%20plans%20for%20The%20Crown%20Villas." target="_blank" class="flex-1 bg-[#25D366] text-white text-xs font-bold py-3 rounded-xl text-center hover:bg-emerald-600 transition flex items-center justify-center gap-1.5">
+              <span>WhatsApp Plans</span>
+            </a>
+            <button onclick="openModalWithProp('The Crown Duplex Villas')" class="bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-xl hover:bg-black transition">
+              Site Visit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 3 (NA Plots) -->
+      <div id="plots" class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="NA Plots" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-blue-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">High Appreciation</span>
+          <span class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-amber-400 text-xs font-extrabold px-3 py-1 rounded-md">₹24.99 Lakh* Onwards</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-amber-800 tracking-wider uppercase mb-1">Hinjawadi Phase 3 Extension</div>
+            <h3 class="font-serif font-bold text-xl text-[#0B1320]">Century Golden Acres NA Plots</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Collector sanctioned NA residential plots with separate 7/12, demarcation, internal tar roads, water & electricity.</p>
+            
+            <div class="flex items-center gap-4 text-xs font-semibold text-slate-600 my-4 py-3 border-y border-slate-100">
+              <span>📐 1200 - 3500 Sq.Ft</span>
+              <span>📜 Clear 7/12 Title</span>
+              <span>⚡ Ready Possession</span>
+            </div>
+          </div>
+          <div class="flex gap-2.5">
+            <a href="https://wa.me/918104755586?text=Hi%20Century%2021%20Acres%2C%20please%20send%20layout%20and%207/12%20details%20for%20Golden%20Acres%20Plots." target="_blank" class="flex-1 bg-[#25D366] text-white text-xs font-bold py-3 rounded-xl text-center hover:bg-emerald-600 transition flex items-center justify-center gap-1.5">
+              <span>WhatsApp Layout</span>
+            </a>
+            <button onclick="openModalWithProp('Golden Acres NA Plots')" class="bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-xl hover:bg-black transition">
+              Site Visit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sell Your Property With Century 21 Acres Section -->
+  <section id="sell" class="bg-[#0B1320] text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div class="max-w-xl">
+        <span class="text-amber-400 font-bold text-xs uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 px-3.5 py-1.5 rounded-full">
+          For Property Sellers & Resellers
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-4 leading-snug">
+          Want to Sell Your Property in Pune at Maximum Market Value?
+        </h2>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          List with Century 21 Acres and get instant exposure to over 5,000+ verified active buyers. We handle legal paperwork, buyer vetting, and guaranteed fastest closing.
+        </p>
+        <div class="grid grid-cols-2 gap-4 mt-6 text-xs font-semibold text-slate-200">
+          <div class="flex items-center gap-2">✅ Free Property Valuation</div>
+          <div class="flex items-center gap-2">✅ Verified Direct Buyers</div>
+          <div class="flex items-center gap-2">✅ Zero Distress Sales</div>
+          <div class="flex items-center gap-2">✅ Complete Legal Verification</div>
+        </div>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 w-full max-w-md shadow-2xl">
+        <h3 class="font-serif font-bold text-xl text-amber-300 mb-2">List Property for Sale</h3>
+        <p class="text-xs text-slate-300 mb-6">Drop your property specs & our sales director will connect in 30 minutes.</p>
+        
+        <form onsubmit="handleSellSubmit(event)" class="space-y-3.5">
+          <input type="text" id="sName" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 text-xs font-medium outline-none">
+          <input type="tel" id="sPhone" placeholder="WhatsApp Number" required class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 text-xs font-medium outline-none">
+          <select id="sPropType" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 text-xs font-medium outline-none">
+            <option value="Flat / Apartment">Selling: Flat / Apartment</option>
+            <option value="Independent House / Villa">Selling: House / Villa</option>
+            <option value="NA Land / Plot">Selling: Land / Plot</option>
+            <option value="Commercial Shop / Office">Selling: Commercial Property</option>
+          </select>
+          <input type="text" id="sLoc" placeholder="Location in Pune (e.g. Baner, Wakad)" required class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 text-xs font-medium outline-none">
+          <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-[#0B1320] font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition shadow-lg">
+            List My Property on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#060B12] text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-serif font-bold flex items-center justify-center text-sm">C</div>
+        <div>
+          <span class="font-bold text-white text-sm">Century 21 Acres</span>
+          <span class="block text-[11px] text-slate-500">Certified Real Estate Advisory • Pune, Maharashtra</span>
+        </div>
+      </div>
+      <div>
+        Direct Helpline: <a href="tel:+918104755586" class="text-amber-400 font-bold hover:underline">+91 81047 55586</a>
+      </div>
+      <div class="text-slate-600">
+        © 2026 Century 21 Acres. All Rights Reserved. RERA Registered Advisory.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auto-Inquiry Modal on Load -->
+  <div class="modal-backdrop" id="inquiryModal">
+    <div class="modal-card">
+      <button class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-amber-100 text-slate-700 font-bold text-sm flex items-center justify-center transition" onclick="closeModal()">&times;</button>
+      
+      <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full mb-3">
+        🌟 Verified Pune Properties
+      </span>
+      <h3 class="font-serif font-bold text-2xl text-[#0B1320]" id="modalTitle">Find Verified Properties in Pune</h3>
+      <p class="text-xs text-slate-500 mt-1 mb-6">Share your preferences to get instant floor plans, price breakdowns & site visit availability directly on WhatsApp.</p>
+
+      <form onsubmit="handleInquirySubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Your Name</label>
+          <input type="text" id="mName" placeholder="e.g. Sameer Kulkarni" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs outline-none focus:border-amber-600 bg-slate-50">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Number</label>
+          <input type="tel" id="mPhone" placeholder="e.g. 98220 12345" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs outline-none focus:border-amber-600 bg-slate-50">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Looking to</label>
+            <select id="mAction" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs outline-none bg-slate-50">
+              <option value="Buy Property">Buy Property</option>
+              <option value="Sell Property">Sell Property</option>
+              <option value="Invest in Land">Invest in Land / Plots</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Budget</label>
+            <select id="mBudget" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs outline-none bg-slate-50">
+              <option value="₹45L - ₹75 Lakhs">₹45L - ₹75 Lakhs</option>
+              <option value="₹75L - ₹1.5 Crore" selected>₹75L - ₹1.5 Crore</option>
+              <option value="₹1.5 Crore+">₹1.5 Crore+</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full mt-4 bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+          <span>📲 Get Verified Options on WhatsApp</span>
+        </button>
+        <p class="text-[10px] text-center text-slate-400 mt-2">🔒 100% Privacy. Zero Spam Guarantee.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Slider & Modals -->
+  <script>
+    // Hero Slider Auto-rotation
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('bg-amber-400', 'w-8');
+      dots[currentSlide].classList.add('bg-white/40', 'w-2');
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.remove('bg-white/40', 'w-2');
+      dots[currentSlide].classList.add('bg-amber-400', 'w-8');
+    }, 4500);
+
+    // Auto-open modal after 1.5s
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const modal = document.getElementById('inquiryModal');
+        if (modal) modal.classList.add('active');
+      }, 1500);
+    });
+
+    function closeModal() {
+      document.getElementById('inquiryModal').classList.remove('active');
+    }
+
+    function openModal() {
+      document.getElementById('modalTitle').innerText = 'Book Verified Site Visit';
+      document.getElementById('inquiryModal').classList.add('active');
+    }
+
+    function openModalWithProp(propName) {
+      document.getElementById('modalTitle').innerText = 'Inquiry for ' + propName;
+      document.getElementById('inquiryModal').classList.add('active');
+    }
+
+    function handleHeroSearch() {
+      const loc = document.getElementById('heroLocation').value;
+      const type = document.getElementById('heroType').value;
+      const waMsg = encodeURIComponent(`Hi Century 21 Acres, I am searching for ${type} in ${loc}. Please share verified options and brochures.`);
+      window.open(`https://wa.me/918104755586?text=${waMsg}`, '_blank');
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('mName').value.trim();
+      const phone = document.getElementById('mPhone').value.trim();
+      const action = document.getElementById('mAction').value;
+      const budget = document.getElementById('mBudget').value;
+
+      const waMsg = encodeURIComponent(`Hi Century 21 Acres! My name is ${name} (${phone}). I am looking to ${action} in Pune with budget ${budget}. Please share verified property details and floor plans.`);
+      closeModal();
+      window.open(`https://wa.me/918104755586?text=${waMsg}`, '_blank');
+    }
+
+    function handleSellSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('sName').value.trim();
+      const phone = document.getElementById('sPhone').value.trim();
+      const ptype = document.getElementById('sPropType').value;
+      const loc = document.getElementById('sLoc').value.trim();
+
+      const waMsg = encodeURIComponent(`Hi Century 21 Acres! My name is ${name} (${phone}). I want to sell my ${ptype} located at ${loc}, Pune. Please provide valuation and connect with verified buyers.`);
+      window.open(`https://wa.me/918104755586?text=${waMsg}`, '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garvik Hair & Skin Clinic | Advanced Hair Transplant & Aesthetics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0F172A;
+      --accent: #2563EB;
+      --accent-gold: #D97706;
+      --green: #25D366;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-dark: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --radius: 14px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.6; padding-bottom: 75px; }
+    
+    .top-strip { background: #0F172A; color: #FFF; font-size: 13px; text-align: center; padding: 10px 16px; font-weight: 500; }
+    .top-strip strong { color: #38BDF8; }
+
+    header { background: #FFF; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 800; color: #0F172A; letter-spacing: -0.5px; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .btn-wa-sm { background: var(--green); color: #FFF; text-decoration: none; font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 50px; display: flex; align-items: center; gap: 6px; }
+
+    .hero { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: #EFF6FF; color: var(--accent); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero h1 { font-size: 38px; line-height: 1.2; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.8px; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 16px; color: var(--text-muted); margin-bottom: 24px; }
+    .hero-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .feat .v { font-size: 22px; font-weight: 800; color: #0F172A; }
+    .feat .l { font-size: 12px; color: var(--text-muted); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-main { background: var(--accent); color: #FFF; text-decoration: none; padding: 14px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; }
+    .btn-offer { background: #0F172A; color: #FFF; text-decoration: none; padding: 14px 22px; border-radius: 50px; font-weight: 700; font-size: 15px; }
+
+    .hero-card { background: #FFF; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); position: relative; }
+    .hero-card img { width: 100%; height: 380px; object-fit: cover; }
+    .card-offer-badge { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(8px); color: #FFF; padding: 12px 18px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .card-offer-badge .price { font-size: 20px; font-weight: 800; color: #38BDF8; }
+
+    .sec-wrap { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .sec-title { text-align: center; margin-bottom: 36px; }
+    .sec-title h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .sec-title p { color: var(--text-muted); font-size: 15px; }
+
+    .treatments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .treat-card { background: #FFF; border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .treat-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .treat-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .treat-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+    .treat-card .price-tag { font-weight: 800; color: var(--accent); font-size: 15px; }
+
+    .calc-box { background: #FFF; border-radius: 20px; padding: 32px; border: 1px solid var(--border); max-width: 750px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .calc-title { text-align: center; margin-bottom: 24px; }
+    .calc-title h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .form-control { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit; font-size: 14px; }
+    .calc-res { background: #F1F5F9; border-radius: 12px; padding: 20px; text-align: center; }
+    .calc-res .est-val { font-size: 30px; font-weight: 800; color: var(--accent); margin: 6px 0; }
+
+    .bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #FFF; border-top: 1px solid var(--border); padding: 12px 16px; z-index: 99; }
+    .btn-wa-full { background: var(--green); color: #FFF; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-radius: 50px; font-weight: 800; font-size: 15px; }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 24px; }
+      .hero h1 { font-size: 30px; }
+      .treatments-grid { grid-template-columns: 1fr; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .bottom-bar { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-strip">
+    🔥 SPECIAL CAMPAIGN OFFER: <strong>Hair Transplant Starting at Just ₹39,999/-</strong> (Limited Slots)
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">GARVIK <span>CLINIC</span></a>
+      <a href="https://wa.me/917982725066?text=Hi%20Garvik%20Clinic%2C%20I%20saw%20your%20website%20and%20want%20to%20consult%20for%20Hair%20Transplant" class="btn-wa-sm">
+        Book Consultation
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="badge">⭐ Delhi NCR’s Trusted Aesthetic Center</div>
+      <h1>Bald to Bold: Natural <span>Hair Restoration</span> You Can Trust</h1>
+      <p>US-FDA approved Micro-FUE & Sapphire Hair Transplant techniques. Painless, maximum graft survival, and 100% natural hairline designed by expert certified surgeons.</p>
+      
+      <div class="hero-features">
+        <div class="feat"><div class="v">₹39,999</div><div class="l">Starts At</div></div>
+        <div class="feat"><div class="v">98.5%</div><div class="l">Graft Survival</div></div>
+        <div class="feat"><div class="v">Natural</div><div class="l">Hairline Design</div></div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/917982725066?text=Hi%20Garvik%20Clinic%2C%20I%20want%20to%20book%20a%20free%20Hair%20Checkup%20%26%20Graft%20Estimation" class="btn-main">Book Free Scalp Analysis</a>
+        <a href="#calculator" class="btn-offer">Estimate Grafts</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Hair Restoration Clinic Doctor">
+      <div class="card-offer-badge">
+        <div>
+          <div style="font-size: 12px; color: #CBD5E1;">Limited Time Meta Offer</div>
+          <div style="font-weight: 700;">Complete Procedure</div>
+        </div>
+        <div class="price">₹39,999/-</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-wrap">
+    <div class="sec-title">
+      <h2>Specialized Hair & Skin Solutions</h2>
+      <p>Delivering high-precision clinical excellence with state-of-the-art medical technology.</p>
+    </div>
+
+    <div class="treatments-grid">
+      <div class="treat-card">
+        <div class="icon">👨‍⚕️</div>
+        <h3>Advanced Bio-FUE Hair Transplant</h3>
+        <p>Minimally invasive follicular unit extraction with zero linear scarring and rapid 3-day recovery.</p>
+        <div class="price-tag">Starting ₹39,999/-</div>
+      </div>
+
+      <div class="treat-card">
+        <div class="icon">💉</div>
+        <h3>GFC & PRP Hair Therapy</h3>
+        <p>Autologous growth factor concentrate injections to stop hair fall and stimulate dormant hair follicles.</p>
+        <div class="price-tag">Per Session Packages</div>
+      </div>
+
+      <div class="treat-card">
+        <div class="icon">✨</div>
+        <h3>Laser Skin & Anti-Pigmentation</h3>
+        <p>Targeted medical lasers for acne scars, pigmentation, skin brightening, and rejuvenation.</p>
+        <div class="price-tag">Custom Clinic Protocols</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-wrap" id="calculator" style="background: #EFF6FF; border-radius: 24px;">
+    <div class="calc-box">
+      <div class="calc-title">
+        <h3>Instant Hair Graft & Cost Calculator</h3>
+        <p style="color: #64748B; font-size: 14px;">Select your baldness level (Norwood Scale) to get an immediate estimate.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="form-group">
+          <label>Stage of Hair Loss</label>
+          <select class="form-control" id="stageSelect" onchange="calcCost()">
+            <option value="stage2">Grade 2 - Receding Temples (~1,500 Grafts)</option>
+            <option value="stage3" selected>Grade 3 - Frontal Forehead Thinning (~2,500 Grafts)</option>
+            <option value="stage4">Grade 4 - Frontal & Crown Thinning (~3,500 Grafts)</option>
+            <option value="stage5">Grade 5+ - Extensive Hair Loss (~4,500+ Grafts)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Technique</label>
+          <select class="form-control" id="techSelect" onchange="calcCost()">
+            <option value="fue" selected>Advanced Bio-FUE</option>
+            <option value="sapphire">Sapphire Micro-FUE (High Density)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-res">
+        <div style="font-size: 12px; font-weight: 700; color: #64748B; text-transform: uppercase;">Estimated Investment</div>
+        <div class="est-val" id="costVal">₹39,999 – ₹49,999</div>
+        <p style="font-size: 13px; color: #64748B; margin-bottom: 16px;">Includes Surgeon Charges, Local Anesthesia, Post-Op Kit & 1 Free PRP Session.</p>
+        <a id="btnWaQuote" href="https://wa.me/917982725066?text=Hi%20Garvik%20Clinic%2C%20I%20checked%20my%20hair%20graft%20estimate%20(₹39,999%20-%20₹49,999)%20on%20your%20website.%20Please%20guide%20me" class="btn-wa-full" style="display: inline-flex;">
+          Lock This Offer on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="bottom-bar">
+    <a href="https://wa.me/917982725066?text=Hi%20Garvik%20Clinic%2C%20I%20want%20to%20book%20a%20consultation" class="btn-wa-full">
+      Chat on WhatsApp with Garvik Clinic
+    </a>
+  </div>
+
+  <script>
+    function calcCost() {
+      const stage = document.getElementById('stageSelect').value;
+      const tech = document.getElementById('techSelect').value;
+      const costVal = document.getElementById('costVal');
+      const btn = document.getElementById('btnWaQuote');
+
+      let val = '₹39,999 – ₹49,999';
+      if (stage === 'stage2') {
+        val = tech === 'fue' ? '₹35,000 – ₹42,000' : '₹45,000 – ₹55,000';
+      } else if (stage === 'stage3') {
+        val = tech === 'fue' ? '₹39,999 – ₹49,999' : '₹55,000 – ₹68,000';
+      } else if (stage === 'stage4') {
+        val = tech === 'fue' ? '₹58,000 – ₹72,000' : '₹75,000 – ₹90,000';
+      } else {
+        val = tech === 'fue' ? '₹75,000 – ₹95,000' : '₹98,000 – ₹1,20,000';
+      }
+      costVal.innerText = val;
+      btn.href = 'https://wa.me/917982725066?text=Hi%20Garvik%20Clinic%2C%20I%20checked%20my%20hair%20graft%20estimate%20(' + encodeURIComponent(val) + ')%20on%20your%20website.%20Please%20guide%20me';
+    }
+  </script>
+</body>
+</html>

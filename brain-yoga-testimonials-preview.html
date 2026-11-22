@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brain Yoga for Busy Minds - Video Testimonials Preview</title>
+  <title>Brain Yoga for Busy Minds - Full Width Video Testimonials</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,68 +11,113 @@
     :root {
       --teal: #007984;
       --teal-dark: #005A63;
-      --teal-light: #E6F3F4;
       --coral: #FEB880;
-      --dark: #1F2937;
-      --gray-bg: #F9FAFB;
-      --border: #E5E7EB;
+      --dark: #0F172A;
+      --border: rgba(255, 255, 255, 0.15);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
-      background: #F3F4F6;
+      background: #FFFFFF;
       color: var(--dark);
-      padding: 20px 10px 60px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .preview-notice {
-      max-width: 1160px;
-      margin: 0 auto 24px;
-      background: #1E293B;
-      color: #FFF;
-      padding: 16px 20px;
-      border-radius: 12px;
+    /* Top Global Notice */
+    .top-strip {
+      background: #0B1320;
+      color: #94A3B8;
+      font-size: 13px;
+      padding: 10px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .preview-notice .badge {
+    .top-strip strong { color: #38BDF8; }
+    .top-strip .tag {
       background: #FEB880;
       color: #000;
       font-size: 11px;
       font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 50px;
-    }
-    .preview-notice p {
-      font-size: 13px;
-      color: #CBD5E1;
     }
 
-    /* Testimonial Section - Exact Kids Page Matching Design */
-    .testimonial-section {
-      max-width: 1160px;
+    /* Website Header Mockup */
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .header-inner {
+      max-width: 1280px;
       margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--teal);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #F59E0B; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .btn-header {
       background: var(--teal);
-      border-radius: 24px;
-      padding: 60px 40px;
+      color: #FFFFFF !important;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+    }
+
+    /* FULL SCREEN EDGE-TO-EDGE TESTIMONIAL SECTION */
+    .testimonial-fullwidth {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      background-color: var(--teal);
+      padding: 85px 0 95px 0;
       color: #FFFFFF;
-      box-shadow: 0 20px 50px rgba(0, 121, 132, 0.25);
       position: relative;
-      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
     .sec-header {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
+      max-width: 780px;
+      margin: 0 auto 50px;
     }
     .sec-pill {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: #FFFFFF;
       font-size: 13px;
@@ -83,47 +128,50 @@
       letter-spacing: 0.5px;
     }
     .sec-header h2 {
-      font-size: 36px;
+      font-size: 42px;
       font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 14px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
     .sec-header h2 span {
       color: var(--coral);
     }
     .sec-header p {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 300;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.92);
       line-height: 1.6;
     }
 
-    /* Grid of Videos */
+    /* Video Grid (2 Columns on Desktop, 1 on Mobile) */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      margin-bottom: 30px;
+      gap: 32px;
+      margin-bottom: 40px;
     }
 
     .video-card {
       background: #FFFFFF;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
     }
     .video-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
     }
-    .video-iframe-wrap {
+
+    .video-frame {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       height: 0;
-      overflow: hidden;
       background: #000;
     }
-    .video-iframe-wrap iframe {
+    .video-frame iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -132,223 +180,201 @@
       border: 0;
     }
 
-    .video-meta {
-      padding: 16px 20px;
-      color: var(--dark);
+    .card-footer {
+      padding: 16px 22px;
+      background: #FFFFFF;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid #F1F5F9;
     }
-    .video-meta .author {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
+    .card-footer .title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F172A;
     }
-    .video-meta .lang-tag {
+    .card-footer .lang-badge {
       background: #EEF2F6;
-      color: #64748B;
+      color: #475569;
       font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    /* Tab switcher for Telugu / English */
-    .tab-bar {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-    .tab-btn {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #FFF;
-      padding: 10px 22px;
-      border-radius: 50px;
+    .section-footer-note {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
       font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .tab-btn.active {
-      background: #FFFFFF;
-      color: var(--teal);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 30px;
     }
 
-    /* Carousel Nav Buttons */
-    .carousel-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      margin-top: 10px;
-    }
-    .nav-circle {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #FFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 18px;
-      transition: all 0.2s;
-    }
-    .nav-circle:hover {
-      background: #FFFFFF;
-      color: var(--teal);
-    }
-
-    @media (max-width: 800px) {
-      .testimonial-section { padding: 40px 20px; }
-      .sec-header h2 { font-size: 26px; }
-      .video-grid { grid-template-columns: 1fr; gap: 20px; }
+    @media (max-width: 900px) {
+      .testimonial-fullwidth { padding: 60px 0; }
+      .container { padding: 0 18px; }
+      .sec-header h2 { font-size: 30px; }
+      .video-grid { grid-template-columns: 1fr; gap: 24px; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top preview control banner -->
-  <div class="preview-notice">
+  <!-- Top Announcement -->
+  <div class="top-strip">
     <div>
-      <span class="badge">LIVE MOCKUP PREVIEW</span>
-      <strong style="margin-left: 8px; font-size: 14px;">Brain Yoga for Busy Minds • Video Testimonial Section</strong>
-      <p>This layout matches the Brain Yoga for Kids teal brand colors (#007984 & #FEB880) and embeds all 10 videos Rajendra Boddu sent.</p>
+      <span class="tag">FULL SCREEN PREVIEW</span>
+      <strong style="margin-left: 8px;">Brain Yoga for Busy Minds</strong> • 100% Edge-to-Edge Desktop & Mobile Layout
     </div>
-    <div style="font-size: 12px; color: #94A3B8;">
-      Mode: <strong>Hidden by default on Live Site</strong> (As instructed by Rajendra ji)
-    </div>
+    <div>Status: <strong>Hidden on Live Site until English Videos Added</strong></div>
   </div>
 
-  <!-- The Actual Testimonial Section -->
-  <section class="testimonial-section" id="testimonials">
-    <div class="sec-header">
-      <div class="sec-pill">Participant Stories</div>
-      <h2>Transformation Stories from <span>Busy Minds</span></h2>
-      <p>The best way to understand Brain Yoga is through the experiences of working professionals, leaders, and parents who have experienced the practice.</p>
+  <!-- Real Site Header Context -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">BRAIN YOGA <span>ACADEMY</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Kids Program</a></li>
+        <li><a href="#" style="color: var(--teal); font-weight: 700;">Busy Minds (Adults)</a></li>
+        <li><a href="#">Workshops</a></li>
+        <li><a href="#" class="btn-header">Book Free Session</a></li>
+      </ul>
     </div>
+  </header>
 
-    <!-- Video Grid (Featuring the 10 YouTube Videos sent by Rajendra ji) -->
-    <div class="video-grid">
-      <!-- Video 1 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/tvGIzsMHLMg" title="Brain Yoga Testimonial 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #1</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
+  <!-- 100% FULL WIDTH EDGE-TO-EDGE SECTION -->
+  <section class="testimonial-fullwidth" id="video-testimonials">
+    <div class="container">
+      
+      <div class="sec-header">
+        <div class="sec-pill">Participant Stories</div>
+        <h2>Transformation Stories from <span>Busy Minds</span></h2>
+        <p>The best way to understand Brain Yoga is through the experiences of working professionals, leaders, and parents who have experienced the practice firsthand.</p>
       </div>
 
-      <!-- Video 2 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/xFzc5OA-llE" title="Brain Yoga Testimonial 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!-- 10 Videos Grid (Rajendra Boddu's Verified YouTube Links) -->
+      <div class="video-grid">
+
+        <!-- Video 1 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/tvGIzsMHLMg" title="Brain Yoga Adult Testimonial 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #1</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
         </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #2</span>
-          <span class="lang-tag">Telugu Video</span>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/xFzc5OA-llE" title="Brain Yoga Adult Testimonial 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #2</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
         </div>
+
+        <!-- Video 3 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/SrpkYuDnMPM" title="Brain Yoga Adult Testimonial 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #3</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/SYGSx2sPkps" title="Brain Yoga Adult Testimonial 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #4</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/I6RbLUjHfKU" title="Brain Yoga Adult Testimonial 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #5</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/9NNVaOeqb2s" title="Brain Yoga Adult Testimonial 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #6</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 7 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/5-QVguj1LPA" title="Brain Yoga Adult Testimonial 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #7</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 8 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/b07JkP-Lp_0" title="Brain Yoga Adult Testimonial 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #8</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 9 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/uGSTZP0FW38" title="Brain Yoga Adult Testimonial 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #9</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
+        <!-- Video 10 -->
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/ib8-juxUK4c" title="Brain Yoga Adult Testimonial 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <span class="title">Participant Experience #10</span>
+            <span class="lang-badge">Telugu Video</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Video 3 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/SrpkYuDnMPM" title="Brain Yoga Testimonial 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #3</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
+      <div class="section-footer-note">
+        ✨ 10 Verified Adult Video Testimonials Integrated • Seamless Full-Width Background
       </div>
 
-      <!-- Video 4 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/SYGSx2sPkps" title="Brain Yoga Testimonial 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #4</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 5 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/I6RbLUjHfKU" title="Brain Yoga Testimonial 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #5</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 6 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/9NNVaOeqb2s" title="Brain Yoga Testimonial 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #6</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 7 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/5-QVguj1LPA" title="Brain Yoga Testimonial 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #7</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 8 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/b07JkP-Lp_0" title="Brain Yoga Testimonial 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #8</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 9 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/uGSTZP0FW38" title="Brain Yoga Testimonial 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #9</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-
-      <!-- Video 10 -->
-      <div class="video-card">
-        <div class="video-iframe-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/ib8-juxUK4c" title="Brain Yoga Testimonial 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-meta">
-          <span class="author">Participant Experience #10</span>
-          <span class="lang-tag">Telugu Video</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation indicator -->
-    <div style="text-align: center; color: rgba(255,255,255,0.7); font-size: 13px;">
-      ⚡ Showing 10 Verified Adult Video Testimonials (Responsive 2-col desktop, 1-col mobile)
     </div>
   </section>
 

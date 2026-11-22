@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brain Yoga for Busy Minds - Full Width Video Testimonials</title>
+  <title>Brain Yoga for Busy Minds - Interactive Carousel Testimonials</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --teal: #007984;
-      --teal-dark: #005A63;
-      --coral: #FEB880;
-      --dark: #0F172A;
-      --border: rgba(255, 255, 255, 0.15);
+      --teal-dark: #0F6E8C;
+      --coral: #F4A261;
+      --dark: #272727;
+      --gray-text: #4A5568;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
@@ -25,9 +25,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Global Notice */
+    /* Top Preview Strip */
     .top-strip {
-      background: #0B1320;
+      background: #0F172A;
       color: #94A3B8;
       font-size: 13px;
       padding: 10px 24px;
@@ -36,11 +36,10 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .top-strip strong { color: #38BDF8; }
-    .top-strip .tag {
-      background: #FEB880;
+    .top-strip .pill {
+      background: var(--coral);
       color: #000;
       font-size: 11px;
       font-weight: 700;
@@ -49,16 +48,13 @@
       text-transform: uppercase;
     }
 
-    /* Website Header Mockup */
+    /* Website Mockup Header */
     header {
       background: #FFFFFF;
       border-bottom: 1px solid #E2E8F0;
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
     .header-inner {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 18px 24px;
       display: flex;
@@ -70,12 +66,11 @@
       font-weight: 800;
       color: var(--teal);
       text-decoration: none;
-      letter-spacing: -0.5px;
     }
     .logo span { color: #F59E0B; }
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
       list-style: none;
     }
@@ -85,93 +80,132 @@
       font-size: 14px;
       font-weight: 500;
     }
-    .btn-header {
-      background: var(--teal);
-      color: #FFFFFF !important;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600 !important;
-    }
 
-    /* FULL SCREEN EDGE-TO-EDGE TESTIMONIAL SECTION */
-    .testimonial-fullwidth {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      background-color: var(--teal);
-      padding: 85px 0 95px 0;
-      color: #FFFFFF;
+    /* SECTION 6 EXACT KIDS-PAGE CLONE FOR ADULT TESTIMONIALS */
+    .activities-section {
+      width: 100%;
+      background: #FFFFFF;
+      padding: 80px 0 90px;
       position: relative;
     }
 
     .container {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
+      position: relative;
     }
 
-    .sec-header {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 50px;
-    }
-    .sec-pill {
+    .sec-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: var(--coral);
       color: #FFFFFF;
       font-size: 13px;
       font-weight: 600;
-      padding: 6px 18px;
-      border-radius: 50px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       margin-bottom: 16px;
-      letter-spacing: 0.5px;
     }
-    .sec-header h2 {
-      font-size: 42px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .header-text {
+      max-width: 680px;
+    }
+    .header-text h2 {
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: #272727;
+      margin-bottom: 12px;
       letter-spacing: -0.5px;
     }
-    .sec-header h2 span {
-      color: var(--coral);
+    .header-text h2 span {
+      color: var(--teal);
+      font-weight: 600;
     }
-    .sec-header p {
-      font-size: 17px;
+    .header-text p {
+      font-size: 16px;
       font-weight: 300;
-      color: rgba(255, 255, 255, 0.92);
+      color: #333333;
       line-height: 1.6;
     }
 
-    /* Video Grid (2 Columns on Desktop, 1 on Mobile) */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-bottom: 40px;
+    /* Top-Right Slider Controls (Like Kids Section 6) */
+    .slider-arrows {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .arrow-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 30px;
+      background: var(--teal-dark);
+      color: #FFFFFF;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(15, 110, 140, 0.25);
+      transition: all 0.2s ease;
+      font-size: 18px;
+    }
+    .arrow-btn:hover {
+      background: var(--teal);
+      transform: scale(1.06);
+    }
+    .arrow-btn:active {
+      transform: scale(0.95);
     }
 
-    .video-card {
-      background: #FFFFFF;
-      border-radius: 16px;
+    /* CAROUSEL TRACK & SLIDES */
+    .carousel-viewport {
+      width: 100%;
       overflow: hidden;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px 4px 25px;
     }
-    .video-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
     }
 
-    .video-frame {
+    /* COMPACT VIDEO CARD */
+    .compact-card {
+      flex: 0 0 calc((100% - 48px) / 3); /* Exactly 3 cards visible on desktop */
+      min-width: calc((100% - 48px) / 3);
+      background: #FFFFFF;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid #EAEAEA;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .compact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%; /* Compact 16:9 */
       height: 0;
       background: #000;
     }
-    .video-frame iframe {
+    .video-wrapper iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -180,56 +214,76 @@
       border: 0;
     }
 
-    .card-footer {
-      padding: 16px 22px;
+    .card-info {
+      padding: 14px 18px;
       background: #FFFFFF;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid #F1F5F9;
     }
-    .card-footer .title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #0F172A;
-    }
-    .card-footer .lang-badge {
-      background: #EEF2F6;
-      color: #475569;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .section-footer-note {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.8);
+    .card-info .label {
       font-size: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 30px;
+      font-weight: 600;
+      color: #1E293B;
+    }
+    .card-info .badge-sub {
+      background: #F1F5F9;
+      color: #64748B;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
     }
 
-    @media (max-width: 900px) {
-      .testimonial-fullwidth { padding: 60px 0; }
-      .container { padding: 0 18px; }
-      .sec-header h2 { font-size: 30px; }
-      .video-grid { grid-template-columns: 1fr; gap: 24px; }
+    /* Bottom Slider Indicator Dots */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #CBD5E1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      width: 28px;
+      border-radius: 20px;
+      background: var(--teal-dark);
+    }
+
+    @media (max-width: 1024px) {
+      .compact-card {
+        flex: 0 0 calc((100% - 24px) / 2); /* 2 cards on tablet */
+        min-width: calc((100% - 24px) / 2);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .header-text h2 { font-size: 28px; }
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .compact-card {
+        flex: 0 0 100%; /* 1 card on mobile */
+        min-width: 100%;
+      }
       .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement -->
+  <!-- Top Preview Bar -->
   <div class="top-strip">
     <div>
-      <span class="tag">FULL SCREEN PREVIEW</span>
-      <strong style="margin-left: 8px;">Brain Yoga for Busy Minds</strong> • 100% Edge-to-Edge Desktop & Mobile Layout
+      <span class="pill">SECTION 6 CAROUSEL CLONE</span>
+      <strong style="margin-left: 8px;">Brain Yoga for Busy Minds</strong> • Compact 3-Card Carousel with Left/Right Arrows
     </div>
-    <div>Status: <strong>Hidden on Live Site until English Videos Added</strong></div>
+    <div style="font-size: 12px;">Total 10 YouTube Testimonials Loaded</div>
   </div>
 
   <!-- Real Site Header Context -->
@@ -241,142 +295,225 @@
         <li><a href="#">Kids Program</a></li>
         <li><a href="#" style="color: var(--teal); font-weight: 700;">Busy Minds (Adults)</a></li>
         <li><a href="#">Workshops</a></li>
-        <li><a href="#" class="btn-header">Book Free Session</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- 100% FULL WIDTH EDGE-TO-EDGE SECTION -->
-  <section class="testimonial-fullwidth" id="video-testimonials">
+  <!-- ACTIVITIES / TESTIMONIALS COMPACT CAROUSEL (KIDS SECTION 6 EXACT CLONE) -->
+  <section class="activities-section" id="testimonials-carousel">
     <div class="container">
-      
-      <div class="sec-header">
-        <div class="sec-pill">Participant Stories</div>
-        <h2>Transformation Stories from <span>Busy Minds</span></h2>
-        <p>The best way to understand Brain Yoga is through the experiences of working professionals, leaders, and parents who have experienced the practice firsthand.</p>
+
+      <div class="header-row">
+        <div class="header-text">
+          <span class="sec-badge">ADULT EXPERIENCES</span>
+          <h2>What Brain Yoga Looks Like <span style="color: #007984; font-weight: 600;">In Action</span></h2>
+          <p>Watch working professionals, parents, and leaders share their real experiences of finding mental clarity, focus, and daily calm through Brain Yoga.</p>
+        </div>
+
+        <!-- Left / Right Cursor Arrows (Exact Kids Section 6 Styling) -->
+        <div class="slider-arrows">
+          <button class="arrow-btn" id="btnPrev" onclick="slidePrev()" aria-label="Previous Slide">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          </button>
+          <button class="arrow-btn" id="btnNext" onclick="slideNext()" aria-label="Next Slide">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </button>
+        </div>
       </div>
 
-      <!-- 10 Videos Grid (Rajendra Boddu's Verified YouTube Links) -->
-      <div class="video-grid">
+      <!-- Carousel Viewport -->
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="track">
 
-        <!-- Video 1 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/tvGIzsMHLMg" title="Brain Yoga Adult Testimonial 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- Video Card 1 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/tvGIzsMHLMg" title="Brain Yoga Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #1</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
           </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #1</span>
-            <span class="lang-badge">Telugu Video</span>
+
+          <!-- Video Card 2 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/xFzc5OA-llE" title="Brain Yoga Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #2</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
           </div>
+
+          <!-- Video Card 3 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/SrpkYuDnMPM" title="Brain Yoga Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #3</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 4 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/SYGSx2sPkps" title="Brain Yoga Video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #4</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 5 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/I6RbLUjHfKU" title="Brain Yoga Video 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #5</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 6 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/9NNVaOeqb2s" title="Brain Yoga Video 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #6</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 7 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/5-QVguj1LPA" title="Brain Yoga Video 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #7</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 8 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/b07JkP-Lp_0" title="Brain Yoga Video 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #8</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 9 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/uGSTZP0FW38" title="Brain Yoga Video 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #9</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
+          <!-- Video Card 10 -->
+          <div class="compact-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/ib8-juxUK4c" title="Brain Yoga Video 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-info">
+              <span class="label">Transformation Story #10</span>
+              <span class="badge-sub">Telugu</span>
+            </div>
+          </div>
+
         </div>
-
-        <!-- Video 2 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/xFzc5OA-llE" title="Brain Yoga Adult Testimonial 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #2</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 3 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/SrpkYuDnMPM" title="Brain Yoga Adult Testimonial 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #3</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 4 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/SYGSx2sPkps" title="Brain Yoga Adult Testimonial 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #4</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 5 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/I6RbLUjHfKU" title="Brain Yoga Adult Testimonial 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #5</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 6 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/9NNVaOeqb2s" title="Brain Yoga Adult Testimonial 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #6</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 7 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/5-QVguj1LPA" title="Brain Yoga Adult Testimonial 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #7</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 8 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/b07JkP-Lp_0" title="Brain Yoga Adult Testimonial 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #8</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 9 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/uGSTZP0FW38" title="Brain Yoga Adult Testimonial 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #9</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
-        <!-- Video 10 -->
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/ib8-juxUK4c" title="Brain Yoga Adult Testimonial 10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="card-footer">
-            <span class="title">Participant Experience #10</span>
-            <span class="lang-badge">Telugu Video</span>
-          </div>
-        </div>
-
       </div>
 
-      <div class="section-footer-note">
-        ✨ 10 Verified Adult Video Testimonials Integrated • Seamless Full-Width Background
-      </div>
+      <!-- Indicator Dots -->
+      <div class="slider-dots" id="dotsContainer"></div>
 
     </div>
   </section>
 
+  <script>
+    let currentIndex = 0;
+    const track = document.getElementById('track');
+    const cards = document.querySelectorAll('.compact-card');
+    const totalCards = cards.length;
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    function getVisibleCards() {
+      if (window.innerWidth <= 680) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function maxIndex() {
+      return totalCards - getVisibleCards();
+    }
+
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      const totalSteps = maxIndex() + 1;
+      for (let i = 0; i < totalSteps; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === currentIndex ? ' active' : '');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateCarousel() {
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 24;
+      const offset = currentIndex * (cardWidth + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+
+      document.querySelectorAll('.dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    function slideNext() {
+      if (currentIndex < maxIndex()) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Loop back
+      }
+      updateCarousel();
+    }
+
+    function slidePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = maxIndex(); // Loop to end
+      }
+      updateCarousel();
+    }
+
+    function goToSlide(idx) {
+      currentIndex = idx;
+      updateCarousel();
+    }
+
+    window.addEventListener('resize', () => {
+      if (currentIndex > maxIndex()) currentIndex = maxIndex();
+      createDots();
+      updateCarousel();
+    });
+
+    createDots();
+    updateCarousel();
+  </script>
 </body>
 </html>

@@ -244,9 +244,7 @@
   <header class="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-stone-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-[#0F172A] text-white flex items-center justify-center font-heading font-bold text-lg tracking-tight group-hover:bg-[#8C7756] transition-colors">
-          E
-        </div>
+        <img src="assets/eminence_space_logo.jpg" alt="The Eminence Space Official Logo" class="w-11 h-11 rounded-xl object-cover shadow-sm border border-stone-200 group-hover:scale-105 transition-transform" />
         <div>
           <div class="font-heading font-bold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
             THE EMINENCE SPACE
@@ -581,10 +579,13 @@
   <!-- 04 / FOOTER & PREVIEW NOTE -->
   <footer id="contact" class="bg-[#F4EFE6] text-slate-700 py-14 border-t border-[#8C7756]/25">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-      <div>
-        <div class="font-heading font-bold text-xl text-slate-900">THE EMINENCE SPACE</div>
-        <p class="text-sm text-slate-600 mt-1">Sector 46 &amp; Sushant Lok, Gurugram &bull; Delhi NCR Turnkey Interiors</p>
-        <p class="text-xs text-[#8C7756] font-medium mt-2">WhatsApp / Direct: +91 89208 08466</p>
+      <div class="flex items-center gap-3.5">
+        <img src="assets/eminence_space_logo.jpg" alt="The Eminence Space Logo" class="w-12 h-12 rounded-xl object-cover shadow-sm border border-stone-300" />
+        <div>
+          <div class="font-heading font-bold text-xl text-slate-900">THE EMINENCE SPACE</div>
+          <p class="text-sm text-slate-600 mt-1">Sector 46 &amp; Sushant Lok, Gurugram &bull; Delhi NCR Turnkey Interiors</p>
+          <p class="text-xs text-[#8C7756] font-medium mt-1.5">WhatsApp / Direct: +91 89208 08466</p>
+        </div>
       </div>
       <div class="bg-white/80 backdrop-blur-sm border border-stone-200 rounded-2xl p-4 max-w-md text-xs text-slate-600">
         <strong class="text-slate-900 font-heading block mb-1">Concept Preview Notice:</strong>
@@ -608,7 +609,10 @@
   <div id="consultModal" onclick="if(event.target===this) closeConsultModal()" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 transition-opacity duration-300">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border border-stone-200 shadow-2xl relative animate-[fadeIn_0.3s_ease-out]">
       <button onclick="closeConsultModal()" aria-label="Close popup" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-slate-700 font-bold transition">✕</button>
-      <span class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">The Eminence Space &bull; Gurgaon</span>
+      <div class="flex items-center gap-2.5 mb-2">
+        <img src="assets/eminence_space_logo.jpg" alt="The Eminence Space" class="w-8 h-8 rounded-lg object-cover border border-stone-200" />
+        <span class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">The Eminence Space &bull; Gurgaon</span>
+      </div>
       <h3 class="font-heading font-bold text-2xl text-slate-900 mt-1 mb-1.5">Plan Your Dream Space</h3>
       <p class="text-xs text-slate-600 mb-4 leading-relaxed">Book a free 2D/3D design consultation &amp; site visit in Gurgaon / Delhi NCR.</p>
       <form onsubmit="submitConsult(event)" class="space-y-3">

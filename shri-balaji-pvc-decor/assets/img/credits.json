@@ -1,0 +1,97 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f192968130.webp",
+   "files": [
+    "photo-f192968130-500.webp",
+    "photo-f192968130-960.webp",
+    "photo-f192968130-1280.webp",
+    "photo-f192968130.webp",
+    "photo-f192968130-780x975.webp"
+   ],
+   "id": "f192968130",
+   "alt": "Modern luxury living room with kitchen interior",
+   "by": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Modern_luxury_living_room_with_kitchen_interior.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f187101720.webp",
+   "files": [
+    "photo-f187101720-500.webp",
+    "photo-f187101720-960.webp",
+    "photo-f187101720.webp"
+   ],
+   "id": "f187101720",
+   "alt": "Modern living room with stylish furniture and a view of the outdoors in a cozy apartment setting",
+   "by": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Modern_living_room_with_stylish_furniture_and_a_view_of_the_outdoors_in_a_cozy_apartment_setting.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f62125506.webp",
+   "files": [
+    "photo-f62125506-500.webp",
+    "photo-f62125506-960.webp",
+    "photo-f62125506.webp"
+   ],
+   "id": "f62125506",
+   "alt": "Living room (Unsplash)",
+   "by": "Jarosław Ceborski jarson",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Living_room_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f186239762.webp",
+   "files": [
+    "photo-f186239762-500.webp",
+    "photo-f186239762-960.webp",
+    "photo-f186239762.webp"
+   ],
+   "id": "f186239762",
+   "alt": "Modern kitchen and dining area with stylish furnishings and natural light in a contemporary home setting",
+   "by": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Modern_kitchen_and_dining_area_with_stylish_furnishings_and_natural_light_in_a_contemporary_home_setting.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f148515981.webp",
+   "files": [
+    "photo-f148515981-500.webp",
+    "photo-f148515981-960.webp",
+    "photo-f148515981.webp"
+   ],
+   "id": "f148515981",
+   "alt": "False ceiling",
+   "by": "Suhail sartaj ahmed shaikh",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:False_ceiling.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f124576956.webp",
+   "files": [
+    "photo-f124576956-500.webp",
+    "photo-f124576956-960.webp",
+    "photo-f124576956.webp"
+   ],
+   "id": "f124576956",
+   "alt": "DSAI DGH 0913-22",
+   "by": "Djanssen",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:DSAI_DGH_0913-22.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

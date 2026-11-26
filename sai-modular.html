@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Modular | Premium HDHMR + Acrylic Kitchens, Glass Railings &amp; uPVC Windows</title>
+  <meta name="description" content="Sai Modular — Concept Website Preview. Factory-finished HDHMR + Acrylic modular kitchens, toughened glass railings, and uPVC windows with material included and a 10-year guarantee." />
+
+  <!-- Typography: Manrope + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            accent: '#8C7756',
+            'accent-dark': '#736145',
+            ivory: '#FBF9F5',
+            linen: '#FAF8F5',
+            sand: '#F4EFE6',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: #FAF8F5;
+      color: #0F172A;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .font-heading { font-family: var(--font-heading); }
+
+    .typo-hero {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 4.4vw, 4rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+    .typo-section {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    /* Hero Slider */
+    .hero-slider { position: relative; height: 82vh; min-height: 540px; max-height: 820px; }
+    .hero-track { display: flex; width: 200%; height: 100%; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+    .hero-slide { position: relative; width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.06); transition: transform 6s ease-out; }
+    .hero-slide.active .hero-slide-bg { transform: scale(1); }
+    .hero-slide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.56) 0%, rgba(15, 23, 42, 0.74) 100%); }
+    .hero-text-centered { position: relative; z-index: 20; text-align: center; padding: 0 1.5rem; max-width: 960px; }
+    .hero-slide .anim-eyebrow, .hero-slide h1, .hero-slide h2, .hero-slide .hero-sub, .hero-slide .hero-cta {
+      opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-slide.active .anim-eyebrow { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+    .hero-slide.active h1, .hero-slide.active h2 { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+    .hero-slide.active .hero-sub { opacity: 1; transform: translateY(0); transition-delay: 0.38s; }
+    .hero-slide.active .hero-cta { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+    .atelier-btn {
+      display: inline-flex; align-items: center; gap: 14px; padding: 8px 10px 8px 24px;
+      border-radius: 9999px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3); color: #ffffff; font-family: var(--font-heading);
+      font-weight: 600; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.35s ease;
+    }
+    .atelier-btn:hover { background: rgba(255, 255, 255, 0.18); border-color: #8C7756; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(140, 119, 86, 0.35); }
+    .atelier-btn .arrow-circle { width: 34px; height: 34px; border-radius: 9999px; background: #8C7756; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+    .atelier-btn:hover .arrow-circle { background: #736145; transform: rotate(45deg); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .hover-lift { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease; }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(15, 23, 42, 0.08); border-color: rgba(140, 119, 86, 0.45); }
+
+    .calc-btn { border: 1px solid #E2E8F0; background: #FFFFFF; transition: all 0.25s ease; }
+    .calc-btn:hover { border-color: #8C7756; }
+    .calc-btn.active { border-color: #8C7756; background: #FAF6EE; box-shadow: 0 0 0 1px #8C7756; }
+
+    .sticky-quote-tab {
+      position: fixed; right: 0; top: 50%; transform: translateY(-50%) rotate(180deg); z-index: 45;
+      background: #8C7756; color: #ffffff; font-weight: 600; font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 14px 7px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;
+      writing-mode: vertical-rl; box-shadow: -4px 6px 20px rgba(15, 23, 42, 0.22); transition: all 0.3s ease; cursor: pointer;
+    }
+    .sticky-quote-tab:hover { background: #736145; padding-right: 12px; }
+  </style>
+</head>
+<body class="antialiased pb-16 sm:pb-0">
+
+  <!-- Concept Preview Strip -->
+  <div class="bg-[#0F172A] text-stone-200 text-[11px] sm:text-xs font-medium tracking-wider uppercase py-2 px-4 text-center border-b border-white/10">
+    <span class="text-[#C9B38C] font-semibold">Concept Homepage Preview</span> &bull; Crafted for <span class="text-white font-semibold">Sai Modular</span> (Shivam Gupta)
+  </div>
+
+  <!-- Sticky Side Tab -->
+  <button onclick="openConsultModal()" class="sticky-quote-tab hidden sm:flex items-center justify-center" title="Get Free Quote">
+    FREE QUOTE
+  </button>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-[#0F172A] text-[#E2CEAA] flex items-center justify-center font-heading font-bold text-base tracking-wider shadow-sm group-hover:bg-[#8C7756] group-hover:text-white transition-colors">
+          SM
+        </div>
+        <div>
+          <div class="font-heading font-bold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
+            SAI MODULAR
+          </div>
+          <div class="text-[10px] font-medium uppercase tracking-[0.18em] text-[#8C7756] mt-1">
+            HDHMR + Acrylic &bull; 10-Yr Guarantee
+          </div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+        <a href="#about" class="hover:text-[#8C7756] transition-colors">Factory Standard</a>
+        <a href="#craft" class="hover:text-[#8C7756] transition-colors">What We Craft</a>
+        <a href="#estimator" class="hover:text-[#8C7756] transition-colors">Cost Estimator</a>
+        <a href="#contact" class="hover:text-[#8C7756] transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="openConsultModal()" class="px-5 py-2.5 rounded-full bg-[#0F172A] hover:bg-[#8C7756] text-white text-xs sm:text-sm font-heading font-semibold tracking-wide transition-all shadow-sm">
+          Get Free Quote
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <section class="hero-slider overflow-hidden border-b border-stone-200">
+    <div id="heroTrack" class="hero-track">
+      <!-- Slide 1 -->
+      <div class="hero-slide active">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-[#E2CEAA] text-xs sm:text-sm font-heading font-semibold tracking-[0.25em] uppercase mb-4">
+            HDHMR + ACRYLIC FACTORY FINISH &bull; 10-YEAR GUARANTEE
+          </div>
+          <h1 class="typo-hero text-white mb-5">
+            Factory-Finished Modular<br /> Kitchens Built To Last
+          </h1>
+          <p class="hero-sub text-stone-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+            Complete turnkey execution with material included — premium HDHMR &amp; Acrylic modular kitchens engineered for modern Indian homes.
+          </p>
+          <div class="hero-cta flex flex-wrap items-center justify-center gap-4">
+            <a href="#estimator" class="atelier-btn">
+              <span>Calculate Kitchen &amp; Home Cost</span>
+              <span class="arrow-circle">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-[#E2CEAA] text-xs sm:text-sm font-heading font-semibold tracking-[0.25em] uppercase mb-4">
+            MODULAR KITCHENS &bull; GLASS RAILINGS &bull; UPVC WINDOWS
+          </div>
+          <h2 class="typo-hero text-white mb-5">
+            Precision Glass Railings<br /> &amp; uPVC Window Systems
+          </h2>
+          <p class="hero-sub text-stone-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+            Seamless toughened glass balcony &amp; staircase railings alongside soundproof, weather-resistant uPVC windows — installed end-to-end.
+          </p>
+          <div class="hero-cta">
+            <button onclick="openConsultModal()" class="atelier-btn">
+              <span>Book Free Site Measurement</span>
+              <span class="arrow-circle">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 z-30 bg-black/55 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 flex items-center gap-2.5">
+      <button class="hero-dot w-7 h-2 rounded-full bg-[#8C7756] transition-all" onclick="goSlide(0)" aria-label="Slide 1"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all" onclick="goSlide(1)" aria-label="Slide 2"></button>
+    </div>
+  </section>
+
+  <!-- 01 / BRAND & FACTORY STANDARD -->
+  <section id="about" class="py-20 md:py-24 bg-white border-b border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 reveal">
+        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
+          01 / Why Sai Modular
+        </span>
+        <h2 class="typo-section text-slate-900 mb-6">
+          Material-Included Precision With a 10-Year Guarantee
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed mb-5">
+          At <strong class="text-slate-900 font-semibold">Sai Modular</strong>, led by Shivam Gupta, we focus exclusively on three core architectural verticals — <strong class="text-slate-900">Modular Kitchens</strong>, <strong class="text-slate-900">Toughened Glass Railings</strong>, and <strong class="text-slate-900">uPVC Windows</strong> — with 100% material included.
+        </p>
+        <p class="text-slate-600 text-base leading-relaxed mb-8">
+          Every modular kitchen is factory-finished in moisture-resistant <strong class="text-slate-900">HDHMR + high-gloss Acrylic</strong>, backed by a written 10-year guarantee for lasting durability and zero carpenter headaches.
+        </p>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200">
+          <div>
+            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">10 Yr</div>
+            <div class="text-xs text-slate-500 mt-1">Written Guarantee</div>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-2xl sm:text-3xl text-[#8C7756]">HDHMR</div>
+            <div class="text-xs text-slate-500 mt-1">+ Acrylic Factory Finish</div>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">100%</div>
+            <div class="text-xs text-slate-500 mt-1">Material Included</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 reveal">
+        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-stone-200">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+               alt="Sai Modular Kitchen & Architectural Systems"
+               class="w-full h-[380px] sm:h-[440px] object-cover" loading="lazy" />
+          <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-200/80 flex items-center justify-between">
+            <div>
+              <div class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Direct Consultation</div>
+              <div class="font-heading font-bold text-slate-900 text-sm sm:text-base">Shivam Gupta &bull; +91 80851 79249</div>
+            </div>
+            <button onclick="openConsultModal()" class="px-4 py-2 rounded-full bg-[#0F172A] text-white text-xs font-semibold hover:bg-[#8C7756] transition-colors">
+              Book Visit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / WHAT WE CRAFT (EXACT 3 SPECIALTIES) -->
+  <section id="craft" class="py-20 md:py-24 bg-[#FBF9F5] border-b border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-14 reveal">
+        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
+          02 / Our Core Specialties
+        </span>
+        <h2 class="typo-section text-slate-900 mb-4">
+          Three Specialized Solutions, Material Included
+        </h2>
+        <p class="text-slate-600 text-base">
+          Click any category below to request a custom measurement &amp; transparent estimate directly on WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <!-- Card 1: Modular Kitchens -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="HDHMR + Acrylic Modular Kitchens" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">10-Year Guarantee</span>
+              <h3 class="font-heading font-bold text-xl text-slate-900 mt-1 mb-2.5">Modular Kitchens</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Premium HDHMR carcass with high-gloss Acrylic factory shutters, soft-close hardware, and complete material included.</p>
+            </div>
+            <button onclick="openConsultModal('Modular Kitchen (HDHMR + Acrylic)')" class="mt-6 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
+              <span>Get Kitchen Quote</span><span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Glass Railings -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Toughened Glass Railings" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Balcony &amp; Staircase</span>
+              <h3 class="font-heading font-bold text-xl text-slate-900 mt-1 mb-2.5">Glass Railings</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Sleek frameless toughened glass railings with architectural aluminium &amp; stainless-steel profiles for modern elevation.</p>
+            </div>
+            <button onclick="openConsultModal('Glass Railing')" class="mt-6 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
+              <span>Get Railing Quote</span><span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: uPVC Windows -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="uPVC Windows & Doors" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Sound &amp; Weather Sealed</span>
+              <h3 class="font-heading font-bold text-xl text-slate-900 mt-1 mb-2.5">uPVC Windows</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Multi-chamber uPVC sliding &amp; casement windows engineered for thermal insulation, dust protection, and acoustic quietness.</p>
+            </div>
+            <button onclick="openConsultModal('uPVC Windows')" class="mt-6 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
+              <span>Get Window Quote</span><span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / INTERACTIVE COST ESTIMATOR -->
+  <section id="estimator" class="py-20 md:py-24 bg-[#FAF8F5] border-b border-stone-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
+          03 / Smart Lead Filter
+        </span>
+        <h2 class="typo-section text-slate-900 mb-3">
+          Instant Project Cost Estimator
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Homeowners select their requirement, finish spec, and approximate size upfront — sending qualified, ready-to-book enquiries directly to Shivam Gupta on WhatsApp.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-lg p-6 sm:p-10 grid lg:grid-cols-12 gap-8 items-start reveal">
+        <div class="lg:col-span-7 space-y-7">
+          <!-- Step 1 -->
+          <div>
+            <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">1</span>
+              <span>Select Requirement</span>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <button type="button" onclick="setProduct('Modular Kitchen', 2100, 'Running Sq.Ft.', 12, 120, 45, this)" class="calc-btn calc-prod active p-3.5 rounded-2xl text-left">
+                <div class="font-heading font-bold text-sm text-slate-900">Modular Kitchen</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">HDHMR + Acrylic</div>
+              </button>
+              <button type="button" onclick="setProduct('Glass Railing', 1350, 'Running Ft.', 10, 150, 35, this)" class="calc-btn calc-prod p-3.5 rounded-2xl text-left">
+                <div class="font-heading font-bold text-sm text-slate-900">Glass Railing</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Toughened Balcony</div>
+              </button>
+              <button type="button" onclick="setProduct('uPVC Windows', 680, 'Sq.Ft.', 20, 300, 80, this)" class="calc-btn calc-prod p-3.5 rounded-2xl text-left">
+                <div class="font-heading font-bold text-sm text-slate-900">uPVC Windows</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Sliding / Casement</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div>
+            <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">2</span>
+              <span>Finish &amp; Package Tier</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" onclick="setTier('Standard Material Package', 0.9, this)" class="calc-btn calc-tier p-3 rounded-2xl text-left">
+                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Standard</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">HDHMR + Matte</div>
+              </button>
+              <button type="button" onclick="setTier('Premium HDHMR + Acrylic', 1.15, this)" class="calc-btn calc-tier active p-3 rounded-2xl text-left">
+                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Premium</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Acrylic Factory Finish</div>
+              </button>
+              <button type="button" onclick="setTier('Signature Bespoke', 1.4, this)" class="calc-btn calc-tier p-3 rounded-2xl text-left">
+                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Signature</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Fluted Glass + Soft-Close</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">3</span>
+                <span>Estimated Size</span>
+              </div>
+              <span id="sizeLabel" class="text-xs font-heading font-bold text-[#8C7756] bg-[#8C7756]/10 px-3 py-1 rounded-full">45 Running Sq.Ft.</span>
+            </div>
+            <input id="sizeSlider" type="range" min="12" max="120" step="2" value="45" oninput="updateEstimate()" class="w-full accent-[#8C7756] cursor-pointer" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span id="minLbl">12</span>
+              <span id="maxLbl">120+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Card -->
+        <div class="lg:col-span-5 bg-[#FAF8F5] rounded-2xl border border-stone-200 p-6 sm:p-7 space-y-5">
+          <div>
+            <div class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Estimated Package (Material Included)</div>
+            <div id="estRange" class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-1.5">
+              ₹1.00L – ₹1.20L
+            </div>
+            <div id="estSummary" class="text-xs text-slate-500 mt-2">
+              Modular Kitchen &bull; Premium HDHMR + Acrylic &bull; 45 Running Sq.Ft.
+            </div>
+          </div>
+
+          <ul class="text-xs text-slate-600 space-y-2 pt-4 border-t border-stone-200">
+            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> Complete Material &amp; Hardware Included</li>
+            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> Factory-Finished HDHMR + Acrylic Precision</li>
+            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> 10-Year Written Guarantee</li>
+          </ul>
+
+          <a id="waQuoteLink" href="#" target="_blank" rel="noopener noreferrer"
+             class="w-full py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-heading font-semibold text-sm flex items-center justify-center gap-2 transition shadow-sm">
+            <span>Get Exact Quote from Shivam Gupta</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / FOOTER & PREVIEW NOTE -->
+  <footer id="contact" class="bg-[#F4EFE6] text-slate-700 py-14 border-t border-[#8C7756]/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-[#0F172A] text-[#E2CEAA] flex items-center justify-center font-heading font-bold text-lg tracking-wider shadow-sm">
+          SM
+        </div>
+        <div>
+          <div class="font-heading font-bold text-xl text-slate-900">SAI MODULAR</div>
+          <p class="text-sm text-slate-600 mt-1">Modular Kitchens &bull; Glass Railings &bull; uPVC Windows (10-Year Guarantee)</p>
+          <p class="text-xs text-[#8C7756] font-medium mt-1.5">Shivam Gupta &bull; Direct / WhatsApp: +91 80851 79249</p>
+        </div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-sm border border-stone-200 rounded-2xl p-4 max-w-md text-xs text-slate-600">
+        <strong class="text-slate-900 font-heading block mb-1">Concept Preview Notice:</strong>
+        This is a curated homepage preview built for <strong>Sai Modular</strong>. Your actual completed kitchen, glass railing, and uPVC project photos can be added directly into this layout.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Bar -->
+  <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-2.5 flex items-center gap-3">
+    <button onclick="openConsultModal()" class="flex-1 py-2.5 rounded-full bg-[#0F172A] text-white text-xs font-heading font-semibold">
+      Book Free Quote
+    </button>
+    <a href="https://wa.me/918085179249?text=Hi%20Shivam%20Ji,%20I%20would%20like%20a%20quote%20from%20Sai%20Modular." target="_blank" rel="noopener noreferrer"
+       class="flex-1 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-heading font-semibold text-center">
+      WhatsApp Shivam Ji
+    </a>
+  </div>
+
+  <!-- Consultation & Smart Inquiry Modal (Auto-opens on visit) -->
+  <div id="consultModal" onclick="if(event.target===this) closeConsultModal()" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border border-stone-200 shadow-2xl relative">
+      <button onclick="closeConsultModal()" aria-label="Close popup" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-slate-700 font-bold transition">✕</button>
+      <div class="flex items-center gap-2.5 mb-2">
+        <div class="w-8 h-8 rounded-lg bg-[#0F172A] text-[#E2CEAA] flex items-center justify-center font-heading font-bold text-xs">SM</div>
+        <span class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Sai Modular &bull; 10-Yr Guarantee</span>
+      </div>
+      <h3 class="font-heading font-bold text-2xl text-slate-900 mt-1 mb-1.5">Get a Free Material-Included Quote</h3>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Select what you're planning for your home to connect directly with Shivam Gupta.</p>
+      <form onsubmit="submitConsult(event)" class="space-y-3">
+        <input id="mName" type="text" required placeholder="Your Name" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#8C7756]" />
+        <input id="mLoc" type="text" required placeholder="Your City / Area" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#8C7756]" />
+        <select id="mService" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white text-slate-700 focus:outline-none focus:border-[#8C7756]">
+          <option value="Modular Kitchen (HDHMR + Acrylic)">Modular Kitchen (HDHMR + Acrylic)</option>
+          <option value="Glass Railing">Glass Railing (Balcony / Staircase)</option>
+          <option value="uPVC Windows">uPVC Windows &amp; Doors</option>
+          <option value="Complete Home Package">Complete Home Package (All 3)</option>
+        </select>
+        <select id="mBudget" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white text-slate-700 focus:outline-none focus:border-[#8C7756]">
+          <option value="₹1L – ₹2.5L">Estimated Budget: ₹1L – ₹2.5L</option>
+          <option value="₹2.5L – ₹5L" selected>Estimated Budget: ₹2.5L – ₹5L</option>
+          <option value="₹5L+ Full Home">Estimated Budget: ₹5L+ Full Home</option>
+        </select>
+        <button type="submit" class="w-full py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-heading font-semibold text-sm transition shadow-sm">
+          Connect with Shivam Gupta on WhatsApp
+        </button>
+        <button type="button" onclick="closeConsultModal()" class="w-full py-1.5 text-xs text-slate-500 hover:text-slate-800 font-medium transition">
+          Explore Preview First
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const track = document.getElementById('heroTrack');
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+
+    function goSlide(idx) {
+      currentSlide = idx;
+      track.style.transform = `translateX(-${idx * 50}%)`;
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => {
+        d.className = i === idx
+          ? 'hero-dot w-7 h-2 rounded-full bg-[#8C7756] transition-all'
+          : 'hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all';
+      });
+    }
+    setInterval(() => goSlide((currentSlide + 1) % slides.length), 6000);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    let prodName = 'Modular Kitchen';
+    let baseRate = 2100;
+    let unitLabel = 'Running Sq.Ft.';
+    let tierName = 'Premium HDHMR + Acrylic';
+    let tierMult = 1.15;
+
+    function setProduct(name, rate, unit, minV, maxV, defV, btn) {
+      prodName = name;
+      baseRate = rate;
+      unitLabel = unit;
+      const sl = document.getElementById('sizeSlider');
+      sl.min = minV; sl.max = maxV; sl.value = defV;
+      document.getElementById('minLbl').textContent = minV + ' ' + unit;
+      document.getElementById('maxLbl').textContent = maxV + '+ ' + unit;
+      document.querySelectorAll('.calc-prod').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateEstimate();
+    }
+
+    function setTier(name, mult, btn) {
+      tierName = name;
+      tierMult = mult;
+      document.querySelectorAll('.calc-tier').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateEstimate();
+    }
+
+    function updateEstimate() {
+      const sz = parseInt(document.getElementById('sizeSlider').value, 10);
+      document.getElementById('sizeLabel').textContent = `${sz} ${unitLabel}`;
+      const mid = (sz * baseRate * tierMult) / 100000;
+      const low = Math.max(0.2, mid * 0.92).toFixed(2);
+      const high = Math.max(0.25, mid * 1.10).toFixed(2);
+      document.getElementById('estRange').textContent = `₹${low}L – ₹${high}L`;
+      document.getElementById('estSummary').textContent = `${prodName} • ${tierName} • ${sz} ${unitLabel}`;
+      const msg = encodeURIComponent(`Hi Shivam Ji (Sai Modular), I checked your website estimator for ${prodName} (${tierName}, ~${sz} ${unitLabel}, Est: ₹${low}L–₹${high}L). Please share details.`);
+      document.getElementById('waQuoteLink').href = `https://wa.me/918085179249?text=${msg}`;
+    }
+    updateEstimate();
+
+    function openConsultModal(service = '') {
+      if (service) {
+        const sel = document.getElementById('mService');
+        for (let opt of sel.options) {
+          if (opt.value === service) { sel.value = service; break; }
+        }
+      }
+      const m = document.getElementById('consultModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeConsultModal() {
+      const m = document.getElementById('consultModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      try { sessionStorage.setItem('sai_popup_seen', '1'); } catch (e) {}
+    }
+    function submitConsult(e) {
+      e.preventDefault();
+      const n = document.getElementById('mName').value.trim();
+      const l = document.getElementById('mLoc').value.trim();
+      const s = document.getElementById('mService').value;
+      const b = document.getElementById('mBudget').value;
+      const msg = encodeURIComponent(`Hi Shivam Ji (Sai Modular), I am ${n} from ${l}. Planning ${s} (Budget: ${b}). Please share quote & visit availability.`);
+      window.open(`https://wa.me/918085179249?text=${msg}`, '_blank');
+      closeConsultModal();
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (!sessionStorage.getItem('sai_popup_seen')) setTimeout(() => openConsultModal(), 1800);
+      } catch (e) { setTimeout(() => openConsultModal(), 1800); }
+    });
+  </script>
+</body>
+</html>

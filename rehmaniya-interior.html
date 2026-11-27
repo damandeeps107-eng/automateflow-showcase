@@ -3,698 +3,1110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rehmaniya Interior | Bespoke Modular Kitchens, Wardrobes &amp; Turnkey Interiors — Delhi NCR</title>
-  <meta name="description" content="Rehmaniya Interior — Interactive Portfolio &amp; Budget Estimator Concept. Modular kitchens, luxury wardrobes, living spaces &amp; turnkey home interiors across Delhi NCR." />
+  <title>Rehmaniya Interior | Bespoke Luxury Interiors &amp; Modular Kitchens — Delhi NCR</title>
+  <meta name="description" content="Rehmaniya Interior designs and executes bespoke turnkey residences, Italian-inspired modular kitchens, and floor-to-ceiling wardrobes across Delhi NCR." />
 
+  <!-- Typography: Manrope (Display) + Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            heading: ['Manrope', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
           colors: {
-            accent: '#8C7756',
-            'accent-dark': '#736145',
-            ivory: '#FBF9F5',
-            linen: '#FAF8F5',
-            sand: '#F4EFE6',
+            obsidian: '#0F172A',
+            charcoal: '#161A22',
+            ivory: '#FAF8F5',
+            cream: '#F4EFE6',
+            alabaster: '#FBF9F5',
+            bronze: '#8C7756',
+            gold: '#C9B38C',
+            slateInk: '#475569'
+          },
+          fontFamily: {
+            display: ['Manrope', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
     :root {
-      --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg-ivory: #FAF8F5;
+      --bg-cream: #F4EFE6;
+      --ink-obsidian: #0F172A;
+      --accent-bronze: #8C7756;
+      --accent-gold: #C9B38C;
+      --ease-atelier: cubic-bezier(0.22, 1, 0.36, 1);
     }
-    body {
-      font-family: var(--font-body);
-      background-color: #FAF8F5;
-      color: #0F172A;
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-ivory);
+      color: var(--ink-obsidian);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    h1, h2, h3, h4, .font-heading { font-family: var(--font-heading); }
 
+    /* Editorial Fluid Typography */
     .typo-hero {
-      font-family: var(--font-heading);
-      font-size: clamp(2.15rem, 4.5vw, 4.1rem);
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.45rem, 5.4vw, 4.9rem);
       font-weight: 600;
-      line-height: 1.08;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+
+    .typo-h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.95rem, 3.6vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1.1;
       letter-spacing: -0.025em;
     }
-    .typo-section {
-      font-family: var(--font-heading);
-      font-size: clamp(1.75rem, 3vw, 2.75rem);
+
+    .typo-h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.25rem, 1.8vw, 1.65rem);
       font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
     }
 
-    /* Hero Slider */
-    .hero-slider { position: relative; height: 84vh; min-height: 550px; max-height: 820px; }
-    .hero-track { display: flex; width: 200%; height: 100%; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
-    .hero-slide { position: relative; width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero-slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.06); transition: transform 6s ease-out; }
-    .hero-slide.active .hero-slide-bg { transform: scale(1); }
-    .hero-slide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.56) 0%, rgba(15, 23, 42, 0.76) 100%); }
-    .hero-text-centered { position: relative; z-index: 20; text-align: center; padding: 0 1.5rem; max-width: 960px; }
-    .hero-slide .anim-eyebrow, .hero-slide h1, .hero-slide h2, .hero-slide .hero-sub, .hero-slide .hero-cta {
-      opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    .typo-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
     }
-    .hero-slide.active .anim-eyebrow { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
-    .hero-slide.active h1, .hero-slide.active h2 { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-    .hero-slide.active .hero-sub { opacity: 1; transform: translateY(0); transition-delay: 0.38s; }
-    .hero-slide.active .hero-cta { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
 
+    /* Glass Header */
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.42);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201, 179, 140, 0.16);
+      transition: background 0.45s var(--ease-atelier), border-color 0.45s var(--ease-atelier), padding 0.45s var(--ease-atelier), box-shadow 0.45s var(--ease-atelier);
+    }
+
+    .glass-nav.scrolled {
+      background: rgba(250, 248, 245, 0.94);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+    }
+
+    .glass-nav.scrolled .nav-link,
+    .glass-nav.scrolled .brand-title,
+    .glass-nav.scrolled .brand-sub,
+    .glass-nav.scrolled .mobile-menu-btn {
+      color: #0F172A !important;
+    }
+
+    .glass-nav.scrolled .brand-sub {
+      color: #8C7756 !important;
+    }
+
+    /* Official Brand Monogram Frame */
+    .logo-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      padding: 2px;
+      background: linear-gradient(135deg, #C9B38C 0%, #8C7756 55%, #DFCFAF 100%);
+      box-shadow: 0 6px 20px rgba(140, 119, 86, 0.28);
+      flex-shrink: 0;
+    }
+
+    .logo-badge img {
+      border-radius: 9999px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Signature Atelier Pill CTA */
     .atelier-btn {
-      display: inline-flex; align-items: center; gap: 14px; padding: 8px 10px 8px 24px;
-      border-radius: 9999px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3); color: #ffffff; font-family: var(--font-heading);
-      font-weight: 600; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.35s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.62rem 0.65rem 0.62rem 1.45rem;
+      border-radius: 9999px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: transform 0.35s var(--ease-atelier), box-shadow 0.35s var(--ease-atelier), background-color 0.35s ease;
+      cursor: pointer;
     }
-    .atelier-btn:hover { background: rgba(255, 255, 255, 0.18); border-color: #8C7756; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(140, 119, 86, 0.35); }
-    .atelier-btn .arrow-circle { width: 34px; height: 34px; border-radius: 9999px; background: #8C7756; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-    .atelier-btn:hover .arrow-circle { background: #736145; transform: rotate(45deg); }
 
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .atelier-btn:hover {
+      transform: translateY(-2px);
+    }
 
-    .hover-lift { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease; }
-    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(15, 23, 42, 0.08); border-color: rgba(140, 119, 86, 0.45); }
+    .atelier-btn .btn-circle {
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.45s var(--ease-atelier);
+    }
 
-    .filter-pill { border: 1px solid #E2E8F0; background: #FFFFFF; color: #475569; transition: all 0.25s ease; }
-    .filter-pill:hover { border-color: #8C7756; color: #0F172A; }
-    .filter-pill.active { background: #0F172A; color: #FFFFFF; border-color: #0F172A; }
+    .atelier-btn:hover .btn-circle {
+      transform: rotate(45deg) scale(1.05);
+    }
 
-    .calc-btn { border: 1px solid #E2E8F0; background: #FFFFFF; transition: all 0.25s ease; }
-    .calc-btn:hover { border-color: #8C7756; }
-    .calc-btn.active { border-color: #8C7756; background: #FAF6EE; box-shadow: 0 0 0 1px #8C7756; }
+    /* Hero Multi-Slide + Ken Burns */
+    .hero-section {
+      position: relative;
+      min-height: 94vh;
+      width: 100%;
+      overflow: hidden;
+      background: #0B0F17;
+    }
 
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.15s var(--ease-atelier), visibility 1.15s;
+      z-index: 1;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-slide.active .hero-slide-bg {
+      transform: scale(1.09);
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, rgba(10, 14, 22, 0.84) 0%, rgba(10, 14, 22, 0.56) 52%, rgba(10, 14, 22, 0.32) 100%),
+                  linear-gradient(to top, rgba(10, 14, 22, 0.85) 0%, transparent 45%);
+      z-index: 3;
+    }
+
+    /* Staggered Hero Text Choreography */
+    .hero-stagger {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.85s var(--ease-atelier), transform 0.85s var(--ease-atelier);
+    }
+
+    .hero-slide.active .hero-stagger-1 { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+    .hero-slide.active .hero-stagger-2 { opacity: 1; transform: translateY(0); transition-delay: 0.30s; }
+    .hero-slide.active .hero-stagger-3 { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+    .hero-slide.active .hero-stagger-4 { opacity: 1; transform: translateY(0); transition-delay: 0.60s; }
+
+    /* Architectural Marquee Ticker */
+    .marquee-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 2.5rem;
+      animation: marqueeScroll 32s linear infinite;
+    }
+
+    .marquee-wrap:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Full Scroll-Reveal Animation Engine */
+    .reveal-on-scroll,
+    .reveal-text,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: opacity 0.85s var(--ease-atelier), transform 0.85s var(--ease-atelier);
+    }
+
+    .reveal-on-scroll { transform: translateY(34px); }
+    .reveal-text { transform: translateY(22px); }
+    .reveal-left { transform: translateX(-36px); }
+    .reveal-right { transform: translateX(36px); }
+    .reveal-scale { transform: scale(0.94); }
+
+    .is-visible {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Delay Utility Classes */
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+    .delay-400 { transition-delay: 0.40s; }
+    .delay-500 { transition-delay: 0.50s; }
+
+    /* Card Hover Lift & Image Zoom */
+    .hover-lift {
+      transition: transform 0.45s var(--ease-atelier), box-shadow 0.45s var(--ease-atelier);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.16);
+    }
+
+    .img-zoom-wrap img {
+      transition: transform 0.85s var(--ease-atelier);
+    }
+
+    .img-zoom-wrap:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Portfolio Filter Tabs */
+    .filter-tab {
+      transition: all 0.3s var(--ease-atelier);
+    }
+
+    .filter-tab.active {
+      background-color: #0F172A;
+      color: #FAF8F5;
+      border-color: #0F172A;
+      box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.35);
+    }
+
+    /* Sticky Side Consultation Tab */
     .sticky-quote-tab {
-      position: fixed; right: 0; top: 50%; transform: translateY(-50%) rotate(180deg); z-index: 45;
-      background: #8C7756; color: #ffffff; font-weight: 600; font-size: 11px; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 14px 7px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;
-      writing-mode: vertical-rl; box-shadow: -4px 6px 20px rgba(15, 23, 42, 0.22); transition: all 0.3s ease; cursor: pointer;
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      z-index: 40;
+      background: #8C7756;
+      color: #FAF8F5;
+      padding: 1rem 0.55rem;
+      border-radius: 0.75rem 0 0 0.75rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      box-shadow: -6px 8px 24px rgba(15, 23, 42, 0.22);
+      transition: background 0.3s ease, padding 0.3s ease;
+      cursor: pointer;
     }
-    .sticky-quote-tab:hover { background: #736145; padding-right: 12px; }
+
+    .sticky-quote-tab:hover {
+      background: #0F172A;
+      padding-right: 0.8rem;
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 9999px;
+      background: #E2D9C8;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 9999px;
+      background: #0F172A;
+      border: 3px solid #C9B38C;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
   </style>
 </head>
-<body class="antialiased pb-16 sm:pb-0">
+<body class="bg-ivory text-obsidian antialiased selection:bg-bronze selection:text-white">
 
-  <!-- Concept Preview Strip -->
-  <div class="bg-[#0F172A] text-stone-200 text-[11px] sm:text-xs font-medium tracking-wider uppercase py-2 px-4 text-center border-b border-white/10">
-    <span class="text-[#C9B38C] font-semibold">Interactive Portfolio Preview</span> &bull; Crafted for <span class="text-white font-semibold">Rehmaniya Interior</span> (Delhi NCR)
-  </div>
-
-  <!-- Sticky Side Tab -->
-  <button onclick="openConsultModal()" class="sticky-quote-tab hidden sm:flex items-center justify-center" title="Book Site Visit">
-    FREE QUOTE
-  </button>
-
-  <!-- Sticky Navigation Header -->
-  <header class="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-stone-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Official Logo" class="w-11 h-11 rounded-xl object-cover shadow-sm border border-stone-200 group-hover:scale-105 transition-transform" />
-        <div>
-          <div class="font-heading font-bold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
-            REHMANIYA INTERIOR
-          </div>
-          <div class="text-[10px] font-medium uppercase tracking-[0.18em] text-[#8C7756] mt-1">
-            Bespoke Kitchens &amp; Turnkey Homes
-          </div>
+  <!-- Sticky Glass Navigation -->
+  <header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <span class="logo-badge w-11 h-11 sm:w-12 sm:h-12">
+          <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Official Logo" class="w-full h-full" />
+        </span>
+        <div class="leading-tight min-w-0">
+          <span class="brand-title block font-display font-bold text-sm sm:text-base tracking-wider text-white uppercase truncate">Rehmaniya Interior</span>
+          <span class="brand-sub block text-[10px] sm:text-[11px] tracking-[0.22em] text-gold uppercase font-medium">Bespoke Architecture • Delhi NCR</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-        <a href="#about" class="hover:text-[#8C7756] transition-colors">Studio</a>
-        <a href="#portfolio" class="hover:text-[#8C7756] transition-colors">Portfolio</a>
-        <a href="#estimator" class="hover:text-[#8C7756] transition-colors">Budget Estimator</a>
-        <a href="#process" class="hover:text-[#8C7756] transition-colors">Process</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <a href="#atelier" class="nav-link text-white/90 hover:text-gold transition">Studio</a>
+        <a href="#portfolio" class="nav-link text-white/90 hover:text-gold transition">Portfolio</a>
+        <a href="#estimator" class="nav-link text-white/90 hover:text-gold transition">Cost Estimator</a>
+        <a href="#process" class="nav-link text-white/90 hover:text-gold transition">Process</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <button onclick="openConsultModal()" class="px-5 py-2.5 rounded-full bg-[#0F172A] hover:bg-[#8C7756] text-white text-xs sm:text-sm font-heading font-semibold tracking-wide transition-all shadow-sm">
-          Book Site Visit
+        <a href="tel:+918178511551" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-gold hover:text-white transition nav-link">
+          <span>+91 81785 11551</span>
+        </a>
+        <button onclick="openQuoteModal('Header Consultation')" class="atelier-btn bg-gold text-obsidian hover:bg-white shadow-lg">
+          <span class="hidden sm:inline">Book Site Visit</span>
+          <span class="sm:hidden">Consult</span>
+          <span class="btn-circle bg-obsidian text-gold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO SLIDER -->
-  <section class="hero-slider overflow-hidden border-b border-stone-200">
-    <div id="heroTrack" class="hero-track">
-      <!-- Slide 1 -->
-      <div class="hero-slide active">
-        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hero-text-centered">
-          <div class="anim-eyebrow text-[#E2CEAA] text-xs sm:text-sm font-heading font-semibold tracking-[0.25em] uppercase mb-4">
-            DELHI NCR &bull; BESPOKE RESIDENTIAL INTERIORS
+  <!-- Sticky Right Edge Consultation Tab -->
+  <button onclick="openQuoteModal('Sticky Free Quote Tab')" class="sticky-quote-tab hidden sm:block" aria-label="Get Free Quote">
+    FREE QUOTE
+  </button>
+
+  <!-- HERO SECTION: Full-Viewport 3-Slide Architectural Showcase -->
+  <section id="top" class="hero-section flex items-end pb-16 sm:pb-24 pt-28">
+    <!-- Slide 1 -->
+    <div class="hero-slide active" data-slide="0">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12 sm:pt-20">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">Turnkey Residences &bull; Delhi NCR</span>
           </div>
-          <h1 class="typo-hero text-white mb-5">
-            Crafting Homes That<br /> Define Refined Living
+          <h1 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            Spaces Crafted With <span class="text-gold font-normal">Architectural</span> Precision.
           </h1>
-          <p class="hero-sub text-stone-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-            Modular kitchens, custom wardrobes, architectural panelling, and complete turnkey home execution designed around your lifestyle.
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            From Italian-inspired modular kitchens to bespoke floor-to-ceiling wardrobes and full-home turnkey interiors — Rehmaniya Interior delivers factory-finished precision in 45 days.
           </p>
-          <div class="hero-cta flex flex-wrap items-center justify-center gap-4">
-            <a href="#estimator" class="atelier-btn">
-              <span>Calculate Home Budget</span>
-              <span class="arrow-circle">↗</span>
+          <div class="hero-stagger hero-stagger-4 flex flex-wrap items-center gap-4">
+            <button onclick="openQuoteModal('Hero Slide 1 - Turnkey Consultation')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Schedule Free Design Visit</span>
+              <span class="btn-circle bg-obsidian text-gold">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </span>
+            </button>
+            <a href="#portfolio" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium hover:bg-white/10 transition">
+              Explore Completed Spaces
             </a>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Slide 2 -->
-      <div class="hero-slide">
-        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="hero-slide-overlay"></div>
-        <div class="hero-text-centered">
-          <div class="anim-eyebrow text-[#E2CEAA] text-xs sm:text-sm font-heading font-semibold tracking-[0.25em] uppercase mb-4">
-            MODULAR KITCHENS &bull; WARDROBES &bull; TURNKEY FITOUTS
+    <!-- Slide 2 -->
+    <div class="hero-slide" data-slide="1">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12 sm:pt-20">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">Bespoke Modular Kitchens</span>
           </div>
-          <h2 class="typo-hero text-white mb-5">
-            Precision Joinery &amp;<br /> Timeless Craftsmanship
+          <h2 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            German Hardware. <span class="text-gold font-normal">Flawless</span> Joinery.
           </h2>
-          <p class="hero-sub text-stone-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-            From 3D space planning to clean on-site installation — transparent pricing, curated finishes, and dedicated supervision.
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            BWP-grade marine ply, fluted glass shutters, quartz islands, and soft-close Hettich &amp; Blum fittings backed by a 10-year structural warranty.
           </p>
-          <div class="hero-cta">
-            <button onclick="openConsultModal()" class="atelier-btn">
-              <span>Book Free Consultation</span>
-              <span class="arrow-circle">↗</span>
-            </button>
+          <div class="hero-stagger hero-stagger-4 flex flex-wrap items-center gap-4">
+            <a href="#estimator" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Calculate Kitchen Cost</span>
+              <span class="btn-circle bg-obsidian text-gold">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 z-30 bg-black/55 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 flex items-center gap-2.5">
-      <button class="hero-dot w-7 h-2 rounded-full bg-[#8C7756] transition-all" onclick="goSlide(0)" aria-label="Slide 1"></button>
-      <button class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all" onclick="goSlide(1)" aria-label="Slide 2"></button>
-    </div>
-  </section>
-
-  <!-- 01 / ABOUT STUDIO -->
-  <section id="about" class="py-20 md:py-24 bg-white border-b border-stone-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-6 reveal">
-        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
-          01 / About Rehmaniya Interior
-        </span>
-        <h2 class="typo-section text-slate-900 mb-6">
-          Where Functional Design Meets Lasting Craftsmanship
-        </h2>
-        <p class="text-slate-600 text-base leading-relaxed mb-5">
-          At <strong class="text-slate-900 font-semibold">Rehmaniya Interior</strong>, we transform apartments, builder floors, and independent residences across Delhi NCR with bespoke modular kitchens, floor-to-ceiling wardrobes, and complete turnkey interior solutions.
-        </p>
-        <p class="text-slate-600 text-base leading-relaxed mb-8">
-          Every project is backed by moisture-resistant core materials, soft-close European hardware, clean detailing, and clear milestone timelines — so homeowners experience zero execution stress.
-        </p>
-
-        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200">
-          <div>
-            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">100%</div>
-            <div class="text-xs text-slate-500 mt-1">Custom Space Planning</div>
+    <!-- Slide 3 -->
+    <div class="hero-slide" data-slide="2">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12 sm:pt-20">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">Builder Floors &amp; Villas</span>
           </div>
-          <div>
-            <div class="font-heading font-bold text-2xl sm:text-3xl text-[#8C7756]">NCR</div>
-            <div class="text-xs text-slate-500 mt-1">Turnkey Execution</div>
-          </div>
-          <div>
-            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">On-Time</div>
-            <div class="text-xs text-slate-500 mt-1">Handover Guarantee</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-6 reveal">
-        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-stone-200">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
-               alt="Rehmaniya Interior Turnkey Living Room"
-               class="w-full h-[380px] sm:h-[440px] object-cover" loading="lazy" />
-          <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-stone-200/80 flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior" class="w-10 h-10 rounded-lg object-cover border border-stone-200" />
-              <div>
-                <div class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Delhi NCR Studio</div>
-                <div class="font-heading font-bold text-slate-900 text-sm">3D Design &bull; Fabrication &bull; Fitout</div>
-              </div>
-            </div>
-            <button onclick="openConsultModal()" class="px-4 py-2 rounded-full bg-[#0F172A] text-white text-xs font-semibold hover:bg-[#8C7756] transition-colors flex-shrink-0">
-              Enquire
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 / INTERACTIVE CATEGORY PORTFOLIO -->
-  <section id="portfolio" class="py-20 md:py-24 bg-[#FBF9F5] border-b border-stone-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
-        <div class="max-w-xl">
-          <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
-            02 / Interactive Portfolio
-          </span>
-          <h2 class="typo-section text-slate-900">
-            Browse Spaces By Category
+          <h2 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            Quiet Luxury For <span class="text-gold font-normal">Modern</span> Living.
           </h2>
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            Photorealistic 3D renders before site work begins, transparent itemized BOQs, and dedicated site supervision across South Delhi, Noida &amp; Gurugram.
+          </p>
+          <div class="hero-stagger hero-stagger-4 flex flex-wrap items-center gap-4">
+            <button onclick="openQuoteModal('Hero Slide 3 - 3D Design Consultation')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Request 3D Walkthrough</span>
+              <span class="btn-circle bg-obsidian text-gold">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Bottom Controls Dock -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between pt-8 pointer-events-none">
+      <div class="flex items-center gap-2.5 pointer-events-auto" id="heroDots">
+        <button onclick="goToSlide(0)" class="hero-dot h-1.5 w-10 rounded-full bg-gold transition-all" aria-label="Slide 1"></button>
+        <button onclick="goToSlide(1)" class="hero-dot h-1.5 w-4 rounded-full bg-white/35 hover:bg-white/60 transition-all" aria-label="Slide 2"></button>
+        <button onclick="goToSlide(2)" class="hero-dot h-1.5 w-4 rounded-full bg-white/35 hover:bg-white/60 transition-all" aria-label="Slide 3"></button>
+      </div>
+      <div class="hidden sm:flex items-center gap-3 pointer-events-auto">
+        <button onclick="prevSlide()" class="w-10 h-10 rounded-full border border-white/25 bg-black/30 backdrop-blur-md text-white hover:border-gold hover:text-gold flex items-center justify-center transition" aria-label="Previous slide">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/25 bg-black/30 backdrop-blur-md text-white hover:border-gold hover:text-gold flex items-center justify-center transition" aria-label="Next slide">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURAL MARQUEE STRIP -->
+  <div class="bg-obsidian text-gold border-y border-gold/20 py-4">
+    <div class="marquee-wrap">
+      <div class="marquee-track typo-eyebrow text-xs">
+        <span>BESPOKE MODULAR KITCHENS</span>
+        <span class="text-white/30">&bull;</span>
+        <span>FLOOR-TO-CEILING WARDROBES</span>
+        <span class="text-white/30">&bull;</span>
+        <span>TURNKEY BUILDER FLOORS</span>
+        <span class="text-white/30">&bull;</span>
+        <span>45-DAY HANDOVER PROMISE</span>
+        <span class="text-white/30">&bull;</span>
+        <span>10-YEAR STRUCTURAL WARRANTY</span>
+        <span class="text-white/30">&bull;</span>
+        <span>DELHI NCR DESIGN STUDIO</span>
+        <span class="text-white/30">&bull;</span>
+        <span>BESPOKE MODULAR KITCHENS</span>
+        <span class="text-white/30">&bull;</span>
+        <span>FLOOR-TO-CEILING WARDROBES</span>
+        <span class="text-white/30">&bull;</span>
+        <span>TURNKEY BUILDER FLOORS</span>
+        <span class="text-white/30">&bull;</span>
+        <span>45-DAY HANDOVER PROMISE</span>
+        <span class="text-white/30">&bull;</span>
+        <span>10-YEAR STRUCTURAL WARRANTY</span>
+        <span class="text-white/30">&bull;</span>
+        <span>DELHI NCR DESIGN STUDIO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDIO PHILOSOPHY & TRUST STATS (With Official Logo Showcase) -->
+  <section id="atelier" class="py-20 sm:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left: Editorial Image + Floating Brand Emblem Card -->
+        <div class="lg:col-span-6 relative reveal-left">
+          <div class="rounded-3xl overflow-hidden shadow-2xl img-zoom-wrap aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Rehmaniya Interior Luxury Living Space" class="w-full h-full object-cover" />
+          </div>
+          <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-8 sm:-right-6 bg-obsidian text-white p-5 sm:p-6 rounded-2xl shadow-2xl border border-gold/30 flex items-center gap-4 max-w-sm">
+            <span class="logo-badge w-14 h-14">
+              <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Monogram" class="w-full h-full" />
+            </span>
+            <div>
+              <p class="typo-eyebrow text-gold text-[10px] mb-1">Verified Studio</p>
+              <p class="font-display font-semibold text-base text-white">Rehmaniya Interior</p>
+              <p class="text-xs text-white/70">Factory-Finish &bull; Zero Hidden Costs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Copy & Animated Metrics -->
+        <div class="lg:col-span-6">
+          <p class="typo-eyebrow text-bronze mb-4 reveal-text">The Rehmaniya Standard</p>
+          <h2 class="typo-h2 text-obsidian mb-6 reveal-text delay-100">
+            Designed Around Your Lifestyle. Built To Outlast Trends.
+          </h2>
+          <p class="text-slateInk text-base sm:text-lg leading-relaxed mb-8 reveal-text delay-200">
+            Every residence we touch combines timeless warm minimalism with disciplined engineering. From moisture-resistant BWP cabinetry to concealed ambient lighting, we manage design, material sourcing, and site execution under one roof.
+          </p>
+
+          <!-- Animated Counters -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-obsidian/10 mb-8 reveal-on-scroll delay-300">
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-4xl text-obsidian">
+                <span class="counter" data-target="100" data-suffix="%">100%</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slateInk mt-1">Itemized BOQ Transparency</p>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-4xl text-bronze">
+                <span class="counter" data-target="45" data-suffix=" Days">45 Days</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slateInk mt-1">Guaranteed Modular Delivery</p>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl sm:text-4xl text-obsidian">
+                <span class="counter" data-target="10" data-suffix=" Yr">10 Yr</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slateInk mt-1">Hardware &amp; Ply Warranty</p>
+            </div>
+          </div>
+
+          <div class="reveal-on-scroll delay-400">
+            <button onclick="openQuoteModal('Studio Section - Book Consultation')" class="atelier-btn bg-obsidian text-white hover:bg-bronze">
+              <span>Talk To Lead Designer</span>
+              <span class="btn-circle bg-gold text-obsidian">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURATED PORTFOLIO WITH INTERACTIVE CATEGORY FILTER -->
+  <section id="portfolio" class="py-20 sm:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <p class="typo-eyebrow text-bronze mb-3 reveal-text">Curated Portfolio</p>
+          <h2 class="typo-h2 text-obsidian reveal-text delay-100">Signature Spaces Across Delhi NCR</h2>
         </div>
 
         <!-- Category Filter Pills -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterPortfolio('all', this)" class="filter-pill active px-4 py-2 rounded-full text-xs font-heading font-semibold">All Spaces</button>
-          <button onclick="filterPortfolio('kitchen', this)" class="filter-pill px-4 py-2 rounded-full text-xs font-heading font-semibold">Modular Kitchens</button>
-          <button onclick="filterPortfolio('wardrobe', this)" class="filter-pill px-4 py-2 rounded-full text-xs font-heading font-semibold">Wardrobes</button>
-          <button onclick="filterPortfolio('living', this)" class="filter-pill px-4 py-2 rounded-full text-xs font-heading font-semibold">Living &amp; Bedrooms</button>
+        <div class="flex flex-wrap gap-2.5 reveal-on-scroll delay-200" id="portfolioFilters">
+          <button onclick="filterPortfolio('all', this)" class="filter-tab active px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white">All Spaces</button>
+          <button onclick="filterPortfolio('kitchen', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white text-obsidian">Modular Kitchens</button>
+          <button onclick="filterPortfolio('wardrobe', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white text-obsidian">Wardrobes</button>
+          <button onclick="filterPortfolio('living', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white text-obsidian">Living &amp; Bedrooms</button>
         </div>
       </div>
 
-      <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-        <!-- Card 1: Kitchen -->
-        <div data-cat="kitchen" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="Modular Kitchen" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Modular Kitchen</span>
+      <!-- Portfolio Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="portfolioGrid">
+        <!-- Card 1 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll" data-category="kitchen">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1600&q=80" alt="Island Modular Kitchen" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Modular Kitchen</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">L-Shape Acrylic &amp; Quartz Kitchen</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">High-gloss seamless shutters, tall pantry unit, and soft-close tandem drawers.</p>
-            </div>
-            <button onclick="openConsultModal('Modular Kitchen')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Matte Cashmere Island Kitchen</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Handleless PU shutters, bookmatched quartz island &amp; concealed pantry pull-outs.</p>
+            <button onclick="openQuoteModal('Similar Design: Matte Cashmere Island Kitchen')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 2: Wardrobe -->
-        <div data-cat="wardrobe" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=80" alt="Luxury Wardrobe" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Wardrobes</span>
+        <!-- Card 2 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-100" data-category="living">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Contemporary Living & TV Console" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Living &amp; Media</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">Floor-to-Ceiling Sliding Wardrobe</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Fluted glass &amp; matte laminate finish with sensor LED lighting and organizer drawers.</p>
-            </div>
-            <button onclick="openConsultModal('Modular Wardrobe & Dressing')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Fluted Oak &amp; Marble Lounge</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Full-height fluted wall panelling, floating TV console &amp; warm cove lighting.</p>
+            <button onclick="openQuoteModal('Similar Design: Fluted Oak & Marble Lounge')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 3: Living -->
-        <div data-cat="living" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Living & TV Unit" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Living Space</span>
+        <!-- Card 3 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-200" data-category="wardrobe">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=80" alt="Floor-to-Ceiling Wardrobe Suite" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Wardrobe Suite</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">Minimal Living &amp; Fluted TV Console</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Warm wood-grain wall panelling, concealed wiring, and ambient false-ceiling lighting.</p>
-            </div>
-            <button onclick="openConsultModal('Full Home Turnkey Interior')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Tinted Glass Walk-In Wardrobe</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Sensor-lit wardrobe interiors, suede-lined jewellery drawers &amp; slim aluminium profiles.</p>
+            <button onclick="openQuoteModal('Similar Design: Tinted Glass Walk-In Wardrobe')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 4: Kitchen Island -->
-        <div data-cat="kitchen" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=900&q=80" alt="Island Modular Kitchen" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Modular Kitchen</span>
+        <!-- Card 4 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll" data-category="living">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80" alt="Master Bedroom Sanctuary" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Master Suite</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">Island Kitchen With Breakfast Counter</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Built-in oven tower, corner carousel, and seamless stone countertop integration.</p>
-            </div>
-            <button onclick="openConsultModal('Modular Kitchen')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Warm Minimalist Master Suite</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Upholstered headboard wall, custom bedside pendants &amp; acoustic wooden flooring.</p>
+            <button onclick="openQuoteModal('Similar Design: Warm Minimalist Master Suite')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 5: Bedroom -->
-        <div data-cat="living" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80" alt="Master Bedroom Suite" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Master Suite</span>
+        <!-- Card 5 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-100" data-category="kitchen">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80" alt="Parallel Modular Kitchen" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Modular Kitchen</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">Master Bedroom &amp; Upholstered Bed Back</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Bespoke bed back panelling, floating side tables, and warm cove illumination.</p>
-            </div>
-            <button onclick="openConsultModal('Full Home Turnkey Interior')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Parallel Chef's Kitchen</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Scratch-resistant acrylic finish, built-in appliance tower &amp; corner magic units.</p>
+            <button onclick="openQuoteModal('Similar Design: Parallel Chefs Kitchen')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 6: Walk-in Wardrobe -->
-        <div data-cat="wardrobe" class="portfolio-card bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover-lift reveal flex flex-col">
-          <div class="h-60 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Bespoke Architectural Fitout" class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-4 left-4 bg-slate-900/85 text-[#E2CEAA] text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full">Turnkey Fitout</span>
+        <!-- Card 6 -->
+        <article class="portfolio-card group bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-200" data-category="living">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Turnkey Builder Floor" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-gold text-[11px] font-semibold tracking-wider uppercase">Turnkey Home</span>
           </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-heading font-bold text-lg text-slate-900 mb-1.5">Complete 3BHK &amp; Builder Floor Fitout</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">End-to-end joinery, false ceiling, painting, and vanity units delivered on schedule.</p>
-            </div>
-            <button onclick="openConsultModal('Turnkey Builder Floor / Villa')" class="mt-5 text-xs font-heading font-semibold uppercase tracking-wider text-slate-900 hover:text-[#8C7756] flex items-center gap-1.5">
-              <span>Request Similar Quote</span><span>→</span>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">South Delhi 4BHK Turnkey</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">End-to-end civil, electrical, false ceiling, veneer panelling &amp; bespoke furniture.</p>
+            <button onclick="openQuoteModal('Similar Design: South Delhi 4BHK Turnkey')" class="text-xs font-semibold tracking-wider uppercase text-bronze hover:text-obsidian inline-flex items-center gap-1.5 transition">
+              Get Quote For Similar Space &rarr;
             </button>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 03 / INTERACTIVE BUDGET ESTIMATOR -->
-  <section id="estimator" class="py-20 md:py-24 bg-[#FAF8F5] border-b border-stone-200/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">
-          03 / Smart Lead Qualifier
-        </span>
-        <h2 class="typo-section text-slate-900 mb-3">
-          Instant Interior &amp; Kitchen Estimator
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base">
-          Homeowners select their space, finish tier, and size upfront — filtering out casual price-checkers and sending serious enquiries straight to your WhatsApp.
-        </p>
-      </div>
-
-      <div class="bg-white rounded-3xl border border-stone-200/90 shadow-lg p-6 sm:p-10 grid lg:grid-cols-12 gap-8 items-start reveal">
-        <div class="lg:col-span-7 space-y-7">
-          <div>
-            <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
-              <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">1</span>
-              <span>Select Project Scope</span>
+  <!-- INTERACTIVE INTERIOR BUDGET ESTIMATOR -->
+  <section id="estimator" class="py-20 sm:py-28 bg-obsidian text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5">
+          <p class="typo-eyebrow text-gold mb-3 reveal-text">Instant Transparency</p>
+          <h2 class="typo-h2 text-white mb-5 reveal-text delay-100">Estimate Your Interior Investment</h2>
+          <p class="text-white/75 text-base leading-relaxed mb-8 reveal-text delay-200">
+            Select your home configuration, finish tier, and carpet area to get an instant realistic budget range — then lock it in with our designer on WhatsApp.
+          </p>
+          <div class="space-y-4 text-sm text-white/80 reveal-on-scroll delay-300">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center text-xs">&#10003;</span>
+              <span>Includes BWP Marine Ply + Branded German Hardware</span>
             </div>
-            <div class="grid grid-cols-2 gap-3">
-              <button type="button" onclick="setScope('Modular Kitchen', 18000, 'Running Ft.', 12, 45, 22, this)" class="calc-btn calc-scope active p-3.5 rounded-2xl text-left">
-                <div class="font-heading font-bold text-sm text-slate-900">Modular Kitchen</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">L / U-Shape / Island</div>
-              </button>
-              <button type="button" onclick="setScope('Wardrobes + Dressing', 1650, 'Sq.Ft.', 40, 250, 90, this)" class="calc-btn calc-scope p-3.5 rounded-2xl text-left">
-                <div class="font-heading font-bold text-sm text-slate-900">Modular Wardrobes</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Sliding / Hinged + Loft</div>
-              </button>
-              <button type="button" onclick="setScope('Full 2BHK / 3BHK Home', 1450, 'Sq.Ft.', 700, 2200, 1200, this)" class="calc-btn calc-scope p-3.5 rounded-2xl text-left">
-                <div class="font-heading font-bold text-sm text-slate-900">2BHK / 3BHK Full Home</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Complete Turnkey Package</div>
-              </button>
-              <button type="button" onclick="setScope('Builder Floor / Villa', 1650, 'Sq.Ft.', 1200, 3500, 1800, this)" class="calc-btn calc-scope p-3.5 rounded-2xl text-left">
-                <div class="font-heading font-bold text-sm text-slate-900">Builder Floor / Villa</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Luxury End-to-End</div>
-              </button>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center text-xs">&#10003;</span>
+              <span>Zero-Cost 3D Conceptual Walkthrough Included</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center text-xs">&#10003;</span>
+              <span>45-Day Factory-Finish Installation Timeline</span>
             </div>
           </div>
+        </div>
 
-          <div>
-            <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
-              <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">2</span>
-              <span>Finish Tier</span>
-            </div>
-            <div class="grid grid-cols-3 gap-3">
-              <button type="button" onclick="setTier('Essential Matte Laminate', 0.9, this)" class="calc-btn calc-tier p-3 rounded-2xl text-left">
-                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Essential</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Matte Laminate</div>
-              </button>
-              <button type="button" onclick="setTier('Premium High-Gloss Acrylic', 1.15, this)" class="calc-btn calc-tier active p-3 rounded-2xl text-left">
-                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Premium</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Acrylic &amp; Fluted</div>
-              </button>
-              <button type="button" onclick="setTier('Signature Italian PU', 1.38, this)" class="calc-btn calc-tier p-3 rounded-2xl text-left">
-                <div class="font-heading font-bold text-xs sm:text-sm text-slate-900">Signature</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Italian PU / Veneer</div>
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-[#8C7756] text-white inline-flex items-center justify-center text-[11px]">3</span>
-                <span>Project Size</span>
+        <div class="lg:col-span-7 reveal-scale delay-200">
+          <div class="bg-ivory text-obsidian rounded-3xl p-6 sm:p-10 shadow-2xl border border-gold/25">
+            <!-- Property Type -->
+            <div class="mb-6">
+              <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">1. Select Scope</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="scopeGroup">
+                <button type="button" onclick="setScope('2BHK', 6.5, this)" class="scope-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs sm:text-sm font-semibold bg-white hover:border-bronze transition">2 BHK</button>
+                <button type="button" onclick="setScope('3BHK', 9.5, this)" class="scope-btn active-scope py-2.5 px-3 rounded-xl border border-obsidian text-xs sm:text-sm font-semibold bg-obsidian text-white transition">3 BHK</button>
+                <button type="button" onclick="setScope('4BHK / Villa', 14.5, this)" class="scope-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs sm:text-sm font-semibold bg-white hover:border-bronze transition">4 BHK / Villa</button>
+                <button type="button" onclick="setScope('Modular Kitchen', 2.4, this)" class="scope-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs sm:text-sm font-semibold bg-white hover:border-bronze transition">Kitchen Only</button>
               </div>
-              <span id="sizeLabel" class="text-xs font-heading font-bold text-[#8C7756] bg-[#8C7756]/10 px-3 py-1 rounded-full">22 Running Ft.</span>
             </div>
-            <input id="sizeSlider" type="range" min="12" max="45" step="1" value="22" oninput="updateEstimate()" class="w-full accent-[#8C7756] cursor-pointer" />
-            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-              <span id="minLbl">12 Running Ft.</span>
-              <span id="maxLbl">45+ Running Ft.</span>
+
+            <!-- Finish Tier -->
+            <div class="mb-6">
+              <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">2. Finish Tier</label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button type="button" onclick="setTier('Essential', 1.0, this)" class="tier-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs sm:text-sm font-semibold bg-white transition">Essential</button>
+                <button type="button" onclick="setTier('Signature', 1.35, this)" class="tier-btn active-tier py-2.5 px-3 rounded-xl border border-obsidian text-xs sm:text-sm font-semibold bg-obsidian text-white transition">Signature</button>
+                <button type="button" onclick="setTier('Bespoke Luxe', 1.75, this)" class="tier-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs sm:text-sm font-semibold bg-white transition">Bespoke Luxe</button>
+              </div>
+            </div>
+
+            <!-- Carpet Area Slider -->
+            <div class="mb-8">
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-bronze">3. Approximate Area</label>
+                <span id="areaLabel" class="font-display font-bold text-sm text-obsidian">1,450 sq.ft.</span>
+              </div>
+              <input type="range" id="areaSlider" min="400" max="4000" step="50" value="1450" oninput="updateEstimate()" />
+            </div>
+
+            <!-- Output Bar -->
+            <div class="bg-cream rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-bronze/20">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-slateInk">Estimated Investment Range</p>
+                <p id="estimateOutput" class="font-display font-bold text-2xl sm:text-3xl text-obsidian mt-1">&#8377;11.8L &ndash; &#8377;14.2L</p>
+              </div>
+              <button onclick="sendEstimateToWhatsApp()" class="atelier-btn bg-obsidian text-white hover:bg-bronze justify-center">
+                <span>Get Detailed BOQ</span>
+                <span class="btn-circle bg-gold text-obsidian">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                </span>
+              </button>
             </div>
           </div>
-        </div>
-
-        <div class="lg:col-span-5 bg-[#FAF8F5] rounded-2xl border border-stone-200 p-6 sm:p-7 space-y-5">
-          <div>
-            <div class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Estimated Investment</div>
-            <div id="estRange" class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-1.5">
-              ₹4.18L – ₹5.00L
-            </div>
-            <div id="estSummary" class="text-xs text-slate-500 mt-2">
-              Modular Kitchen &bull; Premium High-Gloss Acrylic &bull; 22 Running Ft.
-            </div>
-          </div>
-
-          <ul class="text-xs text-slate-600 space-y-2 pt-4 border-t border-stone-200">
-            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> Free 3D Layout &amp; Material Consultation</li>
-            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> Moisture-Resistant Core &amp; Soft-Close Fittings</li>
-            <li class="flex items-center gap-2"><span class="text-[#8C7756] font-bold">✓</span> Transparent Pricing &amp; On-Schedule Handover</li>
-          </ul>
-
-          <a id="waQuoteLink" href="#" target="_blank" rel="noopener noreferrer"
-             class="w-full py-3.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-heading font-semibold text-sm flex items-center justify-center gap-2 transition shadow-sm">
-            <span>Get Detailed Quote on WhatsApp</span>
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 04 / 4-STEP TRANSPARENT PROCESS -->
-  <section id="process" class="py-16 md:py-20 bg-white border-b border-stone-200/80">
+  <!-- 4-STEP ARCHITECTURAL PROCESS -->
+  <section id="process" class="py-20 sm:py-28 bg-ivory">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-        <span class="text-xs font-heading font-semibold uppercase tracking-[0.22em] text-[#8C7756] block mb-3">04 / How We Work</span>
-        <h2 class="typo-section text-slate-900">Simple, Transparent 4-Step Execution</h2>
+      <div class="max-w-2xl mb-14">
+        <p class="typo-eyebrow text-bronze mb-3 reveal-text">Execution Discipline</p>
+        <h2 class="typo-h2 text-obsidian reveal-text delay-100">From Bare Shell To Handover In 4 Clear Stages</h2>
       </div>
+
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 reveal">
-          <div class="text-xs font-heading font-bold text-[#8C7756] mb-2">STEP 01</div>
-          <h3 class="font-heading font-bold text-base text-slate-900 mb-1.5">Site Visit &amp; Measurement</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">Laser measurements and understanding your family's storage &amp; design goals.</p>
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">01</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Site Visit &amp; Brief</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Laser measurements at your residence in Delhi NCR, lifestyle mapping, and initial budget alignment.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 reveal">
-          <div class="text-xs font-heading font-bold text-[#8C7756] mb-2">STEP 02</div>
-          <h3 class="font-heading font-bold text-base text-slate-900 mb-1.5">3D Design &amp; Material Lock</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">Photorealistic 3D views with transparent itemized quote before starting.</p>
+
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-100">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">02</span>
+          <h3 class="typo-h3 text-obsidian mb-2">3D Renders &amp; BOQ</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Photorealistic 3D views of every room paired with an itemized material specification sheet.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 reveal">
-          <div class="text-xs font-heading font-bold text-[#8C7756] mb-2">STEP 03</div>
-          <h3 class="font-heading font-bold text-base text-slate-900 mb-1.5">Precision Fabrication</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">Clean edge-banding, durable hardware assembly, and multi-stage quality checks.</p>
+
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-200">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">03</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Factory Production</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Precision CNC edge-banding, PU coating, and pre-fitting at our partner modular facility.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 reveal">
-          <div class="text-xs font-heading font-bold text-[#8C7756] mb-2">STEP 04</div>
-          <h3 class="font-heading font-bold text-base text-slate-900 mb-1.5">Installation &amp; Handover</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">Dust-free on-site fitting, final inspection, and on-time key handover.</p>
+
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-300">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">04</span>
+          <h3 class="typo-h3 text-obsidian mb-2">45-Day Handover</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Clean site installation, 50-point quality audit, deep cleaning, and 10-year warranty activation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#F4EFE6] text-slate-700 py-14 border-t border-[#8C7756]/25">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-      <div class="flex items-center gap-3.5">
-        <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Logo" class="w-12 h-12 rounded-xl object-cover shadow-sm border border-stone-300" />
-        <div>
-          <div class="font-heading font-bold text-xl text-slate-900">REHMANIYA INTERIOR</div>
-          <p class="text-sm text-slate-600 mt-1">Modular Kitchens &bull; Wardrobes &bull; Turnkey Interiors (Delhi NCR)</p>
-          <p class="text-xs text-[#8C7756] font-medium mt-1.5">Direct / WhatsApp: +91 81785 11551</p>
+  <!-- FOOTER WITH OFFICIAL LOGO -->
+  <footer class="bg-obsidian text-white pt-16 pb-10 border-t border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-3.5 mb-5">
+            <span class="logo-badge w-12 h-12">
+              <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Footer Logo" class="w-full h-full" />
+            </span>
+            <div>
+              <span class="font-display font-bold text-lg tracking-wider uppercase block">Rehmaniya Interior</span>
+              <span class="text-xs tracking-[0.2em] text-gold uppercase">Turnkey Homes &bull; Modular Kitchens</span>
+            </div>
+          </div>
+          <p class="text-sm text-white/65 leading-relaxed max-w-sm">
+            Creating calm, architectural, factory-finished homes across South Delhi, Noida, Gurugram, and Greater Noida.
+          </p>
+        </div>
+
+        <div class="md:col-span-3">
+          <p class="typo-eyebrow text-gold text-[11px] mb-4">Explore</p>
+          <ul class="space-y-2.5 text-sm text-white/75">
+            <li><a href="#atelier" class="hover:text-gold transition">Studio Philosophy</a></li>
+            <li><a href="#portfolio" class="hover:text-gold transition">Completed Portfolio</a></li>
+            <li><a href="#estimator" class="hover:text-gold transition">Cost Estimator</a></li>
+            <li><a href="#process" class="hover:text-gold transition">45-Day Process</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="typo-eyebrow text-gold text-[11px] mb-4">Direct Studio Desk</p>
+          <p class="text-sm text-white/80 mb-2">Delhi NCR &bull; On-Site Consultations</p>
+          <a href="tel:+918178511551" class="text-lg font-display font-semibold text-gold hover:text-white transition block mb-4">+91 81785 11551</a>
+          <button onclick="openQuoteModal('Footer Consultation')" class="atelier-btn bg-gold text-obsidian hover:bg-white text-xs">
+            <span>Chat On WhatsApp</span>
+            <span class="btn-circle bg-obsidian text-gold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+            </span>
+          </button>
         </div>
       </div>
-      <div class="bg-white/80 backdrop-blur-sm border border-stone-200 rounded-2xl p-4 max-w-md text-xs text-slate-600">
-        <strong class="text-slate-900 font-heading block mb-1">Concept Portfolio Preview:</strong>
-        Built exclusively for <strong>Rehmaniya Interior</strong>. Your actual completed site photos, client reviews, and Instagram gallery can be placed directly into this layout.
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
+        <p>&copy; 2026 Rehmaniya Interior. All Rights Reserved.</p>
+        <p>Crafted for Luxury Living &bull; Delhi NCR</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Sticky Bar -->
-  <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-2.5 flex items-center gap-3">
-    <button onclick="openConsultModal()" class="flex-1 py-2.5 rounded-full bg-[#0F172A] text-white text-xs font-heading font-semibold">
-      Book Site Visit
-    </button>
-    <a href="https://wa.me/918178511551?text=Hi%20Rehmaniya%20Interior,%20I%20would%20like%20to%20discuss%20an%20interior%20project." target="_blank" rel="noopener noreferrer"
-       class="flex-1 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-heading font-semibold text-center">
-      WhatsApp Studio
-    </a>
-  </div>
+  <!-- SMART INQUIRY POPUP MODAL -->
+  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="bg-ivory text-obsidian rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gold/30 relative">
+      <button onclick="closeQuoteModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-obsidian hover:text-white flex items-center justify-center transition" aria-label="Close modal">
+        &times;
+      </button>
 
-  <!-- Auto-Opening Smart Inquiry Popup -->
-  <div id="consultModal" onclick="if(event.target===this) closeConsultModal()" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border border-stone-200 shadow-2xl relative">
-      <button onclick="closeConsultModal()" aria-label="Close popup" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-slate-700 font-bold transition">✕</button>
-      <div class="flex items-center gap-2.5 mb-2">
-        <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior" class="w-8 h-8 rounded-lg object-cover border border-stone-200" />
-        <span class="text-[11px] font-heading font-semibold uppercase tracking-widest text-[#8C7756]">Rehmaniya Interior &bull; Delhi NCR</span>
+      <div class="flex items-center gap-3.5 mb-5">
+        <span class="logo-badge w-12 h-12">
+          <img src="assets/rehmaniya_logo.jpg" alt="Rehmaniya Interior Logo" class="w-full h-full" />
+        </span>
+        <div>
+          <p class="typo-eyebrow text-bronze text-[10px]">Free Design Consultation</p>
+          <h3 class="font-display font-bold text-xl text-obsidian">Book Your Site Visit</h3>
+        </div>
       </div>
-      <h3 class="font-heading font-bold text-2xl text-slate-900 mt-1 mb-1.5">Plan Your Dream Space</h3>
-      <p class="text-xs text-slate-600 mb-4 leading-relaxed">Share your requirement for a free 3D layout consultation &amp; site visit.</p>
-      <form onsubmit="submitConsult(event)" class="space-y-3">
-        <input id="mName" type="text" required placeholder="Your Name" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#8C7756]" />
-        <input id="mLoc" type="text" required placeholder="Location (e.g. South Delhi / Noida / Gurgaon)" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#8C7756]" />
-        <select id="mService" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white text-slate-700 focus:outline-none focus:border-[#8C7756]">
-          <option value="Modular Kitchen">Modular Kitchen</option>
-          <option value="Modular Wardrobe & Dressing">Modular Wardrobe &amp; Dressing</option>
-          <option value="Full Home Turnkey Interior">Full Home Turnkey Interior (2BHK/3BHK)</option>
-          <option value="Turnkey Builder Floor / Villa">Turnkey Builder Floor / Villa</option>
-        </select>
-        <select id="mBudget" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white text-slate-700 focus:outline-none focus:border-[#8C7756]">
-          <option value="₹3L – ₹6L">Estimated Budget: ₹3L – ₹6L</option>
-          <option value="₹6L – ₹12L" selected>Estimated Budget: ₹6L – ₹12L</option>
-          <option value="₹12L+ Full Turnkey">Estimated Budget: ₹12L+ Full Turnkey</option>
-        </select>
-        <button type="submit" class="w-full py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-heading font-semibold text-sm transition shadow-sm">
-          Get Free Quote on WhatsApp
-        </button>
-        <button type="button" onclick="closeConsultModal()" class="w-full py-1.5 text-xs text-slate-500 hover:text-slate-800 font-medium transition">
-          Explore Portfolio First
+
+      <p id="modalContextText" class="text-xs text-slateInk mb-5 bg-cream px-3.5 py-2 rounded-xl border border-bronze/20">
+        Inquiry: Turnkey Residence / Modular Kitchen Consultation
+      </p>
+
+      <form onsubmit="submitQuoteForm(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slateInk mb-1">Your Name</label>
+          <input type="text" id="leadName" required placeholder="e.g. Aarav Sharma" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slateInk mb-1">Location (Delhi NCR)</label>
+            <input type="text" id="leadCity" required placeholder="e.g. South Delhi / Noida" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slateInk mb-1">Requirement</label>
+            <select id="leadType" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze">
+              <option>Full Home Turnkey</option>
+              <option>Modular Kitchen</option>
+              <option>Wardrobes &amp; Storage</option>
+              <option>Builder Floor Renovation</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full atelier-btn bg-obsidian text-white hover:bg-bronze justify-between mt-2">
+          <span>Send Details on WhatsApp</span>
+          <span class="btn-circle bg-gold text-obsidian">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </span>
         </button>
       </form>
     </div>
   </div>
 
+  <!-- INTERACTION & ANIMATION SCRIPTS -->
   <script>
+    // 1. Sticky Nav Scroll State
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // 2. Hero Multi-Slide Engine
     let currentSlide = 0;
-    const track = document.getElementById('heroTrack');
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
+    let slideInterval;
 
-    function goSlide(idx) {
-      currentSlide = idx;
-      track.style.transform = `translateX(-${idx * 50}%)`;
-      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-      dots.forEach((d, i) => {
-        d.className = i === idx
-          ? 'hero-dot w-7 h-2 rounded-full bg-[#8C7756] transition-all'
-          : 'hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all';
-      });
-    }
-    setInterval(() => goSlide((currentSlide + 1) % slides.length), 6000);
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('w-10', 'bg-gold');
+      dots[currentSlide].classList.add('w-4', 'bg-white/35');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      currentSlide = (index + slides.length) % slides.length;
 
-    function filterPortfolio(cat, btn) {
-      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.portfolio-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
-      });
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.remove('w-4', 'bg-white/35');
+      dots[currentSlide].classList.add('w-10', 'bg-gold');
+      resetSlideTimer();
     }
 
-    let scopeName = 'Modular Kitchen';
-    let baseRate = 18000;
-    let unitLabel = 'Running Ft.';
-    let tierName = 'Premium High-Gloss Acrylic';
-    let tierMult = 1.15;
+    function nextSlide() { goToSlide(currentSlide + 1); }
+    function prevSlide() { goToSlide(currentSlide - 1); }
 
-    function setScope(name, rate, unit, minV, maxV, defV, btn) {
-      scopeName = name;
-      baseRate = rate;
-      unitLabel = unit;
-      const sl = document.getElementById('sizeSlider');
-      sl.min = minV; sl.max = maxV; sl.value = defV;
-      document.getElementById('minLbl').textContent = minV + ' ' + unit;
-      document.getElementById('maxLbl').textContent = maxV + '+ ' + unit;
-      document.querySelectorAll('.calc-scope').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    function resetSlideTimer() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 6000);
+    }
+    resetSlideTimer();
+
+    // 3. Full Scroll-Reveal Engine + Counter Animation
+    function initScrollRevealEngine() {
+      const revealEls = document.querySelectorAll('.reveal-on-scroll, .reveal-text, .reveal-left, .reveal-right, .reveal-scale');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(animateCounter);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach((el) => observer.observe(el));
+    }
+
+    function animateCounter(el) {
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1100;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = Math.round(target * eased);
+        el.textContent = val + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    document.addEventListener('DOMContentLoaded', initScrollRevealEngine);
+
+    // 4. Portfolio Category Filter
+    function filterPortfolio(category, btnEl) {
+      document.querySelectorAll('.filter-tab').forEach((b) => {
+        b.classList.remove('active');
+        b.classList.add('text-obsidian');
+      });
+      btnEl.classList.add('active');
+      btnEl.classList.remove('text-obsidian');
+
+      document.querySelectorAll('.portfolio-card').forEach((card) => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+          requestAnimationFrame(() => card.classList.add('is-visible'));
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 5. Budget Estimator Logic
+    let estScope = '3BHK';
+    let estBase = 9.5;
+    let estTier = 'Signature';
+    let estMultiplier = 1.35;
+
+    function setScope(name, base, btn) {
+      estScope = name;
+      estBase = base;
+      document.querySelectorAll('.scope-btn').forEach((b) => {
+        b.classList.remove('bg-obsidian', 'text-white', 'border-obsidian');
+        b.classList.add('bg-white', 'text-obsidian', 'border-obsidian/15');
+      });
+      btn.classList.remove('bg-white', 'border-obsidian/15');
+      btn.classList.add('bg-obsidian', 'text-white', 'border-obsidian');
       updateEstimate();
     }
 
     function setTier(name, mult, btn) {
-      tierName = name;
-      tierMult = mult;
-      document.querySelectorAll('.calc-tier').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      estTier = name;
+      estMultiplier = mult;
+      document.querySelectorAll('.tier-btn').forEach((b) => {
+        b.classList.remove('bg-obsidian', 'text-white', 'border-obsidian');
+        b.classList.add('bg-white', 'text-obsidian', 'border-obsidian/15');
+      });
+      btn.classList.remove('bg-white', 'border-obsidian/15');
+      btn.classList.add('bg-obsidian', 'text-white', 'border-obsidian');
       updateEstimate();
     }
 
     function updateEstimate() {
-      const sz = parseInt(document.getElementById('sizeSlider').value, 10);
-      document.getElementById('sizeLabel').textContent = `${sz.toLocaleString('en-IN')} ${unitLabel}`;
-      const mid = (sz * baseRate * tierMult) / 100000;
-      const low = Math.max(0.8, mid * 0.92).toFixed(2);
-      const high = Math.max(1.0, mid * 1.10).toFixed(2);
-      document.getElementById('estRange').textContent = `₹${low}L – ₹${high}L`;
-      document.getElementById('estSummary').textContent = `${scopeName} • ${tierName} • ${sz.toLocaleString('en-IN')} ${unitLabel}`;
-      const msg = encodeURIComponent(`Hi Rehmaniya Interior, I checked your website estimator for ${scopeName} (${tierName}, ~${sz} ${unitLabel}, Est: ₹${low}L–₹${high}L). Would like to book a consultation.`);
-      document.getElementById('waQuoteLink').href = `https://wa.me/918178511551?text=${msg}`;
-    }
-    updateEstimate();
+      const area = parseInt(document.getElementById('areaSlider').value, 10);
+      document.getElementById('areaLabel').textContent = area.toLocaleString('en-IN') + ' sq.ft.';
 
-    function openConsultModal(service = '') {
-      if (service) {
-        const sel = document.getElementById('mService');
-        for (let opt of sel.options) {
-          if (opt.value === service) { sel.value = service; break; }
-        }
-      }
-      const m = document.getElementById('consultModal');
-      m.classList.remove('hidden');
-      m.classList.add('flex');
+      const areaFactor = estScope === 'Modular Kitchen' ? 1 : (area / 1450);
+      const low = (estBase * estMultiplier * areaFactor).toFixed(1);
+      const high = (low * 1.2).toFixed(1);
+      document.getElementById('estimateOutput').innerHTML = `&#8377;${low}L &ndash; &#8377;${high}L`;
     }
-    function closeConsultModal() {
-      const m = document.getElementById('consultModal');
-      m.classList.add('hidden');
-      m.classList.remove('flex');
-      try { sessionStorage.setItem('rehmaniya_popup_seen', '1'); } catch (e) {}
+
+    function sendEstimateToWhatsApp() {
+      const area = document.getElementById('areaSlider').value;
+      const range = document.getElementById('estimateOutput').textContent;
+      const msg = `Hi Rehmaniya Interior, I checked your cost estimator for a ${estScope} (${area} sq.ft., ${estTier} finish). Estimated budget: ${range}. Please share a detailed BOQ & consultation slot.`;
+      window.open(`https://wa.me/918178511551?text=${encodeURIComponent(msg)}`, '_blank');
     }
-    function submitConsult(e) {
+
+    // 6. Consultation Modal + Auto-Open After 4.5s (Once)
+    let activeInquirySource = 'Website Consultation';
+    const quoteModal = document.getElementById('quoteModal');
+
+    function openQuoteModal(source) {
+      activeInquirySource = source || 'Website Consultation';
+      document.getElementById('modalContextText').textContent = 'Inquiry: ' + activeInquirySource;
+      quoteModal.classList.remove('hidden');
+      quoteModal.classList.add('flex');
+    }
+
+    function closeQuoteModal() {
+      quoteModal.classList.add('hidden');
+      quoteModal.classList.remove('flex');
+    }
+
+    function submitQuoteForm(e) {
       e.preventDefault();
-      const n = document.getElementById('mName').value.trim();
-      const l = document.getElementById('mLoc').value.trim();
-      const s = document.getElementById('mService').value;
-      const b = document.getElementById('mBudget').value;
-      const msg = encodeURIComponent(`Hi Rehmaniya Interior, I am ${n} from ${l}. Looking for ${s} (Budget: ${b}). Please share availability for a site visit.`);
-      window.open(`https://wa.me/918178511551?text=${msg}`, '_blank');
-      closeConsultModal();
+      const name = document.getElementById('leadName').value.trim();
+      const city = document.getElementById('leadCity').value.trim();
+      const req = document.getElementById('leadType').value;
+      const msg = `Hi Rehmaniya Interior, I am ${name} from ${city}. Looking for ${req} (${activeInquirySource}). Please share design options & schedule a site visit.`;
+      window.open(`https://wa.me/918178511551?text=${encodeURIComponent(msg)}`, '_blank');
+      closeQuoteModal();
     }
-    window.addEventListener('DOMContentLoaded', () => {
-      try {
-        if (!sessionStorage.getItem('rehmaniya_popup_seen')) setTimeout(() => openConsultModal(), 1800);
-      } catch (e) { setTimeout(() => openConsultModal(), 1800); }
-    });
+
+    setTimeout(() => {
+      if (!sessionStorage.getItem('rehmaniya_popup_shown')) {
+        openQuoteModal('Welcome Free Design Consultation');
+        sessionStorage.setItem('rehmaniya_popup_shown', '1');
+      }
+    }, 4500);
   </script>
 </body>
 </html>

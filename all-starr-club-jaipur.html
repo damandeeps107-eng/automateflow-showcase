@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Starr Club Jaipur | Luxury Banquet &amp; Wedding Venue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { obsidian: '#0F172A', ivory: '#FAF8F5', cream: '#F4EFE6', alabaster: '#FBF9F5', bronze: '#8C7756', gold: '#C9B38C', slateInk: '#475569' },
+          fontFamily: { display: ['Manrope', 'sans-serif'], sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    html, body { margin: 0; padding: 0; background: #FAF8F5; color: #0F172A; font-family: 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .typo-hero { font-family: 'Manrope', sans-serif; font-size: clamp(2.35rem, 5.2vw, 4.7rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; }
+    .typo-h2 { font-family: 'Manrope', sans-serif; font-size: clamp(1.9rem, 3.5vw, 3.1rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; }
+    .typo-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
+    .glass-nav { background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(201, 179, 140, 0.16); transition: all 0.4s var(--ease); }
+    .glass-nav.scrolled { background: rgba(250, 248, 245, 0.95); border-bottom-color: rgba(15,23,42,0.08); }
+    .glass-nav.scrolled .nav-text { color: #0F172A !important; }
+    .atelier-btn { display: inline-flex; align-items: center; gap: 0.85rem; padding: 0.6rem 0.6rem 0.6rem 1.4rem; border-radius: 9999px; font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 600; transition: transform 0.35s var(--ease); cursor: pointer; }
+    .atelier-btn:hover { transform: translateY(-2px); }
+    .btn-circle { width: 2.25rem; height: 2.25rem; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.4s var(--ease); }
+    .atelier-btn:hover .btn-circle { transform: rotate(45deg); }
+    .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: kenBurns 12s ease-out forwards; }
+    @keyframes kenBurns { from { transform: scale(1.0); } to { transform: scale(1.08); } }
+    .marquee-wrap { overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; gap: 2.5rem; animation: marquee 30s linear infinite; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .hover-lift { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 44px -18px rgba(15,23,42,0.16); }
+    .sticky-tab { position: fixed; right: 0; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; z-index: 40; background: #8C7756; color: #FAF8F5; padding: 1rem 0.5rem; border-radius: 0.75rem 0 0 0.75rem; font-family: 'Manrope', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header id="nav" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <span class="w-11 h-11 rounded-full bg-gradient-to-br from-gold to-bronze text-obsidian font-display font-bold text-sm flex items-center justify-center shrink-0 shadow-lg">AS</span>
+        <div class="leading-tight min-w-0">
+          <span class="nav-text block font-display font-bold text-sm sm:text-base tracking-wider text-white uppercase truncate">All Starr Club Jaipur</span>
+          <span class="block text-[10px] tracking-[0.2em] text-gold uppercase font-medium truncate">Luxury Banquet &amp; Wedding Venue</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#showcase" class="nav-text text-white/90 hover:text-gold transition">Showcase</a>
+        <a href="#estimator" class="nav-text text-white/90 hover:text-gold transition">Packages</a>
+      </nav>
+      <button onclick="openModal('Header Inquiry')" class="atelier-btn bg-gold text-obsidian hover:bg-white shadow-lg">
+        <span>Check Date Availability</span>
+        <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+      </button>
+    </div>
+  </header>
+
+  <button onclick="openModal('Sticky Quote Tab')" class="sticky-tab hidden sm:block">FREE QUOTE</button>
+
+  <section id="top" class="relative min-h-[92vh] flex items-end pb-16 sm:pb-24 pt-32 overflow-hidden bg-obsidian">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/55 to-obsidian/30"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+          <span class="typo-eyebrow text-gold">Luxury Wedding & Event Destination</span>
+        </div>
+        <h1 class="typo-hero text-white mb-6">Unforgettable Celebrations In <span class='text-gold font-normal'>Timeless</span> Grandeur.</h1>
+        <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">Grand pillarless banquet halls, lush starlit lawns, curated culinary experiences, and seamless hospitality — designed for royal weddings & milestone events.</p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openModal('Hero Primary CTA')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+            <span>Check Date Availability</span>
+            <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+          </button>
+          <a href="#showcase" class="px-6 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium hover:bg-white/10 transition">Explore Highlights</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-obsidian text-gold border-y border-gold/20 py-4">
+    <div class="marquee-wrap"><div class="marquee-track typo-eyebrow text-xs"><span>ROYAL WEDDINGS • GRAND BANQUET HALLS • LUSH OUTDOOR LAWNS • BESPOKE CATERING • VALET & GUEST SUITES</span><span>&bull;</span><span>ROYAL WEDDINGS • GRAND BANQUET HALLS • LUSH OUTDOOR LAWNS • BESPOKE CATERING • VALET & GUEST SUITES</span></div></div>
+  </div>
+
+  <section id="showcase" class="py-20 sm:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12 reveal">
+        <p class="typo-eyebrow text-bronze mb-3">Signature Experience</p>
+        <h2 class="typo-h2 text-obsidian">Why Discerning Clients Choose All Starr Club Jaipur</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:0ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Pillarless Crystal Banquet" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Grand Ballroom</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">Pillarless Crystal Banquet</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Chandelier-lit acoustic hall for 600+ guests with bridal lounge & VIP dining.</p>
+            <button onclick="openModal('Pillarless Crystal Banquet')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
+          </div>
+        </article>
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:100ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80" alt="Starlit Courtyard &amp; Mandap" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Outdoor Lawn</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">Starlit Courtyard & Mandap</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Manicured open-air wedding lawn crafted for pheras, sangeet & Sufi nights.</p>
+            <button onclick="openModal('Starlit Courtyard &amp; Mandap')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
+          </div>
+        </article>
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:200ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80" alt="Curated Multi-Cuisine Dining" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Hospitality</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">Curated Multi-Cuisine Dining</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Live gourmet counters, royal thalis & bespoke mocktail lounges.</p>
+            <button onclick="openModal('Curated Multi-Cuisine Dining')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="estimator" class="py-20 sm:py-28 bg-obsidian text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <p class="typo-eyebrow text-gold mb-3">Instant Transparency</p>
+        <h2 class="typo-h2 text-white mb-4">Estimate Your Event Package</h2>
+        <p class="text-white/75 text-base leading-relaxed">Select your guest count, venue space, and hospitality tier to preview an instant celebration budget — then lock your dates directly on WhatsApp.</p>
+      </div>
+      <div class="lg:col-span-7 reveal">
+        <div class="bg-ivory text-obsidian rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">1. Event Space</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" onclick="setScope('Cocktail / Sangeet', 4.5, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Cocktail / Sangeet</button><button type="button" onclick="setScope('Grand Reception', 8.5, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian">Grand Reception</button><button type="button" onclick="setScope('Full Wedding (2 Days)', 16, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Full Wedding (2 Days)</button><button type="button" onclick="setScope('Corporate Gala', 3.5, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Corporate Gala</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">2. Tier</label>
+            <div class="grid grid-cols-3 gap-2.5">
+              <button type="button" onclick="setTier('Classic Gold', 1, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Classic Gold</button><button type="button" onclick="setTier('Royal Signature', 1.35, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian">Royal Signature</button><button type="button" onclick="setTier('Maharaja Luxe', 1.75, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Maharaja Luxe</button>
+            </div>
+          </div>
+          <div class="mb-8">
+            <div class="flex justify-between mb-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-bronze">3. Estimated Guest Count</label>
+              <span id="areaLabel" class="font-display font-bold text-sm">450 Guests</span>
+            </div>
+            <input type="range" id="areaSlider" min="100" max="1200" step="50" value="450" oninput="updateEst()" class="w-full accent-obsidian" />
+          </div>
+          <div class="bg-cream rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-bronze/20">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slateInk">Indicative Package</p>
+              <p id="estOut" class="font-display font-bold text-2xl sm:text-3xl text-obsidian mt-1"></p>
+            </div>
+            <button onclick="sendEst()" class="atelier-btn bg-obsidian text-white hover:bg-bronze justify-center">
+              <span>Get Brochure on WhatsApp</span>
+              <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-obsidian text-white py-12 border-t border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-display font-bold text-lg tracking-wider uppercase">All Starr Club Jaipur</p>
+        <p class="text-xs text-gold uppercase tracking-widest mt-1">Luxury Banquet &amp; Wedding Venue</p>
+      </div>
+      <div class="text-center sm:text-right">
+        <a href="tel:+919950007750" class="font-display font-semibold text-gold text-lg block">+919950007750</a>
+        <p class="text-xs text-white/50 mt-1">&copy; 2026 All Starr Club Jaipur. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="bg-ivory text-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream flex items-center justify-center">&times;</button>
+      <p class="typo-eyebrow text-bronze text-[10px] mb-1">All Starr Club Jaipur</p>
+      <h3 class="font-display font-bold text-xl mb-4">Request Priority Callback</h3>
+      <form onsubmit="submitForm(event)" class="space-y-4">
+        <input type="text" id="lName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <input type="text" id="lNote" required placeholder="Preferred Date / Requirement" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <button type="submit" class="w-full atelier-btn bg-obsidian text-white justify-between"><span>Connect on WhatsApp</span><span class="btn-circle bg-gold text-obsidian">&#8599;</span></button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    let curScope = "Grand Reception", curBase = 8.5, curTier = "Royal Signature", curMult = 1.35;
+    function setScope(n, b, btn) {
+      curScope = n; curBase = b;
+      document.querySelectorAll('.scope-btn').forEach(x => x.className = 'scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15');
+      btn.className = 'scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian';
+      updateEst();
+    }
+    function setTier(n, m, btn) {
+      curTier = n; curMult = m;
+      document.querySelectorAll('.tier-btn').forEach(x => x.className = 'tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15');
+      btn.className = 'tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian';
+      updateEst();
+    }
+    function updateEst() {
+      const val = parseInt(document.getElementById('areaSlider').value, 10);
+      document.getElementById('areaLabel').textContent = val.toLocaleString('en-IN') + ' Guests';
+      const factor = val / 450;
+      const raw = curBase * curMult * factor;
+      const low = (false ? (raw / 100) : raw).toFixed(2);
+      const high = (false ? ((raw * 1.15) / 100) : (raw * 1.18)).toFixed(2);
+      document.getElementById('estOut').innerHTML = '&#8377;' + low + 'L &ndash; &#8377;' + high + 'L';
+    }
+    updateEst();
+
+    function sendEst() {
+      const val = document.getElementById('areaSlider').value;
+      const txt = document.getElementById('estOut').textContent;
+      const msg = `Hi All Starr Club Jaipur, I checked your package estimator (${curScope}, ${curTier}, ${val} Guests). Indicative range: ${txt}. Please share details.`;
+      window.open(`https://wa.me/919950007750?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function openModal() { document.getElementById('quoteModal').classList.replace('hidden', 'flex'); }
+    function closeModal() { document.getElementById('quoteModal').classList.replace('flex', 'hidden'); }
+    function submitForm(e) {
+      e.preventDefault();
+      const msg = `Hi All Starr Club Jaipur, I am ${document.getElementById('lName').value}. Requirement: ${document.getElementById('lNote').value}.`;
+      window.open(`https://wa.me/919950007750?text=${encodeURIComponent(msg)}`, '_blank');
+      closeModal();
+    }
+  </script>
+</body>
+</html>

@@ -1,441 +1,255 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presto Estates | Luxury Builder Floors in DLF Phase 2, Gurgaon</title>
-  <meta name="description" content="Presto Estates - Curated Luxury Independent Builder Floors and Distress Deals in DLF Phase 2, Gurugram. Direct builder mandate, private elevators, and prime connectivity to Cyber City.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presto Estates | Luxury Builder Floor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { obsidian: '#0F172A', ivory: '#FAF8F5', cream: '#F4EFE6', alabaster: '#FBF9F5', bronze: '#8C7756', gold: '#C9B38C', slateInk: '#475569' },
+          fontFamily: { display: ['Manrope', 'sans-serif'], sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #0F172A;
-      background-color: #FAFAFA;
-      -webkit-font-smoothing: antialiased;
-    }
-    .font-serif-luxury {
-      font-family: 'Playfair Display', Georgia, serif;
-    }
-    
-    /* Clean entrance animation */
-    @keyframes heroEntrance {
-      0% {
-        opacity: 0.1;
-        transform: translateY(12px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .hero-container-anim {
-      animation: heroEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .btn-wa-green {
-      background-color: #25D366;
-      color: #FFFFFF;
-      transition: all 0.25s ease;
-    }
-    .btn-wa-green:hover {
-      background-color: #1EBE5D;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -6px rgba(37, 211, 102, 0.45);
-    }
-
-    .glass-pill {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .floating-wa {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 99;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .floating-wa:hover {
-      transform: scale(1.1) translateY(-3px);
-    }
-
-    /* Modal Animation */
-    @keyframes modalPop {
-      0% {
-        opacity: 0;
-        transform: scale(0.95) translateY(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-    .modal-box-anim {
-      animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
+    :root { --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    html, body { margin: 0; padding: 0; background: #FAF8F5; color: #0F172A; font-family: 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .typo-hero { font-family: 'Manrope', sans-serif; font-size: clamp(2.35rem, 5.2vw, 4.7rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; }
+    .typo-h2 { font-family: 'Manrope', sans-serif; font-size: clamp(1.9rem, 3.5vw, 3.1rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; }
+    .typo-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
+    .glass-nav { background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(201, 179, 140, 0.16); transition: all 0.4s var(--ease); }
+    .glass-nav.scrolled { background: rgba(250, 248, 245, 0.95); border-bottom-color: rgba(15,23,42,0.08); }
+    .glass-nav.scrolled .nav-text { color: #0F172A !important; }
+    .atelier-btn { display: inline-flex; align-items: center; gap: 0.85rem; padding: 0.6rem 0.6rem 0.6rem 1.4rem; border-radius: 9999px; font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 600; transition: transform 0.35s var(--ease); cursor: pointer; }
+    .atelier-btn:hover { transform: translateY(-2px); }
+    .btn-circle { width: 2.25rem; height: 2.25rem; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.4s var(--ease); }
+    .atelier-btn:hover .btn-circle { transform: rotate(45deg); }
+    .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; animation: kenBurns 12s ease-out forwards; }
+    @keyframes kenBurns { from { transform: scale(1.0); } to { transform: scale(1.08); } }
+    .marquee-wrap { overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; gap: 2.5rem; animation: marquee 30s linear infinite; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .hover-lift { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 44px -18px rgba(15,23,42,0.16); }
+    .sticky-tab { position: fixed; right: 0; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; z-index: 40; background: #8C7756; color: #FAF8F5; padding: 1rem 0.5rem; border-radius: 0.75rem 0 0 0.75rem; font-family: 'Manrope', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; cursor: pointer; }
   </style>
 </head>
-<body class="selection:bg-amber-100 selection:text-amber-900">
-
-  <!-- 1. Top Minimal Bar -->
-  <div class="bg-[#0B1120] text-gray-300 text-[11px] sm:text-xs py-2 px-4 border-b border-white/10">
-    <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="font-medium tracking-wide text-gray-200">DLF PHASE 2 &amp; CYBER CITY • DIRECT BUILDER MANDATE</span>
-      </div>
-      <div class="flex items-center gap-4 text-xs font-light">
-        <span class="hidden md:inline">📍 DLF Phase 2, Gurugram</span>
-        <span class="hidden md:inline">•</span>
-        <a href="tel:917424001000" class="hover:text-amber-400 text-gray-200 transition font-medium">📞 +91 7424001000</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Clean Minimal Header with Original Circular Logo -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex justify-between items-center">
-      
-      <!-- Brand with Original Circular Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <!-- Proper Circle Original Logo -->
-        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-amber-500/60 shadow-md group-hover:scale-105 transition-transform flex-shrink-0 bg-slate-900">
-          <img src="assets/presto_original_logo.png" alt="Presto Estates Official Logo" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <span class="text-base sm:text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">PRESTO ESTATES</span>
-          <span class="text-[10px] sm:text-[11px] text-amber-700 font-semibold tracking-wider uppercase block">Luxury Real Estate Advisory • DLF Gurgaon</span>
+<body>
+  <header id="nav" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <span class="w-11 h-11 rounded-full bg-gradient-to-br from-gold to-bronze text-obsidian font-display font-bold text-sm flex items-center justify-center shrink-0 shadow-lg">PE</span>
+        <div class="leading-tight min-w-0">
+          <span class="nav-text block font-display font-bold text-sm sm:text-base tracking-wider text-white uppercase truncate">Presto Estates</span>
+          <span class="block text-[10px] tracking-[0.2em] text-gold uppercase font-medium truncate">Luxury Builder Floor</span>
         </div>
       </a>
-
-      <!-- Quick Actions -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="openInquiryModal('Header Quick Inquiry')" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-gray-700 bg-gray-50 border border-gray-200 px-3.5 py-2 rounded-full hover:bg-gray-100 transition">
-          <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          Call: 7424001000
-        </button>
-        <button onclick="openInquiryModal('Header WhatsApp')" class="btn-wa-green inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-          <span>WhatsApp Inquiry</span>
-        </button>
-      </div>
-
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#showcase" class="nav-text text-white/90 hover:text-gold transition">Showcase</a>
+        <a href="#estimator" class="nav-text text-white/90 hover:text-gold transition">Packages</a>
+      </nav>
+      <button onclick="openModal('Header Inquiry')" class="atelier-btn bg-gold text-obsidian hover:bg-white shadow-lg">
+        <span>Book Private Site Visit</span>
+        <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+      </button>
     </div>
   </header>
 
-  <!-- 3. Minimal Ultra-Luxury Hero Section with Full-Bleed Architectural Image & Left-Aligned Text -->
-  <section class="relative w-full min-h-[580px] sm:min-h-[660px] flex items-center bg-[#0B1120] overflow-hidden">
-    
-    <!-- Full-Bleed Architectural Luxury Image Background -->
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
-         alt="Luxury DLF Builder Floors Presto Estates" 
-         class="absolute inset-0 w-full h-full object-cover object-center">
+  <button onclick="openModal('Sticky Quote Tab')" class="sticky-tab hidden sm:block">FREE QUOTE</button>
 
-    <!-- Sophisticated Minimal Dark Gradient: Heavy on left for crisp readability, fades subtly to right -->
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/30 sm:to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40"></div>
+  <section id="top" class="relative min-h-[92vh] flex items-end pb-16 sm:pb-24 pt-32 overflow-hidden bg-obsidian">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/55 to-obsidian/30"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+          <span class="typo-eyebrow text-gold">Luxury Residences & Investment Plots</span>
+        </div>
+        <h1 class="typo-hero text-white mb-6">Architectural Homes Built For <span class='text-gold font-normal'>Generational</span> Value.</h1>
+        <p class="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">Low-density luxury builder floors, gated villa plots, Italian marble finishes, and high-appreciation corridors with RERA-compliant documentation.</p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openModal('Hero Primary CTA')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+            <span>Book Private Site Visit</span>
+            <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+          </button>
+          <a href="#showcase" class="px-6 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium hover:bg-white/10 transition">Explore Highlights</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Left-Aligned Animated Text Container -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full py-14 sm:py-20">
-      <div class="max-w-xl text-white hero-container-anim">
+  <div class="bg-obsidian text-gold border-y border-gold/20 py-4">
+    <div class="marquee-wrap"><div class="marquee-track typo-eyebrow text-xs"><span>LUXURY BUILDER FLOORS • GATED VILLA PLOTS • ITALIAN MARBLE FINISH • DEDICATED STILT PARKING • PRIVATE SITE TOURS</span><span>&bull;</span><span>LUXURY BUILDER FLOORS • GATED VILLA PLOTS • ITALIAN MARBLE FINISH • DEDICATED STILT PARKING • PRIVATE SITE TOURS</span></div></div>
+  </div>
+
+  <section id="showcase" class="py-20 sm:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12 reveal">
+        <p class="typo-eyebrow text-bronze mb-3">Signature Experience</p>
+        <h2 class="typo-h2 text-obsidian">Why Discerning Clients Choose Presto Estates</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
         
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 glass-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-300 mb-4">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          <span>DLF Phase 2 &amp; Cyber City • Starting ₹3.50 Cr</span>
-        </div>
-
-        <!-- Italic Script Line -->
-        <p class="font-serif-luxury italic text-xl sm:text-2xl text-amber-200 mb-2 tracking-wide">
-          Distress Deals &amp; Bespoke Builder Floors
-        </p>
-
-        <!-- Main Headline -->
-        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] mb-4 text-white">
-          Luxury Living in the Heart of DLF Gurgaon
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="text-gray-200 text-xs sm:text-base leading-relaxed mb-6 font-light max-w-lg">
-          Curated 350 to 500 Sq. Yds. independent luxury builder floors in DLF Phase 2. Private high-speed elevator access, 3 covered car parks, Italian marble, and immediate connectivity to Cyber City &amp; MG Road.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <button onclick="openInquiryModal('Hero CTA - Verified Site Visit')" class="btn-wa-green inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-xl">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            <span>Book Verified Site Visit</span>
-          </button>
-          <a href="tel:917424001000" class="glass-pill hover:bg-white/20 text-white px-5 py-3 rounded-full text-xs sm:text-sm font-medium transition flex items-center justify-center gap-2">
-            <span>📞 Call: 7424001000</span>
-          </a>
-        </div>
-
-        <!-- Spec Pillars -->
-        <div class="grid grid-cols-3 gap-4 pt-6 mt-8 border-t border-white/15 text-xs text-gray-300">
-          <div>
-            <span class="block text-amber-300 font-extrabold text-base sm:text-lg">₹3.50 Cr+</span>
-            <span class="text-gray-300 font-normal">Starting Price</span>
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:0ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="4 BHK Italian Marble Residence" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Signature Floor</span>
           </div>
-          <div>
-            <span class="block text-amber-300 font-extrabold text-base sm:text-lg">DLF Ph-2</span>
-            <span class="text-gray-300 font-normal">Prime Location</span>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">4 BHK Italian Marble Residence</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Private lift lobby, VRV air-conditioning, modular kitchen & 3-car stilt parking.</p>
+            <button onclick="openModal('4 BHK Italian Marble Residence')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
           </div>
-          <div>
-            <span class="block text-amber-300 font-extrabold text-base sm:text-lg">100%</span>
-            <span class="text-gray-300 font-normal">Direct Mandate</span>
+        </article>
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:100ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Double-Height Living &amp; Deck" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Living Lounge</span>
           </div>
-        </div>
-
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">Double-Height Living & Deck</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Floor-to-ceiling toughened glass sliders opening to landscaped greens.</p>
+            <button onclick="openModal('Double-Height Living &amp; Deck')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
+          </div>
+        </article>
+        <article class="bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal" style="transition-delay:200ms">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="24/7 Secured Villa Community" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 text-gold text-[11px] font-semibold uppercase tracking-wider">Gated Estate</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-xl text-obsidian mb-2">24/7 Secured Villa Community</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Wide internal avenues, underground cabling & clubhouse lifestyle.</p>
+            <button onclick="openModal('24/7 Secured Villa Community')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Inquire Now &rarr;</button>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 4. Featured Properties (Curated DLF Phase 2 Inventory) -->
-  <section id="inventory" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-3">
-      <div>
-        <span class="text-amber-700 font-bold text-xs uppercase tracking-widest block mb-1">Curated Inventory</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">Available Residences in DLF Phase 2</h2>
+  <section id="estimator" class="py-20 sm:py-28 bg-obsidian text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <p class="typo-eyebrow text-gold mb-3">Instant Transparency</p>
+        <h2 class="typo-h2 text-white mb-4">Explore Floor & Plot Pricing</h2>
+        <p class="text-white/75 text-base leading-relaxed">Select your preferred configuration, finish specification, and super area to view indicative pricing — and request floor plans directly on WhatsApp.</p>
       </div>
-      <p class="text-gray-500 text-xs sm:text-sm max-w-md">
-        Direct builder mandates with verified registry documents and zero hidden commission disputes.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-      
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
-        <div class="relative h-60 overflow-hidden bg-gray-100">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="DLF Phase 2 Luxury Builder Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute top-3.5 left-3.5 bg-slate-900/90 backdrop-blur-md text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
-            Ready for Registry
+      <div class="lg:col-span-7 reveal">
+        <div class="bg-ivory text-obsidian rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">1. Configuration</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" onclick="setScope('3 BHK Floor', 145, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">3 BHK Floor</button><button type="button" onclick="setScope('4 BHK Luxury', 225, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian">4 BHK Luxury</button><button type="button" onclick="setScope('Penthouse / Duplex', 340, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Penthouse / Duplex</button><button type="button" onclick="setScope('Villa Plot', 180, this)" class="scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Villa Plot</button>
+            </div>
           </div>
-          <div class="absolute bottom-3.5 right-3.5 bg-white/95 text-slate-900 text-xs font-bold px-3 py-1 rounded-md shadow">
-            ₹3.50 Cr Onwards
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">2. Tier</label>
+            <div class="grid grid-cols-3 gap-2.5">
+              <button type="button" onclick="setTier('Prime', 1, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Prime</button><button type="button" onclick="setTier('Ultra-Luxe', 1.25, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian">Ultra-Luxe</button><button type="button" onclick="setTier('Bespoke Penthouse', 1.55, this)" class="tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15">Bespoke Penthouse</button>
+            </div>
           </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11px] font-semibold text-amber-700 tracking-wider uppercase block mb-1">350–500 Sq. Yds. • DLF Phase 2</span>
-          <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Luxury Independent Builder Floor</h3>
-          <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
-            Italian marble flooring, private elevator access directly into apartment foyer, 3 dedicated stilt car parks, premium modular kitchen, 2 mins from Cyber City.
-          </p>
-          <button onclick="openInquiryModal('DLF Phase 2 Luxury Builder Floor (₹3.50 Cr)')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
-            <span>WhatsApp Floor Plan</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 2 (Distress Deal) -->
-      <div class="bg-white rounded-2xl overflow-hidden border-2 border-amber-500/50 shadow-sm hover:shadow-xl transition-all duration-300 group relative">
-        <div class="relative h-60 overflow-hidden bg-gray-100">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Distress Deal DLF Gurgaon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute top-3.5 left-3.5 bg-red-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
-            🔥 Exclusive Distress Deal
+          <div class="mb-8">
+            <div class="flex justify-between mb-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-bronze">3. Plot / Floor Area</label>
+              <span id="areaLabel" class="font-display font-bold text-sm">2600 sq.ft.</span>
+            </div>
+            <input type="range" id="areaSlider" min="1500" max="5000" step="100" value="2600" oninput="updateEst()" class="w-full accent-obsidian" />
           </div>
-          <div class="absolute bottom-3.5 right-3.5 bg-white/95 text-slate-900 text-xs font-bold px-3 py-1 rounded-md shadow">
-            Below Market Value
+          <div class="bg-cream rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-bronze/20">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slateInk">Indicative Package</p>
+              <p id="estOut" class="font-display font-bold text-2xl sm:text-3xl text-obsidian mt-1"></p>
+            </div>
+            <button onclick="sendEst()" class="atelier-btn bg-obsidian text-white hover:bg-bronze justify-center">
+              <span>Get Brochure on WhatsApp</span>
+              <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
+            </button>
           </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11px] font-semibold text-amber-700 tracking-wider uppercase block mb-1">500 Sq. Yds. Corner • DLF Phase 2</span>
-          <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Park-Facing Signature Floor</h3>
-          <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
-            Double-height ceiling, bespoke terrace lounge, central VRV air conditioning, 100% power backup. High ROI potential for premium end-users &amp; property investors.
-          </p>
-          <button onclick="openInquiryModal('DLF Distress Deal (Park-Facing 500 Sq. Yds.)')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
-            <span>Get Distress Deal Details</span>
-          </button>
         </div>
       </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
-        <div class="relative h-60 overflow-hidden bg-gray-100">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Cyber City Facing Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute top-3.5 left-3.5 bg-slate-900/90 backdrop-blur-md text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
-            Private Terrace
-          </div>
-          <div class="absolute bottom-3.5 right-3.5 bg-white/95 text-slate-900 text-xs font-bold px-3 py-1 rounded-md shadow">
-            4 BHK + Servant
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11px] font-semibold text-amber-700 tracking-wider uppercase block mb-1">Luxury Penthouse • Gurugram</span>
-          <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Executive Penthouse &amp; Terrace</h3>
-          <p class="text-gray-600 text-xs leading-relaxed mb-5 font-light">
-            Unobstructed skyline view, smart home automation, high-speed elevator, 4-tier security. Walking distance from MG Road &amp; Cyber Hub.
-          </p>
-          <button onclick="openInquiryModal('Cyber City Penthouse with Terrace')" class="btn-wa-green w-full py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
-            <span>WhatsApp Penthouse Specs</span>
-          </button>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 5. Minimal Trust Footprint with Original Logo -->
-  <section class="bg-slate-900 text-white py-14 px-4 sm:px-8 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left">
+  <footer class="bg-obsidian text-white py-12 border-t border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div>
-        <div class="flex items-center justify-center sm:justify-start gap-3 mb-3">
-          <div class="w-9 h-9 rounded-full overflow-hidden border border-amber-500/50 flex-shrink-0 bg-slate-950">
-            <img src="assets/presto_original_logo.png" alt="Presto Estates Logo" class="w-full h-full object-cover">
-          </div>
-          <span class="font-bold text-sm tracking-wide">PRESTO ESTATES</span>
-        </div>
-        <p class="text-gray-400 text-xs leading-relaxed max-w-sm">
-          Specialized in ultra-luxury builder floors and high-value distress transactions in DLF Phase 2, DLF Phase 1, and Golf Course Road, Gurugram.
-        </p>
+        <p class="font-display font-bold text-lg tracking-wider uppercase">Presto Estates</p>
+        <p class="text-xs text-gold uppercase tracking-widest mt-1">Luxury Builder Floor</p>
       </div>
-      <div>
-        <span class="text-xs font-bold text-amber-400 tracking-wider uppercase block mb-2.5">Contact &amp; Site Visits</span>
-        <p class="text-gray-300 text-xs mb-1">📍 DLF Phase 2, Gurugram, Haryana</p>
-        <p class="text-gray-300 text-xs mb-1">📞 Direct: +91 7424001000</p>
-        <p class="text-gray-300 text-xs">💬 Instagram: @prestoestates</p>
-      </div>
-      <div>
-        <span class="text-xs font-bold text-amber-400 tracking-wider uppercase block mb-2.5">Direct Mandate Assurance</span>
-        <p class="text-gray-400 text-xs leading-relaxed">
-          All properties verified with RERA approved sanction plans, structural warranties, and clear title documentation for high-net-worth buyers and investors.
-        </p>
+      <div class="text-center sm:text-right">
+        <a href="tel:+917424001000" class="font-display font-semibold text-gold text-lg block">+917424001000</a>
+        <p class="text-xs text-white/50 mt-1">&copy; 2026 Presto Estates. All Rights Reserved.</p>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-slate-800 text-center text-gray-500 text-[11px]">
-      © 2026 Presto Estates. All rights reserved. RERA Registered Real Estate Consultancy Gurugram.
-    </div>
-  </section>
+  </footer>
 
-  <!-- 6. Fixed Floating WhatsApp Button -->
-  <button onclick="openInquiryModal('Floating WhatsApp Widget')" class="floating-wa w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white" aria-label="WhatsApp Us">
-    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-  </button>
-
-  <!-- 7. SMART LEAD CAPTURE POPUP (Direct WhatsApp Forwarding) -->
-  <div id="inquiryModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm hidden">
-    
-    <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-amber-500/30 modal-box-anim">
-      
-      <!-- Modal Header with Original Logo & Close Button -->
-      <div class="bg-gradient-to-r from-slate-950 to-slate-900 p-5 text-white flex items-center justify-between border-b border-amber-500/20">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full overflow-hidden border border-amber-400 flex-shrink-0 bg-black">
-            <img src="assets/presto_original_logo.png" alt="Presto Estates Logo" class="w-full h-full object-cover">
-          </div>
-          <div>
-            <h3 class="text-sm font-bold tracking-tight text-white leading-tight">Presto Estates • Direct Inquiry</h3>
-            <p class="text-[11px] text-amber-300 font-medium">Get Pricing &amp; Floor Plans on WhatsApp</p>
-          </div>
-        </div>
-        <button onclick="closeInquiryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center transition">
-          ✕
-        </button>
-      </div>
-
-      <!-- Modal Body (Input Form) -->
-      <form id="leadForm" onsubmit="handleLeadSubmit(event)" class="p-6 space-y-4">
-        <input type="hidden" id="inquirySource" value="Website Direct Popup">
-
-        <div>
-          <label class="block text-xs font-semibold text-gray-700 mb-1">Aapka Naam / Full Name *</label>
-          <input type="text" id="leadName" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-gray-700 mb-1">WhatsApp Mobile Number *</label>
-          <input type="tel" id="leadPhone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-gray-700 mb-1">Interested Property</label>
-          <select id="leadProperty" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
-            <option value="DLF Phase 2 Luxury Builder Floor (₹3.50 Cr+)">DLF Phase 2 Luxury Builder Floor (₹3.50 Cr+)</option>
-            <option value="Exclusive Distress Deal in DLF Gurgaon">Exclusive Distress Deal in DLF Gurgaon</option>
-            <option value="Cyber City Penthouse with Private Terrace">Cyber City Penthouse with Private Terrace</option>
-            <option value="General Luxury Kothi / Independent Plot">General Luxury Kothi / Independent Plot</option>
-          </select>
-        </div>
-
-        <div class="pt-2">
-          <button type="submit" class="btn-wa-green w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            <span>Send Inquiry Direct to Presto WhatsApp</span>
-          </button>
-        </div>
-
-        <p class="text-[10px] text-gray-400 text-center">
-          🔒 Aapki details 100% private rahengi. Presto Estates advisory team aapse direct connect karegi.
-        </p>
+  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="bg-ivory text-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream flex items-center justify-center">&times;</button>
+      <p class="typo-eyebrow text-bronze text-[10px] mb-1">Presto Estates</p>
+      <h3 class="font-display font-bold text-xl mb-4">Request Priority Callback</h3>
+      <form onsubmit="submitForm(event)" class="space-y-4">
+        <input type="text" id="lName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <input type="text" id="lNote" required placeholder="Preferred Date / Requirement" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <button type="submit" class="w-full atelier-btn bg-obsidian text-white justify-between"><span>Connect on WhatsApp</span><span class="btn-circle bg-gold text-obsidian">&#8599;</span></button>
       </form>
-
     </div>
   </div>
 
-  <!-- Client-Side Script for Auto-Popup & Instant WhatsApp Submission -->
   <script>
-    function openInquiryModal(source) {
-      if (source) {
-        document.getElementById('inquirySource').value = source;
-      }
-      const modal = document.getElementById('inquiryModal');
-      modal.classList.remove('hidden');
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    let curScope = "4 BHK Luxury", curBase = 225, curTier = "Ultra-Luxe", curMult = 1.25;
+    function setScope(n, b, btn) {
+      curScope = n; curBase = b;
+      document.querySelectorAll('.scope-btn').forEach(x => x.className = 'scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15');
+      btn.className = 'scope-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian';
+      updateEst();
     }
-
-    function closeInquiryModal() {
-      const modal = document.getElementById('inquiryModal');
-      modal.classList.add('hidden');
+    function setTier(n, m, btn) {
+      curTier = n; curMult = m;
+      document.querySelectorAll('.tier-btn').forEach(x => x.className = 'tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-white text-obsidian border-obsidian/15');
+      btn.className = 'tier-btn py-2.5 px-3 rounded-xl border text-xs font-semibold bg-obsidian text-white border-obsidian';
+      updateEst();
     }
+    function updateEst() {
+      const val = parseInt(document.getElementById('areaSlider').value, 10);
+      document.getElementById('areaLabel').textContent = val.toLocaleString('en-IN') + ' sq.ft.';
+      const factor = val / 2600;
+      const raw = curBase * curMult * factor;
+      const low = (true ? (raw / 100) : raw).toFixed(2);
+      const high = (true ? ((raw * 1.15) / 100) : (raw * 1.18)).toFixed(2);
+      document.getElementById('estOut').innerHTML = '&#8377;' + low + 'Cr &ndash; &#8377;' + high + 'Cr';
+    }
+    updateEst();
 
-    // Auto-open modal after 1.8 seconds on page load
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        // Only open if modal hasn't been closed
-        const modal = document.getElementById('inquiryModal');
-        if (modal.classList.contains('hidden') && !sessionStorage.getItem('presto_modal_seen')) {
-          openInquiryModal('Automated Welcome Popup');
-          sessionStorage.setItem('presto_modal_seen', 'true');
-        }
-      }, 1800);
-    });
-
-    // Handle Form Submit and forward directly to Presto Estates WhatsApp
-    function handleLeadSubmit(e) {
+    function sendEst() {
+      const val = document.getElementById('areaSlider').value;
+      const txt = document.getElementById('estOut').textContent;
+      const msg = `Hi Presto Estates, I checked your package estimator (${curScope}, ${curTier}, ${val} sq.ft.). Indicative range: ${txt}. Please share details.`;
+      window.open(`https://wa.me/917424001000?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function openModal() { document.getElementById('quoteModal').classList.replace('hidden', 'flex'); }
+    function closeModal() { document.getElementById('quoteModal').classList.replace('flex', 'hidden'); }
+    function submitForm(e) {
       e.preventDefault();
-      const name = document.getElementById('leadName').value.trim();
-      const phone = document.getElementById('leadPhone').value.trim();
-      const property = document.getElementById('leadProperty').value;
-      const source = document.getElementById('inquirySource').value;
-
-      // Construct professional WhatsApp message
-      const text = encodeURIComponent(
-        "Hi Presto Estates Team,\n" +
-        "Maine aapki website se verified property inquiry submit ki hai:\n\n" +
-        "👤 Name: " + name + "\n" +
-        "📱 WhatsApp: +91 " + phone + "\n" +
-        "🏡 Interested Property: " + property + "\n" +
-        "📍 Reference: " + source + "\n\n" +
-        "Kripya floor plans aur verified pricing share karein."
-      );
-
-      const targetWaUrl = "https://wa.me/917424001000?text=" + text;
-      
-      // Close modal
-      closeInquiryModal();
-
-      // Redirect directly to WhatsApp
-      window.open(targetWaUrl, '_blank');
+      const msg = `Hi Presto Estates, I am ${document.getElementById('lName').value}. Requirement: ${document.getElementById('lNote').value}.`;
+      window.open(`https://wa.me/917424001000?text=${encodeURIComponent(msg)}`, '_blank');
+      closeModal();
     }
   </script>
-
 </body>
 </html>

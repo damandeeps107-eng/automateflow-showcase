@@ -1,0 +1,280 @@
+import os
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essbee Realtors | 400 Sq. Yards Luxury Builder Floor, DLF Phase 2 Gurgaon</title>
+  <meta name="description" content="Essbee Realtors - Exclusive 400 Sq. Yards Luxury Builder Floors in DLF Phase 2, Gurgaon. 4 BHK + 4.5 Baths, Italian Marble, Daikin Air-Conditioning, Half Terrace, and Dedicated 2 Car Covered Parking.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FAF9F6;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-luxury {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .clean-card {
+      background: #FFFFFF;
+      border: 1px solid #EAE7E1;
+      transition: all 0.25s ease-in-out;
+    }
+    .clean-card:hover {
+      border-color: #1A1A1A;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.08);
+    }
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s ease;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+<body class="selection:bg-neutral-900 selection:text-white">
+
+  <!-- Floating WhatsApp Site Tour Action -->
+  <a href="https://wa.me/918750006668?text=Hello%20Essbee%20Realtors%2C%20I%20saw%20your%20DLF%20Phase%202%20luxury%20builder%20floor%20showcase.%20Please%20share%20price%20and%20site%20visit%20details." target="_blank" class="floating-wa flex items-center gap-2.5 bg-[#25D366] text-white px-4 py-3 rounded-full font-semibold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#20ba5a]">
+    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Schedule Visit</span>
+  </a>
+
+  <!-- Top Announcement Bar -->
+  <aside class="bg-neutral-900 text-white py-2 px-4 text-center text-xs tracking-wider uppercase font-medium">
+    DLF Phase 2 • 400 Sq. Yards Luxury Builder Floor • All 3 Independent Floors Available
+  </aside>
+
+  <!-- Navigation Header with ORIGINAL LOGO -->
+  <header class="sticky top-0 z-50 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-[#EAE7E1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand with Original Logo -->
+      <div class="flex items-center space-x-3.5">
+        <img src="assets/essbee_official_logo.jpg" alt="Essbee Realtors Official Logo" class="w-12 h-12 rounded-full object-cover border border-neutral-300 shadow-sm">
+        <div>
+          <span class="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 font-serif-luxury block leading-none">
+            Essbee Realtors
+          </span>
+          <span class="text-[11px] tracking-wider text-neutral-500 uppercase font-medium">
+            Builder Floors Gurgaon
+          </span>
+        </div>
+      </div>
+
+      <!-- Contact CTAs -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <a href="tel:+918750006668" class="hidden sm:flex items-center gap-2 text-xs font-medium text-neutral-700 hover:text-neutral-900 transition">
+          <svg class="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>+91 87500 06668</span>
+        </a>
+        <a href="https://wa.me/918750006668?text=Hello%20Essbee%20Realtors%2C%20please%20share%20DLF%20Phase%202%20floor%20details." class="bg-neutral-900 text-white text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded hover:bg-neutral-800 transition">
+          Direct Inquire
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Clean, Editorial, High-End Minimal) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Column: Copy & Actions -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-neutral-500 uppercase border border-neutral-300 px-3 py-1 rounded-full bg-white">
+          <span>DLF Phase 2</span> • <span>East Facing</span> • <span>Near Parks</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif-luxury tracking-tight text-neutral-900 leading-[1.15]">
+          400 Sq. Yards <br>
+          <span class="italic font-normal text-neutral-700">Luxury Builder Floor</span>
+        </h1>
+
+        <p class="text-base text-neutral-600 leading-relaxed max-w-xl">
+          Experience elevated living in one of Gurgaon's most prestigious addresses. An exclusive 3-floor East-facing residential building with half terrace privileges, Daikin ductable air-conditioning, and bespoke Italian marble finishes throughout.
+        </p>
+
+        <!-- Key Points List -->
+        <div class="grid grid-cols-2 gap-4 py-3 border-y border-neutral-200 text-xs sm:text-sm text-neutral-800">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
+            <span><strong>4 BHK</strong> + 4.5 Bathrooms</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
+            <span><strong>All 3 Floors</strong> Available</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
+            <span><strong>Half Terrace</strong> Option</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
+            <span><strong>2 Covered</strong> Car Stilt Parking</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+          <a href="https://wa.me/918750006668?text=Hello%20Essbee%20Realtors%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20the%20400%20Sq.%20Yards%20floor%20in%20DLF%20Phase%202." target="_blank" class="w-full sm:w-auto text-center bg-neutral-900 text-white font-medium text-xs uppercase tracking-wider px-7 py-4 rounded hover:bg-neutral-800 transition">
+            Book Private Site Visit
+          </a>
+          <a href="tel:+918750006668" class="w-full sm:w-auto text-center border border-neutral-300 text-neutral-800 font-medium text-xs uppercase tracking-wider px-7 py-4 rounded hover:bg-neutral-100 transition">
+            Call: 87500 06668
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Hero Real Estate Image -->
+      <div class="lg:col-span-6">
+        <div class="relative rounded-2xl overflow-hidden shadow-lg border border-neutral-200">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="DLF Phase 2 Luxury Living" class="w-full h-[420px] sm:h-[480px] object-cover">
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl border border-neutral-200 text-xs text-neutral-800 flex items-center justify-between">
+            <div>
+              <span class="font-bold block text-neutral-900">DLF Phase 2, Gurugram</span>
+              <span class="text-neutral-500">Walking Distance to 2 Beautiful Parks</span>
+            </div>
+            <span class="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 bg-neutral-100 rounded text-neutral-700">
+              Immediate Possession
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Specifications Section (Clean White Cards) -->
+  <section class="bg-white py-16 border-y border-neutral-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-semibold tracking-widest text-neutral-500 uppercase">Specifications</span>
+        <h2 class="text-3xl font-bold font-serif-luxury text-neutral-900 mt-1">Crafted with Fine Architectural Precision</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="clean-card p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 mb-5 font-semibold text-sm">
+            01
+          </div>
+          <h3 class="text-lg font-bold font-serif-luxury text-neutral-900 mb-2">Italian Marble & Daikin Climate Control</h3>
+          <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+            High-grade imported Italian marble flooring across living lounges and master bedrooms. Equipped with Daikin Ductable and Cassette air-conditioning for silent, balanced climate control.
+          </p>
+        </div>
+
+        <div class="clean-card p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 mb-5 font-semibold text-sm">
+            02
+          </div>
+          <h3 class="text-lg font-bold font-serif-luxury text-neutral-900 mb-2">Fully Loaded Modular Kitchen</h3>
+          <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+            State-of-the-art modular kitchen pre-fitted with branded chimney, built-in hob, microwave, and baking oven. Soft-close drawers, dedicated pantry, and quartz counters.
+          </p>
+        </div>
+
+        <div class="clean-card p-6 rounded-xl">
+          <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 mb-5 font-semibold text-sm">
+            03
+          </div>
+          <h3 class="text-lg font-bold font-serif-luxury text-neutral-900 mb-2">Terrace Privilege & Parking</h3>
+          <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+            Half private terrace allocated with 2nd floor and half private terrace with 3rd floor. Dedicated covered parking for 2 cars per floor in a secure gated neighborhood.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Configurations & Full Inventory Range -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs font-semibold tracking-widest text-neutral-500 uppercase">Gurgaon Real Estate Portfolio</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-neutral-900 mt-1">Available Builder Floor Sizes</h2>
+      </div>
+      <p class="text-xs sm:text-sm text-neutral-500">DLF Phase 1, 2, 3, 4 &amp; Sushant Lok</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+      <div class="bg-white border border-neutral-200 p-4 rounded-lg text-center">
+        <div class="text-base sm:text-lg font-bold text-neutral-900">200–250</div>
+        <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Sq. Yards</div>
+      </div>
+      <div class="bg-white border border-neutral-200 p-4 rounded-lg text-center">
+        <div class="text-base sm:text-lg font-bold text-neutral-900">270–300</div>
+        <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Sq. Yards</div>
+      </div>
+      <div class="bg-white border border-neutral-200 p-4 rounded-lg text-center">
+        <div class="text-base sm:text-lg font-bold text-neutral-900">316–360</div>
+        <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Sq. Yards</div>
+      </div>
+      <div class="bg-neutral-900 text-white p-4 rounded-lg text-center shadow-sm">
+        <div class="text-base sm:text-lg font-bold">400 Sq. Yd.</div>
+        <div class="text-[11px] text-neutral-300 uppercase mt-0.5">Featured DLF Ph 2</div>
+      </div>
+      <div class="bg-white border border-neutral-200 p-4 rounded-lg text-center">
+        <div class="text-base sm:text-lg font-bold text-neutral-900">500–1000</div>
+        <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Sq. Yards Penthouse</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Consultation Gate -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 text-center">
+    <div class="bg-white border border-neutral-200 rounded-2xl p-8 sm:p-12 shadow-sm space-y-5">
+      <img src="assets/essbee_official_logo.jpg" alt="Essbee Realtors" class="w-16 h-16 rounded-full mx-auto object-cover border border-neutral-200 shadow-sm">
+      <h3 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-neutral-900">
+        Inquire Directly with Essbee Realtors
+      </h3>
+      <p class="text-neutral-600 text-xs sm:text-sm max-w-lg mx-auto">
+        Speak directly with the property advisory desk for unit availability, floor layout PDFs, and booking an on-site inspection in DLF Phase 2.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="https://wa.me/918750006668?text=Hello%20Essbee%20Realtors%2C%20please%20send%20DLF%20Phase%202%20floor%20plan%20and%20pricing." class="w-full sm:w-auto bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 rounded hover:bg-[#20ba5a] transition flex items-center justify-center gap-2">
+          <span>Chat on WhatsApp</span>
+        </a>
+        <a href="tel:+918750006668" class="w-full sm:w-auto bg-neutral-900 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 rounded hover:bg-neutral-800 transition">
+          Call: +91 87500 06668
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean Footer -->
+  <footer class="border-t border-neutral-200 py-8 text-center text-xs text-neutral-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center space-x-2">
+        <span class="font-bold text-neutral-800">ESSBEE REALTORS</span>
+        <span>•</span>
+        <span>DLF Phase 2, Gurugram, Haryana</span>
+      </div>
+      <div>
+        Direct Builder Mandate • Luxury Builder Floors • 100% Transparency
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+"""
+
+with open("/Users/user/.gemini/antigravity/scratch/automateflow-showcase/essbee-realtors.html", "w") as f:
+    f.write(html_content)
+
+print("Generated clean, minimalist, professional essbee-realtors.html successfully!")

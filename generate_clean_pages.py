@@ -653,3 +653,4 @@ with open('/Users/user/.gemini/antigravity/scratch/automateflow-showcase/shivaye
     f.write(generate_clean_shivaye())
 
 print("Both clean pages generated successfully!")
+

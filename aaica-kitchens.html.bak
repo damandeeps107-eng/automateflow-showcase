@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="warm-atelier">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAICA Modular Kitchen | Direct Factory Manufacturer Delhi NCR</title>
+  <meta name="description" content="Thoughtful modular kitchens and bespoke wardrobes crafted directly at our Jagat Puri factory. 100% BWP Marine Ply, German hardware, zero showroom markups.">
+  
+  <!-- Fonts: Modern Poppins (Bold, Crisp Sans-Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            heading: ['"Poppins"', 'system-ui', 'sans-serif'],
+            poppins: ['"Poppins"', 'system-ui', 'sans-serif'],
+            serif: ['"Poppins"', 'system-ui', 'sans-serif'], // Maps legacy serif classes to Poppins so NO cursive text renders!
+          },
+          colors: {
+            linen: {
+              50: '#FDFCF9',
+              100: '#F8F6F0',
+              200: '#F0ECE1',
+              300: '#E4DCD0',
+              400: '#CFC3B1',
+            },
+            terracotta: {
+              500: '#C25E34',
+              600: '#A34B24',
+              700: '#843A1A',
+            },
+            gold: {
+              400: '#F59E0B',
+              500: '#D97706',
+              600: '#B45309',
+            },
+            ink: {
+              950: '#0F0E0D',
+              900: '#1A1816',
+              800: '#2C2724',
+              700: '#463F3A',
+              500: '#756D65',
+              400: '#A89F95',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    ::selection {
+      background-color: #F59E0B;
+      color: #0F0E0D;
+    }
+    .editorial-border {
+      border-color: #E6DFD5;
+    }
+    .badge-number {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.1em;
+    }
+    .bg-subtle-pattern {
+      background-color: #F8F6F0;
+      background-image: radial-gradient(rgba(194, 94, 52, 0.05) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+    /* 2. Hero Section (AtoZ Style Smooth Horizontal Slide Carousel - Clean & Minimal) */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 80px);
+      min-height: 720px;
+      max-height: 940px;
+      overflow: hidden;
+      background: #0d0c0b;
+    }
+    .hero-track {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+      will-change: transform;
+    }
+    .hero-slide {
+      position: relative;
+      width: 25%;
+      height: 100%;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1);
+      transition: transform 7s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
+    }
+    .hero-slide.active .hero-slide-bg {
+      transform: scale(1.08);
+    }
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(10, 9, 8, 0.35) 0%, rgba(10, 9, 8, 0.75) 100%),
+                  linear-gradient(0deg, rgba(10, 9, 8, 0.65) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 15;
+    }
+    .hero-text-centered {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1.5rem;
+      z-index: 25;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .hero-text-centered .anim-eyebrow,
+    .hero-text-centered h1,
+    .hero-text-centered .hero-single-btn {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-slide.active .hero-text-centered .anim-eyebrow {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.15s;
+    }
+    .hero-slide.active .hero-text-centered h1 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+    .hero-slide.active .hero-text-centered .hero-single-btn {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.45s;
+    }
+    /* AtoZ Style Outline Glass Button */
+    .atoz-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: all 0.35s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    .atoz-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #f59e0b;
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 12px 36px rgba(245, 158, 11, 0.25);
+    }
+    .atoz-btn .btn-arrow-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #8C7756;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .atoz-btn:hover .btn-arrow-circle {
+      background: #f59e0b;
+      transform: rotate(45deg);
+    }
+    /* Sticky Side Tab for Free Quote */
+    .sticky-quote-tab {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 45;
+      background: #ff1d25;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 14px 7px;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.3);
+      writing-mode: vertical-rl;
+      transform: translateY(-50%) rotate(180deg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .sticky-quote-tab:hover {
+      background: #e0121a;
+      padding-right: 12px;
+    }
+    /* Smooth Accordion */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 500px;
+      opacity: 1;
+    }
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+    /* Minimal Estimator Interactive Buttons */
+    .calc-layout-btn, .calc-finish-btn, .calc-scale-btn {
+      border-color: #e7e5e4;
+      background-color: #fafaf9;
+      color: #1c1917;
+      cursor: pointer;
+    }
+    .calc-layout-btn:hover, .calc-finish-btn:hover, .calc-scale-btn:hover {
+      border-color: #a8a29e;
+      background-color: #f5f5f4;
+    }
+    .calc-layout-btn.active, .calc-finish-btn.active, .calc-scale-btn.active {
+      border-color: #1c1917;
+      background-color: #1c1917;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .calc-layout-btn.active .text-stone-400,
+    .calc-finish-btn.active .text-stone-400,
+    .calc-scale-btn.active .text-stone-400 {
+      color: #a8a29e;
+    }
+    /* Infinite Marquee Track (Wonder Interior Style) */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      gap: 1.25rem;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+      will-change: transform;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    /* AtoZ Style Outline Watermark & Marquee */
+    .text-stroke-watermark {
+      font-size: clamp(80px, 14vw, 170px);
+      line-height: 1;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+      user-select: none;
+      pointer-events: none;
+    }
+    .text-stroke-marquee {
+      font-size: clamp(40px, 5.5vw, 76px);
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(168, 159, 149, 0.35);
+      white-space: nowrap;
+      user-select: none;
+    }
+    @keyframes marqueeOutline {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-outline-track {
+      display: flex;
+      gap: 2.5rem;
+      width: max-content;
+      animation: marqueeOutline 25s linear infinite;
+      will-change: transform;
+    }
+    .marquee-outline-track:hover {
+      animation-play-state: paused;
+    }
+    /* Moving Testimonials Track (Smooth Infinite Auto-Scroll) */
+    @keyframes testimonialSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonials-slide-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: testimonialSlide 38s linear infinite;
+      will-change: transform;
+    }
+    .testimonials-slide-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-linen-100 text-ink-900 font-sans antialiased pb-24 lg:pb-0 selection:bg-amber-100">
+
+  <!-- Floating Sticky Side Tab (Woodspace Style FREE QUOTE) -->
+  <a href="https://wa.me/919910270754?text=Hi%20AAICA%20Kitchen,%20I%20want%20to%20get%20a%20Free%203D%20Kitchen%20Design%20Quote." 
+     target="_blank" 
+     class="sticky-quote-tab hidden sm:flex items-center justify-center gap-1 group" onclick="openInquiryModal()"
+     title="Get Free 3D Design Quote">
+    <span>💬 FREE QUOTE</span>
+  </a>
+
+  <!-- Main Navigation Header (Clean, Crisp White, Spacious & Modern) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 text-stone-900 transition-all duration-300 shadow-sm">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-22 flex items-center justify-between">
+      
+      <!-- Brand Logo + Direct Phone Pill -->
+      <div class="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+        <a href="#" class="flex items-center group py-1">
+          <img src="assets/aaica-original-logo.png" 
+               alt="AAICA Bath N Kitchen" 
+               class="h-10 sm:h-12 w-auto object-contain transition duration-200 group-hover:scale-102">
+        </a>
+        <a href="tel:+919910270754" class="hidden xl:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-heading font-extrabold tracking-wider transition">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>+91 99102 70754</span>
+        </a>
+      </div>
+
+      <!-- Desktop Nav (Clean, Spacious, Essential Links) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs font-heading font-extrabold uppercase tracking-wider text-stone-700">
+        <a href="#about" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">About</a>
+        <a href="#services" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Services</a>
+        <a href="#why-us" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Why Us</a>
+        <a href="#portfolio" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Projects</a>
+        <a href="#comparison" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Advantage</a>
+        <a href="#calculator" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Estimator</a>
+        <a href="#reviews" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Reviews</a>
+        <a href="#contact" class="hover:text-[#ff1d25] transition py-1.5 whitespace-nowrap">Contact</a>
+      </nav>
+
+      <!-- Header CTAs & Mobile Toggle -->
+      <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+        <!-- Direct Free Quote Pill Button -->
+        <button onclick="openInquiryModal()" class="inline-flex items-center gap-2 bg-[#ff1d25] hover:bg-[#d91219] text-white px-6 sm:px-7 py-3 rounded-full text-xs font-heading font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+          <span>Get Free Quote</span>
+          <span class="text-sm">↗</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 transition focus:outline-none" aria-label="Toggle Navigation">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Menu -->
+    <div id="mobile-menu-dropdown" class="hidden lg:hidden bg-white border-b border-stone-200 px-6 py-6 space-y-4 shadow-xl">
+      <div class="space-y-3 text-sm font-heading font-bold uppercase tracking-wider text-stone-900">
+        <a href="#about" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">About Atelier</a>
+        <a href="#services" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Services &amp; Joinery</a>
+        <a href="#why-us" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Why Choose Us</a>
+        <a href="#portfolio" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Real Projects Gallery</a>
+        <a href="#comparison" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Factory Advantage vs Retail</a>
+        <a href="#calculator" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Instant Cost Estimator</a>
+        <a href="#reviews" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Client Reviews</a>
+        <a href="#contact" class="block hover:text-[#ff1d25] py-1 transition mobile-nav-link">Book Free Workshop Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-slider relative text-white border-b border-stone-800 overflow-hidden">
+
+    <div class="hero-track">
+      <!-- Slide 1: MODULAR KITCHEN -->
+      <div class="hero-slide active">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=2000&q=85');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-amber-300 text-xs sm:text-sm font-heading font-extrabold tracking-[0.25em] uppercase mb-4">
+            AAICA MODULAR KITCHEN
+          </div>
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-white tracking-tight leading-[1.08] max-w-4xl mb-8">
+            Precision Modular Kitchens<br> For Modern Living
+          </h1>
+          <div class="hero-single-btn">
+            <button onclick="openInquiryModal()" class="atoz-btn">
+              <span>Book Atelier Visit</span>
+              <span class="btn-arrow-circle">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: FACTORY DIRECT JOINERY -->
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=2000&q=85');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-amber-300 text-xs sm:text-sm font-heading font-extrabold tracking-[0.25em] uppercase mb-4">
+            DIRECT FACTORY ATELIER
+          </div>
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-white tracking-tight leading-[1.08] max-w-4xl mb-8">
+            Factory Direct Joinery<br> 100% IS:710 Marine Ply
+          </h1>
+          <div class="hero-single-btn">
+            <a href="#comparison" class="atoz-btn">
+              <span>Factory vs Showroom</span>
+              <span class="btn-arrow-circle">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: BESPOKE ISLAND ATELIERS (Exact AtoZ Headline) -->
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=2000&q=85');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-amber-300 text-xs sm:text-sm font-heading font-extrabold tracking-[0.25em] uppercase mb-4">
+            BESPOKE ERGONOMICS
+          </div>
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-white tracking-tight leading-[1.08] max-w-4xl mb-8">
+            Design Spaces To<br> Make Wonderful Living
+          </h1>
+          <div class="hero-single-btn">
+            <button onclick="openInquiryModal()" class="atoz-btn">
+              <span>Take Free Counsel</span>
+              <span class="btn-arrow-circle">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: GERMAN CNC FABRICATION -->
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=2000&q=85');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-text-centered">
+          <div class="anim-eyebrow text-amber-300 text-xs sm:text-sm font-heading font-extrabold tracking-[0.25em] uppercase mb-4">
+            STRESS-FREE EXECUTION
+          </div>
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-white tracking-tight leading-[1.08] max-w-4xl mb-8">
+            German CNC Precision<br> 48-Hour Dust-Free Fitout
+          </h1>
+          <div class="hero-single-btn">
+            <a href="https://wa.me/919910270754?text=Hi%20AAICA%20Kitchen,%20I%20want%20to%20consult%20Arjun%20Ji." target="_blank" class="atoz-btn">
+              <span>WhatsApp Founder Directly</span>
+              <span class="btn-arrow-circle">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating AtoZ-Style Dots Dock at Bottom Right -->
+    <div class="hero-dots-dock absolute bottom-8 right-6 sm:right-12 z-30 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20 flex items-center gap-2.5 shadow-2xl">
+      <button class="hero-dot active w-7 h-2 rounded-full bg-amber-400 transition-all duration-300" data-slide="0" aria-label="Slide 1"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" data-slide="3" aria-label="Slide 4"></button>
+    </div>
+
+  </section>
+
+  <!-- 01 / About & Partner: Your Trusted Interior Design Partner (AtoZ Style Frame 01) -->
+  <section id="about" class="py-20 md:py-28 bg-white border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Big Rounded Image with Overlapping Award Badge -->
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-stone-200 aspect-[4/3] relative">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85" 
+                 alt="AAICA Atelier Team" 
+                 class="w-full h-full object-cover">
+          </div>
+          
+          <!-- Overlapping Gold/Bronze Badge (AtoZ Frame 01) -->
+          <div class="absolute -bottom-6 -right-2 sm:bottom-6 sm:right-6 bg-[#8C7756] text-white p-5 sm:p-6 rounded-2xl shadow-2xl border border-[#A6906D] flex items-center gap-3.5 max-w-[220px]">
+            <div class="text-3xl sm:text-4xl">🏆</div>
+            <div>
+              <div class="text-[11px] font-heading font-extrabold uppercase tracking-wider text-amber-200">Certified Atelier</div>
+              <div class="text-xs sm:text-sm font-heading font-black leading-tight text-white mt-0.5">Best Awarded Kitchen Atelier</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Copy & 4 Rounded Feature Pills -->
+        <div class="lg:col-span-6 space-y-6 lg:pl-4">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-2">
+              <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+              <span>SINCE 2012</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+              Your Trusted Interior &amp; Modular Kitchen Partner
+            </h2>
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-sans mt-3">
+              AAICA Modular Kitchen (A Unit of R&amp;R Industries) is a premier East Delhi manufacturing firm specializing in precision modular kitchens and architectural joinery. With over 500+ delivered kitchens across Delhi NCR, our legacy is built on direct factory trust, authentic European hardware, and honest material pricing.
+            </p>
+          </div>
+
+          <!-- 4 Feature Pills in 2x2 Grid (AtoZ Frame 01) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            
+            <div class="flex items-center gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm hover:border-[#8C7756] transition">
+              <span class="text-2xl">🛠️</span>
+              <div>
+                <div class="text-xs font-heading font-black text-stone-900">500+ Kitchens</div>
+                <div class="text-[11px] text-stone-500 font-sans">Delivered in NCR</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm hover:border-[#8C7756] transition">
+              <span class="text-2xl">🪵</span>
+              <div>
+                <div class="text-xs font-heading font-black text-stone-900">IS:710 Marine</div>
+                <div class="text-[11px] text-stone-500 font-sans">100% Boiling Proof</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm hover:border-[#8C7756] transition">
+              <span class="text-2xl">🏭</span>
+              <div>
+                <div class="text-xs font-heading font-black text-stone-900">Direct Factory</div>
+                <div class="text-[11px] text-stone-500 font-sans">Save 30–40% vs Retail</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm hover:border-[#8C7756] transition">
+              <span class="text-2xl">🛡️</span>
+              <div>
+                <div class="text-xs font-heading font-black text-stone-900">10-Yr Warranty</div>
+                <div class="text-[11px] text-stone-500 font-sans">Direct Replacement</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Founder Sign-Off -->
+          <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
+            <div>
+              <div class="font-heading font-black text-sm text-stone-900">Arjun &amp; Ajay Ji</div>
+              <div class="text-xs text-stone-500 font-sans">Founders &amp; Master Joiners • AAICA Kitchen</div>
+            </div>
+            <button onclick="openInquiryModal()" class="px-5 py-2.5 rounded-full bg-stone-900 hover:bg-[#ff1d25] text-white text-xs font-heading font-bold uppercase tracking-wider transition">
+              Meet At Workshop &rarr;
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 02 / Services: What We Offer For You with Outline Watermark & Rounded Cards (AtoZ Frame 02) -->
+  <section id="services" class="py-24 bg-[#201D1A] text-white rounded-[36px] relative overflow-hidden mx-3 sm:mx-6 lg:mx-8 my-8 shadow-2xl">
+    
+    <!-- Giant Background Outlined Watermark "Services" (AtoZ Frame 02) -->
+    <div class="text-stroke-watermark absolute top-4 left-0 right-0 text-center uppercase tracking-wider z-0">
+      Services
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-amber-400 uppercase mb-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          <span>WHAT WE CRAFT</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-white leading-tight tracking-tight">
+          What we offer for you
+        </h2>
+        <p class="text-stone-400 text-xs sm:text-sm font-sans mt-2">
+          Precision modular kitchens engineered in 100% IS:710 Marine Ply with authentic German hardware.
+        </p>
+      </div>
+
+      <!-- 3 Rounded Kitchen Cards with Diagonal Arrow Buttons (AtoZ Frame 02) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Card 1: L-Shape & Island Kitchens -->
+        <div onclick="openInquiryModal()" class="relative rounded-[32px] overflow-hidden group bg-stone-900/90 border border-white/10 shadow-2xl cursor-pointer hover:border-amber-400/50 transition-all duration-500">
+          <div class="h-96 sm:h-[420px] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80" 
+                 alt="L-Shape & Island Kitchens" 
+                 class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold text-amber-400 uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md">
+                KITCHEN ATELIER
+              </span>
+              <h3 class="text-2xl font-heading font-black text-white mt-2 leading-tight">
+                L-Shape &amp; Island Kitchens
+              </h3>
+              <p class="text-xs text-stone-300 font-sans mt-1">Seamless Quartz Counters, Breakfast Island &amp; Tandem Drawers</p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-[#ff1d25] text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 flex-shrink-0 ml-3">
+              <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Parallel Galley Kitchens -->
+        <div onclick="openInquiryModal()" class="relative rounded-[32px] overflow-hidden group bg-stone-900/90 border border-white/10 shadow-2xl cursor-pointer hover:border-amber-400/50 transition-all duration-500">
+          <div class="h-96 sm:h-[420px] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Parallel Galley Kitchens" 
+                 class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold text-amber-400 uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md">
+                PARALLEL &amp; DUAL COUNTER
+              </span>
+              <h3 class="text-2xl font-heading font-black text-white mt-2 leading-tight">
+                Parallel Galley Kitchens
+              </h3>
+              <p class="text-xs text-stone-300 font-sans mt-1">Dual Cooking &amp; Prep Zones, Senosan Acrylic &amp; Gola Profiles</p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-[#ff1d25] text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 flex-shrink-0 ml-3">
+              <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Italian PU & Fluted Glass Kitchens -->
+        <div onclick="openInquiryModal()" class="relative rounded-[32px] overflow-hidden group bg-stone-900/90 border border-white/10 shadow-2xl cursor-pointer hover:border-amber-400/50 transition-all duration-500">
+          <div class="h-96 sm:h-[420px] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Italian PU & Fluted Glass Kitchens" 
+                 class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold text-amber-400 uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md">
+                FLAGSHIP FINISHES
+              </span>
+              <h3 class="text-2xl font-heading font-black text-white mt-2 leading-tight">
+                Italian PU &amp; Glass Kitchens
+              </h3>
+              <p class="text-xs text-stone-300 font-sans mt-1">Automated PU Lacquer, Fluted Glass Shutters &amp; Profile LEDs</p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-[#ff1d25] text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 flex-shrink-0 ml-3">
+              <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Contact Pill (AtoZ Frame 02) -->
+      <div class="text-center mt-12">
+        <button onclick="openInquiryModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-amber-400 text-stone-300 hover:text-white text-xs font-heading font-bold uppercase tracking-wider transition bg-white/5 backdrop-blur-md">
+          <span>Looking for a bespoke modular kitchen tailored to your floor plan? Book Free Atelier Survey</span>
+          <span>&rarr;</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 03 / Why Choose Us with Circular Centerpiece & Outline Marquee (AtoZ Frame 03) -->
+  <section id="why-us" class="py-20 md:py-28 bg-[#F7F5F0] border-b border-stone-200 overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Header with Right Book Consult Button (AtoZ Frame 03) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-stone-200">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+            <span>SINCE 2012</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 tracking-tight">
+            Why choose us
+          </h2>
+        </div>
+        
+        <div class="flex items-center gap-6">
+          <p class="text-xs sm:text-sm text-stone-600 font-sans max-w-md hidden lg:block">
+            At AAICA, we are more than just a kitchen firm — we are your direct manufacturing partner creating timeless, ergonomic spaces.
+          </p>
+          <button onclick="openInquiryModal()" class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8C7756] hover:bg-[#736145] text-white rounded-full text-xs font-heading font-bold uppercase tracking-wider shadow-lg transition transform hover:scale-105">
+            <span>Book Consult</span>
+            <span class="text-sm">↗</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3-Column Grid with Circular Centerpiece (AtoZ Frame 03) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left 3 Features -->
+        <div class="lg:col-span-4 space-y-8">
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              📐
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">15+ Years Experience</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                Countless residential kitchens &amp; architectural joinery projects delivered across Delhi NCR since 2012.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              ⚙️
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">Latest CNC Technologies</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                We bring your vision to life using cutting-edge 3D CAD blueprints, automated panel sizing, and PUR edge-banding.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              🪵
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">100% IS:710 Marine Ply</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                From raw calibrated marine core to authentic European motion hardware, zero cheap particle board or local duplicates.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Center Column: Circular Centerpiece Cutout Image (AtoZ Frame 03) -->
+        <div class="lg:col-span-4 flex items-center justify-center py-6">
+          <div class="relative w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-white shadow-2xl border-8 border-white flex items-center justify-center overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#8C7756]/10 to-transparent rounded-full z-10 pointer-events-none"></div>
+            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=800&q=80" 
+                 alt="Architectural Kitchen Centerpiece" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Right 3 Features -->
+        <div class="lg:col-span-4 space-y-8">
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              🏷️
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">Transparent Pricing</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                No hidden costs — just clear, factory-direct competitive pricing that saves you 30–40% vs mall showroom studios.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              👨‍🏭
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">Professional Factory Team</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                Our in-house team of skilled joiners ensures 48-hour dust-free installation with direct founder quality checks.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-[#8C7756]/15 text-[#8C7756] flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              🛡️
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-black text-stone-900">10-Year Replacement Warranty</h3>
+              <p class="text-xs text-stone-600 font-sans mt-1 leading-relaxed">
+                Unconditional replacement warranty against borer, termite, or water delamination on all marine ply carcasses.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Outlined Typography Marquee Ticker (AtoZ Frame 03 Bottom) -->
+    <div class="mt-20 border-t border-stone-200/80 pt-6 overflow-hidden">
+      <div class="marquee-outline-track">
+        <span class="text-stroke-marquee">Modular Kitchens &bull; Island Ateliers &bull; Parallel Galley &bull; German Blum Hardware &bull; 100% IS:710 Marine Ply &bull; East Delhi Factory &bull; 45-Day Handover &bull;</span>
+        <span class="text-stroke-marquee">Modular Kitchens &bull; Island Ateliers &bull; Parallel Galley &bull; German Blum Hardware &bull; 100% IS:710 Marine Ply &bull; East Delhi Factory &bull; 45-Day Handover &bull;</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- 04 / Real Projects & Workshop Fabrication: Before & After + On-Site Work (AtoZ Frame 05) -->
+  <section id="portfolio" class="py-20 md:py-28 bg-white border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header with Filter Tabs (AtoZ Frame 05) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-stone-200">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+            <span>PROCESS &amp; EXECUTION</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 tracking-tight">
+            Our Latest Kitchen Projects
+          </h2>
+          <p class="text-stone-500 text-xs sm:text-sm font-sans mt-1">
+            Real factory fabrication, German CNC edge-banding, and delivered modular kitchens across Delhi NCR.
+          </p>
+        </div>
+
+        <!-- Filter Chips (100% Kitchen Categories) -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-heading font-bold">
+          <span class="px-4 py-2 rounded-full bg-stone-900 text-white cursor-pointer shadow-sm">All Kitchens (45)</span>
+          <span class="px-4 py-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 cursor-pointer transition">Island Ateliers (14)</span>
+          <span class="px-4 py-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 cursor-pointer transition">Parallel Galley (12)</span>
+          <span class="px-4 py-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 cursor-pointer transition">L-Shaped (11)</span>
+          <span class="px-4 py-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 cursor-pointer transition">Acrylic &amp; PU (08)</span>
+        </div>
+      </div>
+
+      <!-- 6-Grid 100% Real Luxury Kitchen Projects -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Kitchen 1: Island Kitchen Atelier (Preet Vihar Handover) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Matte Anthracite Island Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-md text-amber-300 text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              Preet Vihar Handover ✨
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Island Atelier</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">Matte Anthracite Island Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen 2: Warm Oak & Fluted Glass Parallel Kitchen (Noida Sector 50) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Warm Oak & Glass Modular Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-md text-white text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              Parallel Galley ⚡
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Noida Sector 50</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">Warm Oak &amp; Glass Modular Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen 3: Champagne Lacquered PU Kitchen (Laxmi Nagar) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Champagne Lacquered PU Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#ff1d25] text-white text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              48-Hour Fitout ⏱️
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Laxmi Nagar Residence</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">Champagne Lacquered PU Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen 4: Handleless Acrylic L-Shape Kitchen (Jagat Puri Workshop Verified) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Handleless Acrylic L-Shape Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-md text-amber-300 text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              100% IS:710 Marine Carcass 🪵
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Jagat Puri Tested</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">Handleless Acrylic L-Shape Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen 5: Minimalist European White & Wood Kitchen (Karkardooma) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Minimalist European White & Wood Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              Handover Complete 🏡
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Karkardooma Handover</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">European White &amp; Wood Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Kitchen 6: Sleek Fluted Glass & Profile LED Kitchen (Indirapuram Villa) -->
+        <div onclick="openInquiryModal()" class="group rounded-3xl overflow-hidden border border-stone-200 bg-stone-50 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Sleek Fluted Glass & Profile LED Kitchen" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-md text-white text-[10px] font-heading font-bold px-3 py-1 rounded-full">
+              Flagship Atelier 💎
+            </span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-[#8C7756]">Indirapuram Villa</span>
+              <h3 class="text-base font-heading font-black text-stone-900 mt-0.5">Fluted Glass &amp; Profile LED Kitchen</h3>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-stone-100 group-hover:bg-[#ff1d25] group-hover:text-white text-stone-700 flex items-center justify-center transition">
+              ↗
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination Strip (AtoZ Frame 05 Bottom) -->
+      <div class="flex items-center justify-center gap-2 mt-12 text-xs font-heading font-bold">
+        <span class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 cursor-pointer hover:border-stone-400">&lsaquo;</span>
+        <span class="w-8 h-8 rounded-full bg-[#8C7756] text-white flex items-center justify-center">1</span>
+        <span class="w-8 h-8 rounded-full border border-stone-200 hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer transition">2</span>
+        <span class="text-stone-400">...</span>
+        <span class="w-8 h-8 rounded-full border border-stone-200 hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer transition">8</span>
+        <span class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 cursor-pointer hover:border-stone-400">&rsaquo;</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 05 / Factory Advantage: AAICA Direct Factory vs Retail Showrooms (Clean, Bright, Grand Architectural Design) -->
+  <section id="comparison" class="py-24 md:py-32 bg-[#FBF9F5] border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header with High Editorial Typography -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-stone-200">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+            <span>05 / FACTORY ADVANTAGE &bull; THE REAL MATH</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+            AAICA Direct Factory vs. Retail Showrooms
+          </h2>
+          <p class="text-xl sm:text-2xl text-[#ff1d25] font-heading font-bold mt-2">
+            Where Does Your Money Actually Go?
+          </p>
+        </div>
+        <p class="text-stone-600 text-xs sm:text-sm font-sans max-w-md leading-relaxed">
+          When you buy from mall studios or online aggregators, up to 40% of what you pay covers mall rentals, celebrity ads, and middleman commissions &mdash; not your kitchen materials.
+        </p>
+      </div>
+
+      <!-- 3-Pillar Architectural Comparison Grid (Clean White Aesthetic) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Pillar 1: AAICA FACTORY ATELIER (Hero Highlighted Card) -->
+        <div class="relative rounded-3xl p-8 sm:p-10 bg-white border-2 border-[#8C7756] shadow-2xl flex flex-col justify-between transform lg:-translate-y-2 transition-all">
+          
+          <!-- Top Badge -->
+          <div class="absolute -top-4 left-8 bg-[#8C7756] text-white text-[11px] font-heading font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg border border-amber-300/40">
+            ★ DIRECT FACTORY ATELIER (JAGAT PURI)
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between pt-2 mb-4">
+              <div>
+                <span class="text-xs font-heading font-extrabold text-[#8C7756] uppercase tracking-widest">East Delhi Workshop</span>
+                <h3 class="text-2xl font-heading font-black text-stone-900 mt-0.5">AAICA Factory Atelier</h3>
+              </div>
+              <span class="text-3xl">🏭</span>
+            </div>
+
+            <!-- Big Metric Callout -->
+            <div class="py-4 my-4 rounded-2xl bg-emerald-50 border border-emerald-200 px-5 text-center">
+              <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-emerald-800">Direct Factory Saving</span>
+              <div class="text-3xl font-heading font-black text-emerald-600 mt-1">
+                0% Middleman Cut
+              </div>
+              <span class="text-xs text-emerald-700 font-sans font-medium">You save 30% to 40% directly vs retail showrooms</span>
+            </div>
+
+            <!-- Feature Checklist -->
+            <div class="space-y-4 pt-3 text-xs sm:text-sm font-sans text-stone-700">
+              <div class="flex items-start gap-3">
+                <span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">100% IS:710 Marine Ply</strong>
+                  <span class="text-stone-500 text-xs">Calibrated BWP core &bull; 100% boiling water proof.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Certified Blum &amp; Häfele</strong>
+                  <span class="text-stone-500 text-xs">Authentic German tandem motion with lifetime warranty.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Open Factory Inspection</strong>
+                  <span class="text-stone-500 text-xs">Inspect raw ply and German edge-banding at Jagat Puri before cutting.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">45-Day Handover Guaranteed</strong>
+                  <span class="text-stone-500 text-xs">Direct founder commitment in writing with zero delays.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">10-Year Direct Replacement</strong>
+                  <span class="text-stone-500 text-xs">Direct founder warranty against borer, termite, or water damage.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-stone-100">
+            <button onclick="openInquiryModal()" class="w-full py-4 rounded-full bg-[#ff1d25] hover:bg-[#d91219] text-white font-heading font-bold text-xs uppercase tracking-wider transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+              <span>Book Atelier Visit With Arjun Ji</span>
+              <span class="text-sm">↗</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Pillar 2: Mall Retail Showrooms -->
+        <div class="rounded-3xl p-8 sm:p-10 bg-white border border-stone-200/90 shadow-sm flex flex-col justify-between hover:border-stone-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-xs font-heading font-extrabold text-stone-400 uppercase tracking-widest">Mall Franchises</span>
+                <h3 class="text-2xl font-heading font-black text-stone-900 mt-0.5">Retail Showrooms</h3>
+              </div>
+              <span class="text-3xl">🏬</span>
+            </div>
+
+            <div class="py-4 my-4 rounded-2xl bg-stone-50 border border-stone-200 px-5 text-center">
+              <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-stone-500">Hidden Markups</span>
+              <div class="text-3xl font-heading font-black text-rose-600 mt-1">
+                +35% to 45%
+              </div>
+              <span class="text-xs text-stone-500 font-sans">Covers high mall rent, AC &amp; dealer commissions</span>
+            </div>
+
+            <div class="space-y-4 pt-3 text-xs sm:text-sm font-sans text-stone-600">
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Commercial Ply / Particle Board</strong>
+                  <span class="text-stone-500 text-xs">Marine ply carries 30% premium surcharge.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Basic / White-Label OEM Hardware</strong>
+                  <span class="text-stone-500 text-xs">German branded fittings cost significantly more.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-rose-500 font-bold text-base mt-0.5">&cross;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Factory Visits Not Allowed</strong>
+                  <span class="text-stone-500 text-xs">Production outsourced to distant contract manufacturing hubs.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">60 to 90 Days Delivery</strong>
+                  <span class="text-stone-500 text-xs">Frequent supply chain delays across multiple dealer layers.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">5-Year Limited Warranty</strong>
+                  <span class="text-stone-500 text-xs">Excludes wear-and-tear with complex warranty claims.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-stone-100 text-center">
+            <span class="text-xs text-stone-400 font-sans">High overhead costs passed directly to customer</span>
+          </div>
+
+        </div>
+
+        <!-- Pillar 3: Online Aggregators -->
+        <div class="rounded-3xl p-8 sm:p-10 bg-white border border-stone-200/90 shadow-sm flex flex-col justify-between hover:border-stone-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-xs font-heading font-extrabold text-stone-400 uppercase tracking-widest">Portal Platforms</span>
+                <h3 class="text-2xl font-heading font-black text-stone-900 mt-0.5">Online Aggregators</h3>
+              </div>
+              <span class="text-3xl">📱</span>
+            </div>
+
+            <div class="py-4 my-4 rounded-2xl bg-stone-50 border border-stone-200 px-5 text-center">
+              <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-stone-500">Marketing Overhead</span>
+              <div class="text-3xl font-heading font-black text-rose-600 mt-1">
+                +25% to 35%
+              </div>
+              <span class="text-xs text-stone-500 font-sans">Celebrity brand ads &amp; sub-contractor commission</span>
+            </div>
+
+            <div class="space-y-4 pt-3 text-xs sm:text-sm font-sans text-stone-600">
+              <div class="flex items-start gap-3">
+                <span class="text-rose-500 font-bold text-base mt-0.5">&cross;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">MDF or Particle Board Core</strong>
+                  <span class="text-stone-500 text-xs">Prone to water swelling and screw-holding degradation.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-rose-500 font-bold text-base mt-0.5">&cross;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Standard In-House Hardware</strong>
+                  <span class="text-stone-500 text-xs">Proprietary unbranded hinges without lifetime warranty.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-rose-500 font-bold text-base mt-0.5">&cross;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">No Factory Visibility</strong>
+                  <span class="text-stone-500 text-xs">Third-party local contractors handle execution without direct accountability.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">45 to 60 Days Handover</strong>
+                  <span class="text-stone-500 text-xs">Customer support ticket escalation if vendor fails timeline.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold text-base mt-0.5">&minus;</span>
+                <div>
+                  <strong class="text-stone-900 block font-heading">Ticket-Based Warranty</strong>
+                  <span class="text-stone-500 text-xs">Long waiting cycles for carpenter inspection visits.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-stone-100 text-center">
+            <span class="text-xs text-stone-400 font-sans">Heavy middleman layers with zero factory ownership</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 / Minimal Architectural Kitchen Cost Estimator (Bright, Clean, Grand Architectural Design - NO BLACK BOX) -->
+  <section id="calculator" class="py-24 md:py-32 bg-white border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-stone-200">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+            <span>06 / INSTANT FACTORY COST ESTIMATOR</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+            Estimate Your Kitchen in Seconds.
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base font-sans mt-3 max-w-2xl leading-relaxed">
+            Transparent manufacturing pricing with zero showroom markups. Choose your layout, finish, and scope to view honest factory manufacturing estimates including 18mm IS:710 Marine Ply and authentic European soft-close hardware.
+          </p>
+        </div>
+        <div class="hidden lg:block text-right">
+          <span class="text-xs font-heading font-extrabold text-stone-400 uppercase tracking-widest block">Direct Factory BOQ</span>
+          <span class="text-sm text-stone-700 font-sans font-medium">Jagat Puri Main Road Atelier</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Controls Column (Left) -->
+        <div class="lg:col-span-7 space-y-10">
+          
+          <!-- Step 1: Layout Selection -->
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <label class="text-sm font-heading font-extrabold uppercase tracking-wider text-stone-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#8C7756] text-white flex items-center justify-center text-xs">1</span>
+                <span>Select Kitchen Layout</span>
+              </label>
+              <span id="calc-layout-badge" class="text-xs font-heading font-bold text-[#8C7756] bg-amber-50 px-3 py-1 rounded-full">8×10 ft Standard</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <button type="button" onclick="setCalcLayout('l_shape', 'L-Shaped Kitchen (8×10 ft)', 185000, 220000, '8×10 ft Standard')" 
+                      class="calc-layout-btn active text-left p-4 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">L-Shaped</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">8×10 ft &bull; Mid-Size</div>
+              </button>
+              <button type="button" onclick="setCalcLayout('parallel', 'Parallel Galley Kitchen (10×10 ft)', 235000, 275000, '10×10 ft Double Counter')" 
+                      class="calc-layout-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">Parallel Galley</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">10×10 ft &bull; Dual Counter</div>
+              </button>
+              <button type="button" onclick="setCalcLayout('u_shape', 'U-Shaped Kitchen (10×12 ft)', 295000, 345000, '10×12 ft Full Room')" 
+                      class="calc-layout-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">U-Shaped</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">10×12 ft &bull; Max Storage</div>
+              </button>
+              <button type="button" onclick="setCalcLayout('island', 'Island Kitchen (12×14+ ft)', 385000, 460000, '12×14+ ft Island + Counter')" 
+                      class="calc-layout-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">Island Atelier</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">12×14+ ft &bull; Luxury</div>
+              </button>
+              <button type="button" onclick="setCalcLayout('straight', 'Straight-Line Kitchen (8–10 ft)', 145000, 175000, '8–10 ft Compact Line')" 
+                      class="calc-layout-btn text-left p-4 rounded-2xl border transition-all sm:col-span-2">
+                <div class="text-xs sm:text-sm font-heading font-black">Straight-Line</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">8–10 ft &bull; Studio &amp; Compact Flats</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Shutter Finish Selection -->
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <label class="text-sm font-heading font-extrabold uppercase tracking-wider text-stone-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#8C7756] text-white flex items-center justify-center text-xs">2</span>
+                <span>Select Shutter Finish</span>
+              </label>
+              <span id="calc-finish-badge" class="text-xs font-heading font-bold text-[#8C7756] bg-amber-50 px-3 py-1 rounded-full">Senosan High-Gloss Acrylic</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button type="button" onclick="setCalcFinish('acrylic', 'High-Gloss Acrylic (Senosan)', 1.25, 'Mirror Glass Reflection')" 
+                      class="calc-finish-btn active text-left p-4 rounded-2xl border transition-all">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-heading font-black">High-Gloss Acrylic</span>
+                  <span class="text-[10px] uppercase font-bold text-amber-600 px-2 py-0.5 rounded-full bg-amber-50">Popular</span>
+                </div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">2mm Senosan &bull; Mirror UV Protected</div>
+              </button>
+
+              <button type="button" onclick="setCalcFinish('pu', 'Automated Italian PU Lacquer', 1.45, 'Seamless Soft-Touch')" 
+                      class="calc-finish-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-heading font-black">Italian PU Lacquer</span>
+                  <span class="text-[10px] uppercase font-bold text-stone-500 px-2 py-0.5 rounded-full bg-stone-100">Seamless</span>
+                </div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">Automated Paint &bull; Satin / Deep Matte</div>
+              </button>
+
+              <button type="button" onclick="setCalcFinish('laminate', 'Premium Matte Laminate', 1.0, 'Merino / Stylam Standard')" 
+                      class="calc-finish-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-heading font-black">Matte Laminate</span>
+                  <span class="text-[10px] uppercase font-bold text-stone-500 px-2 py-0.5 rounded-full bg-stone-100">Standard</span>
+                </div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">Merino / Stylam &bull; Scratch Resistant</div>
+              </button>
+
+              <button type="button" onclick="setCalcFinish('glass', 'Tinted Lacquered Glass & Ceramic', 1.65, 'Slimline Aluminium Frame')" 
+                      class="calc-finish-btn text-left p-4 rounded-2xl border transition-all">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs sm:text-sm font-heading font-black">Lacquered Glass &amp; Ceramic</span>
+                  <span class="text-[10px] uppercase font-bold text-purple-600 px-2 py-0.5 rounded-full bg-purple-50">Flagship</span>
+                </div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">Slim Profile &bull; Fingerprint Resistant</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Kitchen Scale -->
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <label class="text-sm font-heading font-extrabold uppercase tracking-wider text-stone-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#8C7756] text-white flex items-center justify-center text-xs">3</span>
+                <span>Kitchen Scale &amp; Scope</span>
+              </label>
+              <span id="calc-scale-badge" class="text-xs font-heading font-bold text-[#8C7756] bg-amber-50 px-3 py-1 rounded-full">Standard (~22 Running Ft)</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" onclick="setCalcScale('compact', 0.85, 'Compact (~16 Rft)')" 
+                      class="calc-scale-btn text-center py-3.5 px-2 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">Compact</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">~16 Rft</div>
+              </button>
+              <button type="button" onclick="setCalcScale('standard', 1.0, 'Standard (~22 Rft)')" 
+                      class="calc-scale-btn active text-center py-3.5 px-2 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">Standard</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">~22 Rft</div>
+              </button>
+              <button type="button" onclick="setCalcScale('expansive', 1.30, 'Expansive (~30+ Rft)')" 
+                      class="calc-scale-btn text-center py-3.5 px-2 rounded-2xl border transition-all">
+                <div class="text-xs sm:text-sm font-heading font-black">Expansive</div>
+                <div class="text-[11px] text-stone-400 mt-1 font-sans">~30+ Rft</div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Result Column (Clean Pristine White Architectural Card - NO BLACK BOX!) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28">
+          <div class="bg-white text-stone-900 rounded-3xl p-8 sm:p-10 border-2 border-stone-200 shadow-2xl space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-heading font-extrabold uppercase tracking-wider text-stone-900">Direct Factory Estimate</span>
+              </div>
+              <span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full font-bold">Zero Middlemen</span>
+            </div>
+
+            <!-- Price Output -->
+            <div>
+              <div class="text-[11px] uppercase tracking-widest text-stone-500 font-bold mb-1 font-heading">
+                ESTIMATED MANUFACTURING COST
+              </div>
+              <div class="text-4xl sm:text-5xl font-heading font-black text-stone-900 tracking-tight flex items-baseline gap-1">
+                <span class="text-stone-400 text-3xl font-light">₹</span>
+                <span id="calc-price-range" class="text-[#ff1d25]">2,31,000 – 2,75,000</span>
+              </div>
+              <div class="mt-3 text-xs text-stone-600 font-sans leading-relaxed p-3 bg-stone-50 rounded-xl border border-stone-200/70">
+                Mall showrooms charge approx <span id="calc-retail-price" class="line-through text-stone-500 font-bold">₹3,70,000 – ₹4,40,000</span> for identical specs.
+              </div>
+            </div>
+
+            <!-- What is 100% Included -->
+            <div class="pt-4 border-t border-stone-100 space-y-3 text-xs text-stone-700 font-sans">
+              <div class="text-[11px] uppercase tracking-widest text-stone-500 font-heading font-extrabold mb-1">Direct Factory Inclusions:</div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm">✓</span>
+                <span><strong>18mm IS:710 Marine Ply</strong> Carcass (100% Boiling Water Proof)</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm">✓</span>
+                <span><strong>Blum / Häfele</strong> Soft-Close Drawers &amp; Hinges (Lifetime Warranty)</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm">✓</span>
+                <span><strong>CNC Pre-Drilled Joinery</strong> &amp; 48-Hour Dust-Free Installation</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold text-sm">✓</span>
+                <span><strong>10-Year Direct Replacement Warranty</strong> &amp; 45-Day Handover</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 border-t border-stone-100 flex flex-col gap-3">
+              <a id="calc-whatsapp-btn" 
+                 href="https://wa.me/919910270754?text=Hi%20AAICA%20Kitchen,%20I%20used%20your%20website%20estimator%20for%20a%20modular%20kitchen." 
+                 target="_blank"
+                 class="w-full py-4 bg-[#ff1d25] hover:bg-[#d91219] text-white rounded-full font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                <span>Send Estimate to Arjun Ji on WhatsApp</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <button type="button" onclick="openInquiryModal()" class="w-full py-3.5 bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-full font-heading font-bold text-xs uppercase tracking-wider transition border border-stone-200">
+                Book Free 3D CAD Blueprint &amp; Factory Visit &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 07 / How It Works: 4-Step Process Journey -->
+  <section id="process" class="py-20 md:py-24 bg-[#F7F5F0] border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between pb-6 mb-12 border-b border-stone-200 text-xs font-heading font-extrabold uppercase tracking-widest text-stone-500">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#ff1d25]"></span>
+          <span>07 / Precision Process</span>
+        </div>
+        <span class="text-stone-400">From Design to 48-Hour Installation</span>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block text-xs font-heading font-extrabold tracking-widest text-[#ff1d25] uppercase mb-1.5">
+          Stress-Free Execution
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+          How It Works.
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-sans mt-3">
+          From your first site survey to move-in day — a completely transparent, German CNC-guided experience.
+        </p>
+      </div>
+
+      <!-- 4 Step Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <span class="text-4xl font-heading font-black text-[#ff1d25]">01</span>
+            <h3 class="text-lg font-heading font-black text-stone-900 mt-4">
+              Book a Free Atelier / Site Visit
+            </h3>
+            <p class="text-xs text-stone-600 mt-2 font-sans leading-relaxed">
+              Share your room dimensions or request our team for a laser survey across Delhi NCR. Completely free with zero obligation.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-stone-100 text-[11px] font-heading font-bold text-stone-500 uppercase tracking-wider">
+            Laser Precision Survey
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <span class="text-4xl font-heading font-black text-stone-900">02</span>
+            <h3 class="text-lg font-heading font-black text-stone-900 mt-4">
+              3D CAD Design &amp; Materials
+            </h3>
+            <p class="text-xs text-stone-600 mt-2 font-sans leading-relaxed">
+              Get bespoke 3D visualisations. Visit our Jagat Puri workshop to touch and choose physical acrylic, PU, glass, and quartz finishes.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-stone-100 text-[11px] font-heading font-bold text-stone-500 uppercase tracking-wider">
+            Photorealistic Render
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <span class="text-4xl font-heading font-black text-stone-900">03</span>
+            <h3 class="text-lg font-heading font-black text-stone-900 mt-4">
+              Precision CNC Fabrication
+            </h3>
+            <p class="text-xs text-stone-600 mt-2 font-sans leading-relaxed">
+              Computerized automated sizing, edge-banding, and hinge pre-drilling directly inside our East Delhi factory. No manual carpentry errors.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-stone-100 text-[11px] font-heading font-bold text-stone-500 uppercase tracking-wider">
+            German Edge-Banding
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-8 rounded-3xl bg-white border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <span class="text-4xl font-heading font-black text-[#ff1d25]">04</span>
+            <h3 class="text-lg font-heading font-black text-stone-900 mt-4">
+              48-Hour Dust-Free Fitout
+            </h3>
+            <p class="text-xs text-stone-600 mt-2 font-sans leading-relaxed">
+              Factory-finished modular carcasses arrive pre-cut. Complete installation takes just 48 hours without sawdust or mess at your home.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-stone-100 text-[11px] font-heading font-bold text-stone-500 uppercase tracking-wider">
+            Move-In Ready Handover
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Process Quote Banner -->
+      <div class="mt-12 bg-stone-900 rounded-3xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div>
+          <p class="font-heading font-bold text-lg sm:text-xl text-white">
+            "Designed to perfection. Delivered on time."
+          </p>
+          <p class="text-stone-400 text-xs sm:text-sm font-sans mt-1">
+            Backed by a 45-day guaranteed handover commitment and an unconditional 10-year replacement warranty.
+          </p>
+        </div>
+        <button onclick="openInquiryModal()" class="px-8 py-4 bg-[#ff1d25] hover:bg-[#d91219] text-white rounded-full font-heading font-bold text-xs uppercase tracking-wider transition whitespace-nowrap shadow-lg hover:shadow-xl">
+          Book Your Free Visit &rarr;
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 08 / Client Feedback: MOVING TESTIMONIALS SLIDER with 4.88 Rating Score (AtoZ Frame 08 & 10) -->
+  <section id="reviews" class="py-20 md:py-28 bg-white border-b border-stone-200 relative overflow-hidden">
+    
+    <!-- Giant Quote Watermark on Left (AtoZ Frame 08) -->
+    <div class="absolute -top-10 -left-6 text-[220px] font-serif font-black text-stone-100/80 leading-none select-none pointer-events-none z-0">
+      &ldquo;
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <!-- Section Header with Subtitle and Live Sliding Indicator -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#8C7756]"></span>
+            <span>CLIENT FEEDBACK</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 tracking-tight">
+            Hear from clients.
+          </h2>
+          <p class="text-stone-500 text-xs sm:text-sm font-sans mt-1">
+            Real Delhi NCR homeowners on our factory finish, on-time handover, and genuine 18mm marine ply.
+          </p>
+        </div>
+
+        <!-- Autoplay Indicator Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-[11px] font-heading font-bold text-amber-800">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+          <span>Hover to Pause • Auto-Sliding</span>
+        </div>
+      </div>
+
+      <!-- Moving Testimonials Infinite Auto-Scroll Carousel -->
+      <div id="testimonials-wrapper" class="overflow-hidden py-4 -mx-4 px-4 sm:-mx-8 sm:px-8">
+        <div class="testimonials-slide-track">
+          
+          <!-- Testimonial 1 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "They completely revamped my kitchen with an island atelier and Blum tandem drawers. Very satisfied with the outcome and joint precision. The marine ply is rock solid."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Rishi Kaushik</p>
+                <p class="text-[11px] text-stone-500 font-sans">Sector 50, Noida • Island Atelier</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                   alt="Rishi Kaushik" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "The parallel kitchen they designed for us in Laxmi Nagar is now a crowd-puller! Everyone asks who did the modular work. Arjun Ji and team were super punctual."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Neha Sutar</p>
+                <p class="text-[11px] text-stone-500 font-sans">Laxmi Nagar, Delhi • Parallel Galley</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                   alt="Neha Sutar" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "Direct factory pricing saved us over ₹1.4 Lakh compared to retail mall quotes. Delivered on time and within budget. Honest people who showed raw ply cutting at workshop."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Mr. Himanshu Verma</p>
+                <p class="text-[11px] text-stone-500 font-sans">Preet Vihar, Delhi • L-Shape Kitchen</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" 
+                   alt="Himanshu Verma" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "The Italian PU lacquer and fluted glass lift-ups look straight out of an architectural digest magazine. In-house installation team took only 2 days without dust!"
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Ananya Sharma</p>
+                <p class="text-[11px] text-stone-500 font-sans">Indirapuram, Ghaziabad • Flagship PU</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" 
+                   alt="Ananya Sharma" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "Visited their Jagat Puri factory before ordering. Loved the raw IS:710 marine ply inspection transparency. Truly exceptional build quality and flawless edge banding."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Dr. Rajesh Malhotra</p>
+                <p class="text-[11px] text-stone-500 font-sans">Karkardooma, Delhi • Straight-Line</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" 
+                   alt="Dr. Rajesh Malhotra" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "Our U-shape modular kitchen with built-in pantry is ergonomic and whisper quiet. 10-year direct warranty gives complete peace of mind. Highly recommended!"
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Pooja &amp; Amit Bansal</p>
+                <p class="text-[11px] text-stone-500 font-sans">Anand Vihar, Delhi • U-Shape Marine</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                   alt="Pooja Bansal" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <!-- Seamless Duplicate Set for 100% Smooth Infinite Loop -->
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "They completely revamped my kitchen with an island atelier and Blum tandem drawers. Very satisfied with the outcome and joint precision. The marine ply is rock solid."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Rishi Kaushik</p>
+                <p class="text-[11px] text-stone-500 font-sans">Sector 50, Noida • Island Atelier</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                   alt="Rishi Kaushik" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "The parallel kitchen they designed for us in Laxmi Nagar is now a crowd-puller! Everyone asks who did the modular work. Arjun Ji and team were super punctual."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Neha Sutar</p>
+                <p class="text-[11px] text-stone-500 font-sans">Laxmi Nagar, Delhi • Parallel Galley</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                   alt="Neha Sutar" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "Direct factory pricing saved us over ₹1.4 Lakh compared to retail mall quotes. Delivered on time and within budget. Honest people who showed raw ply cutting at workshop."
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Mr. Himanshu Verma</p>
+                <p class="text-[11px] text-stone-500 font-sans">Preet Vihar, Delhi • L-Shape Kitchen</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" 
+                   alt="Himanshu Verma" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+          <div class="w-[340px] sm:w-[380px] flex-shrink-0 bg-[#F7F5F0] border border-stone-200/80 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-1 text-amber-500 text-sm">★★★★★</div>
+                <span class="text-[10px] font-heading font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">Verified Handover</span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700 font-sans leading-relaxed">
+                "The Italian PU lacquer and fluted glass lift-ups look straight out of an architectural digest magazine. In-house installation team took only 2 days without dust!"
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-stone-200 flex items-center justify-between">
+              <div>
+                <p class="font-heading font-black text-xs sm:text-sm text-stone-900">Ananya Sharma</p>
+                <p class="text-[11px] text-stone-500 font-sans">Indirapuram, Ghaziabad • Flagship PU</p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" 
+                   alt="Ananya Sharma" 
+                   class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Rating Highlight Block at Bottom (Exact AtoZ Frame 08 & 10) -->
+      <div class="mt-14 pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-4">
+          <div class="text-5xl sm:text-6xl font-heading font-black text-stone-900 tracking-tight">
+            4.88
+          </div>
+          <div>
+            <div class="flex text-amber-500 text-sm">★★★★★</div>
+            <div class="text-xs font-heading font-extrabold text-stone-500 uppercase tracking-wider mt-0.5">
+              2,488+ Verified Ratings
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center gap-3">
+          <button onclick="scrollTestimonialsTrack(-1)" aria-label="Previous Review" class="w-11 h-11 rounded-full border border-stone-300 hover:border-stone-900 hover:bg-stone-900 hover:text-white flex items-center justify-center transition text-sm">
+            &lsaquo;
+          </button>
+          <button onclick="scrollTestimonialsTrack(1)" aria-label="Next Review" class="w-11 h-11 rounded-full bg-[#8C7756] hover:bg-[#736145] text-white flex items-center justify-center transition shadow-md text-sm">
+            &rsaquo;
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 09 / Contact & Atelier Visit (AtoZ Style 2-Column) -->
+  <section id="contact" class="py-20 md:py-28 bg-[#F7F5F0] border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left: Atelier Visit & Direct Contact Details -->
+        <div>
+          <span class="inline-block text-xs font-heading font-extrabold tracking-widest text-[#8C7756] uppercase mb-2">
+            CONTACT ATELIER
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+            Book Your Free<br>
+            Design Consultation.
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-sans mt-3 mb-8 max-w-lg">
+            Speak directly with our founders Arjun &amp; Ajay Ji — completely free, zero obligation. We will review your floor plan, civil status, and budget, then show you authentic factory possibilities.
+          </p>
+
+          <div class="space-y-6">
+            
+            <!-- Address -->
+            <div class="flex gap-4">
+              <span class="text-2xl mt-0.5">📍</span>
+              <div>
+                <p class="text-xs font-heading font-extrabold uppercase tracking-wider text-stone-400 mb-0.5">
+                  Visit Factory Atelier
+                </p>
+                <p class="text-sm font-sans text-stone-800 leading-relaxed font-medium">
+                  F-165, Jagat Puri Main Road,<br>
+                  East Delhi — 110051 (Near Preet Vihar / Karkardooma)
+                </p>
+                <a href="https://maps.google.com/?q=F-165+Jagat+Puri+Main+Road+Delhi" 
+                   target="_blank" 
+                   class="inline-block text-xs font-heading font-bold text-[#8C7756] hover:underline mt-1">
+                  View Location on Google Maps &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex gap-4">
+              <span class="text-2xl mt-0.5">📞</span>
+              <div>
+                <p class="text-xs font-heading font-extrabold uppercase tracking-wider text-stone-400 mb-0.5">
+                  Direct Founder Phones
+                </p>
+                <div class="flex flex-wrap items-center gap-3 mt-1">
+                  <a href="tel:+919910270754" class="text-sm font-heading font-bold text-stone-900 hover:text-[#ff1d25] transition">
+                    +91 99102 70754 (Arjun Ji)
+                  </a>
+                  <span class="text-stone-300">•</span>
+                  <a href="tel:+919899301054" class="text-sm font-heading font-bold text-stone-900 hover:text-[#ff1d25] transition">
+                    +91 98993 01054 (Ajay Ji)
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex gap-4">
+              <span class="text-2xl mt-0.5">✉️</span>
+              <div>
+                <p class="text-xs font-heading font-extrabold uppercase tracking-wider text-stone-400 mb-0.5">
+                  Email Us
+                </p>
+                <a href="mailto:info.aaica@gmail.com" class="text-sm font-sans text-stone-800 hover:text-[#ff1d25] transition font-medium">
+                  info.aaica@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Atelier Timings -->
+            <div class="flex gap-4">
+              <span class="text-2xl mt-0.5">🕐</span>
+              <div>
+                <p class="text-xs font-heading font-extrabold uppercase tracking-wider text-stone-400 mb-0.5">
+                  Workshop &amp; Atelier Hours
+                </p>
+                <p class="text-sm font-sans text-stone-800 font-medium">
+                  Monday – Sunday: 10:00 AM – 8:00 PM (All 7 Days Open)
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Clean High-Converting Booking Form Card -->
+        <div class="bg-white border border-stone-200 rounded-3xl p-8 sm:p-10 shadow-lg">
+          <div class="mb-6">
+            <h3 class="text-2xl font-heading font-black text-stone-900">
+              Get Free 3D Design &amp; Estimate
+            </h3>
+            <p class="text-xs text-stone-500 font-sans mt-1">
+              Direct factory price quote with itemized BOQ in 15 minutes.
+            </p>
+          </div>
+
+          <form id="section-inquiry-form" onsubmit="handleSectionFormSubmit(event)" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Your Full Name *</label>
+                <input type="text" id="sec-name" required placeholder="e.g. Sameer Kapoor" 
+                       class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none bg-stone-50/50">
+              </div>
+              <div>
+                <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">WhatsApp / Phone *</label>
+                <input type="tel" id="sec-phone" required placeholder="+91 98XXX XXXXX" 
+                       class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none bg-stone-50/50">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Location / Colony *</label>
+                <input type="text" id="sec-loc" required placeholder="e.g. Preet Vihar, Noida Sector 50" 
+                       class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none bg-stone-50/50">
+              </div>
+              <div>
+                <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Kitchen Layout</label>
+                <select id="sec-layout" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] text-stone-900 text-sm transition outline-none bg-stone-50/50">
+                  <option value="L-Shaped Kitchen">L-Shaped Kitchen</option>
+                  <option value="Parallel Galley Kitchen">Parallel Galley Kitchen</option>
+                  <option value="U-Shaped Kitchen">U-Shaped Kitchen</option>
+                  <option value="Island Kitchen">Island Kitchen</option>
+                  <option value="Straight-Line Kitchen">Straight-Line Kitchen</option>
+                  <option value="Undecided / Need Advice">Undecided / Need Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Project Stage</label>
+              <select id="sec-stage" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] text-stone-900 text-sm transition outline-none bg-stone-50/50">
+                <option value="Planning / Exploring Ideas">Planning / Exploring Ideas</option>
+                <option value="Civil Work Underway">Civil Work Underway</option>
+                <option value="Ready for Immediate Installation">Ready for Immediate Fitout</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Requirements / Notes</label>
+              <textarea id="sec-notes" rows="3" placeholder="Approx room size, preferred finishes (Acrylic/PU), civil work status..." 
+                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] text-stone-900 text-sm transition outline-none bg-stone-50/50"></textarea>
+            </div>
+
+            <button type="submit" 
+                    class="w-full py-4 bg-[#8C7756] hover:bg-[#736145] text-white rounded-full font-heading font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-2">
+              <span>Book Free Consultation &amp; 3D Plan</span>
+              <span class="text-base">&rarr;</span>
+            </button>
+          </form>
+
+          <div class="flex items-center justify-center gap-4 mt-4 pt-3 border-t border-stone-100 text-[11px] text-stone-500">
+            <span>🔒 Direct Response in 15 Mins</span>
+            <span>•</span>
+            <span>📐 Free 3D Blueprint</span>
+            <span>•</span>
+            <span>0% Spam</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 10 / Frequently Asked Questions (Accordion) -->
+  <section id="faq" class="py-20 md:py-24 bg-white border-b border-stone-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between pb-6 mb-12 border-b border-stone-200 text-xs font-heading font-extrabold uppercase tracking-widest text-stone-500">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#ff1d25]"></span>
+          <span>10 / Frequently Asked Questions</span>
+        </div>
+        <span class="text-stone-400">Clear &amp; Honest Answers</span>
+      </div>
+
+      <div class="max-w-3xl mb-12">
+        <span class="inline-block text-xs font-heading font-extrabold tracking-widest text-[#ff1d25] uppercase mb-1.5">
+          Everything You Need To Know
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+          Got Questions?<br>
+          <span class="text-[#ff1d25]">We Have Honest Answers.</span>
+        </h2>
+      </div>
+
+      <!-- FAQ Accordion Items -->
+      <div class="max-w-4xl mx-auto space-y-3.5">
+        
+        <div class="accordion-item rounded-2xl border border-stone-200 bg-[#F7F5F0] overflow-hidden transition active shadow-sm">
+          <button class="w-full p-6 text-left flex items-center justify-between font-heading font-bold text-base sm:text-lg text-stone-900 focus:outline-none">
+            <span>How can AAICA offer 30% to 40% lower prices than retail showrooms?</span>
+            <span class="accordion-icon text-xl text-[#ff1d25] transition transform">+</span>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-stone-600 leading-relaxed font-sans">
+            Retail showrooms in malls pay heavy monthly commercial rents, multi-layer distributor cuts, and large marketing overheads. At AAICA, you deal directly with the factory owners (Arjun &amp; Ajay Ji). We own our automated workshop in Jagat Puri, buy raw plywood by the truckload directly from mills, and fabricate in-house. That entire 35–40% markup stays in your pocket.
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-2xl border border-stone-200 bg-[#F7F5F0] overflow-hidden transition shadow-sm">
+          <button class="w-full p-6 text-left flex items-center justify-between font-heading font-bold text-base sm:text-lg text-stone-900 focus:outline-none">
+            <span>What happens if water leaks under the sink? Will the wood swell?</span>
+            <span class="accordion-icon text-xl text-[#ff1d25] transition transform">+</span>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-stone-600 leading-relaxed font-sans">
+            Under-sink cabinets are the #1 failure point in cheap kitchens. AAICA exclusively uses 100% IS:710 Boiling Water Proof (BWP) Marine Grade Plywood for all sink and carcass units. It can be submerged in boiling water for 72 hours without delaminating. Additionally, we line the sink base with an embossed PVC aluminum moisture tray for double safety.
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-2xl border border-stone-200 bg-[#F7F5F0] overflow-hidden transition shadow-sm">
+          <button class="w-full p-6 text-left flex items-center justify-between font-heading font-bold text-base sm:text-lg text-stone-900 focus:outline-none">
+            <span>How does the 45-day guaranteed handover work?</span>
+            <span class="accordion-icon text-xl text-[#ff1d25] transition transform">+</span>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-stone-600 leading-relaxed font-sans">
+            Once your 3D CAD design and material selections are frozen, we issue a written handover agreement with a 45-day commitment date. Because all cutting and edge-banding happens in our own Jagat Puri factory (not outsourced), we have 100% control over timelines. On-site installation takes only 48 hours once pre-drilled units arrive at your home.
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-2xl border border-stone-200 bg-[#F7F5F0] overflow-hidden transition shadow-sm">
+          <button class="w-full p-6 text-left flex items-center justify-between font-heading font-bold text-base sm:text-lg text-stone-900 focus:outline-none">
+            <span>Can I visit your Jagat Puri factory before finalizing my order?</span>
+            <span class="accordion-icon text-xl text-[#ff1d25] transition transform">+</span>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-stone-600 leading-relaxed font-sans">
+            Yes, we strongly encourage it! Our factory atelier is located at F-165, Jagat Puri Main Road, East Delhi. You can inspect raw plywood sheets, see our CNC cutting and edge-banding machines in action, test live Blum/Häfele drawer runners, and review physical acrylic and PU color swatches.
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-2xl border border-stone-200 bg-[#F7F5F0] overflow-hidden transition shadow-sm">
+          <button class="w-full p-6 text-left flex items-center justify-between font-heading font-bold text-base sm:text-lg text-stone-900 focus:outline-none">
+            <span>What is covered under the 10-Year Replacement Warranty?</span>
+            <span class="accordion-icon text-xl text-[#ff1d25] transition transform">+</span>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-stone-600 leading-relaxed font-sans">
+            Our warranty covers delamination, termite damage, borer infestation, and structural warping on all 18mm IS:710 Marine Ply carcasses. Furthermore, all European motion hardware (Blum and Häfele hinges and tandem runners) carries a lifetime functional replacement warranty from the manufacturer.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 11 / Clean Architectural Footer (AtoZ Style Frame 08 & 10) -->
+  <footer class="bg-[#1C1A18] text-stone-300 pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-stone-800">
+        
+        <!-- Col 1: Brand & Atelier Intro -->
+        <div class="lg:col-span-4 space-y-4">
+          <a href="#" class="inline-block py-1">
+            <img src="assets/aaica-original-logo.png" 
+                 alt="AAICA Modular Kitchen" 
+                 class="h-10 sm:h-12 w-auto object-contain brightness-0 invert">
+          </a>
+          <p class="text-xs sm:text-sm text-stone-400 font-sans leading-relaxed">
+            Architectural modular kitchens and precision joinery direct from our East Delhi manufacturing atelier. 100% IS:710 Marine Ply, genuine European hardware, zero middleman markup.
+          </p>
+          <div class="pt-2 text-xs font-mono text-stone-500">
+            A Unit of R&amp;R Industries • Est. 2012
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="lg:col-span-2 space-y-3">
+          <div class="text-xs font-heading font-extrabold uppercase tracking-widest text-white">Explore</div>
+          <ul class="space-y-2 text-xs text-stone-400 font-sans">
+            <li><a href="#about" class="hover:text-white transition">01 / About Partner</a></li>
+            <li><a href="#services" class="hover:text-white transition">02 / What We Offer</a></li>
+            <li><a href="#why-us" class="hover:text-white transition">03 / Why Choose Us</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition">04 / Latest Projects</a></li>
+            <li><a href="#comparison" class="hover:text-white transition">05 / Factory Advantage</a></li>
+            <li><a href="#calculator" class="hover:text-white transition">06 / Instant Estimator</a></li>
+            <li><a href="#reviews" class="hover:text-white transition">07 / Client Feedback</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Areas Served -->
+        <div class="lg:col-span-3 space-y-3">
+          <div class="text-xs font-heading font-extrabold uppercase tracking-widest text-white">Areas Served</div>
+          <p class="text-xs text-stone-400 font-sans leading-relaxed">
+            Free site surveys, laser measurement, and delivery across Delhi NCR:
+          </p>
+          <div class="flex flex-wrap gap-2 text-[11px] text-stone-400 font-sans pt-1">
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Preet Vihar</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Anand Vihar</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Indirapuram</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Noida Sec 50/62/137</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Mayur Vihar</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Saket &amp; South Delhi</span>
+            <span class="px-2.5 py-1 rounded bg-stone-800/80 border border-stone-700/60">Vaishali</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Workshop -->
+        <div class="lg:col-span-3 space-y-3">
+          <div class="text-xs font-heading font-extrabold uppercase tracking-widest text-white">Workshop Atelier</div>
+          <div class="text-xs text-stone-400 font-sans space-y-1.5 leading-relaxed">
+            <p><strong class="text-stone-300">Address:</strong> F-165, Jagat Puri Main Road, East Delhi 110051</p>
+            <p><strong class="text-stone-300">Timings:</strong> 10:00 AM – 8:00 PM (All 7 Days)</p>
+            <p><strong class="text-stone-300">Phones:</strong> +91 99102 70754 / +91 98993 01054</p>
+            <p><strong class="text-stone-300">Email:</strong> info.aaica@gmail.com</p>
+          </div>
+          <div class="pt-2">
+            <button onclick="openInquiryModal()" class="w-full py-2.5 bg-[#8C7756] hover:bg-[#736145] text-white rounded-full font-heading font-bold text-xs uppercase tracking-wider transition shadow-md">
+              Get Free 3D Quote &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 font-sans gap-4">
+        <div>
+          &copy; 2012–2026 AAICA Modular Kitchen (A Unit of R&amp;R Industries). All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <span>IS:710 Marine Certified</span>
+          <span>•</span>
+          <span>European Hardware Standards</span>
+          <span>•</span>
+          <span>Jagat Puri, Delhi</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Luxury Inquiry Popup Modal (Auto-triggers after 6s or via any Get Quote button) -->
+  <div id="inquiry-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/75 backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none" aria-modal="true" role="dialog">
+    <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200 transform transition-all duration-300 scale-95" id="modal-content">
+      
+      <!-- Top Accent Bar -->
+      <div class="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white px-6 py-4 flex items-center justify-between border-b border-stone-700">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs font-heading font-bold uppercase tracking-wider text-amber-300">Direct Factory Atelier • Jagat Puri</span>
+        </div>
+        <button onclick="closeInquiryModal()" class="text-stone-400 hover:text-white transition p-1 rounded-full hover:bg-white/10" aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8">
+        <div class="text-left mb-6">
+          <h3 class="text-2xl sm:text-3xl font-heading font-black text-stone-900 leading-tight">
+            Get Free 3D Design &amp; Direct Factory Quote
+          </h3>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1.5 font-sans leading-relaxed">
+            Save <strong>30–40% vs retail showrooms</strong>. Genuine 18mm IS:710 Marine Ply &amp; German fittings delivered directly from our East Delhi Atelier.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="popup-inquiry-form" onsubmit="handlePopupSubmit(event)" class="space-y-4">
+          
+          <div>
+            <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Your Name *</label>
+            <input type="text" id="popup-name" required placeholder="e.g. Vikram Sharma" 
+                   class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Phone / WhatsApp *</label>
+              <input type="tel" id="popup-phone" required placeholder="+91 98XXX XXXXX" 
+                     class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Location / City *</label>
+              <input type="text" id="popup-location" required placeholder="e.g. Preet Vihar, Delhi NCR" 
+                     class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Kitchen Layout</label>
+              <select id="popup-layout" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none bg-white">
+                <option value="L-Shaped Kitchen">L-Shaped Kitchen</option>
+                <option value="U-Shaped Kitchen">U-Shaped Kitchen</option>
+                <option value="Parallel / Galley Kitchen">Parallel / Galley Kitchen</option>
+                <option value="Island Kitchen">Island Kitchen</option>
+                <option value="Straight-Line Kitchen">Straight-Line Kitchen</option>
+                <option value="Undecided / Need Advice">Undecided / Need Consultation</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-heading font-bold uppercase tracking-wider text-stone-700 mb-1.5">Project Stage</label>
+              <select id="popup-stage" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-[#8C7756] focus:ring-2 focus:ring-[#8C7756]/20 text-stone-900 text-sm transition outline-none bg-white">
+                <option value="Planning / Exploring Ideas">Planning / Exploring Ideas</option>
+                <option value="Civil Work Underway">Civil Work Underway</option>
+                <option value="Ready for Immediate Installation">Ready for Immediate Work</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" 
+                  class="w-full py-4 bg-[#8C7756] hover:bg-[#736145] text-white rounded-full font-heading font-bold text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-2">
+            <span>Claim Free 3D Design &amp; Factory Quote</span>
+            <span class="text-base">&rarr;</span>
+          </button>
+        </form>
+
+        <!-- Trust Badges Under Form -->
+        <div class="flex items-center justify-center gap-4 mt-4 pt-3 border-t border-stone-100 text-[11px] text-stone-500">
+          <span class="flex items-center gap-1">🔒 100% Privacy</span>
+          <span>•</span>
+          <span class="flex items-center gap-1">📐 Free 3D CAD Blueprint</span>
+          <span>•</span>
+          <span class="flex items-center gap-1">🏭 Jagat Puri Atelier</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Client-Side Scripts (Hero Slider, Minimal Estimator, Accordions, Modal, Mobile Nav) -->
+  <script>
+    // 1. Hero Woodspace Vertical Slider
+    (function initHeroSlider() {
+      const track = document.querySelector('.hero-slider .hero-track');
+      const slides = document.querySelectorAll('.hero-slider .hero-slide');
+      const dots = document.querySelectorAll('.hero-slider .hero-dot');
+      if (!track || !slides.length) return;
+      let currentSlide = 0;
+      let timer = null;
+
+      function goToSlide(idx) {
+        currentSlide = idx;
+        track.style.transform = `translateX(-${idx * 25}%)`;
+        slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+        dots.forEach((d, i) => {
+          if (i === idx) {
+            d.className = 'hero-dot active w-7 h-2 rounded-full bg-amber-400 transition-all duration-300';
+          } else {
+            d.className = 'hero-dot w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300';
+          }
+        });
+      }
+
+      function nextSlide() {
+        let nxt = (currentSlide + 1) % slides.length;
+        goToSlide(nxt);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        timer = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoplay() {
+        if (timer) clearInterval(timer);
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(idx);
+          startAutoplay();
+        });
+      });
+
+      const heroEl = document.querySelector('.hero-slider');
+      if (heroEl) {
+        heroEl.addEventListener('mouseenter', stopAutoplay);
+        heroEl.addEventListener('mouseleave', startAutoplay);
+      }
+
+      startAutoplay();
+    })();
+
+    // 2. Mobile Menu Toggle
+    (function initMobileMenu() {
+      const toggle = document.getElementById('mobile-menu-toggle');
+      const menu = document.getElementById('mobile-menu-dropdown') || document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          if (hamburger) hamburger.classList.add('hidden');
+          if (closeIcon) closeIcon.classList.remove('hidden');
+        } else {
+          menu.classList.add('hidden');
+          if (hamburger) hamburger.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          if (hamburger) hamburger.classList.remove('hidden');
+          if (closeIcon) closeIcon.classList.add('hidden');
+        });
+      });
+    })();
+
+    // 3. FAQ Accordion
+    document.querySelectorAll('.accordion-item button').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.accordion-item');
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // 4. Minimal Architectural Kitchen Estimator
+    let calcState = {
+      layoutId: 'l_shape',
+      layoutName: 'L-Shaped Kitchen (8×10 ft)',
+      baseMin: 185000,
+      baseMax: 220000,
+      layoutBadge: '8×10 ft Standard',
+      finishId: 'acrylic',
+      finishName: 'High-Gloss Acrylic (Senosan)',
+      finishMult: 1.25,
+      scaleId: 'standard',
+      scaleMult: 1.0,
+      scaleBadge: 'Standard (~22 Running Ft)'
+    };
+
+    function formatINR(val) {
+      return val.toLocaleString('en-IN');
+    }
+
+    function updateKitchenEstimate() {
+      const minCalc = Math.round((calcState.baseMin * calcState.finishMult * calcState.scaleMult) / 1000) * 1000;
+      const maxCalc = Math.round((calcState.baseMax * calcState.finishMult * calcState.scaleMult) / 1000) * 1000;
+      
+      const retailMin = Math.round(minCalc * 1.6 / 1000) * 1000;
+      const retailMax = Math.round(maxCalc * 1.6 / 1000) * 1000;
+
+      const priceRangeEl = document.getElementById('calc-price-range');
+      const retailPriceEl = document.getElementById('calc-retail-price');
+      const waBtn = document.getElementById('calc-whatsapp-btn');
+
+      if (priceRangeEl) {
+        priceRangeEl.innerText = `${formatINR(minCalc)} – ${formatINR(maxCalc)}`;
+      }
+      if (retailPriceEl) {
+        retailPriceEl.innerText = `₹${formatINR(retailMin)} – ₹${formatINR(retailMax)}`;
+      }
+
+      if (waBtn) {
+        const msg = `Hi Arjun Ji, I used the AAICA Kitchen Estimator on your website:
+
+` +
+                    `• Layout: ${calcState.layoutName}
+` +
+                    `• Finish: ${calcState.finishName}
+` +
+                    `• Scale: ${calcState.scaleBadge}
+` +
+                    `• Direct Factory Estimate: ₹${formatINR(minCalc)} – ₹${formatINR(maxCalc)}
+
+` +
+                    `Please share the itemized BOQ & let me know when I can visit your Jagat Puri factory atelier.`;
+        waBtn.href = `https://wa.me/919910270754?text=${encodeURIComponent(msg)}`;
+      }
+    }
+
+    function setCalcLayout(id, name, min, max, badge) {
+      calcState.layoutId = id;
+      calcState.layoutName = name;
+      calcState.baseMin = min;
+      calcState.baseMax = max;
+      calcState.layoutBadge = badge;
+
+      document.querySelectorAll('.calc-layout-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
+      }
+      const bEl = document.getElementById('calc-layout-badge');
+      if (bEl) bEl.innerText = badge;
+      updateKitchenEstimate();
+    }
+
+    function setCalcFinish(id, name, mult, desc) {
+      calcState.finishId = id;
+      calcState.finishName = name;
+      calcState.finishMult = mult;
+
+      document.querySelectorAll('.calc-finish-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
+      }
+      const bEl = document.getElementById('calc-finish-badge');
+      if (bEl) bEl.innerText = name;
+      updateKitchenEstimate();
+    }
+
+    function setCalcScale(id, mult, badge) {
+      calcState.scaleId = id;
+      calcState.scaleMult = mult;
+      calcState.scaleBadge = badge;
+
+      document.querySelectorAll('.calc-scale-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
+      }
+      const bEl = document.getElementById('calc-scale-badge');
+      if (bEl) bEl.innerText = badge;
+      updateKitchenEstimate();
+    }
+
+    // Run initial estimate
+    updateKitchenEstimate();
+
+    // 5. Luxury Modal & WhatsApp Lead Dispatchers
+    function openInquiryModal() {
+      const modal = document.getElementById('inquiry-modal');
+      const content = document.getElementById('modal-content');
+      if (!modal || !content) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+    }
+
+    function closeInquiryModal() {
+      const modal = document.getElementById('inquiry-modal');
+      const content = document.getElementById('modal-content');
+      if (!modal || !content) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+    }
+
+    function handlePopupSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('popup-name').value;
+      const phone = document.getElementById('popup-phone').value;
+      const loc = document.getElementById('popup-location').value;
+      const layout = document.getElementById('popup-layout').value;
+      const stage = document.getElementById('popup-stage').value;
+
+      const msg = `Hi Arjun Ji, new inquiry via AAICA Website Free Quote Modal:
+
+` +
+                  `• Name: ${name}
+` +
+                  `• Phone: ${phone}
+` +
+                  `• Location: ${loc}
+` +
+                  `• Kitchen Layout: ${layout}
+` +
+                  `• Stage: ${stage}
+
+` +
+                  `Please arrange a free 3D CAD design consultation and factory-direct quote.`;
+
+      window.open(`https://wa.me/919910270754?text=${encodeURIComponent(msg)}`, '_blank');
+      closeInquiryModal();
+      alert(`Thank you, ${name}! Your consultation request has been sent to Arjun Ji on WhatsApp.`);
+    }
+
+    function scrollTestimonialsTrack(direction) {
+      const track = document.querySelector(".testimonials-slide-track");
+      if (!track) return;
+      // Temporarily toggle animation or shift
+      const currentAnimation = track.style.animationPlayState;
+      track.style.animation = "none";
+      const shift = direction * 380;
+      track.scrollLeft += shift;
+      setTimeout(() => {
+        track.style.animation = "testimonialSlide 38s linear infinite";
+      }, 500);
+    }
+
+    function handleSectionFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('sec-name').value;
+      const phone = document.getElementById('sec-phone').value;
+      const loc = document.getElementById('sec-loc').value;
+      const layout = document.getElementById('sec-layout').value;
+      const stage = document.getElementById('sec-stage').value || 'Planning';
+      const notes = document.getElementById('sec-notes').value || 'Standard Inquiry';
+
+      const msg = `Hi Arjun Ji, inquiry via AAICA Free Consultation Form:
+
+` +
+                  `• Name: ${name}
+` +
+                  `• Phone: ${phone}
+` +
+                  `• Location: ${loc}
+` +
+                  `• Preferred Layout: ${layout}
+` +
+                  `• Stage: ${stage}
+` +
+                  `• Requirements: ${notes}
+
+` +
+                  `Please schedule a site laser measurement & factory sample review.`;
+
+      window.open(`https://wa.me/919910270754?text=${encodeURIComponent(msg)}`, '_blank');
+      alert(`Thank you, ${name}! Your consultation request has been sent to Arjun Ji at AAICA Kitchen.`);
+    }
+
+    // Modal opens on button click (or subtle exit intent, never intrusive auto-block)
+    // window.addEventListener('load', () => {});
+  </script>
+
+</body>
+</html>

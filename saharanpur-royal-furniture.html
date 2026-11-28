@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saharanpur Royal Furniture | Luxury Teak Handcrafted Collections</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0C;
+      --card: #141419;
+      --card-border: rgba(212, 175, 55, 0.25);
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-dark: #997A15;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(10, 10, 12, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    .tagline {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #000;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4); }
+    
+    /* Hero */
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Calculator */
+    .calc-box {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 750px;
+      margin: 0 auto 4rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .calc-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .calc-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; text-align: left; }
+    @media(max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } .hero h1 { font-size: 1.85rem; } }
+    
+    label { font-size: 0.85rem; font-weight: 600; color: #CBD5E1; display: block; margin-bottom: 0.4rem; }
+    select, input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #0E0F12;
+      border: 1px solid #334155;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: var(--gold); }
+    
+    .price-display {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px dashed var(--gold);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .price-display .amt {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .price-display small { font-size: 0.75rem; color: var(--muted); }
+
+    /* Catalog Showcase */
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1050px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    .cat-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .cat-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .cat-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .cat-body { padding: 1.25rem; }
+    .cat-body h3 { font-family: 'Cinzel', serif; font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem; }
+    .cat-body p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+    .price-tag { font-weight: 700; color: var(--gold); font-size: 1rem; }
+
+    /* Trust banner */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(20, 20, 25, 0.4);
+      margin-bottom: 3rem;
+    }
+    .trust-item { text-align: center; }
+    .trust-item h4 { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .trust-item span { font-size: 0.8rem; color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="logo">SAHARANPUR ROYAL</div>
+      <div class="tagline">Solid Teak Wood Heritage</div>
+    </div>
+    <a href="https://wa.me/916396354060?text=Hi%20Saharanpur%20Royal%20Furniture,%20I%20am%20interested%20in%20custom%20teak%20furniture" class="btn-gold">
+      WhatsApp Factory Direct
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="badge">SAHARANPUR DIRECT MANUFACTURER</div>
+    <h1>Mastercrafted <span>Royal Teak Wood</span> Furniture</h1>
+    <p>Hand-carved royal dining sets, imperial sofa sets, bespoke beds & temple architectures made from 100% seasoned teak wood with pan-India insured transit.</p>
+  </section>
+
+  <!-- Interactive Budget & Advance Calculator -->
+  <div class="calc-box">
+    <div class="calc-title">Instant Custom Order & Advance Estimator</div>
+    <div class="calc-sub">Choose your desired configuration to get wholesale factory rate & booking token amount.</div>
+
+    <div class="grid-2">
+      <div>
+        <label>Select Category</label>
+        <select id="cat" onchange="calculate()">
+          <option value="living">Royal Maharaja Sofa Set (3+2+1 + Tables)</option>
+          <option value="dining">Royal 8-Seater Carved Dining Set</option>
+          <option value="bedroom">Imperial King Bed + Side Tables + Dressing</option>
+          <option value="villa">Complete Villa / Farmhouse Package</option>
+        </select>
+      </div>
+      <div>
+        <label>Wood Polish & Finish</label>
+        <select id="finish" onchange="calculate()">
+          <option value="teak">Natural Teak Gloss / Matte</option>
+          <option value="walnut">Antique Walnut Finish</option>
+          <option value="gold">Royal Antique Gold Leafing (+15%)</option>
+          <option value="duco">Luxury White & Gold Duco (+20%)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="price-display">
+      <small>Estimated Factory Direct Rate:</small>
+      <div class="amt" id="estPrice">₹1,45,000</div>
+      <small id="tokenMsg">Direct Booking Token to Start Production: <strong>₹25,000 (Advance)</strong></small>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="https://wa.me/916396354060?text=Hello,%20I%20checked%20the%20website%20estimator%20for%20Royal%20Furniture%20and%20want%20to%20confirm%20my%20order" id="bookBtn" class="btn-gold" style="font-size: 1rem; padding: 0.85rem 2rem;">
+        Confirm Specification on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <h4>100% Seasoned Teak</h4>
+      <span>Termite-Proof Certified</span>
+    </div>
+    <div class="trust-item">
+      <h4>Pan-India Delivery</h4>
+      <span>Wooden Crated Insured Transport</span>
+    </div>
+    <div class="trust-item">
+      <h4>Live Video Proof</h4>
+      <span>Raw Wood Inspection on Video Call</span>
+    </div>
+    <div class="trust-item">
+      <h4>Lifetime Durability</h4>
+      <span>Generational Hand Carving</span>
+    </div>
+  </div>
+
+  <h2 class="section-title">Exclusive Royal Collections</h2>
+
+  <div class="catalog-grid">
+    <div class="cat-card">
+      <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80');"></div>
+      <div class="cat-body">
+        <h3>Imperial Maharaja Sofa Set</h3>
+        <p>Intricate high-back crown hand-carved in pure Sagwan (Teak Wood) with premium velvet upholstery.</p>
+        <div class="price-tag">Factory Price: ₹1,45,000</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80');"></div>
+      <div class="cat-body">
+        <h3>Royal Crown King Size Bed</h3>
+        <p>Floral jaali back carving with hydraulic storage and pair of matching bedside carved consoles.</p>
+        <div class="price-tag">Factory Price: ₹1,15,000</div>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=800&q=80');"></div>
+      <div class="cat-body">
+        <h3>8-Seater Palace Dining Table</h3>
+        <p>Heavy pedestal carved base with ergonomic high-back royal chairs finished in antique gold.</p>
+        <div class="price-tag">Factory Price: ₹1,85,000</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Saharanpur Royal Furniture — Direct Factory & Workshop: Saharanpur, Uttar Pradesh.</p>
+    <p style="margin-top: 0.5rem; opacity: 0.6;">© 2026 Saharanpur Royal Furniture. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function calculate() {
+      const cat = document.getElementById('cat').value;
+      const finish = document.getElementById('finish').value;
+      let base = 145000;
+      if (cat === 'dining') base = 185000;
+      if (cat === 'bedroom') base = 115000;
+      if (cat === 'villa') base = 480000;
+
+      let mult = 1.0;
+      if (finish === 'gold') mult = 1.15;
+      if (finish === 'duco') mult = 1.20;
+
+      const finalPrice = Math.round(base * mult);
+      const token = Math.round(finalPrice * 0.20);
+
+      document.getElementById('estPrice').innerText = '₹' + finalPrice.toLocaleString('en-IN');
+      document.getElementById('tokenMsg').innerHTML = 'Direct Booking Token to Start Production: <strong>₹' + token.toLocaleString('en-IN') + ' (Advance)</strong>';
+      
+      const text = encodeURIComponent('Hello Saharanpur Royal Furniture, I estimated ' + cat + ' (' + finish + ') at ₹' + finalPrice.toLocaleString('en-IN') + ' on your website. Want to confirm details and start production.');
+      document.getElementById('bookBtn').href = 'https://wa.me/916396354060?text=' + text;
+    }
+  </script>
+</body>
+</html>

@@ -312,19 +312,47 @@
             </div>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-3 mb-6">
+          <div class="grid sm:grid-cols-2 gap-3 mb-4">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slateInk mb-1.5">Preferred Time Slot</label>
-              <select id="slotTime" class="w-full px-3.5 py-3 rounded-xl bg-white border border-deepTeal/15 text-sm">
-                <option>Morning (9:00 AM - 12:00 PM)</option>
-                <option>Afternoon (12:00 PM - 4:00 PM)</option>
-                <option>Evening (4:00 PM - 7:30 PM)</option>
-              </select>
+              <label class="block text-xs font-bold uppercase tracking-widest text-praanOrange mb-1.5">3. Select Date</label>
+              <input type="date" id="bookDate" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-deepTeal/15 text-sm font-medium" />
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slateInk mb-1.5">Patient Name</label>
-              <input type="text" id="bookPatient" placeholder="e.g. Suresh Nair (Age 62)" class="w-full px-3.5 py-3 rounded-xl bg-white border border-deepTeal/15 text-sm" />
+              <label class="block text-xs font-bold uppercase tracking-widest text-praanOrange mb-1.5">4. Patient Name &amp; Age</label>
+              <input type="text" id="bookPatient" placeholder="e.g. Suresh Nair (Age 62)" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-deepTeal/15 text-sm" />
             </div>
+          </div>
+
+          <div class="mb-5">
+            <label class="block text-xs font-bold uppercase tracking-widest text-praanOrange mb-2">5. Choose Exact Time Slot</label>
+            <div class="space-y-2.5">
+              <div>
+                <span class="text-[11px] font-semibold text-slateInk uppercase tracking-wider block mb-1.5">Morning</span>
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                  <button type="button" onclick="setSlot('09:00 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">09:00 AM</button>
+                  <button type="button" onclick="setSlot('09:30 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">09:30 AM</button>
+                  <button type="button" onclick="setSlot('10:00 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-praanOrange text-xs font-semibold bg-praanOrange text-white transition">10:00 AM</button>
+                  <button type="button" onclick="setSlot('10:30 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">10:30 AM</button>
+                  <button type="button" onclick="setSlot('11:00 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">11:00 AM</button>
+                  <button type="button" onclick="setSlot('11:30 AM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">11:30 AM</button>
+                </div>
+              </div>
+              <div>
+                <span class="text-[11px] font-semibold text-slateInk uppercase tracking-wider block mb-1.5">Afternoon &amp; Evening</span>
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                  <button type="button" onclick="setSlot('12:30 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">12:30 PM</button>
+                  <button type="button" onclick="setSlot('02:30 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">02:30 PM</button>
+                  <button type="button" onclick="setSlot('04:00 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">04:00 PM</button>
+                  <button type="button" onclick="setSlot('05:00 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">05:00 PM</button>
+                  <button type="button" onclick="setSlot('06:00 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">06:00 PM</button>
+                  <button type="button" onclick="setSlot('07:00 PM', this)" class="slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition">07:00 PM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="slotSummary" class="mb-5 px-4 py-3 rounded-xl bg-praanSoft border border-praanOrange/25 text-xs text-deepTeal font-medium">
+            Selected: <strong>Joint &amp; Pain Relief</strong> &bull; <strong>Koramangala Clinic</strong> &bull; <strong>10:00 AM</strong>
           </div>
 
           <button onclick="sendBooking()" class="w-full praan-btn bg-praanOrange text-white hover:bg-deepTeal justify-between shadow-lg">
@@ -428,21 +456,42 @@
     const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }), { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    let curFocus = 'Joint & Pain Relief', curMode = 'Koramangala Clinic';
+    let curFocus = 'Joint & Pain Relief', curMode = 'Koramangala Clinic', curSlot = '10:00 AM';
+    const dateInput = document.getElementById('bookDate');
+    if (dateInput) {
+      const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+      dateInput.value = tomorrow;
+      dateInput.min = new Date().toISOString().split('T')[0];
+      dateInput.addEventListener('change', updateSummary);
+    }
+    function updateSummary() {
+      const d = dateInput && dateInput.value ? dateInput.value : 'Upcoming';
+      const el = document.getElementById('slotSummary');
+      if (el) el.innerHTML = `Selected: <strong>${curFocus}</strong> &bull; <strong>${curMode}</strong> &bull; <strong>${d} at ${curSlot}</strong>`;
+    }
     function setFocus(val, btn) {
       curFocus = val;
       document.querySelectorAll('.focus-btn').forEach(b => b.className = 'focus-btn py-2.5 px-3 rounded-xl border border-deepTeal/15 text-xs sm:text-sm font-semibold bg-white');
       btn.className = 'focus-btn py-2.5 px-3 rounded-xl border border-deepTeal text-xs sm:text-sm font-semibold bg-deepTeal text-white';
+      updateSummary();
     }
     function setMode(val, btn) {
       curMode = val;
       document.querySelectorAll('.mode-btn').forEach(b => b.className = 'mode-btn py-2.5 px-3 rounded-xl border border-deepTeal/15 text-xs font-semibold bg-white');
       btn.className = 'mode-btn py-2.5 px-3 rounded-xl border border-deepTeal text-xs font-semibold bg-deepTeal text-white';
+      updateSummary();
     }
+    function setSlot(val, btn) {
+      curSlot = val;
+      document.querySelectorAll('.slot-btn').forEach(b => b.className = 'slot-btn py-2 px-1.5 rounded-lg border border-deepTeal/15 text-xs font-semibold bg-white hover:border-praanOrange transition');
+      btn.className = 'slot-btn py-2 px-1.5 rounded-lg border border-praanOrange text-xs font-semibold bg-praanOrange text-white transition';
+      updateSummary();
+    }
+    updateSummary();
     function sendBooking() {
-      const slot = document.getElementById('slotTime').value;
+      const d = dateInput && dateInput.value ? dateInput.value : 'Next Available';
       const patient = document.getElementById('bookPatient').value.trim() || 'Patient';
-      const msg = `Hi Praan Health Clinic, I want to book an appointment for ${patient}. Care Focus: ${curFocus} | Mode: ${curMode} | Slot: ${slot}.`;
+      const msg = `Hi Praan Health Clinic, I want to book an appointment for ${patient}. Care Focus: ${curFocus} | Mode: ${curMode} | Date: ${d} | Time Slot: ${curSlot}.`;
       window.open(`https://wa.me/919900165693?text=${encodeURIComponent(msg)}`, '_blank');
     }
 

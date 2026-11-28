@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Furniture | Bespoke Sofa Manufacturer &amp; Luxury Living</title>
+  <meta name="description" content="Ahmed Furniture crafts factory-direct custom L-shaped sofas, Chesterfield lounges, and solid wood furniture tailored to your living room." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0F172A',
+            ivory: '#FAF8F5',
+            cream: '#F4EFE6',
+            alabaster: '#FBF9F5',
+            bronze: '#8C7756',
+            gold: '#C9B38C',
+            slateInk: '#475569'
+          },
+          fontFamily: {
+            display: ['Manrope', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --ease-atelier: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #FAF8F5;
+      color: #0F172A;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .typo-hero {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.4rem, 5.2vw, 4.75rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .typo-h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 3.15rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+    }
+
+    .typo-h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.2rem, 1.75vw, 1.55rem);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .typo-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.44);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201, 179, 140, 0.16);
+      transition: all 0.45s var(--ease-atelier);
+    }
+
+    .glass-nav.scrolled {
+      background: rgba(250, 248, 245, 0.95);
+      border-bottom-color: rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+    }
+
+    .glass-nav.scrolled .nav-link,
+    .glass-nav.scrolled .brand-title {
+      color: #0F172A !important;
+    }
+
+    .glass-nav.scrolled .brand-sub {
+      color: #8C7756 !important;
+    }
+
+    .monogram-badge {
+      background: linear-gradient(135deg, #C9B38C 0%, #8C7756 55%, #DFCFAF 100%);
+      box-shadow: 0 6px 20px rgba(140, 119, 86, 0.3);
+    }
+
+    .atelier-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.62rem 0.62rem 0.62rem 1.45rem;
+      border-radius: 9999px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: transform 0.35s var(--ease-atelier), background-color 0.35s ease;
+      cursor: pointer;
+    }
+
+    .atelier-btn:hover { transform: translateY(-2px); }
+
+    .atelier-btn .btn-circle {
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.45s var(--ease-atelier);
+    }
+
+    .atelier-btn:hover .btn-circle { transform: rotate(45deg) scale(1.05); }
+
+    .hero-section {
+      position: relative;
+      min-height: 94vh;
+      width: 100%;
+      overflow: hidden;
+      background: #0B0F17;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.1s var(--ease-atelier), visibility 1.1s;
+      z-index: 1;
+    }
+
+    .hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
+
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-slide.active .hero-slide-bg { transform: scale(1.09); }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, rgba(10, 14, 22, 0.84) 0%, rgba(10, 14, 22, 0.56) 52%, rgba(10, 14, 22, 0.32) 100%),
+                  linear-gradient(to top, rgba(10, 14, 22, 0.85) 0%, transparent 45%);
+      z-index: 3;
+    }
+
+    .hero-stagger {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.85s var(--ease-atelier), transform 0.85s var(--ease-atelier);
+    }
+
+    .hero-slide.active .hero-stagger-1 { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+    .hero-slide.active .hero-stagger-2 { opacity: 1; transform: translateY(0); transition-delay: 0.30s; }
+    .hero-slide.active .hero-stagger-3 { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+    .hero-slide.active .hero-stagger-4 { opacity: 1; transform: translateY(0); transition-delay: 0.60s; }
+
+    .marquee-wrap { overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; gap: 2.5rem; animation: marqueeScroll 32s linear infinite; }
+    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .reveal-on-scroll, .reveal-text, .reveal-left, .reveal-scale {
+      opacity: 0;
+      transition: opacity 0.85s var(--ease-atelier), transform 0.85s var(--ease-atelier);
+    }
+    .reveal-on-scroll { transform: translateY(32px); }
+    .reveal-text { transform: translateY(22px); }
+    .reveal-left { transform: translateX(-34px); }
+    .reveal-scale { transform: scale(0.94); }
+    .is-visible { opacity: 1 !important; transform: translate(0, 0) scale(1) !important; }
+
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+
+    .hover-lift { transition: transform 0.45s var(--ease-atelier), box-shadow 0.45s var(--ease-atelier); }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.16); }
+
+    .img-zoom-wrap img { transition: transform 0.85s var(--ease-atelier); }
+    .img-zoom-wrap:hover img { transform: scale(1.06); }
+
+    .filter-tab.active { background-color: #0F172A; color: #FAF8F5; border-color: #0F172A; }
+
+    .sticky-quote-tab {
+      position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+      writing-mode: vertical-rl; z-index: 40;
+      background: #8C7756; color: #FAF8F5;
+      padding: 1rem 0.55rem; border-radius: 0.75rem 0 0 0.75rem;
+      font-family: 'Manrope', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
+      cursor: pointer;
+    }
+
+    input[type="range"] { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 9999px; background: #E2D9C8; outline: none; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 9999px; background: #0F172A; border: 3px solid #C9B38C; cursor: pointer; }
+  </style>
+</head>
+<body class="bg-ivory text-obsidian antialiased">
+
+  <!-- Sticky Glass Header -->
+  <header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <span class="monogram-badge w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-sm text-obsidian shrink-0">AF</span>
+        <div class="leading-tight min-w-0">
+          <span class="brand-title block font-display font-bold text-[13px] sm:text-base tracking-wider text-white uppercase whitespace-nowrap">Ahmed Furniture</span>
+          <span class="brand-sub block text-[9px] sm:text-[11px] tracking-[0.18em] text-gold uppercase font-medium whitespace-nowrap">Bespoke Sofa Manufacturer</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <a href="#atelier" class="nav-link text-white/90 hover:text-gold transition">Craftsmanship</a>
+        <a href="#catalogue" class="nav-link text-white/90 hover:text-gold transition">Sofa Collection</a>
+        <a href="#estimator" class="nav-link text-white/90 hover:text-gold transition">Price Estimator</a>
+        <a href="#process" class="nav-link text-white/90 hover:text-gold transition">Custom Order</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+917003660315" class="hidden sm:inline-flex text-xs font-semibold text-gold hover:text-white transition nav-link">+91 70036 60315</a>
+        <button onclick="openQuoteModal('Header Factory Quote')" class="atelier-btn bg-gold text-obsidian hover:bg-white shadow-lg">
+          <span class="hidden sm:inline">Custom Order</span>
+          <span class="sm:hidden">Order</span>
+          <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <button onclick="openQuoteModal('Sticky Free Quote Tab')" class="sticky-quote-tab hidden sm:block">FREE QUOTE</button>
+
+  <!-- 3-SLIDE HERO -->
+  <section id="top" class="hero-section flex items-end pb-14 sm:pb-24 pt-32 sm:pt-36">
+    <div class="hero-slide active" data-slide="0">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-10">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">Factory-Direct Sofa Studio</span>
+          </div>
+          <h1 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            Handcrafted Sofas Built For <span class="text-gold font-normal">Timeless</span> Living.
+          </h1>
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            Custom L-shaped sectionals, royal Chesterfield lounges, and solid wood living room suites — built directly in our workshop with zero middleman markup.
+          </p>
+          <div class="hero-stagger hero-stagger-4 flex flex-wrap gap-4">
+            <button onclick="openQuoteModal('Hero - Custom Sofa Inquiry')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Get Factory-Direct Quote</span>
+              <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+            </button>
+            <a href="#catalogue" class="px-6 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium hover:bg-white/10 transition">Explore Sofa Designs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide" data-slide="1">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-10">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">Custom Dimensions &amp; Fabrics</span>
+          </div>
+          <h2 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            Tailored To Your <span class="text-gold font-normal">Exact</span> Room Size.
+          </h2>
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            Choose from 150+ stain-resistant suede, boucle, velvet, and Italian leatherette shades paired with 40-density Sleepwell feather-touch cushioning.
+          </p>
+          <div class="hero-stagger hero-stagger-4">
+            <a href="#estimator" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Calculate Sofa Price</span>
+              <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide" data-slide="2">
+      <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-scrim"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-10">
+        <div class="max-w-3xl">
+          <div class="hero-stagger hero-stagger-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span class="typo-eyebrow text-gold">10-Year Frame Warranty</span>
+          </div>
+          <h2 class="hero-stagger hero-stagger-2 typo-hero text-white mb-6">
+            Seasoned Solid Wood. <span class="text-gold font-normal">Zero</span> Sagging.
+          </h2>
+          <p class="hero-stagger hero-stagger-3 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+            Termite-treated hardwood &amp; neem-teak framing engineered for decades of daily comfort — delivered within 14 days of order confirmation.
+          </p>
+          <div class="hero-stagger hero-stagger-4">
+            <button onclick="openQuoteModal('Hero - Request Fabric Catalog')" class="atelier-btn bg-ivory text-obsidian hover:bg-gold">
+              <span>Request Fabric Swatches</span>
+              <span class="btn-circle bg-obsidian text-gold">&#8599;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between pt-8 pointer-events-none">
+      <div class="flex items-center gap-2.5 pointer-events-auto">
+        <button onclick="goToSlide(0)" class="hero-dot h-1.5 w-10 rounded-full bg-gold transition-all" aria-label="Slide 1"></button>
+        <button onclick="goToSlide(1)" class="hero-dot h-1.5 w-4 rounded-full bg-white/35 transition-all" aria-label="Slide 2"></button>
+        <button onclick="goToSlide(2)" class="hero-dot h-1.5 w-4 rounded-full bg-white/35 transition-all" aria-label="Slide 3"></button>
+      </div>
+      <div class="hidden sm:flex items-center gap-3 pointer-events-auto">
+        <button onclick="prevSlide()" class="w-10 h-10 rounded-full border border-white/25 bg-black/30 text-white hover:border-gold hover:text-gold flex items-center justify-center transition">&larr;</button>
+        <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/25 bg-black/30 text-white hover:border-gold hover:text-gold flex items-center justify-center transition">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="bg-obsidian text-gold border-y border-gold/20 py-4">
+    <div class="marquee-wrap">
+      <div class="marquee-track typo-eyebrow text-xs">
+        <span>BESPOKE L-SHAPED SOFAS</span><span>&bull;</span>
+        <span>ROYAL CHESTERFIELD LOUNGES</span><span>&bull;</span>
+        <span>SOLID WOOD FRAMING</span><span>&bull;</span>
+        <span>FACTORY-DIRECT PRICING</span><span>&bull;</span>
+        <span>10-YEAR FRAME WARRANTY</span><span>&bull;</span>
+        <span>BESPOKE L-SHAPED SOFAS</span><span>&bull;</span>
+        <span>ROYAL CHESTERFIELD LOUNGES</span><span>&bull;</span>
+        <span>SOLID WOOD FRAMING</span><span>&bull;</span>
+        <span>FACTORY-DIRECT PRICING</span><span>&bull;</span>
+        <span>10-YEAR FRAME WARRANTY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRAFTSMANSHIP SECTION -->
+  <section id="atelier" class="py-20 sm:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 relative reveal-left">
+        <div class="rounded-3xl overflow-hidden shadow-2xl img-zoom-wrap aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Ahmed Furniture Luxury Living Room" class="w-full h-full object-cover" />
+        </div>
+        <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-8 sm:-right-6 bg-obsidian text-white p-5 sm:p-6 rounded-2xl shadow-2xl border border-gold/30 flex items-center gap-4 max-w-sm">
+          <span class="monogram-badge w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-lg text-obsidian shrink-0">AF</span>
+          <div>
+            <p class="typo-eyebrow text-gold text-[10px] mb-1">Direct Manufacturer</p>
+            <p class="font-display font-semibold text-base">Ahmed Furniture</p>
+            <p class="text-xs text-white/70">Save 35% vs Retail Showrooms</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <p class="typo-eyebrow text-bronze mb-4 reveal-text">Why Buy Direct From Our Factory</p>
+        <h2 class="typo-h2 text-obsidian mb-6 reveal-text delay-100">Showroom Luxury At Honest Manufacturer Pricing.</h2>
+        <p class="text-slateInk text-base sm:text-lg leading-relaxed mb-8 reveal-text delay-200">
+          Retail stores mark up sofas by 40–60%. At Ahmed Furniture, every frame, spring webbing, high-density foam layer, and upholstery stitch is built in-house to your exact living room measurements.
+        </p>
+
+        <div class="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-obsidian/10 mb-8 reveal-on-scroll delay-300">
+          <div>
+            <div class="font-display font-bold text-2xl sm:text-4xl text-obsidian"><span class="counter" data-target="100" data-suffix="%">100%</span></div>
+            <p class="text-xs sm:text-sm text-slateInk mt-1">Seasoned Hardwood</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl sm:text-4xl text-bronze"><span class="counter" data-target="14" data-suffix=" Days">14 Days</span></div>
+            <p class="text-xs sm:text-sm text-slateInk mt-1">Custom Build &amp; Delivery</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl sm:text-4xl text-obsidian"><span class="counter" data-target="10" data-suffix=" Yr">10 Yr</span></div>
+            <p class="text-xs sm:text-sm text-slateInk mt-1">Frame Warranty</p>
+          </div>
+        </div>
+
+        <button onclick="openQuoteModal('Craftsmanship Section Inquiry')" class="atelier-btn bg-obsidian text-white hover:bg-bronze">
+          <span>Speak With Our Master Maker</span>
+          <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGUE -->
+  <section id="catalogue" class="py-20 sm:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <p class="typo-eyebrow text-bronze mb-3 reveal-text">Signature Collection</p>
+          <h2 class="typo-h2 text-obsidian reveal-text delay-100">Custom Sofas &amp; Living Suites</h2>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <button onclick="filterCards('all', this)" class="filter-tab active px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white">All Designs</button>
+          <button onclick="filterCards('sectional', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white">L-Shaped &amp; Sectionals</button>
+          <button onclick="filterCards('luxury', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white">Chesterfield &amp; Loungers</button>
+          <button onclick="filterCards('suite', this)" class="filter-tab px-5 py-2.5 rounded-full border border-obsidian/15 text-xs sm:text-sm font-medium bg-white">Bedroom &amp; Lounge</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll" data-cat="sectional">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Modular L-Shaped Lounge Sofa" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">Sectional</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Milanese L-Shaped Lounger</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Deep-seated 6-seater modular sectional with removable cushions and walnut plinth base.</p>
+            <button onclick="openQuoteModal('Quote: Milanese L-Shaped Lounger')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-100" data-cat="luxury">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Royal Tufted Sofa Set" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">Signature 3+2</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Sovereign Boucle 3+1+1 Set</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Curved architectural silhouette in premium stain-resistant boucle with brass accents.</p>
+            <button onclick="openQuoteModal('Quote: Sovereign Boucle 3+1+1 Set')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-200" data-cat="suite">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80" alt="Upholstered Master Bed" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">Bedroom Suite</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Hydraulic Upholstered King Bed</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Heavy-duty German hydraulic storage with fluted suede headboard &amp; matching ottoman.</p>
+            <button onclick="openQuoteModal('Quote: Hydraulic King Bed')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll" data-cat="sectional">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Family U-Shaped Sofa" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">U-Shape</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Verona 8-Seater Family Lounge</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Extra-wide lounger chaise, 40-density HR foam &amp; hidden armrest storage console.</p>
+            <button onclick="openQuoteModal('Quote: Verona 8-Seater Lounge')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-100" data-cat="luxury">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Minimalist Sofa Cum Bed" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">Sofa Cum Bed</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Convertible Guest Lounger</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Effortless pull-out steel mechanism that converts into a full queen bed in 5 seconds.</p>
+            <button onclick="openQuoteModal('Quote: Convertible Guest Lounger')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+
+        <article class="sofa-card bg-alabaster rounded-3xl overflow-hidden border border-obsidian/5 hover-lift reveal-on-scroll delay-200" data-cat="suite">
+          <div class="img-zoom-wrap aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Custom Accent Chairs & Sofa" class="w-full h-full object-cover" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/80 text-gold text-[11px] font-semibold uppercase">Living Suite</span>
+          </div>
+          <div class="p-6">
+            <h3 class="typo-h3 text-obsidian mb-2">Complete Drawing Room Combo</h3>
+            <p class="text-sm text-slateInk leading-relaxed mb-4">Coordinated 5-seater sofa, pair of swivel accent chairs &amp; solid wood centre table.</p>
+            <button onclick="openQuoteModal('Quote: Complete Drawing Room Combo')" class="text-xs font-semibold uppercase tracking-wider text-bronze hover:text-obsidian">Get Factory Price &rarr;</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SOFA COST ESTIMATOR -->
+  <section id="estimator" class="py-20 sm:py-28 bg-obsidian text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal-text">
+        <p class="typo-eyebrow text-gold mb-3">Factory-Direct Pricing</p>
+        <h2 class="typo-h2 text-white mb-5">Estimate Your Custom Sofa Price</h2>
+        <p class="text-white/75 text-base leading-relaxed">
+          Pick your sofa layout, upholstery material, and seating capacity to get an instant factory-direct price range — and send your spec directly on WhatsApp.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 reveal-scale delay-100">
+        <div class="bg-ivory text-obsidian rounded-3xl p-6 sm:p-10 shadow-2xl border border-gold/25">
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">1. Sofa Style</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button type="button" onclick="setStyle('3+2 Sofa Set', 32000, this)" class="style-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white">3+2 Set</button>
+              <button type="button" onclick="setStyle('L-Shaped Sectional', 42000, this)" class="style-btn py-2.5 px-3 rounded-xl border border-obsidian text-xs font-semibold bg-obsidian text-white">L-Shaped</button>
+              <button type="button" onclick="setStyle('U-Shaped Lounge', 62000, this)" class="style-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white">U-Shaped</button>
+              <button type="button" onclick="setStyle('Royal Chesterfield', 54000, this)" class="style-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white">Chesterfield</button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-xs font-bold uppercase tracking-widest text-bronze mb-3">2. Upholstery Fabric</label>
+            <div class="grid grid-cols-3 gap-2.5">
+              <button type="button" onclick="setFabric('Suede / Linen', 1.0, this)" class="fab-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white">Suede / Linen</button>
+              <button type="button" onclick="setFabric('Velvet / Boucle', 1.2, this)" class="fab-btn py-2.5 px-3 rounded-xl border border-obsidian text-xs font-semibold bg-obsidian text-white">Velvet / Boucle</button>
+              <button type="button" onclick="setFabric('Italian Leatherette', 1.4, this)" class="fab-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white">Leatherette</button>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <div class="flex justify-between mb-2">
+              <label class="text-xs font-bold uppercase tracking-widest text-bronze">3. Seating Capacity</label>
+              <span id="seatLabel" class="font-display font-bold text-sm">6 Seater</span>
+            </div>
+            <input type="range" id="seatSlider" min="3" max="10" step="1" value="6" oninput="updatePrice()" />
+          </div>
+
+          <div class="bg-cream rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-bronze/20">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slateInk">Factory-Direct Estimate</p>
+              <p id="priceOut" class="font-display font-bold text-2xl sm:text-3xl text-obsidian mt-1">&#8377;50,400 &ndash; &#8377;58,000</p>
+            </div>
+            <button onclick="sendEstToWa()" class="atelier-btn bg-obsidian text-white hover:bg-bronze justify-center">
+              <span>Order on WhatsApp</span>
+              <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP PROCESS -->
+  <section id="process" class="py-20 sm:py-28 bg-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-14 reveal-text">
+        <p class="typo-eyebrow text-bronze mb-3">Simple 4-Step Process</p>
+        <h2 class="typo-h2 text-obsidian">From Measurements To Delivery In 14 Days</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">01</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Pick Design &amp; Size</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Share your room measurements or reference photo directly on WhatsApp.</p>
+        </div>
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-100">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">02</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Select Fabric &amp; Foam</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Choose from 150+ stain-proof fabrics and soft/firm cushion comfort.</p>
+        </div>
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-200">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">03</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Workshop Crafting</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Built in-house on seasoned hardwood frames with live workshop photo updates.</p>
+        </div>
+        <div class="bg-alabaster p-7 rounded-3xl border border-obsidian/8 hover-lift reveal-on-scroll delay-300">
+          <span class="font-display font-bold text-3xl text-gold block mb-4">04</span>
+          <h3 class="typo-h3 text-obsidian mb-2">Home Installation</h3>
+          <p class="text-sm text-slateInk leading-relaxed">Safe doorstep delivery, placement &amp; 10-year structural warranty card.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-obsidian text-white pt-16 pb-10 border-t border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3.5">
+        <span class="monogram-badge w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-sm text-obsidian">AF</span>
+        <div>
+          <span class="font-display font-bold text-lg tracking-wider uppercase block">Ahmed Furniture</span>
+          <span class="text-xs tracking-[0.2em] text-gold uppercase">Bespoke Sofa Manufacturer</span>
+        </div>
+      </div>
+      <div class="text-center sm:text-right">
+        <a href="tel:+917003660315" class="text-lg font-display font-semibold text-gold hover:text-white transition block">+91 70036 60315</a>
+        <p class="text-xs text-white/45 mt-1">&copy; 2026 Ahmed Furniture. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="bg-ivory text-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-gold/30 relative">
+      <button onclick="closeQuoteModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-obsidian hover:text-white flex items-center justify-center transition">&times;</button>
+      <p class="typo-eyebrow text-bronze text-[10px] mb-1">Ahmed Furniture &bull; Factory Direct</p>
+      <h3 class="font-display font-bold text-xl mb-4">Get Custom Sofa Quote</h3>
+      <form onsubmit="submitForm(event)" class="space-y-4">
+        <input type="text" id="leadName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <input type="text" id="leadSpec" required placeholder="e.g. 6-Seater L-Shape in Beige Suede" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
+        <button type="submit" class="w-full atelier-btn bg-obsidian text-white justify-between">
+          <span>Send on WhatsApp</span>
+          <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+    let curSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    function goToSlide(idx) {
+      slides[curSlide].classList.remove('active');
+      dots[curSlide].classList.replace('w-10', 'w-4');
+      dots[curSlide].classList.replace('bg-gold', 'bg-white/35');
+      curSlide = (idx + slides.length) % slides.length;
+      slides[curSlide].classList.add('active');
+      dots[curSlide].classList.replace('w-4', 'w-10');
+      dots[curSlide].classList.replace('bg-white/35', 'bg-gold');
+    }
+    function nextSlide() { goToSlide(curSlide + 1); }
+    function prevSlide() { goToSlide(curSlide - 1); }
+    setInterval(nextSlide, 6000);
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          e.target.querySelectorAll('.counter').forEach(c => {
+            if (c.dataset.done) return;
+            c.dataset.done = '1';
+            const t = parseInt(c.dataset.target, 10), s = c.dataset.suffix || '';
+            const st = performance.now();
+            (function tick(now) {
+              const p = Math.min((now - st) / 1000, 1);
+              c.textContent = Math.round(t * (1 - Math.pow(1 - p, 3))) + s;
+              if (p < 1) requestAnimationFrame(tick);
+            })(st);
+          });
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal-on-scroll, .reveal-text, .reveal-left, .reveal-scale').forEach(el => obs.observe(el));
+
+    function filterCards(cat, btn) {
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.sofa-card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+      });
+    }
+
+    let sName = 'L-Shaped Sectional', sBase = 42000, fName = 'Velvet / Boucle', fMult = 1.2;
+    function setStyle(n, b, btn) {
+      sName = n; sBase = b;
+      document.querySelectorAll('.style-btn').forEach(x => x.className = 'style-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white');
+      btn.className = 'style-btn py-2.5 px-3 rounded-xl border border-obsidian text-xs font-semibold bg-obsidian text-white';
+      updatePrice();
+    }
+    function setFabric(n, m, btn) {
+      fName = n; fMult = m;
+      document.querySelectorAll('.fab-btn').forEach(x => x.className = 'fab-btn py-2.5 px-3 rounded-xl border border-obsidian/15 text-xs font-semibold bg-white');
+      btn.className = 'fab-btn py-2.5 px-3 rounded-xl border border-obsidian text-xs font-semibold bg-obsidian text-white';
+      updatePrice();
+    }
+    function updatePrice() {
+      const seats = parseInt(document.getElementById('seatSlider').value, 10);
+      document.getElementById('seatLabel').textContent = seats + ' Seater';
+      const low = Math.round((sBase * fMult * (seats / 6)) / 500) * 500;
+      const high = Math.round((low * 1.15) / 500) * 500;
+      document.getElementById('priceOut').innerHTML = '&#8377;' + low.toLocaleString('en-IN') + ' &ndash; &#8377;' + high.toLocaleString('en-IN');
+    }
+    updatePrice();
+
+    function sendEstToWa() {
+      const seats = document.getElementById('seatSlider').value;
+      const range = document.getElementById('priceOut').textContent;
+      const msg = `Hi Ahmed Furniture, I checked your website estimator for a ${seats}-Seater ${sName} in ${fName} (${range}). Please share fabric options & delivery time.`;
+      window.open(`https://wa.me/917003660315?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    const modal = document.getElementById('quoteModal');
+    function openQuoteModal() { modal.classList.replace('hidden', 'flex'); }
+    function closeQuoteModal() { modal.classList.replace('flex', 'hidden'); }
+    function submitForm(e) {
+      e.preventDefault();
+      const msg = `Hi Ahmed Furniture, I am ${document.getElementById('leadName').value}. Looking for: ${document.getElementById('leadSpec').value}.`;
+      window.open(`https://wa.me/917003660315?text=${encodeURIComponent(msg)}`, '_blank');
+      closeQuoteModal();
+    }
+    setTimeout(() => { if (!sessionStorage.getItem('ahmed_pop')) { openQuoteModal(); sessionStorage.setItem('ahmed_pop', '1'); } }, 4500);
+  </script>
+</body>
+</html>

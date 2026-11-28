@@ -228,7 +228,7 @@
   <header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       <a href="#top" class="flex items-center gap-3 min-w-0">
-        <span class="monogram-badge w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-sm text-obsidian shrink-0">AF</span>
+        <span class="monogram-badge w-11 h-11 rounded-full p-0.5 flex items-center justify-center shrink-0 overflow-hidden"><img src="assets/ahmed_logo.jpg" alt="Ahmed Furniture Logo" class="w-full h-full rounded-full object-cover" /></span>
         <div class="leading-tight min-w-0">
           <span class="brand-title block font-display font-bold text-[13px] sm:text-base tracking-wider text-white uppercase whitespace-nowrap">Ahmed Furniture</span>
           <span class="brand-sub block text-[9px] sm:text-[11px] tracking-[0.18em] text-gold uppercase font-medium whitespace-nowrap">Bespoke Sofa Manufacturer</span>
@@ -372,7 +372,7 @@
           <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Ahmed Furniture Luxury Living Room" class="w-full h-full object-cover" />
         </div>
         <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-8 sm:-right-6 bg-obsidian text-white p-5 sm:p-6 rounded-2xl shadow-2xl border border-gold/30 flex items-center gap-4 max-w-sm">
-          <span class="monogram-badge w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-lg text-obsidian shrink-0">AF</span>
+          <span class="monogram-badge w-14 h-14 rounded-full p-0.5 flex items-center justify-center shrink-0 overflow-hidden"><img src="assets/ahmed_logo.jpg" alt="Ahmed Furniture Official Logo" class="w-full h-full rounded-full object-cover" /></span>
           <div>
             <p class="typo-eyebrow text-gold text-[10px] mb-1">Direct Manufacturer</p>
             <p class="font-display font-semibold text-base">Ahmed Furniture</p>
@@ -594,7 +594,7 @@
   <footer class="bg-obsidian text-white pt-16 pb-10 border-t border-gold/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3.5">
-        <span class="monogram-badge w-11 h-11 rounded-full flex items-center justify-center font-display font-bold text-sm text-obsidian">AF</span>
+        <span class="monogram-badge w-11 h-11 rounded-full p-0.5 flex items-center justify-center overflow-hidden"><img src="assets/ahmed_logo.jpg" alt="Ahmed Furniture Logo" class="w-full h-full rounded-full object-cover" /></span>
         <div>
           <span class="font-display font-bold text-lg tracking-wider uppercase block">Ahmed Furniture</span>
           <span class="text-xs tracking-[0.2em] text-gold uppercase">Bespoke Sofa Manufacturer</span>
@@ -608,16 +608,43 @@
   </footer>
 
   <!-- MODAL -->
-  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div class="bg-ivory text-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-gold/30 relative">
-      <button onclick="closeQuoteModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-obsidian hover:text-white flex items-center justify-center transition">&times;</button>
-      <p class="typo-eyebrow text-bronze text-[10px] mb-1">Ahmed Furniture &bull; Factory Direct</p>
-      <h3 class="font-display font-bold text-xl mb-4">Get Custom Sofa Quote</h3>
-      <form onsubmit="submitForm(event)" class="space-y-4">
-        <input type="text" id="leadName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
-        <input type="text" id="leadSpec" required placeholder="e.g. 6-Seater L-Shape in Beige Suede" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm" />
-        <button type="submit" class="w-full atelier-btn bg-obsidian text-white justify-between">
-          <span>Send on WhatsApp</span>
+  <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+    <div class="bg-ivory text-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-gold/35 relative">
+      <button onclick="closeQuoteModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-obsidian hover:text-white flex items-center justify-center transition" aria-label="Close">&times;</button>
+      <div class="flex items-center gap-3.5 mb-5">
+        <span class="monogram-badge w-12 h-12 rounded-full p-0.5 flex items-center justify-center shrink-0 overflow-hidden"><img src="assets/ahmed_logo.jpg" alt="Ahmed Furniture Logo" class="w-full h-full rounded-full object-cover" /></span>
+        <div>
+          <p class="typo-eyebrow text-bronze text-[10px]">Ahmed Furniture &bull; Factory Direct</p>
+          <h3 class="font-display font-bold text-xl">Get Custom Sofa Quote</h3>
+        </div>
+      </div>
+      <form onsubmit="submitForm(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-[11px] font-semibold uppercase tracking-wider text-slateInk mb-1">Your Name</label>
+          <input type="text" id="leadName" required placeholder="e.g. Rohan Verma" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-wider text-slateInk mb-1">Sofa Type</label>
+            <select id="leadType" class="w-full px-3.5 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze">
+              <option>L-Shaped Sectional</option>
+              <option>3+2 Sofa Set</option>
+              <option>Royal Chesterfield</option>
+              <option>Sofa Cum Bed</option>
+              <option>Complete Living Suite</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-wider text-slateInk mb-1">Your City</label>
+            <input type="text" id="leadCity" required placeholder="e.g. Kolkata / Delhi" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-[11px] font-semibold uppercase tracking-wider text-slateInk mb-1">Size / Fabric Note (Optional)</label>
+          <input type="text" id="leadSpec" placeholder="e.g. 6-Seater in Beige Suede" class="w-full px-4 py-3 rounded-xl bg-white border border-obsidian/15 text-sm focus:outline-none focus:border-bronze" />
+        </div>
+        <button type="submit" class="w-full atelier-btn bg-obsidian text-white hover:bg-bronze justify-between mt-1">
+          <span>Get Factory Price on WhatsApp</span>
           <span class="btn-circle bg-gold text-obsidian">&#8599;</span>
         </button>
       </form>
@@ -707,11 +734,18 @@
     function closeQuoteModal() { modal.classList.replace('flex', 'hidden'); }
     function submitForm(e) {
       e.preventDefault();
-      const msg = `Hi Ahmed Furniture, I am ${document.getElementById('leadName').value}. Looking for: ${document.getElementById('leadSpec').value}.`;
+      const name = document.getElementById('leadName').value.trim();
+      const type = document.getElementById('leadType').value;
+      const city = document.getElementById('leadCity').value.trim();
+      const spec = document.getElementById('leadSpec').value.trim();
+      const msg = `Hi Ahmed Furniture, I am ${name} from ${city}. Looking for: ${type}${spec ? ' (' + spec + ')' : ''}. Please share factory price & fabric catalog.`;
       window.open(`https://wa.me/917003660315?text=${encodeURIComponent(msg)}`, '_blank');
       closeQuoteModal();
     }
-    setTimeout(() => { if (!sessionStorage.getItem('ahmed_pop')) { openQuoteModal(); sessionStorage.setItem('ahmed_pop', '1'); } }, 4500);
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => { openQuoteModal(); }, 350);
+    });
   </script>
 </body>
 </html>
+
